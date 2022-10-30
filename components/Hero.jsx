@@ -18,9 +18,9 @@ export default function Hero() {
     { iconMobile: <MobileUpworkSVG className='rounded-full w-12 h-12' />, icon: <UpworkSVG className='fill-gray-500 h-[104px] w-[164px] hover:fill-[#14A800]' />, href: 'https://www.upwork.com/freelancers/~01efec3f377775367a' },
   ]
   return (
-    <div classname="bg-gray-100 h-96">
+    <div classname="h-96" className='bg-zinc-100 sm:bg-transparent' style={{"background":"radial-gradient(circle, rgba(244,244,245,1) 57%, rgb(161, 161, 170,0.33853291316526615) 100%)"}}>
 
-      <section className="bg-zinc-100">
+      <section className="bg-transparent">
         <div className="py-8 px-4 mx-auto max-w-screen-xl text-center lg:py-16 lg:px-12">
           <h2 className='text-3xl  tracking-tight text-blue-500 md:text-3xl lg:text-4xl leading-2'>Hello, I&apos;m</h2>
           <h1 className="my-4 sm:mt-0 text-4xl font-bold tracking-normal text-gray-800 md:text-5xl lg:text-5xl leading-2	"><span className='sm:leading-loose'><span className='text-gray-900'>Abdelrahman</span> <span className='text-gray-900 text-bold'>Essawy</span></span> </h1>
@@ -69,6 +69,7 @@ export default function Hero() {
         </div>
       </section>
     </div>
+    
 
   )
 }

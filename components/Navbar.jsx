@@ -5,8 +5,10 @@ import DownloadSVG from './SVG/DownloadSVG';
 
 const navigation = [
   { name: 'Home', href: '#', current: true },
-  { name: 'Projects', href: '#', current: false },
   { name: 'About', href: '#', current: false },
+  { name: 'Skills', href: '#', current: false },
+  { name: 'Testimonials', href: '#', current: false },
+  { name: 'Projects', href: '#', current: false },
   { name: 'Contact', href: '#', current: false },
 ]
 
@@ -32,7 +34,7 @@ export default function Example() {
                   )}
                 </Disclosure.Button>
               </div>
-              <div className="sm:flex flex-shrink-0 items-center sm:justify-self-start hidden">
+              <div className="sm:flex flex-shrink-0 items-center sm:justify-self-start sm:mx-0 mx-auto">
                 <Link href='/'>
 
                   <a className='font text-2xl'>
