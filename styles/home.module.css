@@ -1,0 +1,9 @@
+.bg {
+    position: absolute;
+    width: 1920px;
+    height: 1080px;
+    left: 0px;
+    top: 0px;
+    background: conic-gradient(from 180deg at 50% 50%, rgba(255, 255, 255, 0.42) 0deg, rgba(0, 0, 0, 0) 360deg);
+    filter: blur(229px);
+}
