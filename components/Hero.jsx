@@ -12,10 +12,10 @@ import MobileUpworkSVG from './SVG/MobileUpworkSVG';
 export default function Hero() {
 
   const navigation = [
-    { iconMobile: <MobileFacebookSVG className='rounded-full w-14 h-14' />,icon: <FacebookSVG className='fill-gray-500 h-[74px] w-[164px] hover:fill-[#4267B2]' />, href: 'https://www.facebook.com/abdelrahman.mo.essawy/' },
-    { iconMobile: <MobileGithubSVG className='rounded-full w-14 h-14' />,icon: <GithubSVG className='fill-gray-500 h-[104px] w-[164px] hover:fill-gray-800' />, href: 'https://github.com/abdelrahman-essawy' },
+    { iconMobile: <MobileFacebookSVG className='rounded-full w-14 h-14' />, icon: <FacebookSVG className='fill-gray-500 h-[74px] w-[164px] hover:fill-[#4267B2]' />, href: 'https://www.facebook.com/abdelrahman.mo.essawy/' },
+    { iconMobile: <MobileGithubSVG className='rounded-full w-14 h-14' />, icon: <GithubSVG className='fill-gray-500 h-[104px] w-[164px] hover:fill-gray-800' />, href: 'https://github.com/abdelrahman-essawy' },
     { iconMobile: <MobileFiverrSVG className='rounded-full w-12 h-12' />, icon: <FiverrSVG className='fill-gray-500 h-[104px] w-[164px] hover:fill-gray-800' />, href: 'https://www.fiverr.com/users/abdelrahman_ess' },
-    { iconMobile: <MobileUpworkSVG className='rounded-full w-12 h-12' />,icon: <UpworkSVG className='fill-gray-500 h-[104px] w-[164px] hover:fill-[#14A800]' />, href: 'https://www.upwork.com/freelancers/~01efec3f377775367a' },
+    { iconMobile: <MobileUpworkSVG className='rounded-full w-12 h-12' />, icon: <UpworkSVG className='fill-gray-500 h-[104px] w-[164px] hover:fill-[#14A800]' />, href: 'https://www.upwork.com/freelancers/~01efec3f377775367a' },
   ]
   return (
     <div classname="bg-gray-100 h-96">
@@ -41,7 +41,8 @@ export default function Hero() {
             <span className="font-semibold text-gray-400 uppercase">FIND ME IN</span>
             <div className='sm:hidden flex flex-wrap justify-center items-center mt-8 text-gray-500 sm:justify-between'>
               {navigation.map((item) => (
-                <a
+                <a target={'_blank'}
+                  rel="noopener noreferrer"
                   key={item.name}
                   href={item.href}
                   className={'mx-auto lg:mb-0 hover:fill-gray-800'
@@ -53,7 +54,8 @@ export default function Hero() {
             </div>
             <div className='hidden sm:flex flex-wrap justify-center items-center mt-8 text-gray-500 sm:justify-between '>
               {navigation.map((item) => (
-                <a
+                <a target={'_blank'}
+                  rel="noopener noreferrer"
                   key={item.name}
                   href={item.href}
                   className={'mx-auto lg:mb-0 hover:fill-gray-800'
