@@ -8,6 +8,7 @@ import UpworkSVG from './SVG/UpworkSVG';
 import MobileFacebookSVG from './SVG/MobileFacebook';
 import MobileGithubSVG from './SVG/MobileGithubSVG';
 import MobileUpworkSVG from './SVG/MobileUpworkSVG';
+import JsSVG from './SVG/JsSVG';
 
 export default function Hero() {
 
@@ -18,58 +19,85 @@ export default function Hero() {
     { iconMobile: <MobileUpworkSVG className='rounded-full w-12 h-12' />, icon: <UpworkSVG className='fill-gray-500 h-[104px] w-[164px] hover:fill-[#14A800]' />, href: 'https://www.upwork.com/freelancers/~01efec3f377775367a' },
   ]
   return (
-    <div classname="h-96" className='bg-zinc-100 sm:bg-transparent' style={{"background":"radial-gradient(circle, rgba(244,244,245,1) 57%, rgb(161, 161, 170,0.33853291316526615) 100%)"}}>
+    <section id='Home'>
+      <div className='rounded-3xl absolute w-20'>
+      </div>
 
-      <section className="bg-transparent">
-        <div className="py-8 px-4 mx-auto max-w-screen-xl text-center lg:py-16 lg:px-12">
-          <h2 className='text-3xl  tracking-tight text-blue-500 md:text-3xl lg:text-4xl leading-2'>Hello, I&apos;m</h2>
-          <h1 className="my-4 sm:mt-0 text-4xl font-bold tracking-normal text-gray-800 md:text-5xl lg:text-5xl leading-2	"><span className='sm:leading-loose'><span className='text-gray-900'>Abdelrahman</span> <span className='text-gray-900 text-bold'>Essawy</span></span> </h1>
-          <p id='glitch' className="mt-8 mb-2 text-xl font-normal text-gray-500 lg:text-2xl sm:px-16 xl:px-48">I&apos;m a <span className='type-jobs  font-bold'></span></p>
-          <div className="flex flex-col mb-8 sm:my-8 lg:mb-16 space-y-4 sm:flex-row sm:justify-center sm:space-y-0 sm:space-x-4">
+
+
+      <div className="m-auto py-8 px-4 mx-auto max-w-screen-xl text-center lg:py-0 lg:px-12 sm:flex sm:justify-between sm:items-center">
+        <div className='sm:text-start'>
+          <h2 className='text-3xl  tracking-tight text-blue-500 md:text-3xl lg:text-4xl leading-2 sm:mb-6'>Hello, I&apos;m</h2>
+          <h1 className="my-4 sm:mt-0 text-4xl font-bold tracking-normal text-gray-800 md:text-5xl lg:text-5xl leading-2"><span className='sm:leading-loose md:leading-tight'><span className='text-gray-900'>Abdelrahman</span> <span className='text-gray-900 text-bold'>Essawy</span></span> </h1>
+          <p id='glitch' className="mt-8 mb-2 text-xl font-normal text-gray-500 lg:text-2xl">I&apos;m a <span className='type-jobs  font-bold'></span></p>
+          <div className="hidden flex md:justify-start mb-8 sm:my-8 lg:mb-16 space-y-4 sm:flex-row sm:justify-center sm:space-y-0 sm:space-x-4">
             <p href="#" className="hidden sm:inline-flex justify-center items-center py-3 px-5 text-base font-medium text-center text-gray-900 rounded-lg bg-primary-700 hover:bg-primary-800 focus:ring-4 focus:ring-primary-300 ">
               Learn more
               <svg className="ml-2 -mr-1 w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fillRule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clipRule="evenodd" /></svg>
             </p>
-            <div className=' opacity-60 hover:opacity-100 p-[2px] rounded-lg hover:bg-gradient-to-r from-blue-300 to-emerald-300  focus:ring-4 focus:ring-gray-100  '>
+            <div className='opacity-60 hover:opacity-100 p-[2px] rounded-lg hover:bg-gradient-to-r from-blue-300 to-emerald-300  focus:ring-4 focus:ring-gray-100  '>
               <a href="#" className="w-full  inline-flex justify-center items-center py-3 px-5 text-base font-medium text-center text-gray-900 rounded-lg bg-white border ">
                 <ContactSVG className="mr-2 -ml-1 w-5 h-5 fill-gray-900" xmlns="http://www.w3.org/2000/svg" />
                 Contact me
               </a>
             </div>
           </div>
-          <div className="px-4 mx-auto text-center md:max-w-screen-md lg:max-w-screen-lg lg:px-36">
-            <span className="font-semibold text-gray-400 uppercase">FIND ME IN</span>
-            <div className='sm:hidden flex flex-wrap justify-center items-center mt-8 text-gray-500 sm:justify-between'>
-              {navigation.map((item) => (
-                <a target={'_blank'}
-                  rel="noopener noreferrer"
-                  key={item.name}
-                  href={item.href}
-                  className={'mx-auto lg:mb-0 hover:fill-gray-800'
-                  }
-                >
-                  {item.iconMobile}
-                </a>
-              ))}
+          <div class="mt-5 sm:mt-8 sm:flex sm:justify-center lg:justify-start hidden sm:block">
+            <div class="rounded-md shadow-none sm:shadow">
+              <a href="#" class="flex w-full items-center justify-center rounded-md border border-blue-500 bg-blue-500 bg-clip-text text-transparent  px-8 py-3 text-base font-medium  hover:bg-blue-500 hover:text-white hover:bg-clip-padding active:bg-blue-600 md:py-3 md:px-7 md:text-lg">Contact me</a>
             </div>
-            <div className='hidden sm:flex flex-wrap justify-center items-center mt-8 text-gray-500 sm:justify-between '>
-              {navigation.map((item) => (
-                <a target={'_blank'}
-                  rel="noopener noreferrer"
-                  key={item.name}
-                  href={item.href}
-                  className={'mx-auto lg:mb-0 hover:fill-gray-800'
-                  }
-                >
-                  {item.icon}
-                </a>
-              ))}
+            <div class="mt-3 sm:mt-0 sm:ml-3">
+              <a href="#" class="flex w-full items-center justify-center rounded-md border border-transparent bg-blue-100 px-8 py-3  text-base font-medium text-blue-500 hover:bg-blue-200 active:bg-blue-300 md:py-3 md:px-7 md:text-lg">Projects</a>
             </div>
           </div>
         </div>
-      </section>
-    </div>
-    
+
+
+        <div className=''>
+          <img width={500} src='me.webp' />
+        </div>
+
+        <div class="mt-5 sm:mt-8 sm:flex sm:justify-center lg:justify-start block sm:hidden">
+            <div class="rounded-md shadow-none sm:shadow">
+              <a href="#" class="flex w-full items-center justify-center rounded-md border border-blue-500 bg-blue-500 bg-clip-text text-transparent  px-8 py-3 text-base font-medium  hover:bg-blue-500 hover:text-white hover:bg-clip-padding active:bg-blue-600 md:py-3 md:px-7 md:text-lg">Contact me</a>
+            </div>
+            <div class="mt-3 sm:mt-0 sm:ml-3">
+              <a href="#" class="flex w-full items-center justify-center rounded-md border border-transparent bg-blue-100 px-8 py-3  text-base font-medium text-blue-500 hover:bg-blue-200 active:bg-blue-300 md:py-3 md:px-7 md:text-lg">Projects</a>
+            </div>
+          </div>
+      </div>
+      <hr class=" max-w-4xl mb-4 mx-auto  px-6 hidden"></hr>
+      <div className="mb-4 md:mb-0 px-4 mx-auto text-center md:max-w-screen-md lg:max-w-screen-lg lg:px-36">
+        <span className="font-semibold text-gray-400 uppercase">FIND ME IN</span>
+        <div className='sm:hidden flex flex-wrap justify-center items-center mt-8 text-gray-500 sm:justify-between'>
+          {navigation.map((item) => (
+            <a target={'_blank'}
+              rel="noopener noreferrer"
+              key={item.name}
+              href={item.href}
+              className={'mx-auto lg:mb-0 hover:fill-gray-800'
+              }
+            >
+              {item.iconMobile}
+            </a>
+          ))}
+        </div>
+        <div className='hidden sm:flex flex-wrap justify-center items-center mt-8 text-gray-500 sm:justify-between '>
+          {navigation.map((item) => (
+            <a target={'_blank'}
+              rel="noopener noreferrer"
+              key={item.name}
+              href={item.href}
+              className={'mx-auto lg:mb-0 hover:fill-gray-800'
+              }
+            >
+              {item.icon}
+            </a>
+          ))}
+        </div>
+      </div>
+    </section>
+
 
   )
 }

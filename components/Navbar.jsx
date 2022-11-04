@@ -4,12 +4,12 @@ import Link from 'next/link'
 import DownloadSVG from './SVG/DownloadSVG';
 
 const navigation = [
-  { name: 'Home', href: '#', current: true },
-  { name: 'About', href: '#', current: false },
-  { name: 'Skills', href: '#', current: false },
-  { name: 'Testimonials', href: '#', current: false },
-  { name: 'Projects', href: '#', current: false },
-  { name: 'Contact', href: '#', current: false },
+  { name: 'Home', href: '#Home', current: true },
+  { name: 'About', href: '#About', current: false },
+  { name: 'Skills', href: '#Skills', current: false },
+  { name: 'Testimonials', href: '#Testimonials', current: false },
+  { name: 'Projects', href: '#Projects', current: false },
+  { name: 'Contact', href: '#Contact', current: false },
 ]
 
 function classNames(...classes) {
@@ -64,12 +64,12 @@ export default function Example() {
                 </div>
               </div>
               <div className="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0">
-                <button class="hidden sm:block bg-transparent hover:bg-blue-500 text-blue-500 font-semibold hover:text-white py-2 px-4 border border-blue-500 hover:border-transparent rounded">
+                <button className="animate-pulse hover:animate-none hidden sm:block bg-transparent hover:bg-blue-500 text-blue-500 font-semibold hover:text-white py-2 px-4 border border-blue-500 hover:border-transparent rounded">
                   Download CV
                 </button>
 
 
-                  <button className="sm:hidden flex text-lg items-center justify-center bg-transparent text-blue-500 font-semibold  py-2 px-4 border border-blue-500 hover:border-blue-700 hover:text-blue-700 rounded-lg">
+                  <button className="animate-pulse hover:animate-none sm:hidden flex text-lg items-center justify-center bg-transparent text-blue-500 font-semibold  py-2 px-4 border border-blue-500 hover:border-blue-700 hover:text-blue-700 rounded-lg">
                   <DownloadSVG className={'fill-blue-500 mr-1 '} width={22} ></DownloadSVG>
                     CV
                   </button>
