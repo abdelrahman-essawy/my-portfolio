@@ -12,16 +12,17 @@ export default function Home() {
         <title>Abdelrahman Essawy</title>
         <meta name="description" content="Abdelrahman Essawy Portfolio" />
         <link rel="icon" href="/favicon.ico" />
-        
+
       </Head>
 
-      <Navbar/>
-    <div className='h-[1.5px] opacity-40 bg-gradient-to-r from-emerald-500 via-blue-500 to-emerald-500'></div>
+      <Navbar />
+      <div className='h-[1.5px] opacity-40 bg-gradient-to-r from-emerald-500 via-blue-500 to-emerald-500'></div>
 
-      <Hero/>
-      <Spliiter/>
-      <About/>
-      
+      <Hero />
+      <Spliiter />
+      <About />
+      <Spliiter />
+
     </>
   )
 }

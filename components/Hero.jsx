@@ -42,12 +42,12 @@ export default function Hero() {
               </a>
             </div>
           </div>
-          <div class="mt-5 sm:mt-8 sm:flex sm:justify-center lg:justify-start hidden sm:block">
-            <div class="rounded-md shadow-none sm:shadow">
-              <a href="#" class="flex w-full items-center justify-center rounded-md border border-blue-500 bg-blue-500 bg-clip-text text-transparent  px-8 py-3 text-base font-medium  hover:bg-blue-500 hover:text-white hover:bg-clip-padding active:bg-blue-600 md:py-3 md:px-7 md:text-lg">Contact me</a>
+          <div className="mt-5 sm:mt-8 sm:flex sm:justify-center lg:justify-start hidden sm:block">
+            <div className="rounded-md shadow-none sm:shadow">
+              <a href="#" className="flex w-full items-center justify-center rounded-md border border-blue-500 bg-blue-500 bg-clip-text text-transparent  px-8 py-3 text-base font-medium  hover:bg-blue-500 hover:text-white hover:bg-clip-padding active:bg-blue-600 md:py-3 md:px-7 md:text-lg">Contact me</a>
             </div>
-            <div class="mt-3 sm:mt-0 sm:ml-3">
-              <a href="#" class="flex w-full items-center justify-center rounded-md border border-transparent bg-blue-100 px-8 py-3  text-base font-medium text-blue-500 hover:bg-blue-200 active:bg-blue-300 md:py-3 md:px-7 md:text-lg">Projects</a>
+            <div className="mt-3 sm:mt-0 sm:ml-3">
+              <a href="#" className="flex w-full items-center justify-center rounded-md border border-transparent bg-blue-100 px-8 py-3  text-base font-medium text-blue-500 hover:bg-blue-200 active:bg-blue-300 md:py-3 md:px-7 md:text-lg">Projects</a>
             </div>
           </div>
         </div>
@@ -57,23 +57,23 @@ export default function Hero() {
           <img width={500} src='me.webp' />
         </div>
 
-        <div class="mt-5 sm:mt-8 sm:flex sm:justify-center lg:justify-start block sm:hidden">
-            <div class="rounded-md shadow-none sm:shadow">
-              <a href="#" class="flex w-full items-center justify-center rounded-md border border-blue-500 bg-blue-500 bg-clip-text text-transparent  px-8 py-3 text-base font-medium  hover:bg-blue-500 hover:text-white hover:bg-clip-padding active:bg-blue-600 md:py-3 md:px-7 md:text-lg">Contact me</a>
+        <div className="mt-5 sm:mt-8 sm:flex sm:justify-center lg:justify-start block sm:hidden">
+            <div className="rounded-md shadow-none sm:shadow">
+              <a href="#ContactMeID" className="flex w-full items-center justify-center rounded-md border border-blue-500 bg-blue-500 bg-clip-text text-transparent  px-8 py-3 text-base font-medium  hover:bg-blue-500 hover:text-white hover:bg-clip-padding  sm:active:bg-blue-600 md:py-3 md:px-7 md:text-lg">Contact me</a>
             </div>
-            <div class="mt-3 sm:mt-0 sm:ml-3">
-              <a href="#" class="flex w-full items-center justify-center rounded-md border border-transparent bg-blue-100 px-8 py-3  text-base font-medium text-blue-500 hover:bg-blue-200 active:bg-blue-300 md:py-3 md:px-7 md:text-lg">Projects</a>
+            <div className="mt-3 sm:mt-0 sm:ml-3">
+              <a href="#ProjectsID" className="flex w-full items-center justify-center rounded-md border border-transparent bg-blue-100 px-8 py-3  text-base font-medium text-blue-500 hover:bg-blue-200 active:bg-blue-300 md:py-3 md:px-7 md:text-lg">Projects</a>
             </div>
           </div>
       </div>
-      <hr class=" max-w-4xl mb-4 mx-auto  px-6 hidden"></hr>
+      <hr className=" max-w-4xl mb-4 mx-auto  px-6 hidden"></hr>
       <div className="mb-4 md:mb-0 px-4 mx-auto text-center md:max-w-screen-md lg:max-w-screen-lg lg:px-36">
         <span className="font-semibold text-gray-400 uppercase">FIND ME IN</span>
         <div className='sm:hidden flex flex-wrap justify-center items-center mt-8 text-gray-500 sm:justify-between'>
-          {navigation.map((item) => (
+          {navigation.map((item,index) => (
             <a target={'_blank'}
               rel="noopener noreferrer"
-              key={item.name}
+              key={index}
               href={item.href}
               className={'mx-auto lg:mb-0 hover:fill-gray-800'
               }
@@ -83,10 +83,10 @@ export default function Hero() {
           ))}
         </div>
         <div className='hidden sm:flex flex-wrap justify-center items-center mt-8 text-gray-500 sm:justify-between '>
-          {navigation.map((item) => (
+          {navigation.map((item,index) => (
             <a target={'_blank'}
               rel="noopener noreferrer"
-              key={item.name}
+              key={index}
               href={item.href}
               className={'mx-auto lg:mb-0 hover:fill-gray-800'
               }
