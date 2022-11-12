@@ -2,6 +2,10 @@
 const nextConfig = {
   reactStrictMode: true,
   swcMinify: true,
+  images: {
+    domains: ["fiverr-res.cloudinary.com"],
+
+  },
 }
 
 module.exports = nextConfig

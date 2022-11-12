@@ -9,6 +9,7 @@ import MobileFacebookSVG from './SVG/MobileFacebook';
 import MobileGithubSVG from './SVG/MobileGithubSVG';
 import MobileUpworkSVG from './SVG/MobileUpworkSVG';
 import JsSVG from './SVG/JsSVG';
+import  Image  from 'next/image';
 
 export default function Hero() {
 
@@ -53,8 +54,8 @@ export default function Hero() {
         </div>
 
 
-        <div className=''>
-          <img width={500} src='me.webp' />
+        <div className=' pointer-events-none select-none'>
+          <Image width={500} height={500} alt='Me Image' src='/me.webp'  priority={true}/>
         </div>
 
         <div className="mt-5 sm:mt-8 sm:flex sm:justify-center lg:justify-start block sm:hidden">

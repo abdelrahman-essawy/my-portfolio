@@ -1,13 +1,12 @@
 import React from 'react'
-import MeSVG from './SVG/MeSVG'
-import Me2SVG from './SVG/Me2SVG';
+import Image from 'next/image';
 
 export default function About() {
   return (
     <section id='About' className='bg-zinc-50 overflow-hidden'>
-      <div className='px-4 sm:px-12 pt-6 sm:mt-6 m-auto max-w-screen-xl text-center sm:text-start flex justify-between items-center sm:space-x-4'>
-        <div className='hidden sm:block' >
-          <img width={250} src='about-me.png' />
+      <div className='px-4 sm:px-12 py-6 sm:pb-0 sm:mt-6 m-auto max-w-screen-xl text-center sm:text-start flex justify-between items-center sm:space-x-4'>
+        <div className='hidden sm:block space text-[0px] pointer-events-none select-none' >
+          <Image alt='About Me' width={250} height={381.172} src='/about-me.png' priority={true} />
         </div>
 
         <div className="self-start">
@@ -21,17 +20,21 @@ export default function About() {
             </ul>
           </div>
 
-          <div className=' sm:hidden flex justify-center my-5' >
-            <img width={200} src='about-me.png' />
+          <div className=' sm:hidden flex justify-center my-5 text-[0px] pointer-events-none select-none' >
+            <Image alt='About Me' width={200} height={304.9} src='/about-me.png' priority={true} />
           </div>
-          <div className='flex justify-between xl:mt-28 md:mt-12'>
+          <div className='flex justify-evenly sm:justify-between xl:mt-28 md:mt-12'>
 
             <p className='font-extralight text-gray-800 text-4xl sm:text-6xl'>
-              +79<span className='uppercase text-gray-500 text-2xl sm:text-2xl' > projects</span>
+              <span className='uppercase text-gray-500 text-3xl sm:text-5xl' >+</span>
+              79
+              <span className='uppercase text-gray-500 text-2xl sm:text-2xl' > projects</span>
             </p>
 
             <p className='font-extralight text-gray-800 text-4xl sm:text-6xl'>
-              +2<span className='uppercase text-gray-500 text-2xl sm:text-2xl' > Years</span>
+              <span className='uppercase text-gray-500 text-3xl sm:text-5xl' >+</span>
+              2
+              <span className='uppercase text-gray-500 text-2xl sm:text-2xl' > Years</span>
             </p>
           </div>
         </div>
