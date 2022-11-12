@@ -1,23 +1,10 @@
 import React from 'react'
-import cheerio from 'cheerio'
-import axios from 'axios'
 import Image from 'next/image'
+import Skeleton from 'react-loading-skeleton'
+import 'react-loading-skeleton/dist/skeleton.css'
 
 export default function Testimonials() {
     const reviews = [
-        {
-            name: 'mrmattbarr'
-            , desc: "Abdelrahman has gone above and beyond. His patience, ingenuity and creativity helped me take an idea further then I would have imagined. I felt like I had a team mate throughout this experience, someone to bounce ideas off and discuss epiphanies with. Not only would I highly recommend him but I am really looking forward to working with him again."
-            , icon: 'https://fiverr-res.cloudinary.com/image/upload/f_auto,q_auto,t_profile_small/v1/attachments/profile/photo/5675cc3e93574885b3f1c13c285e72eb-77093841587652388694/JPEG_20200423_093308_8800783325805886115.jpg'
-            , country: 'United States'
-        },
-        {
-            name: 'denisemerc'
-            , desc: "I'm thrilled with the results of his hard work and how quickly he was able to complete my project! Abdelrahman vast knowledge of computer science, creative approach to problem solving, skillful execution, and patience the process was easy and enjoyable! His clever suggestions produced a project that was more cost effective and functional. If you want quality work performed by a skillful computer engineer with an artistic eye for design, Abdelrahman is your guy!"
-            , icon: 'https://fiverr-res.cloudinary.com/image/upload/f_auto,q_auto,t_profile_small/v1/attachments/profile/photo/318e7d01847f7942fdc26c796034ff59-1620687279109/2e9829ef-8902-4b8b-b353-1869951a6386.png'
-            , country: 'United States'
-
-        },
         {
             name: 'druckbar_de'
             , desc: "Great work as always. Fast and reliable. He implements my customer requests excellently and simply has the necessary artistic streak."
@@ -33,6 +20,20 @@ export default function Testimonials() {
 
         },
         {
+            name: 'mrmattbarr'
+            , desc: "Abdelrahman has gone above and beyond. His patience, ingenuity and creativity helped me take an idea further then I would have imagined. I felt like I had a team mate throughout this experience, someone to bounce ideas off and discuss epiphanies with. Not only would I highly recommend him but I am really looking forward to working with him again."
+            , icon: 'https://fiverr-res.cloudinary.com/image/upload/f_auto,q_auto,t_profile_small/v1/attachments/profile/photo/5675cc3e93574885b3f1c13c285e72eb-77093841587652388694/JPEG_20200423_093308_8800783325805886115.jpg'
+            , country: 'United States'
+        },
+        {
+            name: 'denisemerc'
+            , desc: "I'm thrilled with the results of his hard work and how quickly he was able to complete my project! Abdelrahman vast knowledge of computer science, creative approach to problem solving, skillful execution, and patience the process was easy and enjoyable! His clever suggestions produced a project that was more cost effective and functional. If you want quality work performed by a skillful computer engineer with an artistic eye for design, Abdelrahman is your guy!"
+            , icon: 'https://fiverr-res.cloudinary.com/image/upload/f_auto,q_auto,t_profile_small/v1/attachments/profile/photo/318e7d01847f7942fdc26c796034ff59-1620687279109/2e9829ef-8902-4b8b-b353-1869951a6386.png'
+            , country: 'United States'
+
+        },
+
+        {
             name: 'danieledge696'
             , desc: "Highly recommend, great attention to detail and customer satisfaction - wants you to be absolutely happy with the project."
             , icon: 'https://fiverr-res.cloudinary.com/image/upload/f_auto,q_auto,t_profile_small/v1/attachments/profile/photo/0457d5f89eb04f3d909e390acda50dfe-1634589649863/e0e9c4a4-b0c0-4ef6-a867-3b5b6e003888.png'
@@ -43,18 +44,35 @@ export default function Testimonials() {
 
 
     return (
-        <section id='TestimonialsID' className='bg-white py-6 px-4 sm:p-0 '>
+        <section id='TestimonialsID' className='bg-white py-6 px-4 sm:p-0 relative overflow-y-hidden'>
             <div className='px-12 my-8 sm:p-0'>
 
                 <h2 className='text-3xl tracking-tight text-blue-500 leading-2 text-center'>Testimonials</h2>
                 <h3 className='mt-3 font-medium  text-xl sm:tracking-wide text-gray-500 leading-2 text-center'>What My Clients Are Saying...</h3>
             </div>
             <div className='max-screen-w-xl m-auto sm:px-12 my-8 sm:p-0  relative '>
-                <div className='sm:block hidden bg-gradient-to-r from-white to-transparent sm:w-64 h-full absolute left-0 z-20'></div>
-                <div className='sm:block hidden bg-gradient-to-r from-transparent to-white sm:w-64 h-full absolute right-0 z-20'></div>
+
+                <div className='sm:block hidden bg-gradient-to-r from-white to-transparent sm:w-64 h-full absolute left-0 z-20'>
+                    <div className='relative flex justify-start h-full w-full items-center'>
+                    <button type="button" className="mx-8 z-50 rotate-180 text-gray-500  hover:text-gray-700 focus:outline-none ">
+                                <svg aria-hidden="true" class="w-8 h-8 " fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>
+                                <span class="sr-only">Icon description</span>
+                            </button>
+                    </div>
+                </div>
+
+                <div className='sm:block justify-between hidden bg-gradient-to-r from-transparent to-white sm:w-64 h-full absolute right-0 z-20'>
+                <div className='relative flex justify-end h-full w-full items-center'>
+                <button type="button" className="mx-8 z-50  text-gray-500  hover:text-gray-700 focus:outline-none ">
+                                <svg aria-hidden="true" class="w-8 h-8 " fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>
+                                <span class="sr-only">Icon description</span>
+                            </button>
+                    </div>
+                </div>
 
 
-                <div className=' flex justify-evenly items-center sm:my-8 overflow-x-auto scroll-smooth scrollbar-hide snap-x space-x-4 lg:space-x-8'>
+
+                <div className=' flex center items-center sm:my-8 overflow-x-auto overflow-clip scroll-smooth scrollbar-hide snap-x snap-mandatory	 space-x-4 lg:space-x-8'>
                     {
                         reviews.map((review, index) => {
                             return <div key={index} className='bg-zinc-50 block select-none rounded-md sm:hover:scale-105 snap-center sm:hover:shadow-xl shadow-sm sm:px-6 sm:py-8  border border-gray-100  sm:flex sm:justify-center sm:items-center'>
@@ -67,16 +85,16 @@ export default function Testimonials() {
                                         <p className='text-center'>
                                             <span className='text-xl text-gray-400 font-mono'>&quot;
                                             </span>
-                                            <span className="text-md font-sans text-gray-900 dark:text-white">{review.desc}</span>
+                                            <span className="text-md font-sans text-gray-900 dark:text-white">{review.desc || <Skeleton count={4} />}</span>
                                             <span className='text-xl text-gray-400 font-mono'>&quot;
                                             </span>
                                         </p>
                                     </blockquote>
                                     <figcaption className="flex items-center  justify-center mt-6 space-x-3">
-                                        <Image width={32} height={32} className="rounded-full" src={review.icon} alt="profile picture" />
+                                        <Image width={32} height={32} className="rounded-full" src={review.icon || `/placeholder.png`} alt="profile picture" />
                                         <div className="flex items-center divide-x-2 divide-gray-500 dark:divide-gray-700">
-                                            <div className="pr-3 font-medium text-gray-900 dark:text-white">{review.name}</div>
-                                            <div className="pl-3 text-sm font-light text-gray-500 dark:text-gray-400">{review.country}</div>
+                                            <div className="pr-3 font-medium text-gray-900 dark:text-white">{review.name || <Skeleton />}</div>
+                                            <div className="pl-3 text-sm font-light text-gray-500 dark:text-gray-400">{review.country || <Skeleton />}</div>
                                         </div>
                                     </figcaption>
                                 </figure>
@@ -84,10 +102,11 @@ export default function Testimonials() {
                             </div>
                         })
                     }
-
                 </div>
 
             </div>
+
+
         </section >
     )
 

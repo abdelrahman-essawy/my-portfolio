@@ -35,21 +35,19 @@ export default function Example() {
                 </Disclosure.Button>
               </div>
               <div className="sm:flex flex-shrink-0 items-center sm:justify-self-start sm:mx-0 mx-auto">
-                <Link href='/'>
+                <Link className='font text-2xl' href='/'>
 
-                  <a className='font text-2xl'>
                     <span className='text-gray-700'>&lt;</span>
                     <span className='text-blue-700'>
                       AE
                     </span>
                     <span className='text-gray-700'>/&gt;</span>
-                  </a>
                 </Link>
               </div>
               <div className="hidden sm:ml-6 sm:block justify-self-center">
                 <div className="flex space-x-4">
                   {navigation.map((item) => (
-                    <a
+                    <Link
                       key={item.name}
                       href={item.href}
                       className={classNames(
@@ -59,7 +57,7 @@ export default function Example() {
                       aria-current={item.current ? 'page' : undefined}
                     >
                       {item.name}
-                    </a>
+                    </Link>
                   ))}
                 </div>
               </div>
