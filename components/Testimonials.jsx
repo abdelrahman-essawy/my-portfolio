@@ -55,8 +55,8 @@ export default function Testimonials() {
                 <div className='sm:block hidden bg-gradient-to-r from-white to-transparent sm:w-64 h-full absolute left-0 z-20'>
                     <div className='relative flex justify-start h-full w-full items-center'>
                     <button type="button" className="mx-8 z-50 rotate-180 text-gray-500  hover:text-gray-700 focus:outline-none ">
-                                <svg aria-hidden="true" class="w-8 h-8 " fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>
-                                <span class="sr-only">Icon description</span>
+                                <svg aria-hidden="true" className="w-8 h-8 " fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fillRule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clipRule="evenodd"></path></svg>
+                                <span className="sr-only">Icon description</span>
                             </button>
                     </div>
                 </div>
@@ -64,8 +64,8 @@ export default function Testimonials() {
                 <div className='sm:block justify-between hidden bg-gradient-to-r from-transparent to-white sm:w-64 h-full absolute right-0 z-20'>
                 <div className='relative flex justify-end h-full w-full items-center'>
                 <button type="button" className="mx-8 z-50  text-gray-500  hover:text-gray-700 focus:outline-none ">
-                                <svg aria-hidden="true" class="w-8 h-8 " fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>
-                                <span class="sr-only">Icon description</span>
+                                <svg aria-hidden="true" className="w-8 h-8 " fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fillRule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clipRule="evenodd"></path></svg>
+                                <span className="sr-only">Icon description</span>
                             </button>
                     </div>
                 </div>
