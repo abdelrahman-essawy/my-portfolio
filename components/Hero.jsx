@@ -9,15 +9,18 @@ import MobileFacebookSVG from './SVG/MobileFacebook';
 import MobileGithubSVG from './SVG/MobileGithubSVG';
 import MobileUpworkSVG from './SVG/MobileUpworkSVG';
 import JsSVG from './SVG/JsSVG';
-import  Image  from 'next/image';
+import Image from 'next/image';
+import LinkedinSVG from './SVG/LinkedinSVG';
+import MobileLinkedinSVG from './SVG/MobileLinkedinSVG';
 
 export default function Hero() {
 
   const navigation = [
     { iconMobile: <MobileFacebookSVG className='rounded-full w-14 h-14' />, icon: <FacebookSVG className='fill-gray-500 h-[74px] w-[164px] hover:fill-[#4267B2]' />, href: 'https://www.facebook.com/abdelrahman.mo.essawy/' },
-    { iconMobile: <MobileGithubSVG className='rounded-full w-14 h-14' />, icon: <GithubSVG className='fill-gray-500 h-[104px] w-[164px] hover:fill-gray-800' />, href: 'https://github.com/abdelrahman-essawy' },
+    { iconMobile: <MobileLinkedinSVG className='fill-[#0a66c2] w-14 h-14' />, icon: <LinkedinSVG className='fill-gray-500 h-[104px] w-[164px] hover:fill-[#0a66c2] scale-90' />, href: 'https://www.linkedin.com/in/abdelrahman-essawy/' },
+    { iconMobile: <MobileGithubSVG className='rounded-full w-14 h-14 scale-110' />, icon: <GithubSVG className='fill-gray-500 h-[104px] w-[164px] hover:fill-gray-800 scale-125' />, href: 'https://github.com/abdelrahman-essawy' },
     { iconMobile: <MobileFiverrSVG className='rounded-full w-12 h-12' />, icon: <FiverrSVG className='fill-gray-500 h-[104px] w-[164px] hover:fill-gray-800' />, href: 'https://www.fiverr.com/users/abdelrahman_ess' },
-    { iconMobile: <MobileUpworkSVG className='rounded-full w-12 h-12' />, icon: <UpworkSVG className='fill-gray-500 h-[104px] w-[164px] hover:fill-[#14A800]' />, href: 'https://www.upwork.com/freelancers/~01efec3f377775367a' },
+    { iconMobile: <MobileUpworkSVG className='rounded-full w-12 h-12' />, icon: <UpworkSVG className='fill-gray-500 h-[104px] w-[164px] hover:fill-[#14A800] scale-110' />, href: 'https://www.upwork.com/freelancers/~01efec3f377775367a' },
   ]
   return (
     <section id='Home'>
@@ -55,23 +58,23 @@ export default function Hero() {
 
 
         <div className=' pointer-events-none select-none'>
-          <Image width={500} height={500} alt='Me Image' src='/me.webp'  priority={true}/>
+          <Image width={500} height={500} alt='Me Image' src='/me.webp' priority={true} />
         </div>
 
         <div className="mt-5 sm:mt-8 sm:justify-center lg:justify-start block sm:hidden">
-            <div className="rounded-md shadow-none sm:shadow">
-              <a href="#ContactMeID" className="flex w-full items-center justify-center rounded-md border border-blue-500 bg-blue-500 bg-clip-text text-transparent  px-8 py-3 text-base font-medium  hover:bg-blue-500 hover:text-white hover:bg-clip-padding  sm:active:bg-blue-600 md:py-3 md:px-7 md:text-lg">Contact me</a>
-            </div>
-            <div className="mt-3 sm:mt-0 sm:ml-3">
-              <a href="#ProjectsID" className="flex w-full items-center justify-center rounded-md border border-transparent bg-blue-100 px-8 py-3  text-base font-medium text-blue-500 hover:bg-blue-200 active:bg-blue-300 md:py-3 md:px-7 md:text-lg">Projects</a>
-            </div>
+          <div className="rounded-md shadow-none sm:shadow">
+            <a href="#ContactMeID" className="flex w-full items-center justify-center rounded-md border border-blue-500 bg-blue-500 bg-clip-text text-transparent  px-8 py-3 text-base font-medium  hover:bg-blue-500 hover:text-white hover:bg-clip-padding  sm:active:bg-blue-600 md:py-3 md:px-7 md:text-lg">Contact me</a>
           </div>
+          <div className="mt-3 sm:mt-0 sm:ml-3">
+            <a href="#ProjectsID" className="flex w-full items-center justify-center rounded-md border border-transparent bg-blue-100 px-8 py-3  text-base font-medium text-blue-500 hover:bg-blue-200 active:bg-blue-300 md:py-3 md:px-7 md:text-lg">Projects</a>
+          </div>
+        </div>
       </div>
       <hr className=" max-w-4xl mb-4 mx-auto  px-6 hidden"></hr>
       <div className="mb-4 md:mb-0 px-4 mx-auto text-center md:max-w-screen-md lg:max-w-screen-lg lg:px-36">
         <span className="font-semibold text-gray-400 uppercase">FIND ME IN</span>
         <div className='sm:hidden flex flex-wrap justify-center items-center mt-8 text-gray-500 sm:justify-between'>
-          {navigation.map((item,index) => (
+          {navigation.map((item, index) => (
             <a target={'_blank'}
               rel="noopener noreferrer"
               key={index}
@@ -83,14 +86,12 @@ export default function Hero() {
             </a>
           ))}
         </div>
-        <div className='hidden sm:flex flex-wrap justify-center items-center mt-8 text-gray-500 sm:justify-between '>
-          {navigation.map((item,index) => (
+        <div className='hidden sm:flex justify-center items-center mt-8 text-gray-500 sm:justify-evenly gap-x-12 flex-nowrap'>
+          {navigation.map((item, index) => (
             <a target={'_blank'}
               rel="noopener noreferrer"
               key={index}
               href={item.href}
-              className={'mx-auto lg:mb-0 hover:fill-gray-800'
-              }
             >
               {item.icon}
             </a>
