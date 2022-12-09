@@ -9,6 +9,9 @@ const nextConfig = {
   experimental: {
     appDir: true,
   },
+  rules: { 
+    "@next/next/no-html-link-for-pages": "error",
+  },
 }
 
 module.exports = nextConfig
