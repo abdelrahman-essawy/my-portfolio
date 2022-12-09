@@ -11,6 +11,7 @@ import MobileUpworkSVG from './SVG/MobileUpworkSVG';
 import Image from 'next/image';
 import LinkedinSVG from './SVG/LinkedinSVG';
 import MobileLinkedinSVG from './SVG/MobileLinkedinSVG';
+import Link from 'next/link';
 
 export default function Hero() {
 
@@ -39,18 +40,18 @@ export default function Hero() {
               <svg className="ml-2 -mr-1 w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fillRule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clipRule="evenodd" /></svg>
             </p>
             <div className='opacity-60 hover:opacity-100 p-[2px] rounded-lg hover:bg-gradient-to-r from-blue-300 to-emerald-300  focus:ring-4 focus:ring-gray-100  '>
-              <a href="#" className="w-full  inline-flex justify-center items-center py-3 px-5 text-base font-medium text-center text-gray-900 rounded-lg bg-white border ">
+              <Link href="#" className="w-full  inline-flex justify-center items-center py-3 px-5 text-base font-medium text-center text-gray-900 rounded-lg bg-white border ">
                 <ContactSVG className="mr-2 -ml-1 w-5 h-5 fill-gray-900" xmlns="http://www.w3.org/2000/svg" />
                 Contact me
-              </a>
+              </Link>
             </div>
           </div>
           <div className="mt-5 sm:mt-8 sm:flex sm:justify-center lg:justify-start hidden">
             <div className="rounded-md shadow-none sm:shadow">
-              <a href="#" className="flex w-full items-center justify-center rounded-md border border-blue-500 bg-blue-500 bg-clip-text text-transparent  px-8 py-3 text-base font-medium  hover:bg-blue-500 hover:text-white hover:bg-clip-padding active:bg-blue-600 md:py-3 md:px-7 md:text-lg">Contact me</a>
+              <Link href="#" className="flex w-full items-center justify-center rounded-md border border-blue-500 bg-blue-500 bg-clip-text text-transparent  px-8 py-3 text-base font-medium  hover:bg-blue-500 hover:text-white hover:bg-clip-padding active:bg-blue-600 md:py-3 md:px-7 md:text-lg">Contact me</Link>
             </div>
             <div className="mt-3 sm:mt-0 sm:ml-3">
-              <a href="#" className="flex w-full items-center justify-center rounded-md border border-transparent bg-blue-100 px-8 py-3  text-base font-medium text-blue-500 hover:bg-blue-200 active:bg-blue-300 md:py-3 md:px-7 md:text-lg">Projects</a>
+              <Link href="#" className="flex w-full items-center justify-center rounded-md border border-transparent bg-blue-100 px-8 py-3  text-base font-medium text-blue-500 hover:bg-blue-200 active:bg-blue-300 md:py-3 md:px-7 md:text-lg">Projects</Link>
             </div>
           </div>
         </div>
@@ -62,10 +63,10 @@ export default function Hero() {
 
         <div className="mt-5 sm:mt-8 sm:justify-center lg:justify-start block sm:hidden">
           <div className="rounded-md shadow-none sm:shadow">
-            <a href="#ContactMeID" className="flex w-full items-center justify-center rounded-md border border-blue-500 bg-blue-500 bg-clip-text text-transparent  px-8 py-3 text-base font-medium  hover:bg-blue-500 hover:text-white hover:bg-clip-padding  sm:active:bg-blue-600 md:py-3 md:px-7 md:text-lg">Contact me</a>
+            <Link href="#ContactMeID" className="flex w-full items-center justify-center rounded-md border border-blue-500 bg-blue-500 bg-clip-text text-transparent  px-8 py-3 text-base font-medium  hover:bg-blue-500 hover:text-white hover:bg-clip-padding  sm:active:bg-blue-600 md:py-3 md:px-7 md:text-lg">Contact me</Link>
           </div>
           <div className="mt-3 sm:mt-0 sm:ml-3">
-            <a href="#ProjectsID" className="flex w-full items-center justify-center rounded-md border border-transparent bg-blue-100 px-8 py-3  text-base font-medium text-blue-500 hover:bg-blue-200 active:bg-blue-300 md:py-3 md:px-7 md:text-lg">Projects</a>
+            <Link href="#ProjectsID" className="flex w-full items-center justify-center rounded-md border border-transparent bg-blue-100 px-8 py-3  text-base font-medium text-blue-500 hover:bg-blue-200 active:bg-blue-300 md:py-3 md:px-7 md:text-lg">Projects</Link>
           </div>
         </div>
       </div>
@@ -74,7 +75,7 @@ export default function Hero() {
         <span className="font-semibold text-gray-400 uppercase">FIND ME IN</span>
         <div className='sm:hidden flex flex-wrap justify-center items-center mt-8 text-gray-500 sm:justify-between'>
           {navigation.map((item, index) => (
-            <a target={'_blank'}
+            <Link target={'_blank'}
               rel="noopener noreferrer"
               key={index}
               href={item.href}
@@ -82,18 +83,18 @@ export default function Hero() {
               }
             >
               {item.iconMobile}
-            </a>
+            </Link>
           ))}
         </div>
         <div className='hidden sm:flex justify-center items-center mt-8 text-gray-500 sm:justify-evenly gap-x-12 flex-nowrap'>
           {navigation.map((item, index) => (
-            <a target={'_blank'}
+            <Link target={'_blank'}
               rel="noopener noreferrer"
               key={index}
               href={item.href}
             >
               {item.icon}
-            </a>
+            </Link>
           ))}
         </div>
       </div>
