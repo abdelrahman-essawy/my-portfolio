@@ -8,7 +8,6 @@ import UpworkSVG from './SVG/UpworkSVG';
 import MobileFacebookSVG from './SVG/MobileFacebook';
 import MobileGithubSVG from './SVG/MobileGithubSVG';
 import MobileUpworkSVG from './SVG/MobileUpworkSVG';
-import JsSVG from './SVG/JsSVG';
 import Image from 'next/image';
 import LinkedinSVG from './SVG/LinkedinSVG';
 import MobileLinkedinSVG from './SVG/MobileLinkedinSVG';
