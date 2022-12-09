@@ -6,6 +6,9 @@ const nextConfig = {
     domains: ["fiverr-res.cloudinary.com"],
 
   },
+  experimental: {
+    appDir: true,
+  },
 }
 
 module.exports = nextConfig
