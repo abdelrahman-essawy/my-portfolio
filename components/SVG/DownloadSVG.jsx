@@ -1,5 +1,5 @@
 import * as React from "react";
-const DownloadSVG = (props) => (
+const DownloadSVG = (props=null) => (
     <svg
     id='Capa_1'
     xmlns='http://www.w3.org/2000/svg'

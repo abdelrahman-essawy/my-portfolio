@@ -1,5 +1,5 @@
 import * as React from "react";
-const BgSVG = (props) => (
+const BgSVG = (props=null) => (
   <svg
     id='visual'
     viewBox='0 0 900 600'

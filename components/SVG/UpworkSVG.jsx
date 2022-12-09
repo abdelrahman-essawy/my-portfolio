@@ -1,5 +1,5 @@
 import * as React from "react";
-const UpworkSVG = (props) => (
+const UpworkSVG = (props=null) => (
   <svg
     id='layer'
     xmlns='http://www.w3.org/2000/svg'

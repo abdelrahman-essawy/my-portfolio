@@ -1,5 +1,5 @@
 import * as React from "react";
-const FacebookSVG = (props) => (
+const FacebookSVG = (props=null) => (
   <svg
     xmlns='http://www.w3.org/2000/svg'
     width='3840.000000pt'

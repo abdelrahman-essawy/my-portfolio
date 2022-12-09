@@ -1,5 +1,5 @@
 import * as React from "react";
-const FiverrSVG = (props) => (
+const FiverrSVG = (props=null) => (
   <svg
     id='layer'
     xmlns='http://www.w3.org/2000/svg'

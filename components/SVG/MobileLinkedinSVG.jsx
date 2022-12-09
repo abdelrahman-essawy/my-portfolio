@@ -1,5 +1,5 @@
 import * as React from "react";
-const MobileLinkedinSVG = (props) => (
+const MobileLinkedinSVG = (props=null) => (
   <svg
     xmlns='http://www.w3.org/2000/svg'
     width='635.000000pt'
