@@ -18,7 +18,7 @@ module.exports = {
     require('tailwind-typewriter')({
       wordsets: {
         jobs: {
-          words: ['Software Engineer.', 'Cybersecurity Specialist.', '3D Designer.',],
+          words: ['Software Engineer.', 'Frontend Developer.', '3D Designer.',],
           delay: .3,
           writeSpeed: .15,
           eraseSpeed: .15,
