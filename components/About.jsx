@@ -10,7 +10,7 @@ export default function About() {
         </div>
 
         <div className="">
-          <h2 className='text-3xl tracking-tight text-blue-500 leading-2 sm:mb-10'>About Me</h2>
+          <h2 className='text-3xl tracking-tight text-blue-500 leading-2 sm:mb-10 mb-6'>About Me</h2>
           <div className='mt-3 font-medium lg:text-xl lg: text-gray-800 text-base text-start'>
 
             <ul className='list-disc px-5 sm:list-inside tracking-wide sm:tracking-tight'>
@@ -20,7 +20,7 @@ export default function About() {
             </ul>
           </div>
 
-          <div className=' sm:hidden flex justify-center my-5 text-[0px] pointer-events-none select-none' >
+          <div className=' sm:hidden flex justify-center my-6 text-[0px] pointer-events-none select-none' >
             <Image alt='About Me' width={200} height={304.9} src='/about-me.png' priority={true} />
           </div>
           <div className='flex justify-evenly sm:justify-between xl:mt-20 md:mt-12'>
