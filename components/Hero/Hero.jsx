@@ -2,6 +2,7 @@ import React from 'react'
 import ContactSVG from '../SVG/ContactSVG';
 import Image from 'next/image';
 import FindMeIn from './FindMeIn';
+import { motion as m } from 'framer-motion'
 
 export default function Hero() {
 
@@ -11,7 +12,11 @@ export default function Hero() {
       </div>
 
       <div className="m-auto py-8 px-4 mx-auto max-w-screen-xl text-center lg:py-0 lg:px-12 sm:flex sm:justify-between sm:items-center">
-        <div className='sm:text-start'>
+        <m.div
+          initial={{ opacity: 0, x: -10 }}
+          whileInView={{ opacity: 1, x: 0, type: 'spring' }}
+          transition={{ delay: 0.1 }}
+          className='sm:text-start'>
           <h2 className='text-3xl  tracking-tight text-blue-500 md:text-3xl lg:text-4xl leading-2 sm:mb-6'>Hello, I&apos;m</h2>
           <h1 className="my-4 sm:mt-0 text-4xl font-medium tracking-normal text-gray-800 md:text-5xl lg:text-5xl leading-2"><span className='sm:leading-loose md:leading-tight'><span className='text-gray-800 font-base'>Abdelrahman</span> <span className='text-gray-800 font-bold  decoration-3 underline-offset-8 decoration-blue-500'>Essawy</span></span> </h1>
           <p id='glitch' className="mt-8 mb-2 text-xl font-normal text-gray-500 lg:text-2xl">I&apos;m a <span className='type-jobs  font-bold'></span></p>
@@ -35,12 +40,16 @@ export default function Hero() {
               <a href="#" className="transition-all duration-200 ease-out flex w-full items-center justify-center rounded-md border border-transparent bg-blue-100 px-8 py-3  text-base font-medium text-blue-500 hover:bg-blue-200 active:bg-blue-300 md:py-3 md:px-7 md:text-lg">Projects</a>
             </div>
           </div>
-        </div>
+        </m.div>
 
 
-        <div className=' pointer-events-none select-none'>
+        <m.div
+          initial={{ opacity: 0, x: 10 }}
+          whileInView={{ opacity: 1, x: 0, type: 'spring' }}
+          transition={{ delay: 0.1 }}
+          className='pointer-events-none select-none'>
           <Image width={500} height={500} alt='Me Image' src='/me.webp' priority={true} />
-        </div>
+        </m.div>
 
         <div className="mt-5 sm:mt-8 sm:justify-center lg:justify-start block sm:hidden">
           <div className="rounded-md shadow-none sm:shadow">

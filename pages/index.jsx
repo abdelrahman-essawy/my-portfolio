@@ -24,11 +24,7 @@ export default function Home() {
       </header>
 
       {/* <div className='h-[1.5px] opacity-40 bg-gradient-to-r from-emerald-500 via-blue-500 to-emerald-500'></div> */}
-      <motion.main
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1}}
-        transition={{ when:'beforeChildren' }}
-        >
+      <motion.main>
 
         <Hero />
         <Spliiter />
