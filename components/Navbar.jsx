@@ -2,6 +2,7 @@ import { Disclosure, Menu, Transition } from '@headlessui/react'
 import { Bars3Icon, BellIcon, XMarkIcon } from '@heroicons/react/24/outline'
 import Link from 'next/link'
 import DownloadSVG from './SVG/DownloadSVG';
+import {motion as m} from 'framer-motion'
 
 const navigation = [
   { name: 'Home', href: '#Home', current: true },
@@ -21,7 +22,12 @@ export default function Example() {
     <Disclosure as="nav" className="">
       {({ open }) => (
         <>
-          <div className="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">
+          <m.div
+            initial={{opacity: 0}}
+            animate={{opacity: 1}}
+            transition={{duration: 1}}
+
+           className="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">
             <div className="relative  flex h-16 items-center justify-between">
               <div className="absolute inset-y-0 left-0 flex items-center sm:hidden">
                 {/* Mobile menu button*/}
@@ -37,11 +43,11 @@ export default function Example() {
               <div className="sm:flex flex-shrink-0 items-center sm:justify-self-start sm:mx-0 mx-auto">
                 <Link className='font text-2xl' href='/'>
 
-                    <span className='text-gray-700'>&lt;</span>
-                    <span className='text-blue-700'>
-                      AE
-                    </span>
-                    <span className='text-gray-700'>/&gt;</span>
+                  <span className='text-gray-700'>&lt;</span>
+                  <span className='text-blue-700'>
+                    AE
+                  </span>
+                  <span className='text-gray-700'>/&gt;</span>
                 </Link>
               </div>
               <div className="hidden sm:ml-6 sm:block justify-self-center">
@@ -67,15 +73,15 @@ export default function Example() {
                 </button>
 
 
-                  <button className="animate-pulse hover:animate-none sm:hidden flex text-lg items-center justify-center bg-transparent text-blue-500 font-semibold  py-2 px-4 border border-blue-500 hover:border-blue-700 hover:text-blue-700 rounded-lg">
+                <button className="animate-pulse hover:animate-none sm:hidden flex text-lg items-center justify-center bg-transparent text-blue-500 font-semibold  py-2 px-4 border border-blue-500 hover:border-blue-700 hover:text-blue-700 rounded-lg">
                   <DownloadSVG className={'fill-blue-500 mr-1 '} width={22} ></DownloadSVG>
-                    CV
-                  </button>
+                  CV
+                </button>
 
 
               </div>
             </div>
-          </div>
+          </m.div>
 
           <Disclosure.Panel className="sm:hidden">
             <div className="text-center space-y-1 px-2 pt-2 pb-3">
