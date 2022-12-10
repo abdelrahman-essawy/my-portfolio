@@ -1,5 +1,8 @@
 import React from 'react'
 import Image from 'next/image';
+import { motion as m } from 'framer-motion'
+import JsSVG from './SVG/JsSVG';
+import FacebookSVG from './SVG/FacebookSVG';
 
 export default function About() {
   return (
@@ -39,6 +42,7 @@ export default function About() {
           </div>
         </div>
       </div>
+
     </section>
   )
 }

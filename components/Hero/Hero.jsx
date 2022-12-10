@@ -1,27 +1,10 @@
 import React from 'react'
-import ContactSVG from './SVG/ContactSVG';
-import FacebookSVG from './SVG/FacebookSVG';
-import FiverrSVG from './SVG/FiverrSVG';
-import GithubSVG from './SVG/GithubSVG';
-import MobileFiverrSVG from './SVG/MobileFiverrSVG';
-import UpworkSVG from './SVG/UpworkSVG';
-import MobileFacebookSVG from './SVG/MobileFacebook';
-import MobileGithubSVG from './SVG/MobileGithubSVG';
-import MobileUpworkSVG from './SVG/MobileUpworkSVG';
-import JsSVG from './SVG/JsSVG';
+import ContactSVG from '../SVG/ContactSVG';
 import Image from 'next/image';
-import LinkedinSVG from './SVG/LinkedinSVG';
-import MobileLinkedinSVG from './SVG/MobileLinkedinSVG';
+import FindMeIn from './FindMeIn';
 
 export default function Hero() {
 
-  const navigation = [
-    { iconMobile: <MobileFacebookSVG className='rounded-full w-14 h-14' />, icon: <FacebookSVG className='transition-all duration-200 ease-in-out fill-gray-500 h-[74px] w-[164px] hover:fill-[#4267B2]' />, href: 'https://www.facebook.com/abdelrahman.mo.essawy/' },
-    { iconMobile: <MobileLinkedinSVG className='fill-[#0a66c2] w-14 h-14' />, icon: <LinkedinSVG className='transition-all duration-200 ease-in-out fill-gray-500 h-[104px] w-[164px] hover:fill-[#0a66c2] scale-90' />, href: 'https://www.linkedin.com/in/abdelrahman-essawy/' },
-    { iconMobile: <MobileGithubSVG className='rounded-full w-14 h-14 scale-110' />, icon: <GithubSVG className='transition-all duration-200 ease-in-out fill-gray-500 h-[104px] w-[164px] hover:fill-gray-800 scale-125' />, href: 'https://github.com/abdelrahman-essawy' },
-    { iconMobile: <MobileFiverrSVG className='rounded-full w-12 h-12' />, icon: <FiverrSVG className='transition-all duration-200 ease-in-out fill-gray-500 h-[104px] w-[164px] hover:fill-gray-800' />, href: 'https://www.fiverr.com/users/abdelrahman_ess' },
-    { iconMobile: <MobileUpworkSVG className='rounded-full w-12 h-12' />, icon: <UpworkSVG className='transition-all duration-200 ease-in-out fill-gray-500 h-[104px] w-[164px] hover:fill-[#14A800] scale-110' />, href: 'https://www.upwork.com/freelancers/~01efec3f377775367a' },
-  ]
   return (
     <section id='Home'>
       <div className='rounded-3xl absolute w-20'>
@@ -69,33 +52,7 @@ export default function Hero() {
         </div>
       </div>
       <hr className=" max-w-4xl mb-4 mx-auto  px-6 hidden"></hr>
-      <div className="mb-4 md:mb-0 px-4 mx-auto text-center md:max-w-screen-md lg:max-w-screen-xl sm:px-12">
-        <span className="font-semibold text-gray-400 uppercase">FIND ME IN</span>
-        <div className='sm:hidden flex flex-wrap justify-center items-center mt-8 text-gray-500 sm:justify-between'>
-          {navigation.map((item, index) => (
-            <a target={'_blank'}
-              rel="noopener noreferrer"
-              key={index}
-              href={item.href}
-              className={'mx-auto lg:mb-0 hover:fill-gray-800'
-              }
-            >
-              {item.iconMobile}
-            </a>
-          ))}
-        </div>
-        <div className='hidden sm:flex justify-evenly items-center mt-8 text-gray-500 sm:justify-evenly flex-nowrap'>
-          {navigation.map((item, index) => (
-            <a target={'_blank'}
-              rel="noopener noreferrer"
-              key={index}
-              href={item.href}
-            >
-              {item.icon}
-            </a>
-          ))}
-        </div>
-      </div>
+      <FindMeIn />
     </section>
 
 
