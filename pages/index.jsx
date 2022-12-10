@@ -3,9 +3,11 @@ import Image from 'next/image'
 import About from '../components/About';
 import Navbar from '../components/Navbar';
 import Testimonials from '../components/Testimonials';
-import Hero from './../components/Hero';
+import Hero from '../components/Hero/Hero';
 import Spliiter from './../components/Spliiter';
 import {motion} from 'framer-motion'
+import JsSVG from './../components/SVG/JsSVG';
+import ReactSVG from './../components/SVG/ReactSVG';
 
 export default function Home() {
   return (
@@ -22,15 +24,7 @@ export default function Home() {
       </header>
 
       {/* <div className='h-[1.5px] opacity-40 bg-gradient-to-r from-emerald-500 via-blue-500 to-emerald-500'></div> */}
-      <motion.main
-        initial={{
-          opacity: 0,
-          y: 5
-        }}
-        animate={{
-          opacity: 1,
-          y: 0
-        }}>
+      <motion.main>
 
         <Hero />
         <Spliiter />
