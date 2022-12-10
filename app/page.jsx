@@ -27,7 +27,7 @@ export default function Home() {
       <motion.main 
       initial={{
         opacity: 0,
-        y: 10
+        y: 5
       }} 
       animate={{ 
         opacity: 1,
