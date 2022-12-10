@@ -71,7 +71,7 @@ export default function Hero() {
         </div>
       </div>
       <hr className=" max-w-4xl mb-4 mx-auto  px-6 hidden"></hr>
-      <div className="mb-4 md:mb-0 px-4 mx-auto text-center md:max-w-screen-md lg:max-w-screen-lg lg:px-36">
+      <div className="mb-4 md:mb-0 px-4 mx-auto text-center md:max-w-screen-md lg:max-w-screen-xl sm:px-12">
         <span className="font-semibold text-gray-400 uppercase">FIND ME IN</span>
         <div className='sm:hidden flex flex-wrap justify-center items-center mt-8 text-gray-500 sm:justify-between'>
           {navigation.map((item, index) => (
@@ -86,7 +86,7 @@ export default function Hero() {
             </a>
           ))}
         </div>
-        <div className='hidden sm:flex justify-center items-center mt-8 text-gray-500 sm:justify-evenly gap-x-12 flex-nowrap'>
+        <div className='hidden sm:flex justify-evenly items-center mt-8 text-gray-500 sm:justify-evenly flex-nowrap'>
           {navigation.map((item, index) => (
             <a target={'_blank'}
               rel="noopener noreferrer"
