@@ -32,7 +32,6 @@ export default function FindMeIn({ item, index }) {
                     <m.a
                         whileHover={{ scale: 1.1 }}
                         whileTap={{ scale: 0.95 }}
-
                         target={'_blank'} rel="noopener noreferrer" key={index} href={item.href} className={'mx-auto lg:mb-0 hover:fill-gray-800'}>
                         {item.iconMobile}
                     </m.a>)}
