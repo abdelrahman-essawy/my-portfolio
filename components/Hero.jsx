@@ -16,18 +16,16 @@ import MobileLinkedinSVG from './SVG/MobileLinkedinSVG';
 export default function Hero() {
 
   const navigation = [
-    { iconMobile: <MobileFacebookSVG className='rounded-full w-14 h-14' />, icon: <FacebookSVG className='fill-gray-500 h-[74px] w-[164px] hover:fill-[#4267B2]' />, href: 'https://www.facebook.com/abdelrahman.mo.essawy/' },
-    { iconMobile: <MobileLinkedinSVG className='fill-[#0a66c2] w-14 h-14' />, icon: <LinkedinSVG className='fill-gray-500 h-[104px] w-[164px] hover:fill-[#0a66c2] scale-90' />, href: 'https://www.linkedin.com/in/abdelrahman-essawy/' },
-    { iconMobile: <MobileGithubSVG className='rounded-full w-14 h-14 scale-110' />, icon: <GithubSVG className='fill-gray-500 h-[104px] w-[164px] hover:fill-gray-800 scale-125' />, href: 'https://github.com/abdelrahman-essawy' },
-    { iconMobile: <MobileFiverrSVG className='rounded-full w-12 h-12' />, icon: <FiverrSVG className='fill-gray-500 h-[104px] w-[164px] hover:fill-gray-800' />, href: 'https://www.fiverr.com/users/abdelrahman_ess' },
-    { iconMobile: <MobileUpworkSVG className='rounded-full w-12 h-12' />, icon: <UpworkSVG className='fill-gray-500 h-[104px] w-[164px] hover:fill-[#14A800] scale-110' />, href: 'https://www.upwork.com/freelancers/~01efec3f377775367a' },
+    { iconMobile: <MobileFacebookSVG className='rounded-full w-14 h-14' />, icon: <FacebookSVG className='transition-all duration-200 ease-in-out fill-gray-500 h-[74px] w-[164px] hover:fill-[#4267B2]' />, href: 'https://www.facebook.com/abdelrahman.mo.essawy/' },
+    { iconMobile: <MobileLinkedinSVG className='fill-[#0a66c2] w-14 h-14' />, icon: <LinkedinSVG className='transition-all duration-200 ease-in-out fill-gray-500 h-[104px] w-[164px] hover:fill-[#0a66c2] scale-90' />, href: 'https://www.linkedin.com/in/abdelrahman-essawy/' },
+    { iconMobile: <MobileGithubSVG className='rounded-full w-14 h-14 scale-110' />, icon: <GithubSVG className='transition-all duration-200 ease-in-out fill-gray-500 h-[104px] w-[164px] hover:fill-gray-800 scale-125' />, href: 'https://github.com/abdelrahman-essawy' },
+    { iconMobile: <MobileFiverrSVG className='rounded-full w-12 h-12' />, icon: <FiverrSVG className='transition-all duration-200 ease-in-out fill-gray-500 h-[104px] w-[164px] hover:fill-gray-800' />, href: 'https://www.fiverr.com/users/abdelrahman_ess' },
+    { iconMobile: <MobileUpworkSVG className='rounded-full w-12 h-12' />, icon: <UpworkSVG className='transition-all duration-200 ease-in-out fill-gray-500 h-[104px] w-[164px] hover:fill-[#14A800] scale-110' />, href: 'https://www.upwork.com/freelancers/~01efec3f377775367a' },
   ]
   return (
     <section id='Home'>
       <div className='rounded-3xl absolute w-20'>
       </div>
-
-
 
       <div className="m-auto py-8 px-4 mx-auto max-w-screen-xl text-center lg:py-0 lg:px-12 sm:flex sm:justify-between sm:items-center">
         <div className='sm:text-start'>
@@ -48,10 +46,10 @@ export default function Hero() {
           </div>
           <div className="mt-5 sm:mt-8 sm:flex sm:justify-center lg:justify-start hidden">
             <div className="rounded-md shadow-none sm:shadow">
-              <a href="#" className="flex w-full items-center justify-center rounded-md border border-blue-500 bg-blue-500 bg-clip-text text-transparent  px-8 py-3 text-base font-medium  hover:bg-blue-500 hover:text-white hover:bg-clip-padding active:bg-blue-600 md:py-3 md:px-7 md:text-lg">Contact me</a>
+              <a href="#" className="transition-all ease-in-out duration-200 flex w-full items-center justify-center rounded-md border border-blue-500 bg-blue-500 bg-clip-text text-transparent  px-8 py-3 text-base font-medium  hover:bg-blue-500 hover:text-white hover:bg-clip-padding active:bg-blue-600 md:py-3 md:px-7 md:text-lg">Contact me</a>
             </div>
             <div className="mt-3 sm:mt-0 sm:ml-3">
-              <a href="#" className="flex w-full items-center justify-center rounded-md border border-transparent bg-blue-100 px-8 py-3  text-base font-medium text-blue-500 hover:bg-blue-200 active:bg-blue-300 md:py-3 md:px-7 md:text-lg">Projects</a>
+              <a href="#" className="transition-all duration-200 ease-out flex w-full items-center justify-center rounded-md border border-transparent bg-blue-100 px-8 py-3  text-base font-medium text-blue-500 hover:bg-blue-200 active:bg-blue-300 md:py-3 md:px-7 md:text-lg">Projects</a>
             </div>
           </div>
         </div>
