@@ -35,27 +35,6 @@ export default function Home() {
         <Spliiter />
         <Testimonials />
         <Spliiter />
-
-        <Hero />
-        <Spliiter />
-        <About />
-        <Spliiter />
-        <Testimonials />
-        <Spliiter />
-
-        <Hero />
-        <Spliiter />
-        <About />
-        <Spliiter />
-        <Testimonials />
-        <Spliiter />
-
-        <Hero />
-        <Spliiter />
-        <About />
-        <Spliiter />
-        <Testimonials />
-        <Spliiter />
       </motion.main>
     </>
   );

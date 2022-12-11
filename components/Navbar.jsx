@@ -56,7 +56,6 @@ export default function Example() {
               <ScrollspyNav
                 scrollTargetIds={['Home', 'About', 'Skills', 'Testimonials', 'Projects', 'Contact']}
                 activeNavClass='activeNavClass'
-                offset={-100}
                 scrollDuration="500"
                 headerBackground="true"
 
