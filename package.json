@@ -22,6 +22,10 @@
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-loading-skeleton": "^3.1.0",
+    "react-router-dom": "^6.4.5",
+    "react-scrollspy": "^3.4.3",
+    "react-scrollspy-highlight": "^1.0.1",
+    "scroll-navigation-menu": "^0.1.7",
     "tailwind-scrollbar-hide": "^1.1.7",
     "tailwind-typewriter": "^1.0.1"
   },

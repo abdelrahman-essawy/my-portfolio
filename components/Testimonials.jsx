@@ -44,7 +44,7 @@ export default function Testimonials() {
 
 
     return (
-        <section id='TestimonialsID' className='bg-white py-6 px-4 sm:p-0 relative overflow-y-hidden'>
+        <section id='Testimonials' className='bg-white py-6 px-4 sm:p-0 relative overflow-y-hidden'>
             <div className='px-12 my-8 sm:p-0'>
 
                 <h2 className='text-3xl tracking-tight text-blue-500 leading-2 text-center'>Testimonials</h2>

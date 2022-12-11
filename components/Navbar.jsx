@@ -1,33 +1,36 @@
 import { Disclosure, Menu, Transition } from '@headlessui/react'
 import { Bars3Icon, BellIcon, XMarkIcon } from '@heroicons/react/24/outline'
-import Link from 'next/link'
 import DownloadSVG from './SVG/DownloadSVG';
-import {motion as m} from 'framer-motion'
-
-const navigation = [
-  { name: 'Home', href: '#Home', current: true },
-  { name: 'About', href: '#About', current: false },
-  { name: 'Skills', href: '#Skills', current: false },
-  { name: 'Testimonials', href: '#Testimonials', current: false },
-  { name: 'Projects', href: '#Projects', current: false },
-  { name: 'Contact', href: '#Contact', current: false },
-]
-
-function classNames(...classes) {
-  return classes.filter(Boolean).join(' ')
-}
+import { motion as m } from 'framer-motion'
+import ScrollspyNav from "react-scrollspy-nav";
+import { Link, Button, Element, Events, animateScroll as scroll, scrollSpy, scroller } from 'react-scroll'
 
 export default function Example() {
+
+  const navigation = [
+    { name: 'Home', href: '#Home', current: false },
+    { name: 'About', href: '#About', current: false },
+    { name: 'Skills', href: '#Skills', current: false },
+    { name: 'Testimonials', href: '#Testimonials', current: false },
+    { name: 'Projects', href: '#Projects', current: false },
+    { name: 'Contact', href: '#Contact', current: false },
+  ]
+
+  function classNames(...classes) {
+    return classes.filter(Boolean).join(' ')
+  }
+
+  const ac = 'bg-blue-700 text-white'
   return (
     <Disclosure as="nav" className="">
       {({ open }) => (
         <>
           <m.div
-            initial={{opacity: 0}}
-            animate={{opacity: 1}}
-            transition={{duration: 1}}
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 1 }}
 
-           className="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">
+            className="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">
             <div className="relative  flex h-16 items-center justify-between">
               <div className="absolute inset-y-0 left-0 flex items-center sm:hidden">
                 {/* Mobile menu button*/}
@@ -50,23 +53,35 @@ export default function Example() {
                   <span className='text-gray-700'>/&gt;</span>
                 </Link>
               </div>
-              <div className="hidden sm:ml-6 sm:block justify-self-center">
-                <div className="flex space-x-4">
-                  {navigation.map((item) => (
-                    <Link
-                      key={item.name}
-                      href={item.href}
-                      className={classNames(
-                        item.current ? 'bg-blue-700 text-white' : 'text-blue-500 hover:bg-blue-500 hover:text-white',
-                        'px-3 py-2 rounded-md text-sm font-medium'
-                      )}
-                      aria-current={item.current ? 'page' : undefined}
-                    >
-                      {item.name}
-                    </Link>
-                  ))}
+              <ScrollspyNav
+                scrollTargetIds={['Home', 'About', 'Skills', 'Testimonials', 'Projects', 'Contact']}
+                activeNavClass='activeNavClass'
+                offset={-100}
+                scrollDuration="500"
+                headerBackground="true"
+
+              >
+                <div className="hidden sm:ml-6 sm:block justify-self-center">
+                  <div className="flex space-x-4">
+
+                    {navigation.map((item) => (
+                      <a
+                        onClick={() => (true)}
+                        key={item.name}
+                        href={item.href}
+                        className={classNames(
+                          item.current ? 'bg-blue-700 text-white' : 'text-blue-500 hover:bg-blue-500 hover:text-white ease-in-out transition duration-100',
+                          'px-3 py-2 rounded-md text-sm font-medium'
+                        )}
+                        aria-current={item.current ? 'page' : undefined}
+                      >
+                        {item.name}
+                      </a>
+                    ))}
+
+                  </div>
                 </div>
-              </div>
+              </ScrollspyNav>
               <div className="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0">
                 <button className="animate-pulse hover:animate-none hidden sm:block bg-transparent hover:bg-blue-500 text-blue-500 font-semibold hover:text-white py-2 px-4 border border-blue-500 hover:border-transparent rounded">
                   Download CV
