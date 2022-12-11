@@ -1,20 +1,20 @@
-import { Disclosure, Menu, Transition } from '@headlessui/react'
-import { Bars3Icon, BellIcon, XMarkIcon } from '@heroicons/react/24/outline'
-import Link from 'next/link'
-import DownloadSVG from './SVG/DownloadSVG';
-import {motion as m} from 'framer-motion'
+import { Disclosure, Menu, Transition } from "@headlessui/react";
+import { Bars3Icon, BellIcon, XMarkIcon } from "@heroicons/react/24/outline";
+import Link from "next/link";
+import DownloadSVG from "./SVG/DownloadSVG";
+import { motion as m } from "framer-motion";
 
 const navigation = [
-  { name: 'Home', href: '#Home', current: true },
-  { name: 'About', href: '#About', current: false },
-  { name: 'Skills', href: '#Skills', current: false },
-  { name: 'Testimonials', href: '#Testimonials', current: false },
-  { name: 'Projects', href: '#Projects', current: false },
-  { name: 'Contact', href: '#Contact', current: false },
-]
+  { name: "Home", href: "#Home", current: true },
+  { name: "About", href: "#About", current: false },
+  { name: "Skills", href: "#Skills", current: false },
+  { name: "Testimonials", href: "#Testimonials", current: false },
+  { name: "Projects", href: "#Projects", current: false },
+  { name: "Contact", href: "#Contact", current: false },
+];
 
 function classNames(...classes) {
-  return classes.filter(Boolean).join(' ')
+  return classes.filter(Boolean).join(" ");
 }
 
 export default function Example() {
@@ -23,11 +23,11 @@ export default function Example() {
       {({ open }) => (
         <>
           <m.div
-            initial={{opacity: 0}}
-            animate={{opacity: 1}}
-            transition={{duration: 1}}
-
-           className="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 1 }}
+            className="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8"
+          >
             <div className="relative  flex h-16 items-center justify-between">
               <div className="absolute inset-y-0 left-0 flex items-center sm:hidden">
                 {/* Mobile menu button*/}
@@ -41,13 +41,10 @@ export default function Example() {
                 </Disclosure.Button>
               </div>
               <div className="sm:flex flex-shrink-0 items-center sm:justify-self-start sm:mx-0 mx-auto">
-                <Link className='font text-2xl' href='/'>
-
-                  <span className='text-gray-700'>&lt;</span>
-                  <span className='text-blue-700'>
-                    AE
-                  </span>
-                  <span className='text-gray-700'>/&gt;</span>
+                <Link className="font text-2xl" href="/">
+                  <span className="text-gray-700">&lt;</span>
+                  <span className="text-blue-700">AE</span>
+                  <span className="text-gray-700">/&gt;</span>
                 </Link>
               </div>
               <div className="hidden sm:ml-6 sm:block justify-self-center">
@@ -57,10 +54,12 @@ export default function Example() {
                       key={item.name}
                       href={item.href}
                       className={classNames(
-                        item.current ? 'bg-blue-700 text-white' : 'text-blue-500 hover:bg-blue-500 hover:text-white',
-                        'px-3 py-2 rounded-md text-sm font-medium'
+                        item.current
+                          ? "bg-blue-700 text-white"
+                          : "text-blue-500 hover:bg-blue-500 hover:text-white",
+                        "px-3 py-2 rounded-md text-sm font-medium"
                       )}
-                      aria-current={item.current ? 'page' : undefined}
+                      aria-current={item.current ? "page" : undefined}
                     >
                       {item.name}
                     </Link>
@@ -72,13 +71,13 @@ export default function Example() {
                   Download CV
                 </button>
 
-
                 <button className="animate-pulse hover:animate-none sm:hidden flex text-lg items-center justify-center bg-transparent text-blue-500 font-semibold  py-2 px-4 border border-blue-500 hover:border-blue-700 hover:text-blue-700 rounded-lg">
-                  <DownloadSVG className={'fill-blue-500 mr-1 '} width={22} ></DownloadSVG>
+                  <DownloadSVG
+                    className={"fill-blue-500 mr-1 "}
+                    width={22}
+                  ></DownloadSVG>
                   CV
                 </button>
-
-
               </div>
             </div>
           </m.div>
@@ -91,10 +90,12 @@ export default function Example() {
                   as="a"
                   href={item.href}
                   className={classNames(
-                    item.current ? 'bg-blue-700 text-white' : 'text-blue-500 hover:bg-blue-500 hover:text-white',
-                    'block px-3 py-2 rounded-md text-base font-medium'
+                    item.current
+                      ? "bg-blue-700 text-white"
+                      : "text-blue-500 hover:bg-blue-500 hover:text-white",
+                    "block px-3 py-2 rounded-md text-base font-medium"
                   )}
-                  aria-current={item.current ? 'page' : undefined}
+                  aria-current={item.current ? "page" : undefined}
                 >
                   {item.name}
                 </Disclosure.Button>
@@ -104,5 +105,5 @@ export default function Example() {
         </>
       )}
     </Disclosure>
-  )
+  );
 }
