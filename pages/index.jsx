@@ -5,9 +5,10 @@ import Navbar from '../components/Navbar';
 import Testimonials from '../components/Testimonials';
 import Hero from '../components/Hero/Hero';
 import Spliiter from './../components/Spliiter';
-import {motion} from 'framer-motion'
+import { motion } from 'framer-motion'
 import JsSVG from './../components/SVG/JsSVG';
 import ReactSVG from './../components/SVG/ReactSVG';
+import ReversedSpliiter from '../components/ReversedSpliiter';
 
 export default function Home() {
   return (
@@ -24,7 +25,7 @@ export default function Home() {
 
       {/* <div className='h-[1.5px] opacity-40 bg-gradient-to-r from-emerald-500 via-blue-500 to-emerald-500'></div> */}
       <motion.main>
-        
+
         <Hero />
         <Spliiter />
         <About />

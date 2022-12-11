@@ -7,7 +7,7 @@ import FacebookSVG from './SVG/FacebookSVG';
 export default function About() {
   return (
     <m.section
-      initial={{ opacity: 1, }}
+      initial={{ opacity: 0, }}
       whileInView={{ opacity: 1, }}
       transition={{ when: 'beforeChildren' }}
 
