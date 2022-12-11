@@ -20,14 +20,23 @@ export default function FindMeIn({ item, index }) {
         { iconMobile: <MobileUpworkSVG className='rounded-full w-12 h-12' />, icon: <UpworkSVG className='transition-all duration-200 ease-in-out fill-gray-500 h-[104px] w-[164px] hover:fill-[#14A800] scale-110' />, href: 'https://www.upwork.com/freelancers/~01efec3f377775367a' },
     ]
     return (
-        <m.div
-            initial={{ opacity: 0, y: 10 }}
-            transition={{ delay: 0.1 }}
-            whileInView={{ opacity: 1, y: 0, type: 'spring' }}
+        <div
+
 
             className="mb-4 md:mb-0 px-4 mx-auto text-center md:max-w-screen-md lg:max-w-screen-xl sm:px-12">
-            <span className="font-semibold text-gray-400 uppercase">FIND ME IN</span>
-            <div className='sm:hidden flex flex-wrap justify-center items-center mt-8 text-gray-500 sm:justify-between'>
+            <m.span
+                initial={{ opacity: 0 }}
+                whileInView={{ opacity: 1 }}
+                transition={{ delay: 0.3 }}
+                className="font-semibold text-gray-400 uppercase">FIND ME IN</m.span>
+            <m.div
+                initial={{ opacity: 0, y: 10 }}
+                whileInView={{ opacity: 1, y: 0, type: 'spring' }}
+                transition={{
+                    when: "beforeChildren",
+                    delay: 0.2
+                }}
+                className='sm:hidden flex flex-wrap justify-center items-center mt-8 text-gray-500 sm:justify-between'>
                 {links.map((item, index) =>
                     <m.a
                         whileHover={{ scale: 1.1 }}
@@ -35,16 +44,25 @@ export default function FindMeIn({ item, index }) {
                         target={'_blank'} rel="noopener noreferrer" key={index} href={item.href} className={'mx-auto lg:mb-0 hover:fill-gray-800'}>
                         {item.iconMobile}
                     </m.a>)}
-            </div>
-            <div className='hidden sm:flex justify-evenly items-center mt-8 text-gray-500 sm:justify-evenly flex-nowrap'>
+            </m.div>
+            <m.div
+                initial={{ opacity: 0, y: 10 }}
+                whileInView={{ opacity: 1, y: 0, type: 'spring' }}
+                transition={{
+                    when: "beforeChildren",
+                    delay: 0.2
+                }}
+                className='hidden sm:flex justify-evenly items-center mt-8 text-gray-500 sm:justify-evenly flex-nowrap'>
                 {links.map((item, index) =>
                     <m.a
+                        initial={{ opacity: 0, y: 10 }}
+                        whileInView={{ opacity: 1, y: 0, type: 'spring' }}
                         whileHover={{ scale: 1.1 }}
                         whileTap={{ scale: 0.9 }}
                         target={'_blank'} rel="noopener noreferrer" key={index} href={item.href}>
                         {item.icon}
                     </m.a>)}
-            </div>
-        </m.div>
+            </m.div>
+        </div>
     );
 }
