@@ -8,6 +8,7 @@ import Spliiter from './../components/Spliiter';
 import { motion } from 'framer-motion'
 import JsSVG from './../components/SVG/JsSVG';
 import ReactSVG from './../components/SVG/ReactSVG';
+import ReversedSpliiter from '../components/ReversedSpliiter';
 
 export default function Home() {
   return (
