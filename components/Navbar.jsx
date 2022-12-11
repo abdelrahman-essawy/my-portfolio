@@ -3,7 +3,7 @@ import { Bars3Icon, BellIcon, XMarkIcon } from '@heroicons/react/24/outline'
 import DownloadSVG from './SVG/DownloadSVG';
 import { motion as m } from 'framer-motion'
 import ScrollspyNav from "react-scrollspy-nav";
-import { Link, Button, Element, Events, animateScroll as scroll, scrollSpy, scroller } from 'react-scroll'
+import Link from 'next/link'
 
 export default function Example() {
 
