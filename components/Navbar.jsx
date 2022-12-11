@@ -3,17 +3,16 @@ import { Bars3Icon, BellIcon, XMarkIcon } from '@heroicons/react/24/outline'
 import DownloadSVG from './SVG/DownloadSVG';
 import { motion as m } from 'framer-motion'
 import ScrollspyNav from "react-scrollspy-nav";
-import Link from 'next/link'
-
+import { Link, Button, Element, Events, animateScroll as scroll, scrollSpy, scroller } from 'react-scroll'
 export default function Example() {
 
   const navigation = [
-    { name: 'Home', href: '#Home', current: false },
-    { name: 'About', href: '#About', current: false },
-    { name: 'Skills', href: '#Skills', current: false },
-    { name: 'Testimonials', href: '#Testimonials', current: false },
-    { name: 'Projects', href: '#Projects', current: false },
-    { name: 'Contact', href: '#Contact', current: false },
+    { name: 'Home', href: 'Home', current: false },
+    { name: 'About', href: 'About', current: false },
+    { name: 'Skills', href: 'Skills', current: false },
+    { name: 'Testimonials', href: 'Testimonials', current: false },
+    { name: 'Projects', href: 'Projects', current: false },
+    { name: 'Contact', href: 'Contact', current: false },
   ]
 
   function classNames(...classes) {
@@ -53,34 +52,33 @@ export default function Example() {
                   <span className='text-gray-700'>/&gt;</span>
                 </Link>
               </div>
-              <ScrollspyNav
-                scrollTargetIds={['Home', 'About', 'Skills', 'Testimonials', 'Projects', 'Contact']}
-                activeNavClass='activeNavClass'
-                scrollDuration="500"
-                headerBackground="true"
 
-              >
-                <div className="hidden sm:ml-6 sm:block justify-self-center">
-                  <div className="flex space-x-4">
+              <div className="hidden sm:ml-6 sm:block justify-self-center">
+                <div className="flex space-x-4">
 
-                    {navigation.map((item) => (
-                      <a
-                        onClick={() => (true)}
-                        key={item.name}
-                        href={item.href}
+                  {navigation.map((item) => (
+                    <Link
+                      activeClass="bg-blue-700 text-white cursor-pointer"
+                      to={item.href}
+                      spy={true}
+                      smooth={true}
+                      duration={500}
+
+                      key={item.name}
                         className={classNames(
-                          item.current ? 'bg-blue-700 text-white' : 'text-blue-500 hover:bg-blue-500 hover:text-white ease-in-out transition duration-100',
+                          item.current ? 'bg-blue-700 text-white' : 'cursor-pointer text-blue-500 hover:bg-blue-500 hover:text-white ease-in-out transition duration-100',
                           'px-3 py-2 rounded-md text-sm font-medium'
                         )}
                         aria-current={item.current ? 'page' : undefined}
                       >
                         {item.name}
-                      </a>
-                    ))}
 
-                  </div>
+                    </Link>
+                  ))}
+
                 </div>
-              </ScrollspyNav>
+              </div>
+
               <div className="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0">
                 <button className="animate-pulse hover:animate-none hidden sm:block bg-transparent hover:bg-blue-500 text-blue-500 font-semibold hover:text-white py-2 px-4 border border-blue-500 hover:border-transparent rounded">
                   Download CV
