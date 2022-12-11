@@ -19,13 +19,12 @@ export default function Home() {
 
       </Head>
       <header className='sticky top-0 z-50 shadow-sm bg-white/50 backdrop-blur-3xl'>
-        <Spliiter />
         <Navbar />
       </header>
 
       {/* <div className='h-[1.5px] opacity-40 bg-gradient-to-r from-emerald-500 via-blue-500 to-emerald-500'></div> */}
       <motion.main>
-
+        
         <Hero />
         <Spliiter />
         <About />
