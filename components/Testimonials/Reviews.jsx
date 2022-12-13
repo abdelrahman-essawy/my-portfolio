@@ -88,19 +88,15 @@ export default function Reviews({ review }) {
         // add your conditional logic here
     }
     const carousel = useRef()
-    const screen = useRef()
     const [width, setWidth] = useState(0)
-    // setWidth(carousel.current.scrollWidth * reviews.length)
-    // console.log('carousel?.current?.scrollWidth = ' + carousel?.current?.scrollWidth)
-    // console.log('screen?.current?.clientWidth = ' + screen?.current?.clientWidth)
-    // console.log('width = ' + width)
 
     useEffect(() => {
-        setWidth(((16 + carousel.current.clientWidth) * reviews.length + (48 * 2)) - window.screen.width)
-        console.log(window.screen.width)
-        console.log(carousel.current.clientWidth * reviews.length)
+        setWidth(((16 + carousel.current.clientWidth) * reviews.length + (
+            window.screen.width > 640 ? 48 * 2 : 8 * 2
+        )) - window.screen.width)
 
-    }, [])
+
+    }, [reviews.length])
     return (
         // <div className='overflow-hidden h-96 '>
         //     <div className='flex justify-center items-center space-x-4 lg:space-x-8'>
@@ -142,7 +138,6 @@ export default function Reviews({ review }) {
 
 
         <div className='overflow-hidden'
-            ref={screen}
         >
             <m.div
                 layout
