@@ -1,3 +1,85 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+.App {
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    padding: 0px;
+    margin: 0px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(180deg, rgb(255, 94, 0), rgb(143, 133, 49));
+}
+
+.row {
+    position: relative;
+}
+
+.container {
+    position: absolute;
+    width: 60vw;
+    height: 90vh;
+    overflow: hidden;
+    background: white;
+    border-radius: 30px;
+    top: -45vh;
+}
+
+.container>img {
+    height: 100%;
+    width: 100%;
+}
+
+.axis-horizontal ul {
+
+    display: flex;
+    flex-direction: row;
+}
+
+.slider-container {
+    position: relative;
+    width: 600px;
+    height: 600px;
+}
+
+.slide {
+    border-radius: 5px;
+    background: white;
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+}
+
+/* position of indicator container */
+.Indicators {
+    display: flex;
+    justify-content: center;
+    margin-top: 30px;
+}
+
+.Indicator-container {
+    padding: 20px;
+    cursor: pointer;
+}
+
+.Indicator {
+    width: 10px;
+    height: 10px;
+    background: #fcfcfc;
+    border-radius: 50%;
+    position: relative;
+}
+
+.Indicator-highlight {
+    top: -2px;
+    left: -2px;
+    background: #09f;
+    border-radius: 50%;
+    width: 14px;
+    height: 14px;
+    position: absolute;
+}

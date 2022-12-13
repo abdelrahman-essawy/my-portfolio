@@ -31,7 +31,7 @@ export default function FindMeIn({ item, index }) {
                 className="font-semibold text-gray-400 uppercase">FIND ME IN</m.span>
             <m.div
                 initial={{ opacity: 0, y: 10 }}
-                whileInView={{ opacity: 1, y: 0, type: 'spring' }}
+                whileInView={{ opacity: 1, y: 0 }}
                 transition={{
                     when: "beforeChildren",
                     delay: 0.2
@@ -47,7 +47,7 @@ export default function FindMeIn({ item, index }) {
             </m.div>
             <m.div
                 initial={{ opacity: 0, y: 10 }}
-                whileInView={{ opacity: 1, y: 0, type: 'spring' }}
+                whileInView={{ opacity: 1, y: 0 }}
                 transition={{
                     when: "beforeChildren",
                     delay: 0.2
@@ -56,7 +56,7 @@ export default function FindMeIn({ item, index }) {
                 {links.map((item, index) =>
                     <m.a
                         initial={{ opacity: 0, y: 10 }}
-                        whileInView={{ opacity: 1, y: 0, type: 'spring' }}
+                        whileInView={{ opacity: 1, y: 0 }}
                         whileHover={{ scale: 1.1 }}
                         whileTap={{ scale: 0.9 }}
                         target={'_blank'} rel="noopener noreferrer" key={index} href={item.href}>
