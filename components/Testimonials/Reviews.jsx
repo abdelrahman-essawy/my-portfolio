@@ -91,9 +91,22 @@ export default function Reviews({ review }) {
     const [width, setWidth] = useState(0)
 
     useEffect(() => {
-        setWidth(((16 + carousel.current.clientWidth) * reviews.length + (
-            window.screen.width > 640 ? 48 * 2 : 8 * 2
-        )) - window.screen.width)
+        const extraMobileStylesWidth = 8 * 2 //margin left, right
+        const mobileGap = 16 //gap between each review
+        const desktopGap = 28 //gap between each review
+        const extraDesktopStylesWidth = 48 * 2 //margin left, right
+        const widthBreakPoint = 640 //mobile , sm
+
+        const totalWidth = () => {
+            if (window.screen.width < widthBreakPoint) {
+                //mobile
+                return ((mobileGap + carousel.current.clientWidth) * reviews.length + extraMobileStylesWidth) - window.screen.width
+            } else {
+                //desktop
+                return ((desktopGap + carousel.current.clientWidth) * reviews.length + extraDesktopStylesWidth) - window.screen.width
+            }
+        }
+        setWidth(totalWidth)
 
 
     }, [reviews.length])
@@ -146,13 +159,13 @@ export default function Reviews({ review }) {
                 animate={{
 
                 }}
-                className='flex center items-center sm:my-8 space-x-4  snap-x snap-mandatory relative sm:mx-12'>
+                className='flex center items-center sm:my-8 my-0 sm:space-x-7 space-x-4 relative sm:mx-12 mx-0'>
                 {
                     reviews.map(({ name, desc, icon, country }, index) => {
 
                         return <m.div
                             ref={carousel}
-                            className='cursor-grab  snap-center'
+                            className='cursor-grab'
                             key={index}
                             initial={{ scale: 0, rotation: -180 }}
                             animate={{
