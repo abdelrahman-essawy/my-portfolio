@@ -87,6 +87,8 @@ const Carousel = ({ currentPage, setPage, direction }) => {
                     <Review />
                     <Review />
                     <Review />
+                    <Review />
+
                 </motion.div>
             </AnimatePresence>
         </div>
