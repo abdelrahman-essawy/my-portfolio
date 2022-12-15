@@ -194,7 +194,8 @@ export default function Reviews({ review }) {
         // add your conditional logic here
     }
     const carousel = useRef()
-    const [isReadMore, setIsReadMore] = useState(false)
+    const [index, setindex] = useState(false)
+
     const [width, setWidth] = useState(0)
 
     useEffect(() => {
@@ -217,46 +218,13 @@ export default function Reviews({ review }) {
 
 
     }, [reviews.length])
+    useEffect(() => {
+        setTimeout(() => {
+            setPosition(position - 500)
+        }, 1000)
+    }, [position])
 
     return (
-        // <div className='overflow-hidden h-96 '>
-        //     <div className='flex items-center justify-center space-x-4 lg:space-x-8'>
-        //         <button onClick={() => setPosition(position + 1)} className='p-3 bg-red-200 text-7xl rounded-xl'>+</button>
-        //         <button onClick={() => setPosition(position - 1)} className='p-3 bg-red-200 text-7xl rounded-xl'>-</button>
-        //     </div>
-
-
-        //     <m.div animate={{
-        //         left: `${position * 20}vw`,
-        //     }}
-        //         onTouchStart={onTouchStart} onTouchMove={onTouchMove} onTouchEnd={onTouchEnd}
-        //         {...handlers}
-        //         className='relative flex items-center space-x-4 center sm:my-8 lg:space-x-8 '>
-        //         {
-        //             reviews.map(({ name, desc, icon, country }, index) => {
-
-        //                 return <m.div
-
-        //                     key={index}
-        //                     initial={{ scale: 0, rotation: -180 }}
-        //                     animate={{
-        //                         rotate: 0,
-        //                         scale: index === position ? 1.1 : 0.9,
-        //                     }}
-        //                     transition={{
-        //                         type: "spring",
-        //                         stiffness: 260,
-        //                         damping: 20,
-        //                     }}
-        //                 >
-        //                     <Review />
-        //                 </m.div>
-        //             })
-        //         }
-
-        //     </m.div>
-        // </div>
-
 
         <div className='overflow-hidden'
         >
@@ -264,6 +232,9 @@ export default function Reviews({ review }) {
                 layout
                 drag='x'
                 dragConstraints={{ right: 0, left: - width }}
+                animate={{
+                    x: position
+                }}
                 transition={{
                     type: "spring",
                     stiffness: 260,
@@ -282,7 +253,7 @@ export default function Reviews({ review }) {
                             initial={{ scale: 0, rotation: -180 }}
                             animate={{
                                 rotate: 0,
-                                scale: 1
+                                scale: 1,
                             }}
                             transition={{
                                 type: "spring",
