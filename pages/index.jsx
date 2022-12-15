@@ -2,12 +2,13 @@ import Head from 'next/head'
 import Image from 'next/image'
 import About from '../components/About';
 import Navbar from '../components/Navbar';
-import Testimonials from '../components/Testimonials';
+import Testimonials from '../components/Testimonials/Testimonials';
 import Hero from '../components/Hero/Hero';
 import Spliiter from './../components/Spliiter';
 import { motion } from 'framer-motion'
 import JsSVG from './../components/SVG/JsSVG';
 import ReactSVG from './../components/SVG/ReactSVG';
+import Carousel from './../components/Testimonials/Carousel';
 
 export default function Home() {
   return (

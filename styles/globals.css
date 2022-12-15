@@ -1,3 +1,16 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.react-read-more-read-less,
+.react-read-more-read-less-less {
+    color: #686f7b;
+    font-weight: 700;
+    text-decoration: none;
+    cursor: pointer;
+    margin: .3rem;
+}
+.react-read-more-read-less:hover,
+.react-read-more-read-less-less:hover {
+    color: #111827;
+}
