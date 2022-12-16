@@ -5,7 +5,8 @@ import { motion as m, AnimatePresence } from "framer-motion";
 export default function Testimonials({ windowScreenWidth }) {
 
 
-    const carouselCurrentClientWidth = 559
+    const pcCarouselCurrentClientWidth = 576
+    const mobCarouselCurrentClientWidth = 254
     const mobileGap = 16 //gap between each review
     const desktopGap = 28 //gap between each review
     const extraMobileStylesWidth = 8 * 2 //margin left, right
@@ -16,7 +17,7 @@ export default function Testimonials({ windowScreenWidth }) {
 
     useEffect(() => {
         if (windowScreenWidth > widthBreakPoint) {
-            setInitPosition(windowScreenWidth / 2 - extraDesktopStylesWidth / 2 - (desktopGap / 2 + carouselCurrentClientWidth / 2))
+            setInitPosition(windowScreenWidth / 2 - extraDesktopStylesWidth / 2 - (desktopGap / 2 + pcCarouselCurrentClientWidth / 2))
 
         } else {
             setInitPosition(0)

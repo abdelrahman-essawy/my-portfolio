@@ -64,6 +64,7 @@ export default function Reviews({ InitPosition, windowScreenWidth }) {
     const [width, setWidth] = useState(0)
     const extraMobileStylesWidth = 8 * 2 //margin left, right
     const mobileGap = 16 //gap between each review
+    const bordersWidth = reviews.length //border of each review
     const desktopGap = 28 //gap between each review
     const extraDesktopStylesWidth = 48 * 2 //margin left, right
     const widthBreakPoint = 640 //mobile , sm
@@ -77,10 +78,10 @@ export default function Reviews({ InitPosition, windowScreenWidth }) {
             const totalWidth = () => {
                 if (window.screen.width < widthBreakPoint) {
                     //mobile
-                    return ((mobileGap + carousel.current.clientWidth) * reviews.length + extraMobileStylesWidth) - window.screen.width
+                    return (((mobileGap + carousel.current.clientWidth) * reviews.length) + extraMobileStylesWidth + bordersWidth) - window.screen.width
                 } else {
                     //desktop
-                    return ((desktopGap + carousel.current.clientWidth) * reviews.length + extraDesktopStylesWidth) - window.screen.width
+                    return (((desktopGap + carousel.current.clientWidth) * reviews.length) + extraDesktopStylesWidth + bordersWidth) - window.screen.width
                 }
             }
             setWidth(totalWidth)
@@ -97,13 +98,13 @@ export default function Reviews({ InitPosition, windowScreenWidth }) {
             //mobile
             setPosition(position =
                 position - (
-                    carousel.current.clientWidth + mobileGap
+                carousel.current.clientWidth + mobileGap
                 ))
         } else {
             //desktop
             setPosition(position =
                 position - (
-                    carousel.current.clientWidth + desktopGap
+                carousel.current.clientWidth + desktopGap
                 ))
         }
             if (inCenter < reviews.length - 1)
