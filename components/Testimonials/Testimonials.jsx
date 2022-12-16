@@ -17,7 +17,7 @@ export default function Testimonials({ windowScreenWidth }) {
 
     useEffect(() => {
         if (windowScreenWidth > widthBreakPoint) {
-            setInitPosition(windowScreenWidth / 2 - extraDesktopStylesWidth / 2 - (desktopGap / 2 + pcCarouselCurrentClientWidth / 2))
+            setInitPosition((windowScreenWidth / 2 - extraDesktopStylesWidth / 2) + 16 - (desktopGap / 2 + pcCarouselCurrentClientWidth / 2))
 
         } else {
             setInitPosition(0)

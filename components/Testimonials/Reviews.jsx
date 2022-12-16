@@ -10,13 +10,6 @@ export default function Reviews({ InitPosition, windowScreenWidth }) {
     const reviews = [
 
         {
-            name: 'danieledge696'
-            , desc: "Highly recommend, great attention to detail and customer satisfaction - wants you to be absolutely happy with the project."
-            , icon: 'https://fiverr-res.cloudinary.com/image/upload/f_auto,q_auto,t_profile_small/v1/attachments/profile/photo/0457d5f89eb04f3d909e390acda50dfe-1634589649863/e0e9c4a4-b0c0-4ef6-a867-3b5b6e003888.png'
-            , country: 'United Kingdom'
-
-        },
-        {
             name: 'druckbar_de'
             , desc: "Great work as always. Fast and reliable. He implements my customer requests excellently and simply has the necessary artistic streak."
             , icon: 'https://fiverr-res.cloudinary.com/image/upload/f_auto,q_auto,t_profile_small/v1/attachments/profile/photo/c3c90dd13d914ee873b61525eeaad4b0-1617719665852/09bba909-047a-46aa-bbab-10d1af8f538b.jpg'
@@ -51,9 +44,8 @@ export default function Reviews({ InitPosition, windowScreenWidth }) {
             , country: 'United Kingdom'
 
         },
-
-
     ]
+
 
     let [position, setPosition] = useState(0);
     let [useEffectInvoked, setUseEffectInvoked] = useState(false);
@@ -78,10 +70,10 @@ export default function Reviews({ InitPosition, windowScreenWidth }) {
             const totalWidth = () => {
                 if (window.screen.width < widthBreakPoint) {
                     //mobile
-                    return (((mobileGap + carousel.current.clientWidth) * reviews.length) + extraMobileStylesWidth + bordersWidth) - window.screen.width
+                    return (((mobileGap + carousel.current.clientWidth) * reviews.length) + extraMobileStylesWidth) - window.screen.width
                 } else {
                     //desktop
-                    return (((desktopGap + carousel.current.clientWidth) * reviews.length) + extraDesktopStylesWidth + bordersWidth) - window.screen.width
+                    return (((desktopGap + carousel.current.clientWidth) * reviews.length) + extraDesktopStylesWidth) - window.screen.width
                 }
             }
             setWidth(totalWidth)
