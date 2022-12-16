@@ -17,14 +17,12 @@ export default function Testimonials({ windowScreenWidth }) {
     useEffect(() => {
         if (windowScreenWidth > widthBreakPoint) {
             setInitPosition(windowScreenWidth / 2 - extraDesktopStylesWidth / 2 - (desktopGap / 2 + carouselCurrentClientWidth / 2))
-            console.log('InitPosition desktop', InitPosition)
 
         } else {
             setInitPosition(0)
 
-            console.log('InitPosition mobile', InitPosition)
         }
-    }), [windowScreenWidth]
+    }), []
 
     return (
         <m.section

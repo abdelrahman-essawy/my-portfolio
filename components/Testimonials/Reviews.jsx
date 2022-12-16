@@ -55,8 +55,9 @@ export default function Reviews({ InitPosition }) {
 
     ]
 
-    const [position, setPosition] = useState(0);
-    const [inCenter, setInCenter] = useState(0);
+    let [position, setPosition] = useState(0);
+    let [useEffectInvoked, setUseEffectInvoked] = useState(false);
+    let [inCenter, setInCenter] = useState(0);
 
 
     const carousel = useRef()
@@ -67,72 +68,76 @@ export default function Reviews({ InitPosition }) {
     const extraDesktopStylesWidth = 48 * 2 //margin left, right
     const widthBreakPoint = 640 //mobile , sm
 
+
+
+    useEffect(() => {
+        if (!useEffectInvoked) {
+            setUseEffectInvoked(useEffectInvoked = true)
+
+            const totalWidth = () => {
+                if (window.screen.width < widthBreakPoint) {
+                    //mobile
+                    return ((mobileGap + carousel.current.clientWidth) * reviews.length + extraMobileStylesWidth) - window.screen.width
+                } else {
+                    //desktop
+                    return ((desktopGap + carousel.current.clientWidth) * reviews.length + extraDesktopStylesWidth) - window.screen.width
+                }
+            }
+            setWidth(totalWidth)
+            slideCarousel()
+            console.log('did mount')
+        }
+    }, [])
+
     const slideCarousel = () => {
 
-        setInCenter(inCenter + 1)
+        setTimeout(() => {
+            setInCenter(inCenter = inCenter + 1)
         if (window.screen.width < widthBreakPoint) {
             //mobile
-            setPosition(
+            setPosition(position =
                 position - (
                     carousel.current.clientWidth + mobileGap
                 ))
         } else {
             //desktop
-            setPosition(
+            setPosition(position =
                 position - (
                     carousel.current.clientWidth + desktopGap
                 ))
         }
+            if (inCenter < reviews.length - 1)
+                slideCarousel()
+            else
+                reverseSlideCarousel()
+        }, 1000)
     }
+
     const reverseSlideCarousel = () => {
 
-        setInCenter(inCenter - 1)
+        setTimeout(() => {
+            setInCenter(inCenter = inCenter - 1)
         if (window.screen.width < widthBreakPoint) {
-            //mobile
-
-            setPosition(
+                //mobile
+            setPosition(position =
                 position + (
                     carousel.current.clientWidth + mobileGap
                 ))
         } else {
             //desktop
-            setPosition(
+            setPosition(position =
                 position + (
                     carousel.current.clientWidth + desktopGap
                 ))
         }
-    }
+            console.log('set time out revrese : ', inCenter)
 
-
-    useEffect(() => {
-        const totalWidth = () => {
-            if (window.screen.width < widthBreakPoint) {
-                //mobile
-                return ((mobileGap + carousel.current.clientWidth) * reviews.length + extraMobileStylesWidth) - window.screen.width
-            } else {
-                //desktop
-                return ((desktopGap + carousel.current.clientWidth) * reviews.length + extraDesktopStylesWidth) - window.screen.width
-            }
-        }
-        setWidth(totalWidth)
-    }, [reviews.length])
-
-    useEffect(() => {
-        setTimeout(() => {
-            if (inCenter < reviews.length - 1 || inCenter == 0) {
-                console.log('Right inCenter', inCenter)
-                slideCarousel()
-            }
-            if (inCenter > reviews.length - 1 || inCenter == reviews.length - 1) {
-                console.log('Left inCenter', inCenter)
+            if (inCenter > 0)
                 reverseSlideCarousel()
-            }
+            else
+                slideCarousel()
         }, 1000)
-    }, [position])
-
-
-
-
+    }
 
     return (
 
