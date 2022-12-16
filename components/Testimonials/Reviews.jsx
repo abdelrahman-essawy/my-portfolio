@@ -110,7 +110,7 @@ export default function Reviews({ InitPosition }) {
                 slideCarousel()
             else
                 reverseSlideCarousel()
-        }, 1000)
+        }, 3000)
     }
 
     const reverseSlideCarousel = () => {
@@ -136,7 +136,7 @@ export default function Reviews({ InitPosition }) {
                 reverseSlideCarousel()
             else
                 slideCarousel()
-        }, 1000)
+        }, 3000)
     }
 
     return (
