@@ -1,11 +1,11 @@
-import React, { useEffect, useState, useRef } from 'react'
+import React, { useEffect, useState, useRef, } from 'react'
 import { motion as m } from 'framer-motion'
 import { useSwipeable } from "react-swipeable";
 import Review from './Review';
 
 
 
-export default function Reviews({ review }) {
+export default function Reviews({ InitPosition }) {
 
     const reviews = [
         {
@@ -153,58 +153,38 @@ export default function Reviews({ review }) {
     ]
 
     const [position, setPosition] = useState(0);
-    const handleSwipe = ({ dir }) => {
-        if (dir === "Left") {
-            if (position < reviews.length - 1) {
-                setPosition(position + 1);
-            }
-        }
-        if (dir === "Right") {
-            if (position > 0) {
-                setPosition(position - 1);
-            }
-        }
-    };
-    const handlers = useSwipeable({
-        onSwiped: (eventData) => {
-            handleSwipe(eventData)
-            console.log(eventData)
-            console.log(position)
-        }
-    });
-    const [touchStart, setTouchStart] = useState(null)
-    const [touchEnd, setTouchEnd] = useState(null)
+    const [inCenter, setInCenter] = useState(0);
 
-    // the required distance between touchStart and touchEnd to be detected as a swipe
-    const minSwipeDistance = 50
 
-    const onTouchStart = (e) => {
-        setTouchEnd(null) // otherwise the swipe is fired even with usual touch events
-        setTouchStart(e.targetTouches[0].clientX)
-    }
-
-    const onTouchMove = (e) => setTouchEnd(e.targetTouches[0].clientX)
-
-    const onTouchEnd = () => {
-        if (!touchStart || !touchEnd) return
-        const distance = touchStart - touchEnd
-        const isLeftSwipe = distance > minSwipeDistance
-        const isRightSwipe = distance < -minSwipeDistance
-        if (isLeftSwipe || isRightSwipe) console.log('swipe', isLeftSwipe ? 'left' : 'right')
-        // add your conditional logic here
-    }
     const carousel = useRef()
-    const [index, setindex] = useState(false)
-
     const [width, setWidth] = useState(0)
+    const extraMobileStylesWidth = 8 * 2 //margin left, right
+    const mobileGap = 16 //gap between each review
+    const desktopGap = 28 //gap between each review
+    const extraDesktopStylesWidth = 48 * 2 //margin left, right
+    const widthBreakPoint = 640 //mobile , sm
+
+    const slideCarousel = () => {
+        if (window.screen.width < widthBreakPoint) {
+            //mobile
+
+            setInCenter(inCenter + 1)
+            setPosition(
+                position - (
+                    carousel.current.clientWidth + mobileGap
+                ))
+        } else {
+            //desktop
+            setInCenter(inCenter + 1)
+            setPosition(
+                position - (
+                    carousel.current.clientWidth + desktopGap
+                ))
+        }
+    }
+
 
     useEffect(() => {
-        const extraMobileStylesWidth = 8 * 2 //margin left, right
-        const mobileGap = 16 //gap between each review
-        const desktopGap = 28 //gap between each review
-        const extraDesktopStylesWidth = 48 * 2 //margin left, right
-        const widthBreakPoint = 640 //mobile , sm
-
         const totalWidth = () => {
             if (window.screen.width < widthBreakPoint) {
                 //mobile
@@ -215,14 +195,17 @@ export default function Reviews({ review }) {
             }
         }
         setWidth(totalWidth)
-
-
     }, [reviews.length])
+
     useEffect(() => {
         setTimeout(() => {
-            setPosition(position - 500)
-        }, 1000)
+            slideCarousel()
+        }, 4000)
     }, [position])
+
+
+
+
 
     return (
 
@@ -232,28 +215,26 @@ export default function Reviews({ review }) {
                 layout
                 drag='x'
                 dragConstraints={{ right: 0, left: - width }}
-                animate={{
-                    x: position
-                }}
+                initial={{ x: InitPosition }}
+                animate={{ x: InitPosition + position }}
                 transition={{
                     type: "spring",
                     stiffness: 260,
                     damping: 20,
-                    delay: 0.5
                 }}
                 className='relative flex items-center mx-0 my-0 space-x-4 center sm:my-8 sm:space-x-7 sm:mx-12'>
                 {
                     reviews.map(({ name, desc, icon, country }, index) => {
 
                         return <m.div
-                            layout 
+                            layout
                             ref={carousel}
                             className='cursor-grab'
                             key={index}
                             initial={{ scale: 0, rotation: -180 }}
                             animate={{
                                 rotate: 0,
-                                scale: 1,
+                                scale: index == inCenter ? 1.05 : .85,
                             }}
                             transition={{
                                 type: "spring",
