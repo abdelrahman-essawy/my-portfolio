@@ -38,7 +38,7 @@ export default function Testimonials({ windowScreenWidth }) {
 
 
             <div className='my-8 sm:px-0 sm:p-0 '>
-                <Reviews InitPosition={InitPosition} />
+                <Reviews InitPosition={InitPosition} windowScreenWidth={windowScreenWidth} />
             </div>
 
 

@@ -5,7 +5,7 @@ import Review from './Review';
 
 
 
-export default function Reviews({ InitPosition }) {
+export default function Reviews({ InitPosition, windowScreenWidth }) {
 
     const reviews = [
 
@@ -167,7 +167,7 @@ export default function Reviews({ InitPosition }) {
                             initial={{ scale: 0, rotation: -180 }}
                             animate={{
                                 rotate: 0,
-                                scale: index == inCenter ? 1.05 : .85,
+                                scale: windowScreenWidth > widthBreakPoint ? index == inCenter ? 1.05 : .85 : 1,
                             }}
                             transition={{
                                 type: "spring",
