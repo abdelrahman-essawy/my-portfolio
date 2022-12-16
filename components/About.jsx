@@ -14,12 +14,10 @@ export default function About() {
       id='About' className='bg-zinc-50 overflow-hidden'>
       <m.div
         initial={{ opacity: 0, }}
-        transition={{ delay: 0.1 }}
         whileInView={{ opacity: 1, type: 'spring' }}
         className='px-4 sm:px-12 py-6 sm:py-0 sm:mt-6 m-auto max-w-screen-xl text-center sm:text-start flex justify-between items-center sm:space-x-4'>
         <m.div
           initial={{ opacity: 0, x: -10 }}
-          transition={{ delay: 0.1 }}
           whileInView={{ opacity: 1, x: 0, type: 'spring' }}
 
           className='hidden sm:block space py-6 sm:p-0 sm:m-0 text-[0px] pointer-events-none select-none self-end' >
@@ -30,8 +28,8 @@ export default function About() {
           <h2 className='text-3xl tracking-tight text-blue-500 leading-2 sm:mb-10 mb-6'>About Me</h2>
           <m.div
             initial={{ opacity: 0, x: 10 }}
-            transition={{ delay: 0.1 }}
             whileInView={{ opacity: 1, x: 0, type: 'spring' }}
+            transition={{ delay: 0.1 }}
             className='mt-3 font-medium lg:text-xl lg: text-gray-800 text-base text-start'>
 
             <ul className='list-disc px-5 sm:list-inside tracking-wide sm:tracking-tight'>
@@ -44,8 +42,8 @@ export default function About() {
 
           <m.div
             initial={{ opacity: 0, x: -10 }}
-            transition={{ delay: 0.1 }}
             whileInView={{ opacity: 1, x: 0, type: 'spring' }}
+            transition={{ delay: 0.1 }}
             className='sm:hidden flex justify-center my-6 text-[0px] pointer-events-none select-none' >
             <Image alt='About Me' width={200} height={304.9} src='/about-me.png' priority={true} />
           </m.div>
