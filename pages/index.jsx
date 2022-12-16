@@ -9,8 +9,15 @@ import { motion } from 'framer-motion'
 import JsSVG from './../components/SVG/JsSVG';
 import ReactSVG from './../components/SVG/ReactSVG';
 import Carousel from './../components/Testimonials/Carousel';
+import { useEffect, useState } from 'react';
 
 export default function Home() {
+  const [windowScreenWidth, setWindowScreenWidth] = useState(0)
+
+  useEffect(() => {
+    setWindowScreenWidth(window.screen.width)
+  }, [])
+
   return (
     <>
       <Head>
@@ -30,7 +37,7 @@ export default function Home() {
         <Spliiter />
         <About />
         <Spliiter />
-        <Testimonials />
+        <Testimonials windowScreenWidth={windowScreenWidth} />
         <Spliiter />
 
       </motion.main>
