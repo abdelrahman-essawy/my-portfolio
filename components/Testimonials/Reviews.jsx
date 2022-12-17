@@ -67,18 +67,17 @@ export default function Reviews({ InitPosition, windowScreenWidth }) {
         if (!useEffectInvoked) {
             setUseEffectInvoked(useEffectInvoked = true)
 
-            const totalWidth = () => {
-                if (window.screen.width < widthBreakPoint) {
-                    //mobile
-                    return (((mobileGap + carousel.current.clientWidth) * reviews.length) + extraMobileStylesWidth) - window.screen.width
-                } else {
-                    //desktop
-                    return (((desktopGap + carousel.current.clientWidth) * reviews.length) + extraDesktopStylesWidth) - window.screen.width
-                }
-            }
-            setWidth(totalWidth)
+            // const totalWidth = () => {
+            //     if (window.screen.width < widthBreakPoint) {
+            //         //mobile
+            //         return (((mobileGap + carousel.current.clientWidth) * reviews.length) + extraMobileStylesWidth) - window.screen.width
+            //     } else {
+            //         //desktop
+            //         return (((desktopGap + carousel.current.clientWidth) * reviews.length) + extraDesktopStylesWidth) - window.screen.width
+            //     }
+            // }
+            // setWidth(totalWidth)
             slideCarousel()
-            console.log('did mount')
         }
     }, [])
 
@@ -120,7 +119,7 @@ export default function Reviews({ InitPosition, windowScreenWidth }) {
             //desktop
             setPosition(position =
                 position + (
-                    carousel.current.clientWidth + desktopGap
+                carousel.current.clientWidth + desktopGap
                 ))
         }
             console.log('set time out revrese : ', inCenter)
