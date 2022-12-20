@@ -18,14 +18,15 @@ export default function Home() {
     setWindowScreenWidth(window.screen.width)
   }, [])
 
+
   return (
     <>
       <Head>
         <title>Abdelrahman Essawy</title>
         <meta name="description" content="Abdelrahman Essawy Portfolio" />
         <link rel="icon" href="/favicon.ico" />
-
       </Head>
+
       <m.header
         initial={{ opacity: 0, y: 10 }}
         animate={{ opacity: 1, y: 0 }}
@@ -36,16 +37,13 @@ export default function Home() {
 
       {/* <div className='h-[1.5px] opacity-40 bg-gradient-to-r from-emerald-500 via-blue-500 to-emerald-500'></div> */}
       <main>
-
         <Hero />
         <Spliiter />
         <About />
         <Spliiter />
         <Testimonials windowScreenWidth={windowScreenWidth} />
         <Spliiter />
-
       </main>
-
     </>
   )
 }
