@@ -143,7 +143,6 @@ export default function TechnicalSkills() {
 
                 </div>
 
-
                 <div className='flex flex-wrap items-center w-full justify-evenly'>
                     {
                         skills.map((skill, index) => (
