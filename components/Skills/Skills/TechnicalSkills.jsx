@@ -1,5 +1,6 @@
 import React from 'react'
 import { motion as m } from 'framer-motion'
+import { Image } from 'next/image';
 
 export default function TechnicalSkills() {
 
@@ -114,6 +115,10 @@ export default function TechnicalSkills() {
 
             <div className='flex items-center justify-center w-full space-x-1' >
                 <div className='w-full'>
+
+
+                </div>
+                <div className='w-full'>
                     {
                         skills.map((skill, index) => (
                             <div key={index} className='flex items-center justify-between w-full p-2 my-2 space-x-2 bg-gray-100 rounded-lg shadow-lg'>
@@ -135,10 +140,7 @@ export default function TechnicalSkills() {
                     }
 
                 </div>
-                <div className='w-full'>
 
-
-                </div>
             </div>
         </m.div>
     )
