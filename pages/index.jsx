@@ -10,6 +10,7 @@ import JsSVG from './../components/SVG/JsSVG';
 import ReactSVG from './../components/SVG/ReactSVG';
 import Carousel from './../components/Testimonials/Carousel';
 import { useEffect, useState } from 'react';
+import Skills from './../components/Skills/Skills';
 
 export default function Home() {
   const [windowScreenWidth, setWindowScreenWidth] = useState(0)
@@ -40,6 +41,8 @@ export default function Home() {
         <Hero />
         <Spliiter />
         <About />
+        <Spliiter />
+        <Skills />
         <Spliiter />
         <Testimonials windowScreenWidth={windowScreenWidth} />
         <Spliiter />
