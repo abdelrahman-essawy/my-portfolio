@@ -8,7 +8,6 @@ import Spliiter from './../components/Spliiter';
 import { motion as m } from 'framer-motion'
 import JsSVG from './../components/SVG/JsSVG';
 import ReactSVG from './../components/SVG/ReactSVG';
-import Carousel from './../components/Testimonials/Carousel';
 import { useEffect, useState } from 'react';
 
 export default function Home() {
@@ -36,7 +35,7 @@ export default function Home() {
       </m.header>
 
       {/* <div className='h-[1.5px] opacity-40 bg-gradient-to-r from-emerald-500 via-blue-500 to-emerald-500'></div> */}
-      <main>
+      <main className='overflow-hidden'>
         <Hero />
         <Spliiter />
         <About />
