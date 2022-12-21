@@ -61,13 +61,13 @@ export default function TechnicalSkills() {
             imgRounded: 'p-3'
         },
         {
-                    name: 'GitHub',
-                    level: 'Proficient',
+            name: 'GitHub',
+            level: 'Proficient',
             color: 'bg-blue-500'
         },
         {
-                    name: 'Git',
-                    level: 'Proficient',
+            name: 'Git',
+            level: 'Proficient',
             color: 'bg-blue-500'
         },
 
