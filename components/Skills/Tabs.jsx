@@ -33,7 +33,7 @@ export default function Tabs() {
                         onClick={() => handleTap(tab, event)}
                         className={
                             classNames(
-                                'w-full py-2.5 text-md rounded-lg font-medium leading-5',
+                                'w-full py-2.5 sm:text-md text-sm rounded-lg font-medium leading-5',
                                 'focus:outline-none',
                                 selected === tab ?
                                     'bg-white shadow'

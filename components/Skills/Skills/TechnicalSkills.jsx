@@ -169,14 +169,14 @@ export default function TechnicalSkills() {
                                 whileInView={{ opacity: 1, scale: 1, type: 'spring', rotate: 0, transition: { delay: index * .1 } }}
                                 viewport={{ once: true }}
                                 className='p-1 py-3 mx-1 my-2 bg-gray-100 rounded-lg shadow-lg sm:p-3 sm:mx-2'>
-                                <div className='flex items-center justify-center w-32 h-32 rounded-full'>
+                                <div className='flex items-center justify-center w-32 h-32 rounded-full sm:w-32 sm:h-32'>
                                     <img src={`./Skills/${skill.name}.webp`} alt={skill.name} className={`p-2 sm:p-0 bg-gray-100 ${skill?.imgRounded}`} />
                                 </div>
                                 <div className='flex items-center justify-between w-full space-x-2'>
                                     <div className='flex flex-col items-center justify-center w-full'>
                                         <hr className='w-full h-1 my-2 bg-gray-100' />
-                                        <h3 className='text-lg font-bold'>{skill.name}</h3>
-                                        <p className='text-sm'>{skill.level}</p>
+                                        <h3 className='font-bold sm:text-lg text-md'>{skill.name}</h3>
+                                        <p className='text-xs sm:text-sm'>{skill.level}</p>
                                     </div>
                                 </div>
                             </m.div>
