@@ -38,14 +38,19 @@ export default function Home() {
       {/* <div className='h-[1.5px] opacity-40 bg-gradient-to-r from-emerald-500 via-blue-500 to-emerald-500'></div> */}
 
       <main className='overflow-hidden'>
+
         <Hero />
         <Spliiter />
+
         <About />
         <Spliiter />
+
         <Skills />
         <Spliiter />
+
         <Testimonials windowScreenWidth={windowScreenWidth} />
         <Spliiter />
+
       </main>
     </>
   )

@@ -12,7 +12,7 @@ export default function CurrentTab({ tab, isVisible }) {
       animate={{ opacity: 1, x: 0, type: 'spring' }}
     >
       <m.div
-        className='p-4 mt-1 text-gray-500 bg-white rounded-lg shadow-lg'
+        className='p-4 mt-1 text-gray-500 bg-white rounded-lg shadow-inner'
         initial={{ opacity: 0, x: 10 }}
         animate={{ opacity: 1, x: 0, type: 'spring' }}
         transition={{ delay: 0.1 }}

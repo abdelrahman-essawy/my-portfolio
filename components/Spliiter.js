@@ -9,13 +9,13 @@ export default function Spliiter() {
       initial={{ width: 0, opacity: 0 }}
       whileInView={{ width: 'auto', opacity: 1 }}
       transition={{ duration: '.5' }}
-        className='hidden sm:block rounded-full z-50 h-1 bg-gradient-to-r from-emerald-500 via-blue-500 to-emerald-500' />
+        className='z-50 hidden h-1 rounded-full sm:block bg-gradient-to-r from-emerald-500 via-blue-500 to-emerald-500' />
 
       <m.div
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
         transition={{ duration: '.5' }}
-        className='block sm:hidden rounded-full z-50 h-1 bg-gradient-to-r from-emerald-500 via-blue-500 to-emerald-500' />
+        className='z-50 block h-1 rounded-full sm:hidden bg-gradient-to-r from-emerald-500 via-blue-500 to-emerald-500' />
     </>
   )
 }

@@ -18,7 +18,7 @@ export default function Tabs() {
 
     return (
         <m.div
-            className='w-full max-w-screen-xl p-1 bg-blue-500/50 rounded-xl' >
+            className='w-full max-w-screen-xl p-1 shadow-md bg-blue-500/50 rounded-xl' >
             <m.div
                 className="flex space-x-1 text-blue-500 rounded-xl ">
                 {tabs.map((tab) => (
