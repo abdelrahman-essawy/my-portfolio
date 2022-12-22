@@ -16,7 +16,7 @@ export default function Skills() {
                 <h3 className='mt-3 text-xl font-medium text-center text-gray-500 sm:tracking-wide leading-2'>What My Clients Are Saying...</h3>
             </div>
 
-            <div className='max-w-screen-xl px-4 py-8 m-auto mx-auto text-center lg:py-0 lg:px-12 sm:flex sm:justify-center sm:items-center'>
+            <div className='max-w-screen-xl py-8 m-auto mx-auto text-center sm:px-4 lg:py-0 lg:px-12 sm:flex sm:justify-center sm:items-center'>
                 <Tabs />
             </div>
 

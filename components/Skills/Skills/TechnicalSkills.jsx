@@ -23,6 +23,12 @@ export default function TechnicalSkills() {
             imgRounded: 'rounded-xl'
         },
         {
+            name: 'TypeScript',
+            level: 'Advanced Beginner',
+            color: 'bg-blue-500',
+            imgRounded: 'rounded-xl'
+        },
+        {
             name: 'React',
             level: 'Proficient',
             color: 'bg-blue-500'
@@ -61,6 +67,13 @@ export default function TechnicalSkills() {
             imgRounded: 'p-3'
         },
         {
+            name: 'NodeJs',
+            level: 'Advanced Beginner',
+            color: 'bg-blue-500',
+            imgRounded: 'p-3'
+
+        },
+        {
             name: 'GitHub',
             level: 'Proficient',
             color: 'bg-blue-500'
@@ -70,7 +83,6 @@ export default function TechnicalSkills() {
             level: 'Proficient',
             color: 'bg-blue-500'
         },
-
         {
             name: 'Webpack',
             level: 'Advanced Beginner',
@@ -87,6 +99,13 @@ export default function TechnicalSkills() {
             level: 'Advanced Beginner',
             color: 'bg-blue-500'
         },
+        {
+            name: 'Figma',
+            level: 'Proficient',
+            color: 'bg-blue-500',
+        },
+
+
 
         // {
         //     name: 'Adobe XD',
@@ -136,28 +155,31 @@ export default function TechnicalSkills() {
             animate={{ opacity: 1, type: 'spring' }}
         >
 
-            <h2>Technical Skills</h2>
 
             <div className='flex items-center justify-center w-full space-x-1' >
-                <div className='w-full'>
 
-                </div>
 
                 <div className='flex flex-wrap items-center w-full justify-evenly'>
                     {
                         skills.map((skill, index) => (
-                            <div key={index} className='p-3 my-2 bg-gray-100 rounded-lg shadow-lg'>
+
+                            <m.div
+                                key={index}
+                                initial={{ opacity: 0, scale: 0, rotate: -45 }}
+                                whileInView={{ opacity: 1, scale: 1, type: 'spring', rotate: 0, transition: { delay: index * .1 } }}
+                                viewport={{ once: true }}
+                                className='p-1 py-3 mx-1 my-2 bg-gray-100 rounded-lg shadow-lg sm:p-3 sm:mx-2'>
                                 <div className='flex items-center justify-center w-32 h-32 rounded-full'>
-                                    <img src={`./Skills/${skill.name}.webp`} alt={skill.name} className={`bg-gray-100 ${skill?.imgRounded}`} />
+                                    <img src={`./Skills/${skill.name}.webp`} alt={skill.name} className={`p-2 sm:p-0 bg-gray-100 ${skill?.imgRounded}`} />
                                 </div>
                                 <div className='flex items-center justify-between w-full space-x-2'>
-
                                     <div className='flex flex-col items-center justify-center w-full'>
+                                        <hr className='w-full h-1 my-2 bg-gray-100' />
                                         <h3 className='text-lg font-bold'>{skill.name}</h3>
                                         <p className='text-sm'>{skill.level}</p>
                                     </div>
                                 </div>
-                            </div>
+                            </m.div>
                         ))
 
                     }
