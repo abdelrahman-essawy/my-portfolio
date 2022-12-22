@@ -36,7 +36,8 @@ export default function Home() {
       </m.header>
 
       {/* <div className='h-[1.5px] opacity-40 bg-gradient-to-r from-emerald-500 via-blue-500 to-emerald-500'></div> */}
-      <main className='overflow-hidden' >
+
+      <main className='overflow-hidden'>
         <Hero />
         <Spliiter />
         <About />
