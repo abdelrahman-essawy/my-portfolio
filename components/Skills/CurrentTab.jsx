@@ -18,7 +18,7 @@ export default function CurrentTab({ tab, isVisible }) {
 
     <m.div
       animate={{ height }}
-      transition={{ when: 'beforeChildren', type: 'spring', stiffness: 1000, damping: 45 }}
+      transition={{ when: 'beforeChildren', type: 'spring', stiffness: 1000, damping: 50 }}
       className='mt-1 text-gray-600 bg-white rounded-lg shadow-inner'
     >
       <div ref={ref} className={'p-3'}>
