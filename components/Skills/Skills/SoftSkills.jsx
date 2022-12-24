@@ -93,7 +93,7 @@ export default function SoftSkills() {
                             : 'https://img.icons8.com/color/48/000000/teamwork.png'} alt={skill.name} className={'h-10 w-h-10'} />
                         {/* </div> */}
                         <div className='ml-4'>
-                            <div className='text-lg font-medium text-gray-700'>{skill.name}</div>
+                            <div className='font-medium text-gray-700 text-md sm:text-lg'>{skill.name}</div>
                             <div className='text-sm font-medium text-gray-500'>{skill.level}</div>
                         </div>
                     </div>
