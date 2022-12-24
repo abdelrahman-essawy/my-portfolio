@@ -156,7 +156,7 @@ export default function TechnicalSkills() {
         } else if (level === 'Competent') {
             return 'text-yellow-600'
         } else if (level === 'Advanced Beginner') {
-            return 'text-orange-600'
+            return 'text-blue-500'
         }
     }
 
