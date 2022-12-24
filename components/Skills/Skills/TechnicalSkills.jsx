@@ -67,12 +67,11 @@ export default function TechnicalSkills() {
             imgRounded: 'p-3'
         },
         {
-            name: 'NodeJs',
-            level: 'Advanced Beginner',
+            name: 'Figma',
+            level: 'Proficient',
             color: 'bg-blue-500',
-            imgRounded: 'p-3'
-
         },
+
         {
             name: 'GitHub',
             level: 'Proficient',
@@ -99,12 +98,14 @@ export default function TechnicalSkills() {
             level: 'Advanced Beginner',
             color: 'bg-blue-500'
         },
-        {
-            name: 'Figma',
-            level: 'Proficient',
-            color: 'bg-blue-500',
-        },
 
+        {
+            name: 'NodeJs',
+            level: 'Advanced Beginner',
+            color: 'bg-blue-500',
+            imgRounded: 'p-3'
+
+        },
 
 
         // {
