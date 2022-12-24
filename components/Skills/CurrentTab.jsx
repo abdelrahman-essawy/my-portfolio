@@ -3,28 +3,32 @@ import { AnimatePresence, motion as m } from 'framer-motion'
 import PersonalSkills from './Skills/PersonalSkills'
 import TechnicalSkills from './Skills/TechnicalSkills'
 import SoftSkills from './Skills/SoftSkills'
+import useMeasure from 'react-use-measure'
+
+
 
 
 export default function CurrentTab({ tab, isVisible }) {
-  return (
-    <AnimatePresence
-      exitBeforeEnter
-      animate={{ opacity: 1, x: 0, type: 'spring' }}
-    >
-      <m.div
-        className='p-4 mt-1 text-gray-500 bg-white rounded-lg shadow-inner'
-        initial={{ opacity: 0, x: 10 }}
-        animate={{ opacity: 1, x: 0, type: 'spring' }}
-        transition={{ delay: 0.1 }}
-      >
 
-        <p className='text-lg font-medium'></p>
+
+  const [ref, { height }] = useMeasure()
+
+
+  return (
+
+    <m.div
+      animate={{ height }}
+      transition={{ when: 'beforeChildren', type: 'spring', stiffness: 1000, damping: 45 }}
+      className='mt-1 text-gray-600 bg-white rounded-lg shadow-inner'
+    >
+      <div ref={ref} className={'p-3'}>
         {tab === 'Soft Skills' && <SoftSkills />}
         {tab === 'Technical Skills' && <TechnicalSkills />}
         {tab === 'Personal Skills' && <PersonalSkills />}
+      </div>
 
-      </m.div>
-    </AnimatePresence>
+
+    </m.div>
 
   )
 }
