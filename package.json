@@ -28,6 +28,7 @@
     "react-responsive-carousel": "^3.2.23",
     "react-simple-clamp": "^1.2.1",
     "react-swipeable": "^7.0.0",
+    "react-use-measure": "^2.1.1",
     "tailwind-scrollbar-hide": "^1.1.7",
     "tailwind-typewriter": "^1.0.1"
   },
