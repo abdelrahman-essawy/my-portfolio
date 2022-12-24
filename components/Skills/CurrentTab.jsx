@@ -1,6 +1,6 @@
 import React from 'react'
 import { AnimatePresence, motion as m } from 'framer-motion'
-import PersonalSkills from './Skills/PersonalSkills'
+import OtherSkills from './Skills/OtherSkills'
 import TechnicalSkills from './Skills/TechnicalSkills'
 import SoftSkills from './Skills/SoftSkills'
 import useMeasure from 'react-use-measure'
@@ -24,7 +24,7 @@ export default function CurrentTab({ tab, isVisible }) {
       <div ref={ref} className={'p-3'}>
         {tab === 'Soft Skills' && <SoftSkills />}
         {tab === 'Technical Skills' && <TechnicalSkills />}
-        {tab === 'Personal Skills' && <PersonalSkills />}
+        {tab === 'Other Skills' && <OtherSkills />}
       </div>
 
 

@@ -3,7 +3,7 @@ import { motion as m, AnimatePresence } from 'framer-motion'
 import CurrentTab from './CurrentTab'
 
 export default function Tabs() {
-    const [tabs, setTabs] = useState(['Soft Skills', 'Technical Skills', 'Personal Skills'])
+    const [tabs, setTabs] = useState(['Soft Skills', 'Technical Skills', 'Other Skills'])
     const [selected, setSelected] = useState('Technical Skills')
     const [x, setX] = useState(0)
 
