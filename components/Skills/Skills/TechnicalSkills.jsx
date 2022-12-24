@@ -187,9 +187,11 @@ export default function TechnicalSkills() {
 
                             <m.div
                                 key={index}
-                                initial={{ opacity: 0, scale: 0, rotate: -45 }}
-                                whileInView={{ opacity: 1, scale: 1, type: 'spring', rotate: 0, transition: { delay: .1 } }}
-                                viewport={{ once: true }}
+                                initial={{ opacity: 0, y: 20 }}
+                                whileInView={{ opacity: 1, y: 0 }}
+                                exit={{ opacity: 0, y: 20 }}
+                                transition={{ delay: index * 0.07 }}
+
                                 className='p-1 py-3 mx-1 my-2 bg-gray-100 rounded-lg shadow-md sm:p-3 sm:mx-2'>
                                 <div className='flex items-center justify-center w-32 h-32 rounded-full sm:w-32 sm:h-32'>
                                     <img src={`./Skills/${name}.webp`} alt={name} className={`p-2 sm:p-0 bg-gray-100 ${imgRounded}`} />
