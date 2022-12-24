@@ -1,4 +1,5 @@
 import React from 'react'
+import { AnimatePresence, motion as m } from 'framer-motion'
 
 export default function SoftSkills() {
 
@@ -78,9 +79,21 @@ export default function SoftSkills() {
     ]
 
     return (
-        <div className='grid grid-cols-1 gap-4 sm:grid-cols-2'>
+
+        <m.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+
+            className='grid grid-cols-1 gap-4 sm:grid-cols-2'>
             {softSkills.map((skill, index) => (
-                <div key={index} className='flex items-center justify-between p-3 bg-white rounded-lg shadow-md'>
+                <m.div
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    exit={{ opacity: 0, y: 20 }}
+                    transition={{ delay: index * 0.1 }}
+
+                    key={index} className='flex items-center justify-between p-3 bg-white rounded-lg shadow-md'>
                     <div className='flex items-center'>
                         {/* <div className='text-white bg-blue-200 rounded-full'> */}
                         {/* <svg className='w-6 h-6' fill='none' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' viewBox='0 0 24 24' stroke='currentColor'>
@@ -102,9 +115,9 @@ export default function SoftSkills() {
                             {skill.level}
                         </div>
                     </div>
-                </div>
+                </m.div>
             ))}
-        </div>
+        </m.div>
 
 
     )
