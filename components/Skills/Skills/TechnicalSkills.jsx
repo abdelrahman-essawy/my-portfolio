@@ -148,6 +148,18 @@ export default function TechnicalSkills() {
         //     color: 'bg-blue-500'
         // },
     ]
+    const setColor = (level) => {
+        if (level === 'Expert') {
+            return 'text-red-600'
+        } else if (level === 'Proficient') {
+            return 'text-green-600'
+        } else if (level === 'Competent') {
+            return 'text-yellow-600'
+        } else if (level === 'Advanced Beginner') {
+            return 'text-orange-600'
+        }
+    }
+
 
     return (
         <m.div
@@ -160,8 +172,17 @@ export default function TechnicalSkills() {
 
 
                 <div className='flex flex-wrap items-center w-full justify-evenly'>
+
                     {
-                        skills.map((skill, index) => (
+
+                        skills.map(({
+                            name,
+                            level,
+                            imgRounded
+                        }, index) => (
+
+
+
 
                             <m.div
                                 key={index}
@@ -170,13 +191,13 @@ export default function TechnicalSkills() {
                                 viewport={{ once: true }}
                                 className='p-1 py-3 mx-1 my-2 bg-gray-100 rounded-lg shadow-md sm:p-3 sm:mx-2'>
                                 <div className='flex items-center justify-center w-32 h-32 rounded-full sm:w-32 sm:h-32'>
-                                    <img src={`./Skills/${skill.name}.webp`} alt={skill.name} className={`p-2 sm:p-0 bg-gray-100 ${skill?.imgRounded}`} />
+                                    <img src={`./Skills/${name}.webp`} alt={name} className={`p-2 sm:p-0 bg-gray-100 ${imgRounded}`} />
                                 </div>
                                 <div className='flex items-center justify-between w-full space-x-2'>
                                     <div className='flex flex-col items-center justify-center w-full'>
                                         <hr className='w-full h-1 my-2 bg-gray-100' />
-                                        <h3 className='font-bold sm:text-lg text-md'>{skill.name}</h3>
-                                        <p className='text-xs sm:text-sm'>{skill.level}</p>
+                                        <h3 className='font-bold sm:text-lg text-md'>{name}</h3>
+                                        <p className={`text-xs sm:text-sm ${setColor(level)}`}>{level}</p>
                                     </div>
                                 </div>
                             </m.div>
