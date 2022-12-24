@@ -78,7 +78,7 @@ export default function SoftSkills() {
     ]
 
     return (
-        <div className='grid grid-cols-2 gap-4'>
+        <div className='grid grid-cols-1 gap-4 sm:grid-cols-2'>
             {softSkills.map((skill, index) => (
                 <div key={index} className='flex items-center justify-between p-3 bg-white rounded-lg shadow-md'>
                     <div className='flex items-center'>
