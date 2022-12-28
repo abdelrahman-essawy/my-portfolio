@@ -81,6 +81,8 @@ export default function OtherSkills() {
 
     //     : '
 
+
+
     return (
         <div className='grid grid-cols-1 gap-4 '>
             {otherSkills.map(({
@@ -111,16 +113,11 @@ export default function OtherSkills() {
                             <div className='ml-4'>
                                 <div className='font-medium text-gray-700 text-md text-start sm:text-lg'>{name}</div>
                                 {
-
-
-                                    viewDesc
-                                    &&
-
-                                    descTemp(desc)
-
-
+                                    (viewDesc && typeof desc === 'string') ?
+                                        descTemp(desc)
+                                        :
+                                        <h1>asd</h1>
                                 }
-
 
                             </div>
                         </div>
@@ -138,4 +135,5 @@ export default function OtherSkills() {
 
     )
 }
+
 
