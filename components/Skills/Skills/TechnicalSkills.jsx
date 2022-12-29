@@ -171,7 +171,7 @@ export default function TechnicalSkills() {
 
 
 
-            <div className='grid grid-cols-3 gap-x-1 gap-y-3 sm:grid-cols-6'>
+            <div className='grid grid-cols-3 gap-3 sm:gap-4 sm:grid-cols-6'>
 
                 {
 
@@ -191,7 +191,7 @@ export default function TechnicalSkills() {
                             exit={{ opacity: 0, y: 20 }}
                             transition={{ delay: index * 0.07 }}
                             viewport={{ once: true }}
-                            className='flex flex-col justify-center py-2 mx-1 bg-gray-100 rounded-lg shadow-md sm:p-3 sm:mx-2'>
+                            className='flex flex-col justify-center py-2 bg-gray-100 rounded-lg shadow-md sm:p-3 '>
                             <div className='flex items-center justify-center flex-1'>
                                 <img src={`./Skills/${name}.webp`} alt={name} className={`p-2 sm:p-0 bg-gray-100 ${imgRounded}`} />
                             </div>
