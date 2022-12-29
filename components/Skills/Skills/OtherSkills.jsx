@@ -1,6 +1,5 @@
 import React, { useState } from 'react'
 import { motion as m } from 'framer-motion'
-import { useMeasure } from 'react-use-measure';
 
 export default function OtherSkills() {
 
@@ -42,7 +41,7 @@ export default function OtherSkills() {
                                 exit={{ opacity: 0, y: 5 }}
 
                                 key={index} className='flex items-center justify-start'>
-                                <div className={`flex-shrink-0 w-2 h-2 ${color} rounded-full`}></div>
+                                <div className={`flex-shrink-0 w-2 h-2 ${color} rounded-full`} />
                                 <div className='ml-2 text-sm font-medium text-gray-500'>{name}</div>
                             </m.div>
                         ))}
@@ -67,7 +66,25 @@ export default function OtherSkills() {
     const [otherSkills, setOtherSkills] = useState([
         {
             name: 'Networking',
-            desc: 'I have a good understanding of networking and how it works. I have a good understanding of how to set up a network and how to troubleshoot it.',
+            desc: [
+                {
+                    name: 'Networking design and implementation',
+                    color: 'bg-blue-500',
+                },
+                {
+                    name: 'Network administration',
+                    color: 'bg-blue-500',
+                },
+                {
+                    name: 'Network troubleshooting',
+                    color: 'bg-blue-500',
+                },
+                {
+                    name: 'Network security',
+                    color: 'bg-blue-500',
+                },
+
+            ],
             viewDesc: false,
             icon: 'https://cdn-icons-png.flaticon.com/512/1239/1239682.png ',
         },
