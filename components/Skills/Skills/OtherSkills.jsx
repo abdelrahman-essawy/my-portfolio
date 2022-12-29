@@ -14,7 +14,7 @@ export default function OtherSkills() {
                     initial={{ opacity: 0, y: 5 }}
                     animate={{ opacity: 1, y: 0 }}
                     exit={{ opacity: 0, y: 5 }}>
-                    <p className='ml-2 text-sm'>{desc}</p>
+                    <p className='py-3 text-sm'>{desc}</p>
 
                 </m.div>
             )
@@ -28,7 +28,7 @@ export default function OtherSkills() {
                     animate={{ opacity: 1, y: 0 }}
                     exit={{ opacity: 0, y: 5 }}
                 >
-                    <div className='flex flex-col items-start justify-start'>
+                    <div className='grid grid-cols-2 py-3 justify-evenly'>
                         {desc.map(({
                             name,
                             color,
@@ -39,7 +39,6 @@ export default function OtherSkills() {
                                 animate={{ opacity: 1, y: 0 }}
                                 transition={{ delay: 0.1 * index }}
                                 exit={{ opacity: 0, y: 5 }}
-
                                 key={index} className='flex items-center justify-start'>
                                 <div className={`flex-shrink-0 w-2 h-2 ${color} rounded-full`} />
                                 <div className='ml-2 text-sm font-medium text-gray-500'>{name}</div>
@@ -154,7 +153,7 @@ export default function OtherSkills() {
 
 
     return (
-        <div className='grid grid-cols-1 gap-4 sm:grid-cols-2 '>
+        <div className='grid items-start grid-cols-1 gap-4 sm:grid-cols-2'>
             {otherSkills.map(({
                 name,
                 desc,
@@ -171,7 +170,7 @@ export default function OtherSkills() {
                     transition={{ delay: index * 0.1 }}
                     key={index}
                     type='button'
-                    className={`${desc ? 'cursor-pointer hover:shadow-lg' : 'cursor-default'} rounded-lg  x shadow-md`}
+                    className={`${desc ? 'cursor-pointer hover:shadow-lg' : 'cursor-default'} rounded-lg shadow-md`}
                     onClick={() => {
                         setOtherSkills((prev) => {
                             const newSkillsWithDesc = [...prev]
@@ -183,12 +182,12 @@ export default function OtherSkills() {
                 >
                     <m.div
 
-                        className='flex items-center justify-between p-3 '>
-                        <div className='flex items-center'>
+                        className='flex items-center justify-between p-3'>
+                        <div className='flex items-center flex-grow'>
                             <div className={`flex-shrink-0 ${color} `}>
                                 <img src={icon} alt={name} className='w-10 h-10' />
                             </div>
-                            <div className='ml-4'>
+                            <div className='w-full ml-4'>
                                 <div className='font-medium text-gray-700 text-md text-start sm:text-lg'>{name} {badge ? badgeTemplete : null}</div>
                                 {
                                     viewDesc ?
