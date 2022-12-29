@@ -198,7 +198,7 @@ export default function TechnicalSkills() {
                             exit={{ opacity: 0, y: 20 }}
                             transition={{ delay: index * 0.07 }}
                             viewport={{ once: true }}
-                            className={`flex flex-col justify-center px-1 py-2 bg-gray-100 rounded-lg shadow-md ${soon ? `grayscale blur-[2px]` : ``}`}>
+                            className={`flex flex-col justify-center px-1 py-2 bg-gray-100 rounded-lg shadow-md ${soon ? `grayscale blur-[0px]` : ``}`}>
                             <div className='flex items-center justify-center flex-1'>
                                 <img src={`./Skills/${name}.webp`} alt={name} className={`p-2  bg-gray-100 ${imgRounded}`} />
                             </div>
