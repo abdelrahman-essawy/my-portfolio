@@ -36,7 +36,7 @@ export default function TechnicalSkills() {
         {
             name: 'Next.js',
             level: 'Competent',
-            color: 'bg-blue-500'
+            color: 'bg-blue-500',
         },
         {
             name: 'Redux',
@@ -44,7 +44,7 @@ export default function TechnicalSkills() {
             color: 'bg-blue-500'
         },
         {
-            name: 'Tailwind CSS',
+            name: 'Tailwind',
             level: 'Proficient',
             color: 'bg-blue-500'
         },
@@ -54,7 +54,7 @@ export default function TechnicalSkills() {
             color: 'bg-blue-500'
         },
         {
-            name: 'Framer Motion',
+            name: 'Framer',
             level: 'Competent',
             color: 'bg-blue-500',
             imgRounded: 'p-3'
@@ -191,8 +191,8 @@ export default function TechnicalSkills() {
                             exit={{ opacity: 0, y: 20 }}
                             transition={{ delay: index * 0.07 }}
                             viewport={{ once: true }}
-                            className='py-2 mx-1 bg-gray-100 rounded-lg shadow-md sm:p-3 sm:mx-2'>
-                            <div className='m-auto '>
+                            className='flex flex-col justify-center py-2 mx-1 bg-gray-100 rounded-lg shadow-md sm:p-3 sm:mx-2'>
+                            <div className='flex items-center justify-center flex-1'>
                                 <img src={`./Skills/${name}.webp`} alt={name} className={`p-2 sm:p-0 bg-gray-100 ${imgRounded}`} />
                             </div>
                             <div className='flex items-center justify-between w-full space-x-2'>
