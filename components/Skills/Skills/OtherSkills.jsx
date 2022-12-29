@@ -68,7 +68,7 @@ export default function OtherSkills() {
             name: 'Networking',
             desc: [
                 {
-                    name: 'Networking design and implementation',
+                    name: 'Network design',
                     color: 'bg-blue-500',
                 },
                 {
