@@ -1,7 +1,9 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { AnimatePresence, motion as m } from 'framer-motion'
 
 export default function SoftSkills() {
+
+    const [seeMore, setSeeMore] = useState(false)
 
     const softSkills = [
         {
@@ -76,27 +78,36 @@ export default function SoftSkills() {
             exit={{ opacity: 0 }}
 
             className='grid grid-cols-1 gap-4 sm:grid-cols-3'>
-            {softSkills.map((skill, index) => (
-                <m.div
-                    initial={{ opacity: 0, y: 20 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    exit={{ opacity: 0, y: 20 }}
-                    transition={{ delay: index * 0.1 }}
+            {softSkills
+                .slice(0, seeMore ? softSkills.length : 5)
+                .map((skill, index) => (
+                    <m.div
+                        initial={{ opacity: 0, y: 20 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        exit={{ opacity: 0, y: 20 }}
+                        transition={{ delay: index * 0.1 }}
 
-                    key={index} className='flex items-center justify-between p-3 bg-white rounded-lg shadow-md'>
-                    <div className='flex items-center'>
-                        <img src={skill.svg
-                            ? skill.svg
-                            : 'https://img.icons8.com/color/48/000000/teamwork.png'} alt={skill.name} className={'h-8 w-h-8'} />
-                        <div className='ml-4'>
-                            <div className='font-medium text-gray-700 text-md sm:text-md'>{skill.name}</div>
+                        key={index} className='flex items-center justify-between p-3 bg-white rounded-lg shadow-md'>
+                        <div className='flex items-center'>
+                            <img src={skill.svg
+                                ? skill.svg
+                                : 'https://img.icons8.com/color/48/000000/teamwork.png'} alt={skill.name} className={'h-8 w-h-8'} />
+                            <div className='ml-4'>
+                                <div className='font-medium text-gray-700 text-md sm:text-md'>{skill.name}</div>
+                            </div>
                         </div>
-                    </div>
-                    <div className='flex items-center'>
-                        <div className='p-3 bg-green-500 rounded-full' />
-                    </div>
-                </m.div>
-            ))}
+                        <div className='flex items-center'>
+                            <div className='p-3 bg-green-500 rounded-full' />
+                        </div>
+                    </m.div>
+                ))}
+            <m.button
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                exit={{ opacity: 0 }}
+                onClick={() => setSeeMore(!seeMore)}
+                className='p-2 rounded-lg shadow font-SourceCodePro bg-zinc-200 active:bg-zinc-300 hover:bg-zinc-300'>See More</m.button>
+
         </m.div>
 
 
