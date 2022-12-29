@@ -155,14 +155,13 @@ export default function OtherSkills() {
 
             }, index) => (
                 <m.button
-                    initial={{ opacity: 0, y: 5 }}
-                    animate={{ opacity: 1, y: 0, height: 'auto' }}
-                    transition={{ delay: 0.1 * index }}
-                    exit={{ opacity: 0, y: 5 }}
-
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    exit={{ opacity: 0, y: 20 }}
+                    transition={{ delay: index * 0.1 }}
                     key={index}
                     type='button'
-                    className={`${desc ? 'cursor-pointer' : 'cursor-default'} bg-white rounded-lg  transition duration-200 ease-in-out transform hover:-translate-y-1 hover:shadow-lg shadow-md`}
+                    className={`${desc ? 'cursor-pointer' : 'cursor-default'} rounded-lg  hover:shadow-lg shadow-md`}
                     onClick={() => {
                         setOtherSkills((prev) => {
                             const newSkillsWithDesc = [...prev]
@@ -172,7 +171,9 @@ export default function OtherSkills() {
                         })
                     }}
                 >
-                    <div className='flex items-center justify-between p-3 '>
+                    <m.div
+
+                        className='flex items-center justify-between p-3 '>
                         <div className='flex items-center'>
                             <div className={`flex-shrink-0 w-10 h-10 ${color} rounded-full`}>
                                 <img src={icon} alt={name} className='w-10 h-10' />
@@ -195,7 +196,7 @@ export default function OtherSkills() {
                             <path fill-rule="evenodd" d="M14.77 12.79a.75.75 0 01-1.06-.02L10 8.832 6.29 12.77a.75.75 0 11-1.08-1.04l4.25-4.5a.75.75 0 011.08 0l4.25 4.5a.75.75 0 01-.02 1.06z" clip-rule="evenodd">
                             </path>
                         </svg> : ''}
-                    </div>
+                    </m.div>
                 </m.button>
             ))
             }
