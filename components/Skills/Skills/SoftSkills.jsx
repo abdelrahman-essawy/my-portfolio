@@ -87,16 +87,13 @@ export default function SoftSkills() {
                     <div className='flex items-center'>
                         <img src={skill.svg
                             ? skill.svg
-                            : 'https://img.icons8.com/color/48/000000/teamwork.png'} alt={skill.name} className={'h-10 w-h-10'} />
+                            : 'https://img.icons8.com/color/48/000000/teamwork.png'} alt={skill.name} className={'h-8 w-h-8'} />
                         <div className='ml-4'>
-                            <div className='font-medium text-gray-700 text-md sm:text-lg'>{skill.name}</div>
-                            <div className='text-sm font-medium text-gray-500'>{skill.level}</div>
+                            <div className='font-medium text-gray-700 text-md sm:text-md'>{skill.name}</div>
                         </div>
                     </div>
                     <div className='flex items-center'>
-                        <div className='flex items-center justify-center w-4 h-4 text-sm text-white bg-blue-500 rounded-full'>
-                            {skill.level}
-                        </div>
+                        <div className='p-3 bg-green-500 rounded-full' />
                     </div>
                 </m.div>
             ))}
