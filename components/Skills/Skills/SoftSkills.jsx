@@ -80,7 +80,6 @@ export default function SoftSkills({ windowScreenWidth }) {
 
         return softSkills.length
     }
-    console.log(handleSlice(), windowScreenWidth)
     return (
 
         <m.div

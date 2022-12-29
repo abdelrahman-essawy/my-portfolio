@@ -1,8 +1,9 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { motion as m } from 'framer-motion'
 import { Image } from 'next/image';
 
-export default function TechnicalSkills() {
+export default function TechnicalSkills({ windowScreenWidth }) {
+    const [seeMore, setSeeMore] = useState(false)
 
 
     const skills = [
@@ -167,6 +168,17 @@ export default function TechnicalSkills() {
         }
     }
 
+    const handleSlice = () => {
+        if (windowScreenWidth < 640) {
+            if (seeMore) {
+                return skills.length
+            } else {
+                return 6
+            }
+        }
+
+        return skills.length
+    }
 
     return (
         <m.div
@@ -181,38 +193,48 @@ export default function TechnicalSkills() {
 
                 {
 
-                    skills.map(({
-                        name,
-                        level,
-                        imgRounded,
-                        soon
-                    }, index) => (
+                    skills
+                        .slice(0, handleSlice())
+                        .map(({
+                            name,
+                            level,
+                            imgRounded,
+                            soon
+                        }, index) => (
 
 
 
 
-                        <m.div
-                            key={index}
-                            initial={{ opacity: 0, y: 20 }}
-                            whileInView={{ opacity: 1, y: 0 }}
-                            exit={{ opacity: 0, y: 20 }}
-                            transition={{ delay: index * 0.07 }}
-                            viewport={{ once: true }}
-                            className={`flex flex-col justify-center px-1 py-2 bg-gray-100 rounded-lg shadow-md ${soon ? `grayscale blur-[0px]` : ``}`}>
-                            <div className='flex items-center justify-center flex-1'>
-                                <img src={`./Skills/${name}.webp`} alt={name} className={`p-2  bg-gray-100 ${imgRounded}`} />
-                            </div>
-                            <div className='flex items-center justify-between w-full space-x-2'>
-                                <div className='flex flex-col items-center justify-center w-full'>
-                                    <hr className='w-full h-1 my-2 bg-gray-100' />
-                                    <h3 className='mb-1 text-sm font-bold '>{name}</h3>
-                                    <p className={`text-xs font-SourceCodePro ${setColor(level)}`}>{level}</p>
+                            <m.div
+                                key={index}
+                                initial={{ opacity: 0, y: 20 }}
+                                whileInView={{ opacity: 1, y: 0 }}
+                                exit={{ opacity: 0, y: 20 }}
+                                transition={{ delay: index * 0.07 }}
+                                viewport={{ once: true }}
+                                className={`flex flex-col justify-center px-1 py-2 bg-gray-100 rounded-lg shadow-md ${soon ? `grayscale blur-[0px]` : ``}`}>
+                                <div className='flex items-center justify-center flex-1'>
+                                    <img src={`./Skills/${name}.webp`} alt={name} className={`p-2  bg-gray-100 ${imgRounded}`} />
                                 </div>
-                            </div>
-                        </m.div>
-                    ))
+                                <div className='flex items-center justify-between w-full space-x-2'>
+                                    <div className='flex flex-col items-center justify-center w-full'>
+                                        <hr className='w-full h-1 my-2 bg-gray-100' />
+                                        <h3 className='mb-1 text-sm font-bold '>{name}</h3>
+                                        <p className={`text-xs font-SourceCodePro ${setColor(level)}`}>{level}</p>
+                                    </div>
+                                </div>
+                            </m.div>
+                        ))
 
                 }
+                <m.button
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                    exit={{ opacity: 0 }}
+                    onClick={() => setSeeMore(!seeMore)}
+                    className='col-span-3 p-2 rounded-lg shadow sm:hidden font-SourceCodePro bg-zinc-200 active:bg-zinc-300 hover:bg-zinc-300'>{
+                        seeMore ? 'See Less' : 'See More'
+                    }</m.button>
 
 
             </div>
