@@ -106,7 +106,9 @@ export default function SoftSkills() {
                 animate={{ opacity: 1 }}
                 exit={{ opacity: 0 }}
                 onClick={() => setSeeMore(!seeMore)}
-                className='p-2 rounded-lg shadow font-SourceCodePro bg-zinc-200 active:bg-zinc-300 hover:bg-zinc-300'>See More</m.button>
+                className='p-2 rounded-lg shadow font-SourceCodePro bg-zinc-200 active:bg-zinc-300 hover:bg-zinc-300'>{
+                    seeMore ? 'See Less' : 'See More'
+                }</m.button>
 
         </m.div>
 
