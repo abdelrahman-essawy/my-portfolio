@@ -40,6 +40,11 @@ export default function SoftSkills() {
             svg: '   https://cdn-icons-png.flaticon.com/512/860/860430.png '
         },
         {
+            name: 'Detail Oriented',
+            color: 'bg-blue-500',
+            svg: '   https://cdn-icons-png.flaticon.com/512/3163/3163231.png '
+        },
+        {
             name: 'Self Motivation',
             color: 'bg-blue-500',
             svg: '        https://cdn-icons-png.flaticon.com/512/3495/3495048.png  '
@@ -85,7 +90,7 @@ export default function SoftSkills() {
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
 
-            className='grid grid-cols-1 gap-4 sm:grid-cols-2'>
+            className='grid grid-cols-1 gap-4 sm:grid-cols-3'>
             {softSkills.map((skill, index) => (
                 <m.div
                     initial={{ opacity: 0, y: 20 }}
@@ -95,16 +100,9 @@ export default function SoftSkills() {
 
                     key={index} className='flex items-center justify-between p-3 bg-white rounded-lg shadow-md'>
                     <div className='flex items-center'>
-                        {/* <div className='text-white bg-blue-200 rounded-full'> */}
-                        {/* <svg className='w-6 h-6' fill='none' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' viewBox='0 0 24 24' stroke='currentColor'>
-                                <path d='M12 14l9-5-9-5-9 5 9 5z'></path>
-                                <path d='M12 14l-9 5 9 5 9-5-9-5z'></path>
-                                <path d='M12 14L2 9l10-5 9 5-9 5z'></path>
-                            </svg> */}
                         <img src={skill.svg
                             ? skill.svg
                             : 'https://img.icons8.com/color/48/000000/teamwork.png'} alt={skill.name} className={'h-10 w-h-10'} />
-                        {/* </div> */}
                         <div className='ml-4'>
                             <div className='font-medium text-gray-700 text-md sm:text-lg'>{skill.name}</div>
                             <div className='text-sm font-medium text-gray-500'>{skill.level}</div>
