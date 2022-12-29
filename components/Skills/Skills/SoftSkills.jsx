@@ -6,78 +6,63 @@ export default function SoftSkills() {
     const softSkills = [
         {
             name: 'Teamwork',
-            color: 'bg-blue-500',
             svg: 'https://cdn-icons-png.flaticon.com/512/7505/7505858.png'
         },
         {
             name: 'Communication',
-            color: 'bg-blue-500',
             svg: '   https://cdn-icons-png.flaticon.com/512/610/610413.png '
         },
         {
             name: 'Problem Solving',
-            color: 'bg-blue-500',
             svg: '     https://cdn-icons-png.flaticon.com/512/4133/4133589.png  '
         },
         {
             name: 'Time Management',
-            color: 'bg-blue-500',
             svg: '   https://cdn-icons-png.flaticon.com/512/2382/2382564.png '
         },
         {
             name: 'Adaptability',
-            color: 'bg-blue-500',
             svg: '   https://cdn-icons-png.flaticon.com/512/6159/6159679.png '
         },
         {
             name: 'Creativity',
-            color: 'bg-blue-500',
             svg: '   https://cdn-icons-png.flaticon.com/512/3749/3749872.png '
         },
         {
             name: 'Leadership',
-            color: 'bg-blue-500',
             svg: '   https://cdn-icons-png.flaticon.com/512/860/860430.png '
         },
         {
             name: 'Detail Oriented',
-            color: 'bg-blue-500',
             svg: '   https://cdn-icons-png.flaticon.com/512/3163/3163231.png '
         },
         {
             name: 'Self Motivation',
-            color: 'bg-blue-500',
             svg: '        https://cdn-icons-png.flaticon.com/512/3495/3495048.png  '
         },
         {
             name: 'Self Confidence',
-            color: 'bg-blue-500',
             svg: '     https://cdn-icons-png.flaticon.com/512/4371/4371480.png '
         },
         {
             name: 'Self Discipline',
-            color: 'bg-blue-500',
             svg: 'https://cdn-icons-png.flaticon.com/512/5433/5433993.png '
         },
         {
             name: 'Self Awareness',
-            color: 'bg-blue-500',
             svg: '   https://cdn-icons-png.flaticon.com/512/6001/6001137.png '
         },
 
         {
             name: 'Self Esteem',
-            color: 'bg-blue-500',
             svg: '      https://cdn-icons-png.flaticon.com/512/5572/5572331.png '
         },
         {
             name: 'Self Control',
-            color: 'bg-blue-500',
             svg: '   https://cdn-icons-png.flaticon.com/512/6911/6911300.png '
         },
         {
             name: 'Self Reliance',
-            color: 'bg-blue-500',
             svg: '      https://cdn-icons-png.flaticon.com/512/5352/5352328.png '
         },
 
