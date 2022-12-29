@@ -157,7 +157,7 @@ export default function OtherSkills() {
                 <m.button
                     key={index}
                     type='button'
-                    className={`${desc ? 'cursor-pointer' : 'cursor-default'} hover:shadow-lg transition duration-200 ease-in-out`}
+                    className={`${desc ? 'cursor-pointer' : 'cursor-default'}  transition duration-200 ease-in-out`}
                     onClick={() => {
                         setOtherSkills((prev) => {
                             const newSkillsWithDesc = [...prev]
@@ -167,7 +167,7 @@ export default function OtherSkills() {
                         })
                     }}
                 >
-                    <div className='flex items-center justify-between p-3 bg-white rounded-lg shadow-md'>
+                    <div className='flex items-center justify-between p-3 bg-white rounded-lg shadow-md hover:shadow-lg'>
                         <div className='flex items-center'>
                             <div className={`flex-shrink-0 w-10 h-10 ${color} rounded-full`}>
                                 <img src={icon} alt={name} className='w-10 h-10' />
