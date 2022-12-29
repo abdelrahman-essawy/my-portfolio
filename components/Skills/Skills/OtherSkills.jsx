@@ -52,7 +52,6 @@ export default function OtherSkills() {
         }
 
 
-
         if (typeof desc === 'string') {
             return text({ desc })
         } else if (Array.isArray(desc)) {
@@ -60,6 +59,7 @@ export default function OtherSkills() {
         }
 
     }
+    const badgeTemplete = <span className='p-1 ml-4 text-xs font-thin text-red-400 uppercase border border-red-400 rounded-md font-SourceCodePro'>expert</span>
 
 
 
@@ -85,23 +85,33 @@ export default function OtherSkills() {
                 },
 
             ],
-            viewDesc: false,
             icon: 'https://cdn-icons-png.flaticon.com/512/1239/1239682.png ',
         },
         {
             name: 'Linux',
             desc: 'I have a good understanding of Linux and how it works. I have a good understanding of how to set up a Linux server and how to troubleshoot it.',
-            viewDesc: false,
             icon: '   https://cdn-icons-png.flaticon.com/512/2333/2333187.png ',
         },
         {
             name: 'Cyber Security',
             desc: 'I have a good understanding of Cyber Security and how it works. I have a good understanding of how to set up a Cyber Security server and how to troubleshoot it.',
             icon: '     https://cdn-icons-png.flaticon.com/512/2716/2716652.png  ',
+            badge: true,
         },
         {
-            name: '3D Designer',
+            name: '3D Design',
             icon: 'https://cdn-icons-png.flaticon.com/512/1806/1806507.png ',
+            desc: [
+                {
+                    name: 'Blender',
+                    color: 'bg-blue-500',
+                },
+                {
+                    name: 'ZBrush',
+                    color: 'bg-blue-500',
+                }
+            ],
+            badge: true,
         },
         {
             name: 'Video Editing',
@@ -117,7 +127,6 @@ export default function OtherSkills() {
                 },
 
             ],
-            viewDesc: false,
 
         },
         {
@@ -145,13 +154,14 @@ export default function OtherSkills() {
 
 
     return (
-        <div className='grid grid-cols-1 gap-4 '>
+        <div className='grid grid-cols-2 gap-4 '>
             {otherSkills.map(({
                 name,
                 desc,
                 color,
                 viewDesc,
-                icon
+                icon,
+                badge
 
             }, index) => (
                 <m.button
@@ -161,7 +171,7 @@ export default function OtherSkills() {
                     transition={{ delay: index * 0.1 }}
                     key={index}
                     type='button'
-                    className={`${desc ? 'cursor-pointer' : 'cursor-default'} rounded-lg  hover:shadow-lg shadow-md`}
+                    className={`${desc ? 'cursor-pointer hover:shadow-lg' : 'cursor-default'} rounded-lg  x shadow-md`}
                     onClick={() => {
                         setOtherSkills((prev) => {
                             const newSkillsWithDesc = [...prev]
@@ -175,11 +185,11 @@ export default function OtherSkills() {
 
                         className='flex items-center justify-between p-3 '>
                         <div className='flex items-center'>
-                            <div className={`flex-shrink-0 w-10 h-10 ${color} rounded-full`}>
+                            <div className={`flex-shrink-0 ${color} `}>
                                 <img src={icon} alt={name} className='w-10 h-10' />
                             </div>
                             <div className='ml-4'>
-                                <div className='font-medium text-gray-700 text-md text-start sm:text-lg'>{name}</div>
+                                <div className='font-medium text-gray-700 text-md text-start sm:text-lg'>{name} {badge ? badgeTemplete : null}</div>
                                 {
                                     viewDesc ?
 
@@ -192,7 +202,7 @@ export default function OtherSkills() {
                             </div>
                         </div>
 
-                        {desc ? <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true" className={`${viewDesc ? 'rotate - 0' : 'rotate-180'} transform h-6 w-6 text-blue-500`}>
+                        {desc ? <svg xmlns="http://www.w3.org/5000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true" className={`${viewDesc ? 'rotate - 0' : 'rotate-180'} transform h-6 w-6 text-blue-500`}>
                             <path fill-rule="evenodd" d="M14.77 12.79a.75.75 0 01-1.06-.02L10 8.832 6.29 12.77a.75.75 0 11-1.08-1.04l4.25-4.5a.75.75 0 011.08 0l4.25 4.5a.75.75 0 01-.02 1.06z" clip-rule="evenodd">
                             </path>
                         </svg> : ''}

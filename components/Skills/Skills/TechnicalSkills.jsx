@@ -151,9 +151,9 @@ export default function TechnicalSkills() {
     ]
     const setColor = (level) => {
         if (level === 'Expert') {
-            return 'text-red-600'
+            return 'text-red-600 border-red-600'
         } else if (level === 'Proficient') {
-            return 'text-green-600'
+            return 'text-green-600 border-green-600'
         } else if (level === 'Competent') {
             return 'text-yellow-600'
         } else if (level === 'Advanced Beginner') {
@@ -199,8 +199,8 @@ export default function TechnicalSkills() {
                                 <div className='flex items-center justify-between w-full space-x-2'>
                                     <div className='flex flex-col items-center justify-center w-full'>
                                         <hr className='w-full h-1 my-2 bg-gray-100' />
-                                        <h3 className='font-bold sm:text-lg text-md'>{name}</h3>
-                                        <p className={`text-xs sm:text-sm ${setColor(level)}`}>{level}</p>
+                                        <h3 className='mb-1 font-bold sm:text-lg text-md'>{name}</h3>
+                                        <p className={`text-xs sm:text-sm font-SourceCodePro ${setColor(level)}`}>{level}</p>
                                     </div>
                                 </div>
                             </m.div>
