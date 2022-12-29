@@ -99,7 +99,7 @@ export default function OtherSkills() {
             badge: true,
         },
         {
-            name: '3D Design',
+            name: '3D Designing',
             icon: 'https://cdn-icons-png.flaticon.com/512/1806/1806507.png ',
             desc: [
                 {
