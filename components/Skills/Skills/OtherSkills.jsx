@@ -155,9 +155,14 @@ export default function OtherSkills() {
 
             }, index) => (
                 <m.button
+                    initial={{ opacity: 0, y: 5 }}
+                    animate={{ opacity: 1, y: 0, height: 'auto' }}
+                    transition={{ delay: 0.1 * index }}
+                    exit={{ opacity: 0, y: 5 }}
+
                     key={index}
                     type='button'
-                    className={`${desc ? 'cursor-pointer' : 'cursor-default'}  transition duration-200 ease-in-out`}
+                    className={`${desc ? 'cursor-pointer' : 'cursor-default'} bg-white rounded-lg  transition duration-200 ease-in-out transform hover:-translate-y-1 hover:shadow-lg shadow-md`}
                     onClick={() => {
                         setOtherSkills((prev) => {
                             const newSkillsWithDesc = [...prev]
@@ -167,7 +172,7 @@ export default function OtherSkills() {
                         })
                     }}
                 >
-                    <div className='flex items-center justify-between p-3 bg-white rounded-lg shadow-md hover:shadow-lg'>
+                    <div className='flex items-center justify-between p-3 '>
                         <div className='flex items-center'>
                             <div className={`flex-shrink-0 w-10 h-10 ${color} rounded-full`}>
                                 <img src={icon} alt={name} className='w-10 h-10' />
