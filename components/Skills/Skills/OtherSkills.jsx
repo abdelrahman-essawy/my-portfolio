@@ -28,7 +28,7 @@ export default function OtherSkills() {
                     animate={{ opacity: 1, y: 0 }}
                     exit={{ opacity: 0, y: 5 }}
                 >
-                    <div className='grid grid-cols-2 py-3 justify-evenly'>
+                    <div className='grid grid-cols-1 py-3 sm:grid-cols-2 justify-evenly'>
                         {desc.map(({
                             name,
                             color,
