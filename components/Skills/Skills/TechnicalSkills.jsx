@@ -20,7 +20,7 @@ export default function TechnicalSkills() {
             name: 'JavaScript',
             level: 'Proficient',
             color: 'bg-blue-500',
-            imgRounded: 'rounded-xl'
+            imgRounded: 'rounded-3xl'
         },
         {
             name: 'TypeScript',
@@ -106,6 +106,12 @@ export default function TechnicalSkills() {
             imgRounded: 'p-3'
 
         },
+        {
+            name: 'MongoDB',
+            level: 'Learning',
+            color: 'bg-blue-500',
+            soon: true
+        }
 
 
         // {
@@ -171,14 +177,15 @@ export default function TechnicalSkills() {
 
 
 
-            <div className='grid grid-cols-3 gap-3 sm:gap-4 sm:grid-cols-6'>
+            <div className='grid grid-cols-3 gap-3 sm:gap-4 sm:grid-cols-8 '>
 
                 {
 
                     skills.map(({
                         name,
                         level,
-                        imgRounded
+                        imgRounded,
+                        soon
                     }, index) => (
 
 
@@ -191,15 +198,15 @@ export default function TechnicalSkills() {
                             exit={{ opacity: 0, y: 20 }}
                             transition={{ delay: index * 0.07 }}
                             viewport={{ once: true }}
-                            className='flex flex-col justify-center py-2 bg-gray-100 rounded-lg shadow-md sm:p-3 '>
+                            className={`flex flex-col justify-center px-1 py-2 bg-gray-100 rounded-lg shadow-md ${soon ? `grayscale blur-[2px]` : ``}`}>
                             <div className='flex items-center justify-center flex-1'>
-                                <img src={`./Skills/${name}.webp`} alt={name} className={`p-2 sm:p-0 bg-gray-100 ${imgRounded}`} />
+                                <img src={`./Skills/${name}.webp`} alt={name} className={`p-2  bg-gray-100 ${imgRounded}`} />
                             </div>
                             <div className='flex items-center justify-between w-full space-x-2'>
                                 <div className='flex flex-col items-center justify-center w-full'>
                                     <hr className='w-full h-1 my-2 bg-gray-100' />
-                                    <h3 className='mb-1 font-bold sm:text-lg text-md'>{name}</h3>
-                                    <p className={`text-xs sm:text-sm font-SourceCodePro ${setColor(level)}`}>{level}</p>
+                                    <h3 className='mb-1 text-sm font-bold '>{name}</h3>
+                                    <p className={`text-xs font-SourceCodePro ${setColor(level)}`}>{level}</p>
                                 </div>
                             </div>
                         </m.div>
