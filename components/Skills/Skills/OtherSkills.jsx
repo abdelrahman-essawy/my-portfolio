@@ -4,22 +4,64 @@ import { useMeasure } from 'react-use-measure';
 
 export default function OtherSkills() {
 
-    const descTemp = (desc) => {
-        return (
-            <m.div
-                initial={{ opacity: 0, y: 5 }}
-                animate={{ opacity: 1, y: 0 }}
-                exit={{ opacity: 0, y: 5 }}
+    const descTemplete = (desc) => {
 
-                className='flex flex-col items-start justify-start'>
-                <div className='flex items-center justify-start'>
-                    <div className={`w-2 h-2 rounded-full ${desc}`}></div>
+
+
+
+        const text = ({ desc }) => {
+            return (
+                <m.div
+                    initial={{ opacity: 0, y: 5 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    exit={{ opacity: 0, y: 5 }}>
                     <p className='ml-2 text-sm'>{desc}</p>
-                </div>
 
-            </m.div>
-        )
+                </m.div>
+            )
+        }
+
+
+        const array = (desc) => {
+            return (
+                <m.div
+                    initial={{ opacity: 0, y: 5 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    exit={{ opacity: 0, y: 5 }}
+                >
+                    <div className='flex flex-col items-start justify-start'>
+                        {desc.map(({
+                            name,
+                            color,
+                            desc
+                        }, index) => (
+                            <m.div
+                                initial={{ opacity: 0, y: 5 }}
+                                animate={{ opacity: 1, y: 0 }}
+                                transition={{ delay: 0.1 * index }}
+                                exit={{ opacity: 0, y: 5 }}
+
+                                key={index} className='flex items-center justify-start'>
+                                <div className={`flex-shrink-0 w-2 h-2 ${color} rounded-full`}></div>
+                                <div className='ml-2 text-sm font-medium text-gray-500'>{name}</div>
+                            </m.div>
+                        ))}
+                    </div>
+
+                </m.div>
+            )
+        }
+
+
+
+        if (typeof desc === 'string') {
+            return text({ desc })
+        } else if (Array.isArray(desc)) {
+            return array(desc)
+        }
+
     }
+
 
 
     const [otherSkills, setOtherSkills] = useState([
@@ -46,18 +88,20 @@ export default function OtherSkills() {
         },
         {
             name: 'Video Editing',
-            icon: '   https://cdn-icons-png.flaticon.com/512/2886/2886875.png ',
+            icon: 'https://cdn-icons-png.flaticon.com/512/2886/2886875.png ',
             desc: [
                 {
                     name: 'Adobe Premiere',
-                    color: 'bg-green-500',
+                    color: 'bg-blue-500',
                 },
                 {
                     name: 'Adobe After Effects',
-                    color: 'bg-green-500',
+                    color: 'bg-blue-500',
                 },
 
-            ]
+            ],
+            viewDesc: false,
+
         },
         {
             name: 'Photography',
@@ -101,6 +145,7 @@ export default function OtherSkills() {
                         setOtherSkills((prev) => {
                             const newSkillsWithDesc = [...prev]
                             newSkillsWithDesc[index].viewDesc = !newSkillsWithDesc[index].viewDesc
+                            console.log(newSkillsWithDesc)
                             return newSkillsWithDesc
                         })
                     }}
@@ -113,10 +158,12 @@ export default function OtherSkills() {
                             <div className='ml-4'>
                                 <div className='font-medium text-gray-700 text-md text-start sm:text-lg'>{name}</div>
                                 {
-                                    (viewDesc && typeof desc === 'string') ?
-                                        descTemp(desc)
+                                    viewDesc ?
+
+                                        descTemplete(desc)
+
                                         :
-                                        <h1>asd</h1>
+                                        null
                                 }
 
                             </div>
