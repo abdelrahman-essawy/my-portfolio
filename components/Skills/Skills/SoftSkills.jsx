@@ -1,8 +1,7 @@
 import React, { useState } from 'react'
 import { AnimatePresence, motion as m } from 'framer-motion'
 
-export default function SoftSkills() {
-
+export default function SoftSkills({ windowScreenWidth }) {
     const [seeMore, setSeeMore] = useState(false)
 
     const softSkills = [
@@ -70,6 +69,18 @@ export default function SoftSkills() {
 
     ]
 
+    const handleSlice = () => {
+        if (windowScreenWidth < 640) {
+            if (seeMore) {
+                return softSkills.length
+            } else {
+                return 6
+            }
+        }
+
+        return softSkills.length
+    }
+    console.log(handleSlice(), windowScreenWidth)
     return (
 
         <m.div
@@ -79,7 +90,7 @@ export default function SoftSkills() {
 
             className='grid grid-cols-1 gap-4 sm:grid-cols-3'>
             {softSkills
-                .slice(0, seeMore ? softSkills.length : 5)
+                .slice(0, handleSlice())
                 .map((skill, index) => (
                     <m.div
                         initial={{ opacity: 0, y: 20 }}
@@ -97,7 +108,7 @@ export default function SoftSkills() {
                             </div>
                         </div>
                         <div className='flex items-center'>
-                            <div className='p-2 bg-green-500 rounded-full sm:p-3' />
+                            <div className='p-2 bg-green-500 rounded-full' />
                         </div>
                     </m.div>
                 ))}
@@ -106,7 +117,7 @@ export default function SoftSkills() {
                 animate={{ opacity: 1 }}
                 exit={{ opacity: 0 }}
                 onClick={() => setSeeMore(!seeMore)}
-                className='p-2 rounded-lg shadow font-SourceCodePro bg-zinc-200 active:bg-zinc-300 hover:bg-zinc-300'>{
+                className='p-2 rounded-lg shadow sm:hidden font-SourceCodePro bg-zinc-200 active:bg-zinc-300 hover:bg-zinc-300'>{
                     seeMore ? 'See Less' : 'See More'
                 }</m.button>
 

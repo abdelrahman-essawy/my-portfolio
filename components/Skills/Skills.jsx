@@ -3,7 +3,7 @@ import { motion as m } from 'framer-motion'
 import Tabs1 from './Tabs1'
 import Tabs from './Tabs'
 
-export default function Skills() {
+export default function Skills({ windowScreenWidth }) {
     return (
         <m.section
             id='Skills'
@@ -19,7 +19,7 @@ export default function Skills() {
             </h3>
 
             <div className='max-w-screen-xl m-auto mx-auto text-center sm:px-4 lg:py-0 lg:px-12 sm:flex sm:justify-center sm:items-center'>
-                <Tabs />
+                <Tabs windowScreenWidth={windowScreenWidth} />
             </div>
 
             <div className='my-8 sm:px-0 sm:p-0 '>

@@ -45,7 +45,7 @@ export default function Home() {
         <About />
         <Spliiter />
 
-        <Skills />
+        <Skills windowScreenWidth={windowScreenWidth} />
         <Spliiter />
 
         <Testimonials windowScreenWidth={windowScreenWidth} />
