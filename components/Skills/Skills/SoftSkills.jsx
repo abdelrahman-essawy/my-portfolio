@@ -97,7 +97,7 @@ export default function SoftSkills() {
                             </div>
                         </div>
                         <div className='flex items-center'>
-                            <div className='p-3 bg-green-500 rounded-full' />
+                            <div className='p-2 bg-green-500 rounded-full sm:p-3' />
                         </div>
                     </m.div>
                 ))}
