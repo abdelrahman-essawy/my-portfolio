@@ -8,7 +8,7 @@ const SourceCodePro = Source_Code_Pro({
   variable: '--SourceCodePro'
 })
 const CONSOLA = localFont({
-  src: "../public/fonts/CONSOLA.ttf",
+  src: "/public/fonts/CONSOLA.ttf",
   display: "swap",
   styles: "normal",
   variable: "--CONSOLA",
