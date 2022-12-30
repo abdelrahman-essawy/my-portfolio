@@ -10,8 +10,9 @@ module.exports = {
     extend: {
       // custom user configuration
       fontFamily: {
-        SourceCodePro: ['Source Code Pro', 'monospace'],
+        SourceCodePro: ['Source Code Pro'],
       },
+
 
       bgGradientDeg: {
         75: '75deg',

@@ -1,15 +1,13 @@
 import Head from 'next/head'
-import Image from 'next/image'
 import About from '../components/About';
 import Navbar from '../components/Navbar';
 import Testimonials from '../components/Testimonials/Testimonials';
 import Hero from '../components/Hero/Hero';
 import Spliiter from './../components/Spliiter';
 import { motion as m } from 'framer-motion'
-import JsSVG from './../components/SVG/JsSVG';
-import ReactSVG from './../components/SVG/ReactSVG';
 import { useEffect, useState } from 'react';
 import Skills from './../components/Skills/Skills';
+
 
 export default function Home() {
   const [windowScreenWidth, setWindowScreenWidth] = useState(0)
@@ -25,6 +23,8 @@ export default function Home() {
         <title>Abdelrahman Essawy</title>
         <meta name="description" content="Abdelrahman Essawy Portfolio" />
         <link rel="icon" href="/favicon.ico" />
+        <link rel="preconnect" href="https://fonts.googleapis.com" /><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin /><link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@300&display=swap" rel="stylesheet" />
+
       </Head>
 
       <m.header
@@ -37,7 +37,7 @@ export default function Home() {
 
       {/* <div className='h-[1.5px] opacity-40 bg-gradient-to-r from-emerald-500 via-blue-500 to-emerald-500'></div> */}
 
-      <main className='overflow-hidden'>
+      <main className={`overflow-hidden `}>
 
         <Hero />
         <Spliiter />
