@@ -40,22 +40,22 @@ export default function OtherSkills({ windowScreenWidth }) {
                         }, index) => (
                             <>
 
-                            <m.div
-                                initial={{ opacity: 0, y: 5 }}
-                                animate={{ opacity: 1, y: 0 }}
-                                transition={{ delay: 0.07 * index }}
-                                exit={{ opacity: 0, y: 5 }}
-                                key={index} className='flex items-start justify-start'>
-                                <div className={`ml-2 text-sm font-medium text-gray-500 flex justify-center items-center ${href ? `text-black text-sm text-start ` : ``}`}>
-                                    <div className='self-start flex-grow mr-auto'>
-                                        <div className={`flex justify-start gap-2 items-center`}>
-                                            <div className={`h-2 w-2 ${color} rounded-full`} />
+                                <m.div
+                                    initial={{ opacity: 0, y: 5 }}
+                                    animate={{ opacity: 1, y: 0 }}
+                                    transition={{ delay: 0.07 * index }}
+                                    exit={{ opacity: 0, y: 5 }}
+                                    key={index} className='flex items-start justify-start'>
+                                    <div className={`ml-2 text-sm font-medium text-gray-500 flex justify-center items-center ${href ? `text-black text-sm text-start ` : ``}`}>
+                                        <div className='self-start flex-grow mr-auto'>
+                                            <div className={`flex justify-start gap-2 items-center`}>
+                                                <div className={`h-2 w-2 ${color} rounded-full`} />
 
-                                            {name}
-                                        </div>
-                                        <div>
-                                            {
-                                                by ?
+                                                {name}
+                                            </div>
+                                            <div>
+                                                {
+                                                    by ?
                                                         <>
                                                             <div className={`flex justify-center items-center p-2`}>
                                                                 <div className='mb-auto w-14 sm:w-10 h-14 sm:h-10'>
@@ -75,27 +75,27 @@ export default function OtherSkills({ windowScreenWidth }) {
                                                                 </div>
                                                             </div>
                                                         </>
-                                                    : null}
+                                                        : null}
+
+                                            </div>
+
 
                                         </div>
 
-
                                     </div>
-
-                                </div>
                                     <div className='m-auto sm:mr-10 sm:m-auto'>
-                                    <a
-                                        href={href}
-                                    >
+                                        <a
+                                            href={href}
+                                        >
 
-                                        {href ? <a href={href
-                                            ? href
-                                            : '#'} target='_blank' rel='noreferrer' >
-                                            {badgeTemplete('verify', 'text-blue-400 border-blue-400 hover:bg-blue-400 hover:text-white active:bg-blue-400 active:text-white')}
-                                        </a> : ``}
+                                            {href ? <a href={href
+                                                ? href
+                                                : '#'} target='_blank' rel='noreferrer' >
+                                                {badgeTemplete('verify', 'text-blue-400 border-blue-400 hover:bg-blue-400 hover:text-white active:bg-blue-400 active:text-white')}
+                                            </a> : ``}
 
                                         </a>
-                                </div>
+                                    </div>
                                 </m.div>
                                 {by && <m.hr
                                     initial={{ opacity: 0, y: 5 }}
@@ -112,8 +112,8 @@ export default function OtherSkills({ windowScreenWidth }) {
         }
         return (
             <>
-                {text(wordDesc)}
-                {array(desc)}
+                {wordDesc && text(wordDesc)}
+                {desc && array(desc)}
             </>
 
         )
@@ -472,26 +472,26 @@ export default function OtherSkills({ windowScreenWidth }) {
                                     {name}
                                     <span>
                                         <div key={index} className={` mt-1`}>
-                                        {
+                                            {
 
-                                            badges ?
-                                                badges
-                                                    .slice(0, handleSlice())
-                                                    .map((badge, index) => (
-                                                        <div key={index} className={`inline-block`}>
-                                                            {
-                                                                badgeTemplete(badge)
-                                                            }
-                                                        </div>
+                                                badges ?
+                                                    badges
+                                                        .slice(0, handleSlice())
+                                                        .map((badge, index) => (
+                                                            <div key={index} className={`inline-block`}>
+                                                                {
+                                                                    badgeTemplete(badge)
+                                                                }
+                                                            </div>
 
-                                                    ))
-                                                :
-                                                null
+                                                        ))
+                                                    :
+                                                    null
 
-                                        }
-                                    </div>
+                                            }
+                                        </div>
 
-                                </span>
+                                    </span>
                                 </div>
                                 {
                                     viewDesc ?
