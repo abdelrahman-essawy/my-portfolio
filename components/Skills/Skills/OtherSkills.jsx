@@ -91,7 +91,33 @@ export default function OtherSkills() {
             return array(desc)
         }
     }
-    const badgeTemplete = (content = `expert`, ...args) => <span className={`p-1 ml-4 text-xs font-thin text-red-400 uppercase border border-red-400 rounded-md font-SourceCodePro ${args}`}>{content}</span>
+    const badgeTemplete = (
+        content,
+        ...args
+    ) => {
+        switch (content) {
+            case 'expert':
+                return (
+                    <div className={`p-1 ml-4 text-xs font-thin text-red-400 uppercase border border-red-400 rounded-md font-SourceCodePro inline-block ${args}`}>
+                        Expert
+                    </div>
+                )
+            case 'verify':
+
+                return (
+                    <div className={`p-1 ml-4 text-xs font-thin text-blue-400 uppercase border border-blue-400 rounded-md font-SourceCodePro text-blue-400 border-blue-400 hover:bg-blue-400 hover:text-white active:bg-blue-400 active:text-white ${args}`}>
+                        Verify
+                    </div>
+                )
+            default:
+                return (
+                    <div className={`flex justify-center items-center px-2 py-1 text-xs font-medium tracking-wide text-white rounded-full ${args}`}>
+                        Expert
+                    </div>
+                )
+        }
+
+    }
     const [otherSkills, setOtherSkills] = useState([
         {
             name: 'Networking',
@@ -184,13 +210,11 @@ export default function OtherSkills() {
                     by: 'ITI - Information Technology Institute',
                     date: 'Issued Jul 2022',
                     id: 'szfaTBVwD9',
-                    color: 'bg-red-500',
                     href: 'https://maharatech.gov.eg/mod/customcert/verify_certificate.php?contextid=259560&amp;code=szfaTBVwD9&amp;qrcode=1',
                     icon: 'https://media.licdn.com/dms/image/C560BAQGK3uuhQer46g/company-logo_100_100/0/1519885145295?e=1680739200&v=beta&t=X4Q4dPPe6YvMn8LJEoZuP9ZwDc7Kpv0xwCt9wnx8tjU',
                 },
                 {
                     name: 'Cyber Security Engineer',
-                    color: 'bg-red-500',
                     by: 'ITI - Information Technology Institute',
                     href: 'https://maharatech.gov.eg/mod/customcert/verify_certificate.php?contextid=259555&code=xnYmZEvZfd&qrcode=1',
                     id: 'xnYmZEvZfd',
@@ -278,7 +302,7 @@ export default function OtherSkills() {
                                     src={icon} alt={name} className={`w-8 h-8 ${isOpen ? `hidden` : `block`}`} />
                             </div>
                             <div className='w-full ml-4'>
-                                <div className='self-center font-medium text-gray-700 text-md text-start sm:text-md'>{name} {badge ? badgeTemplete() : null}</div>
+                                <div className='self-center font-medium text-gray-700 text-md text-start sm:text-md'>{name} <span>{badge ? badgeTemplete('expert') : null}</span></div>
                                 {
                                     viewDesc ?
                                         descTemplete(desc)
