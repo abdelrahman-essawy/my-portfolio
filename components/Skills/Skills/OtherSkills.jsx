@@ -44,7 +44,7 @@ export default function OtherSkills({ windowScreenWidth }) {
                                 transition={{ delay: 0.07 * index }}
                                 exit={{ opacity: 0, y: 5 }}
                                 key={index} className='flex items-start justify-start'>
-                                <div className={`ml-2 text-sm font-medium text-gray-500 flex justify-center items-center ${href ? `text-black text-sm   text-start ` : ``}`}>
+                                <div className={`ml-2 text-sm font-medium text-gray-500 flex justify-center items-center ${href ? `text-black text-sm text-start ` : ``}`}>
                                     <div className='self-start flex-grow mr-auto'>
                                         <div className={`flex justify-start gap-2 items-center`}>
                                             <div className={`h-2 w-2 ${color} rounded-full`} />
@@ -361,7 +361,7 @@ export default function OtherSkills({ windowScreenWidth }) {
                     transition={{ delay: index * 0.1 }}
                     key={index}
                     type='button'
-                    className={`${desc ? `cursor-pointer hover:shadow-lg ${isOpen ? 'sm:col-span-2 sm:shadow-lg' : ''}` : 'cursor-default'}    rounded-lg shadow-md`}
+                    className={`${desc ? `cursor-pointer hover:shadow-lg ${isOpen ? 'sm:col-span-2 sm:shadow-lg' : ''}` : 'cursor-default'} border border-zinc-200/70 rounded-lg shadow-md`}
                     onClick={() => {
                         setOtherSkills((prev) => {
                             const newSkillsWithDesc = [...prev]
