@@ -20,7 +20,7 @@ export default function OtherSkills() {
                     animate={{ opacity: 1, y: 0 }}
                     exit={{ opacity: 0, y: 5 }}
                 >
-                    <div className='grid grid-cols-1 py-3 sm:grid-cols-2 justify-evenly'>
+                    <div className='grid w-full grid-cols-1 py-3 sm:grid-cols-2 justify-evenly'>
                         {desc.map(({
                             name,
                             color,
@@ -49,7 +49,12 @@ export default function OtherSkills() {
                                                     <div className={`flex justify-center items-center p-2`}>
                                                         <div className='mb-auto w-14 sm:w-10 h-14 sm:h-10'>
 
-                                                            <img src={icon} />
+                                                            <Image
+                                                                width="100"
+                                                                height="100"
+                                                                layout="intrinsic"
+                                                                alt={by}
+                                                                src={icon} />
                                                         </div>
 
                                                         <div className={`flex flex-col gap-1 ml-2`}>
@@ -105,7 +110,7 @@ export default function OtherSkills() {
             case 'verify':
 
                 return (
-                    <div className={`p-1 ml-4 text-xs font-thin text-blue-400 uppercase border border-blue-400 rounded-md font-SourceCodePro text-blue-400 border-blue-400 hover:bg-blue-400 hover:text-white active:bg-blue-400 active:text-white ${args}`}>
+                    <div className={`p-1 ml-4 text-xs font-thin text-blue-400 uppercase border border-blue-400 rounded-md font-SourceCodePro  hover:bg-blue-400 hover:text-white active:bg-blue-400 active:text-white ${args}`}>
                         Verify
                     </div>
                 )
@@ -284,7 +289,7 @@ export default function OtherSkills() {
                     transition={{ delay: index * 0.1 }}
                     key={index}
                     type='button'
-                    className={`${desc ? 'cursor-pointer hover:shadow-lg' : 'cursor-default'}  ${isOpen ? 'sm:col-span-2 sm:shadow-lg' : ''}  rounded-lg shadow-md`}
+                    className={`${desc ? `cursor-pointer hover:shadow-lg ${isOpen ? 'sm:col-span-2 sm:shadow-lg' : ''}` : 'cursor-default'}    rounded-lg shadow-md`}
                     onClick={() => {
                         setOtherSkills((prev) => {
                             const newSkillsWithDesc = [...prev]
@@ -297,13 +302,13 @@ export default function OtherSkills() {
                     <m.div
                         className='flex items-center justify-between p-3 '>
                         <div className='flex items-center flex-grow'>
-                            <div className={`flex-shrink-0 ${color}`}>
+                            <div className={`${color} mb-auto`}>
                                 <Image
                                     priority={true}
                                     width="100"
                                     height="100"
                                     layout="intrinsic"
-                                    src={icon} alt={name} className={`w-8 h-8 ${isOpen ? `hidden` : `block`}`} />
+                                    src={icon} alt={name} className={`w-8 h-8  ${isOpen ? `hidden sm:block` : `block`}`} />
                             </div>
                             <div className='w-full ml-4'>
                                 <div className='self-center font-medium text-gray-700 text-md text-start sm:text-md'>{name} <span>{badge ? badgeTemplete('expert') : null}</span></div>
