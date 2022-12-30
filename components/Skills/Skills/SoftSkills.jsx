@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import { AnimatePresence, motion as m } from 'framer-motion'
+import Image from 'next/image';
 
 export default function SoftSkills({ windowScreenWidth }) {
     const [seeMore, setSeeMore] = useState(false)
@@ -99,9 +100,16 @@ export default function SoftSkills({ windowScreenWidth }) {
 
                         key={index} className='flex items-center justify-between p-3 bg-white rounded-lg shadow-md'>
                         <div className='flex items-center'>
-                            <img src={skill.svg
-                                ? skill.svg
-                                : 'https://img.icons8.com/color/48/000000/teamwork.png'} alt={skill.name} className={'h-8 w-h-8'} />
+                            <div className='w-8 h-8'>
+                                <Image
+                                    priority={true}
+                                    width="100"
+                                    height="100"
+                                    layout="intrinsic"
+                                    src={skill.svg
+                                        ? skill.svg
+                                        : 'https://img.icons8.com/color/48/000000/teamwork.png'} alt={skill.name} />
+                            </div>
                             <div className='ml-4'>
                                 <div className='font-medium text-gray-700 text-md sm:text-md'>{skill.name}</div>
                             </div>
