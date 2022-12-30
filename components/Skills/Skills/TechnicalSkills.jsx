@@ -215,7 +215,7 @@ export default function TechnicalSkills({ windowScreenWidth }) {
                                     <div className='flex flex-col items-center justify-center w-full'>
                                         <hr className={`w-full h-1 my-2  ${soon ? `bg-gray-200` : `bg-gray-100`}`} />
                                         <h3 className='mb-1 text-sm font-bold '>{name}</h3>
-                                        <p className={`text-xs font-SourceCodePro ${setColor(level)}`}>{level}</p>
+                                        <p className={`text-xs font-SourceCodePro tracking-tight ${setColor(level)}`}>{level}</p>
                                     </div>
                                 </div>
                             </m.div>
