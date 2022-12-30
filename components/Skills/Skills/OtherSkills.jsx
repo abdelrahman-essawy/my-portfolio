@@ -38,6 +38,8 @@ export default function OtherSkills({ windowScreenWidth }) {
                             date,
                             icon
                         }, index) => (
+                            <>
+
                             <m.div
                                 initial={{ opacity: 0, y: 5 }}
                                 animate={{ opacity: 1, y: 0 }}
@@ -54,23 +56,25 @@ export default function OtherSkills({ windowScreenWidth }) {
                                         <div>
                                             {
                                                 by ?
-                                                    <div className={`flex justify-center items-center p-2`}>
-                                                        <div className='mb-auto w-14 sm:w-10 h-14 sm:h-10'>
+                                                        <>
+                                                            <div className={`flex justify-center items-center p-2`}>
+                                                                <div className='mb-auto w-14 sm:w-10 h-14 sm:h-10'>
 
-                                                            <Image
-                                                                width="100"
-                                                                height="100"
-                                                                layout="intrinsic"
-                                                                alt={by}
-                                                                src={icon} />
-                                                        </div>
+                                                                    <Image
+                                                                        width="100"
+                                                                        height="100"
+                                                                        layout="intrinsic"
+                                                                        alt={by}
+                                                                        src={icon} />
+                                                                </div>
 
-                                                        <div className={`flex flex-col gap-1 ml-2`}>
-                                                            {by ? <div className='text-sm font-medium tracking-wide text-gray-600'>{by}</div> : null}
-                                                            {date ? <div className='text-xs font-light text-gray-500'>{date}</div> : null}
-                                                            {id ? <div className='text-xs font-light text-gray-500'>Credential ID : {id}</div> : null}
-                                                        </div>
-                                                    </div>
+                                                                <div className={`flex flex-col gap-1 ml-2`}>
+                                                                    {by ? <div className='font-mono text-sm font-medium tracking-tight text-gray-600 '>{by}</div> : null}
+                                                                    {date ? <div className='text-xs font-light text-gray-500'>{date}</div> : null}
+                                                                    {id ? <div className='text-xs font-light text-gray-500'>Credential ID : {id}</div> : null}
+                                                                </div>
+                                                            </div>
+                                                        </>
                                                     : null}
 
                                         </div>
@@ -79,7 +83,7 @@ export default function OtherSkills({ windowScreenWidth }) {
                                     </div>
 
                                 </div>
-                                <div className='ml-auto sm:m-auto '>
+                                    <div className='m-auto sm:mr-10 sm:m-auto'>
                                     <a
                                         href={href}
                                     >
@@ -90,9 +94,17 @@ export default function OtherSkills({ windowScreenWidth }) {
                                             {badgeTemplete('verify', 'text-blue-400 border-blue-400 hover:bg-blue-400 hover:text-white active:bg-blue-400 active:text-white')}
                                         </a> : ``}
 
-                                    </a>
+                                        </a>
                                 </div>
-                            </m.div>
+                                </m.div>
+                                {by && <m.hr
+                                    initial={{ opacity: 0, y: 5 }}
+                                    animate={{ opacity: 1, y: 0 }}
+                                    transition={{ delay: 0.07 * index }}
+                                    exit={{ opacity: 0, y: 5 }}
+                                    className={`my-2 sm:hidden ${index == desc.length - 1 && `hidden`}`} />}
+
+                            </>
                         ))}
                     </div>
                 </m.div>
@@ -241,6 +253,49 @@ export default function OtherSkills({ windowScreenWidth }) {
                     id: 'xnYmZEvZfd',
                     date: 'Issued Jul 2022',
                     icon: 'https://media.licdn.com/dms/image/C560BAQGK3uuhQer46g/company-logo_100_100/0/1519885145295?e=1680739200&v=beta&t=X4Q4dPPe6YvMn8LJEoZuP9ZwDc7Kpv0xwCt9wnx8tjU',
+                    color: 'bg-red-500',
+
+
+                },
+                {
+                    name: 'Netowrk Security Engineer',
+                    by: 'ITI - Information Technology Institute',
+                    href: 'https://maharatech.gov.eg/mod/customcert/verify_certificate.php?contextid=35618&code=e8lLCxRnrI&qrcode=1',
+                    id: 'e8lLCxRnrI',
+                    date: 'Issued Jul 2022',
+                    icon: 'https://media.licdn.com/dms/image/C560BAQGK3uuhQer46g/company-logo_100_100/0/1519885145295?e=1680739200&v=beta&t=X4Q4dPPe6YvMn8LJEoZuP9ZwDc7Kpv0xwCt9wnx8tjU',
+                    color: 'bg-red-500',
+
+
+                },
+                {
+                    name: 'Pre Security',
+                    by: 'TryHackMe',
+                    href: 'https://tryhackme-certificates.s3-eu-west-1.amazonaws.com/THM-V1OLTKREBZ.png',
+                    id: 'THM-V1OLTKREBZ',
+                    date: 'Issued Jul 2022',
+                    icon: 'https://media.licdn.com/dms/image/C4D0BAQHbrQNn-KIK_g/company-logo_100_100/0/1555598012984?e=1680739200&v=beta&t=EBhAyahiHPZ41TJu8RR4CX3a3PxLIEJrV_iel9-xAFk',
+                    color: 'bg-red-500',
+
+
+                },
+                {
+                    name: 'Cybersecurity Attacks and Defense Strategies',
+                    by: 'CodeRed',
+                    href: 'https://media.licdn.com/dms/image/C4E0BAQFs-2ABuczSnA/company-logo_100_100/0/1647326522520?e=1680739200&v=beta&t=8M1StpjDoT8vDZn1M6yjigr2ccZT6YEx9w83HLRHopU',
+                    id: '1d0a1029-036e-4693-aa0f-03e5244e65bf',
+                    date: 'Issued Jul 2022',
+                    icon: 'https://media.licdn.com/dms/image/C4E0BAQFs-2ABuczSnA/company-logo_100_100/0/1647326522520?e=1680739200&v=beta&t=8M1StpjDoT8vDZn1M6yjigr2ccZT6YEx9w83HLRHopU',
+                    color: 'bg-red-500',
+
+
+                },
+                {
+                    name: 'Internship',
+                    by: 'Al Ezz Dekheila Steel Co. EZDK',
+                    href: 'https://maharatech.gov.eg/mod/customcert/verify_certificate.php?contextid=259555&code=xnYmZEvZfd&qrcode=1',
+                    date: 'Aug 2022 - Sep 2022 · 2 mos',
+                    icon: 'https://media.licdn.com/dms/image/C4E0BAQGOXgJ-PCvrpg/company-logo_100_100/0/1519878976704?e=1680739200&v=beta&t=Nt7cPWWqd8LPyzQBezizd0efFR3hnQgQ2oEYozUm3us',
                     color: 'bg-red-500',
 
 
