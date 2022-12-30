@@ -126,41 +126,41 @@ export default function OtherSkills({ windowScreenWidth }) {
         switch (content) {
             case 'expert':
                 return (
-                    <div className={`p-1 ml-4 text-[.65rem] leading-3 sm:text-xs font-thin text-white uppercase border bg-red-400 rounded-md font-SourceCodePro  ${args}`}>
+                    <div className={`p-1 ml-4 text-[.65rem] leading-3 sm:text-xs text-white uppercase border bg-red-400 rounded-md font-SourceCodePro  ${args}`}>
                         expert
                     </div>
                 )
             case 'verify':
 
                 return (
-                    <div className={`p-1 ml-4 text-[.65rem] leading-3 sm:text-xs font-thin text-blue-400 uppercase border border-blue-400 rounded-md font-SourceCodePro  hover:bg-blue-400 hover:text-white active:bg-blue-400 active:text-white ${args}`}>
+                    <div className={`p-1 ml-4 text-[.65rem] leading-3 sm:text-xs text-blue-400 uppercase border border-blue-400 rounded-md font-SourceCodePro  hover:bg-blue-400 hover:text-white active:bg-blue-400 active:text-white ${args}`}>
                         Verify
                     </div>
                 )
             case 'Cert.':
 
                 return (
-                    <div className={`p-1 ml-4 text-[.65rem] leading-3 sm:text-xs font-thin text-purple-400 uppercase border border-purple-400 rounded-md font-SourceCodePro   ${args}`}>
+                    <div className={`p-1 ml-4 text-[.65rem] leading-3 sm:text-xs text-purple-400 uppercase border border-purple-400 rounded-md font-SourceCodePro   ${args}`}>
                         Cert.
                     </div>
                 )
             case 'amature':
 
                 return (
-                    <div className={`p-1 ml-4 text-[.65rem] leading-3 sm:text-xs font-thin text-blue-400 uppercase border border-blue-400 rounded-md font-SourceCodePro  ${args}`}>
+                    <div className={`p-1 ml-4 text-[.65rem] leading-3 sm:text-xs text-blue-400 uppercase border border-blue-400 rounded-md font-SourceCodePro  ${args}`}>
                         amature
                     </div>
                 )
             case 'hands-on':
 
                 return (
-                    <div className={`p-1 ml-4 text-[.65rem] leading-3 sm:text-xs font-thin text-green-500 uppercase border border-green-500 rounded-md font-SourceCodePro ${args}`}>
+                    <div className={`p-1 ml-4 text-[.65rem] leading-3 sm:text-xs text-green-500 uppercase border border-green-500 rounded-md font-SourceCodePro ${args}`}>
                         hands-on
                     </div>
                 )
             case 'intern':
                 return (
-                    <div className={`p-1 ml-4 text-[.65rem] leading-3 sm:text-xs font-thin text-yellow-500 uppercase border border-yellow-500 rounded-md font-SourceCodePro ${args}`}>
+                    <div className={`p-1 ml-4 text-[.65rem] leading-3 sm:text-xs text-yellow-500 uppercase border border-yellow-500 rounded-md font-SourceCodePro ${args}`}>
                         intern
                     </div>
                 )
