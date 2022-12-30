@@ -31,16 +31,16 @@ export default function OtherSkills() {
                                 animate={{ opacity: 1, y: 0 }}
                                 transition={{ delay: 0.1 * index }}
                                 exit={{ opacity: 0, y: 5 }}
-                                key={index} className='flex items-center justify-start h-12'>
+                                key={index} className='flex items-center justify-start'>
                                 <div className={`flex-shrink-0 w-2 h-2 ${color} rounded-full ${href ? `text-black text-sm flex ` : ``}`} />
-                                <div className={`ml-2 text-sm font-medium text-gray-500 flex justify-center items-center ${href ? `text-black text-md  ` : ``}`}>
-                                    <div className='flex-grow'>
+                                <div className={`ml-2 text-sm font-medium text-gray-500 flex justify-center items-center ${href ? `text-black text-sm mt-2  text-start ` : ``}`}>
+                                    <div className='flex-grow mr-auto'>
                                         {name}
                                     </div>
 
                                 </div>
-                                <div className='ml-auto sm:m-auto'>
-                                    <button
+                                <div className='ml-auto sm:m-auto '>
+                                    <a
                                         href={href}
                                     >
 
@@ -50,7 +50,7 @@ export default function OtherSkills() {
                                             {badgeTemplete('verify','blue')}
                                             </a> : ``}
 
-                                    </button>
+                                    </a>
                                 </div>
                             </m.div>
                         ))}
