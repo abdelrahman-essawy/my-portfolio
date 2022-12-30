@@ -69,7 +69,7 @@ export default function OtherSkills({ windowScreenWidth }) {
                                                                 </div>
 
                                                                 <div className={`flex flex-col gap-1 ml-2 text-start`}>
-                                                                    {by ? <div className='text-sm tracking-tay-600 font-mediumfont-medium font-SourceCodePro'>{by}</div> : null}
+                                                                    {by ? <div className='text-sm tracking-tay-600 font-mediumfont-medium font-CONSOLA'>{by}</div> : null}
                                                                     {date ? <div className='text-xs font-light text-gray-500'>{date}</div> : null}
                                                                     {id ? <div className='text-xs font-light text-gray-500'>Credential ID : {id}</div> : null}
                                                                 </div>
@@ -126,41 +126,41 @@ export default function OtherSkills({ windowScreenWidth }) {
         switch (content) {
             case 'expert':
                 return (
-                    <div className={`p-1 ml-4 text-[.65rem] leading-3 sm:text-xs font-thin text-white uppercase border bg-red-400 rounded-md font-SourceCodePro  ${args}`}>
+                    <div className={`p-1 ml-4 text-[.65rem] leading-3 sm:text-xs font-thin text-white uppercase border bg-red-400 rounded-md font-CONSOLA  ${args}`}>
                         expert
                     </div>
                 )
             case 'verify':
 
                 return (
-                    <div className={`p-1 ml-4 text-[.65rem] leading-3 sm:text-xs font-thin text-blue-400 uppercase border border-blue-400 rounded-md font-SourceCodePro  hover:bg-blue-400 hover:text-white active:bg-blue-400 active:text-white ${args}`}>
+                    <div className={`p-1 ml-4 text-[.65rem] leading-3 sm:text-xs font-thin text-blue-400 uppercase border border-blue-400 rounded-md font-CONSOLA  hover:bg-blue-400 hover:text-white active:bg-blue-400 active:text-white ${args}`}>
                         Verify
                     </div>
                 )
             case 'Cert.':
 
                 return (
-                    <div className={`p-1 ml-4 text-[.65rem] leading-3 sm:text-xs font-thin text-purple-400 uppercase border border-purple-400 rounded-md font-SourceCodePro   ${args}`}>
+                    <div className={`p-1 ml-4 text-[.65rem] leading-3 sm:text-xs font-thin text-purple-400 uppercase border border-purple-400 rounded-md font-CONSOLA   ${args}`}>
                         Cert.
                     </div>
                 )
             case 'amature':
 
                 return (
-                    <div className={`p-1 ml-4 text-[.65rem] leading-3 sm:text-xs font-thin text-blue-400 uppercase border border-blue-400 rounded-md font-SourceCodePro  ${args}`}>
+                    <div className={`p-1 ml-4 text-[.65rem] leading-3 sm:text-xs font-thin text-blue-400 uppercase border border-blue-400 rounded-md font-CONSOLA  ${args}`}>
                         amature
                     </div>
                 )
             case 'hands-on':
 
                 return (
-                    <div className={`p-1 ml-4 text-[.65rem] leading-3 sm:text-xs font-thin text-green-500 uppercase border border-green-500 rounded-md font-SourceCodePro ${args}`}>
+                    <div className={`p-1 ml-4 text-[.65rem] leading-3 sm:text-xs font-thin text-green-500 uppercase border border-green-500 rounded-md font-CONSOLA ${args}`}>
                         hands-on
                     </div>
                 )
             case 'intern':
                 return (
-                    <div className={`p-1 ml-4 text-[.65rem] leading-3 sm:text-xs font-thin text-yellow-500 uppercase border border-yellow-500 rounded-md font-SourceCodePro ${args}`}>
+                    <div className={`p-1 ml-4 text-[.65rem] leading-3 sm:text-xs font-thin text-yellow-500 uppercase border border-yellow-500 rounded-md font-CONSOLA ${args}`}>
                         intern
                     </div>
                 )

@@ -12,6 +12,7 @@ module.exports = {
       // custom user configuration
       fontFamily: {
         SourceCodePro: [`var(--SourceCodePro)`, ...fontFamily.mono],
+        CONSOLA: [`var(--CONSOLA)`, ...fontFamily.mono],
       },
 
 
