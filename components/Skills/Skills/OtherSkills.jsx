@@ -1,7 +1,15 @@
 import React, { useState } from 'react'
 import { motion as m } from 'framer-motion'
 import Image from 'next/image';
-export default function OtherSkills() {
+export default function OtherSkills({ windowScreenWidth }) {
+    const handleSlice = () => {
+        if (windowScreenWidth < 640) {
+
+            return 2
+
+        }
+        return 5
+    }
     const descTemplete = (desc) => {
         const text = ({ desc }) => {
             return (
@@ -103,8 +111,8 @@ export default function OtherSkills() {
         switch (content) {
             case 'expert':
                 return (
-                    <div className={`p-1 ml-4 text-xs font-thin text-red-400 uppercase border border-red-400 rounded-md font-SourceCodePro inline-block ${args}`}>
-                        Expert
+                    <div className={`p-1 ml-4 text-xs font-thin text-red-400 uppercase border border-red-400 rounded-md font-SourceCodePro  ${args}`}>
+                        expert
                     </div>
                 )
             case 'verify':
@@ -114,15 +122,44 @@ export default function OtherSkills() {
                         Verify
                     </div>
                 )
+            case 'certified':
+
+                return (
+                    <div className={`p-1 ml-4 text-xs font-thin text-blue-400 uppercase border border-blue-400 rounded-md font-SourceCodePro  hover:bg-blue-400 hover:text-white active:bg-blue-400 active:text-white ${args}`}>
+                        Certified
+                    </div>
+                )
+            case 'amature':
+
+                return (
+                    <div className={`p-1 ml-4 text-xs font-thin text-blue-400 uppercase border border-blue-400 rounded-md font-SourceCodePro  hover:bg-blue-400 hover:text-white active:bg-blue-400 active:text-white ${args}`}>
+                        amature
+                    </div>
+                )
+            case 'hands-on':
+
+                return (
+                    <div className={`p-1 ml-4 text-xs font-thin text-green-500 uppercase border border-green-500 rounded-md font-SourceCodePro ${args}`}>
+                        hands-on
+                    </div>
+                )
+            case 'intern':
+                return (
+                    <div className={`p-1 ml-4 text-xs font-thin text-yellow-500 uppercase border border-yellow-500 rounded-md font-SourceCodePro ${args}`}>
+                        intern
+                    </div>
+                )
+
             default:
                 return (
                     <div className={`flex justify-center items-center px-2 py-1 text-xs font-medium tracking-wide text-white rounded-full ${args}`}>
-                        Expert
+                        expert
                     </div>
                 )
         }
 
     }
+
     const [otherSkills, setOtherSkills] = useState([
         {
             name: 'Networking',
@@ -145,11 +182,17 @@ export default function OtherSkills() {
                 },
             ],
             icon: 'https://cdn-icons-png.flaticon.com/512/1239/1239682.png',
+            badges: [
+                'intern', 'hands-on'
+            ],
         },
         {
             name: 'Linux',
             desc: 'I have a good understanding of Linux and how it works. I have a good understanding of how to set up a Linux server and how to troubleshoot it.',
             icon: 'https://cdn-icons-png.flaticon.com/512/2333/2333187.png',
+            badges: [
+                'hands-on', 'amature'
+            ],
         },
         {
             name: 'Cyber Security',
@@ -235,7 +278,9 @@ export default function OtherSkills() {
 
             ],
             icon: 'https://cdn-icons-png.flaticon.com/512/2716/2716652.png',
-            badge: true,
+            badges: [
+                'expert', 'intern', 'hands-on',
+            ],
         },
         {
             name: '3D Designing',
@@ -250,7 +295,9 @@ export default function OtherSkills() {
                     color: 'bg-blue-500',
                 }
             ],
-            badge: true,
+            badges: [
+                'expert', 'hands-on'
+            ],
         },
         {
             name: 'Video Editing',
@@ -265,11 +312,36 @@ export default function OtherSkills() {
                     color: 'bg-blue-500',
                 },
             ],
+            badges: [
+                'hands-on'
+            ],
         },
         {
             name: 'Photography',
             icon: 'https://cdn-icons-png.flaticon.com/512/1042/1042339.png',
+            badges: [
+                'amature'],
+            desc: [
+                {
+                    name: 'Adobe Lightroom',
+                    color: 'bg-blue-500',
+                },
+                {
+                    name: 'Adobe Photoshop',
+                    color: 'bg-blue-500',
+                },
+                {
+                    name: 'Adobe Illustrator',
+                    color: 'bg-blue-500',
+                },
+                {
+                    name: 'Lighting and Composition Rules',
+                    color: 'bg-blue-500',
+                }
+            ],
+
         },
+
     ])
     return (
         <div className='grid items-start grid-cols-1 gap-4 sm:grid-cols-2'>
@@ -279,7 +351,7 @@ export default function OtherSkills() {
                 color,
                 viewDesc,
                 icon,
-                badge,
+                badges,
                 isOpen,
             }, index) => (
                 <m.button
@@ -311,7 +383,28 @@ export default function OtherSkills() {
                                     src={icon} alt={name} className={`w-8 h-8  ${isOpen ? `hidden sm:block` : `block`}`} />
                             </div>
                             <div className='w-full ml-4'>
-                                <div className='self-center font-medium text-gray-700 text-md text-start sm:text-md'>{name} <span>{badge ? badgeTemplete('expert') : null}</span></div>
+                                <div className='self-center font-medium text-gray-700 text-md text-start sm:text-md'>{name} <span>
+                                    <div key={index} className={`inline-block`}>
+                                        {
+
+                                            badges ?
+                                                badges
+                                                    .slice(0, handleSlice())
+                                                    .map((badge, index) => (
+                                                        <div key={index} className={`inline-block`}>
+                                                            {badgeTemplete(badge)
+                                                            }
+                                                        </div>
+
+                                                    ))
+                                                :
+                                                null
+
+                                        }
+                                    </div>
+
+                                </span>
+                                </div>
                                 {
                                     viewDesc ?
                                         descTemplete(desc)
