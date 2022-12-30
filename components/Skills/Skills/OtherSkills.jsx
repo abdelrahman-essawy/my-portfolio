@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import { motion as m } from 'framer-motion'
+import Image from 'next/image';
 
 export default function OtherSkills() {
 
@@ -185,7 +186,12 @@ export default function OtherSkills() {
                         className='flex items-center justify-between p-3'>
                         <div className='flex items-center flex-grow'>
                             <div className={`flex-shrink-0 ${color} `}>
-                                <img src={icon} alt={name} className='w-8 h-8' />
+                                <Image
+                                    priority={true}
+                                    width="100"
+                                    height="100"
+                                    layout="intrinsic"
+                                    src={icon} alt={name} className='w-8 h-8' />
                             </div>
                             <div className='w-full ml-4'>
                                 <div className='font-medium text-gray-700 text-md text-start sm:text-md'>{name} {badge ? badgeTemplete : null}</div>
