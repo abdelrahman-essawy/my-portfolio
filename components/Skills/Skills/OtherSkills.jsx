@@ -24,16 +24,32 @@ export default function OtherSkills() {
                         {desc.map(({
                             name,
                             color,
-                            desc
+                            href
                         }, index) => (
                             <m.div
                                 initial={{ opacity: 0, y: 5 }}
                                 animate={{ opacity: 1, y: 0 }}
                                 transition={{ delay: 0.1 * index }}
                                 exit={{ opacity: 0, y: 5 }}
-                                key={index} className='flex items-center justify-start'>
-                                <div className={`flex-shrink-0 w-2 h-2 ${color} rounded-full`} />
-                                <div className='ml-2 text-sm font-medium text-gray-500'>{name}</div>
+                                key={index} className='flex items-center justify-start w-full'>
+                                <div className={`flex-shrink-0 w-2 h-2 ${color} rounded-full ${href ? `text-black text-sm flex mb-3` : ``}`} />
+                                <div className={`ml-2 text-sm font-medium text-gray-500 flex justify-center items-center ${href ? `text-black text-sm flex mb-3` : ``}`}>
+                                    <div className='flex-grow'>
+                                        {name}
+                                    </div>
+
+                                </div>
+                                <div className='self-start ml-auto sm:m-auto'>
+                                    <button
+                                        href={href}
+                                    >
+
+                                        {href ? <a href={href
+                                            ? href
+                                            : '#'} target='_blank' rel='noreferrer' className='p-1 text-xs font-thin text-blue-400 uppercase border border-blue-400 rounded-md font-SourceCodePro hover:text-white hover:bg-blue-400 active:text-white active:bg-blue-400'>verify</a> : ``}
+
+                                    </button>
+                                </div>
                             </m.div>
                         ))}
                     </div>
@@ -77,7 +93,75 @@ export default function OtherSkills() {
         },
         {
             name: 'Cyber Security',
-            desc: 'I have a good understanding of Cyber Security and how it works. I have a good understanding of how to set up a Cyber Security server and how to troubleshoot it.',
+            desc: [
+                {
+                    name: 'SOC Analysis',
+                    color: 'bg-blue-500',
+                },
+                {
+                    name: 'Incidents Response',
+                    color: 'bg-blue-500',
+                },
+                {
+                    name: 'Web Security & OWASP Top 10',
+                    color: 'bg-blue-500',
+                },
+                {
+                    name: 'Network & Wireless Security',
+                    color: 'bg-blue-500',
+                },
+                {
+                    name: 'Vulnerability Assessment',
+                    color: 'bg-blue-500',
+                },
+                {
+                    name: 'Risk Assessment',
+                    color: 'bg-blue-500',
+                },
+                {
+                    name: '',
+                    color: '',
+                },
+                {
+                    name: '',
+                    color: '',
+                },
+                {
+                    name: 'Metasploit',
+                    color: 'bg-yellow-500',
+                },
+                {
+                    name: 'Nmap',
+                    color: 'bg-yellow-500',
+                },
+                {
+                    name: 'Wireshark',
+                    color: 'bg-yellow-500',
+                },
+                {
+                    name: 'Burp Suite',
+                    color: 'bg-yellow-500',
+                },
+                {
+                    name: '',
+                    color: '',
+                },
+                {
+                    name: '',
+                    color: '',
+                },
+                {
+                    name: 'Certified Ethical Hacker',
+                    color: 'bg-red-500',
+                    href: 'https://maharatech.gov.eg/mod/customcert/verify_certificate.php?contextid=259560&code=szfaTBVwD9&qrcode=1',
+                },
+                {
+                    name: 'Cyber Security Engineer',
+                    color: 'bg-red-500',
+                    href: 'https://maharatech.gov.eg/mod/customcert/verify_certificate.php?contextid=259555&code=xnYmZEvZfd&qrcode=1',
+                }
+
+            ],
             icon: 'https://cdn-icons-png.flaticon.com/512/2716/2716652.png',
             badge: true,
         },
@@ -115,17 +199,6 @@ export default function OtherSkills() {
             icon: 'https://cdn-icons-png.flaticon.com/512/1042/1042339.png',
         },
     ])
-    // const oldArray = '
-    // desc[0] ?
-    //     <div className='flex flex-col items-start justify-start'>
-    //         {desc.map((desc, index) => (
-    //             <div key={index} className='flex items-center justify-start'>
-    //                 <div className={`flex-shrink - 0 w - 3 h - 3 ${desc.color} rounded - full`}></div>
-    //                 <div className='ml-2 text-sm font-medium text-gray-500'>{desc.name}</div>
-    //             </div>
-    //         ))}
-    //     </div>
-    //     : '
     return (
         <div className='grid items-start grid-cols-1 gap-4 sm:grid-cols-2'>
             {otherSkills.map(({
@@ -134,7 +207,8 @@ export default function OtherSkills() {
                 color,
                 viewDesc,
                 icon,
-                badge
+                badge,
+                isOpen,
             }, index) => (
                 <m.button
                     initial={{ opacity: 0, y: 20 }}
@@ -143,26 +217,26 @@ export default function OtherSkills() {
                     transition={{ delay: index * 0.1 }}
                     key={index}
                     type='button'
-                    className={`${desc ? 'cursor-pointer hover:shadow-lg' : 'cursor-default'} rounded-lg shadow-md`}
+                    className={`${desc ? 'cursor-pointer hover:shadow-lg' : 'cursor-default'}  ${isOpen ? 'sm:col-span-2 sm:shadow-lg' : ''}  rounded-lg shadow-md`}
                     onClick={() => {
                         setOtherSkills((prev) => {
                             const newSkillsWithDesc = [...prev]
                             newSkillsWithDesc[index].viewDesc = !newSkillsWithDesc[index].viewDesc
-                            console.log(newSkillsWithDesc)
+                            newSkillsWithDesc[index].isOpen = !newSkillsWithDesc[index].isOpen
                             return newSkillsWithDesc
                         })
                     }}
                 >
                     <m.div
-                        className='flex items-center justify-between p-3'>
+                        className='flex items-center justify-between p-3 '>
                         <div className='flex items-center flex-grow'>
-                            <div className={`flex-shrink-0 ${color} `}>
+                            <div className={`flex-shrink-0 ${color}`}>
                                 <Image
                                     priority={true}
                                     width="100"
                                     height="100"
                                     layout="intrinsic"
-                                    src={icon} alt={name} className='w-8 h-8' />
+                                    src={icon} alt={name} className={`w-8 h-8 ${isOpen ? `sm:block hidden` : `block`}`} />
                             </div>
                             <div className='w-full ml-4'>
                                 <div className='font-medium text-gray-700 text-md text-start sm:text-md'>{name} {badge ? badgeTemplete : null}</div>
