@@ -31,22 +31,24 @@ export default function OtherSkills() {
                                 animate={{ opacity: 1, y: 0 }}
                                 transition={{ delay: 0.1 * index }}
                                 exit={{ opacity: 0, y: 5 }}
-                                key={index} className='flex items-center justify-start w-full'>
+                                key={index} className='flex items-center justify-start h-12'>
                                 <div className={`flex-shrink-0 w-2 h-2 ${color} rounded-full ${href ? `text-black text-sm flex ` : ``}`} />
-                                <div className={`ml-2 text-sm font-medium text-gray-500 flex justify-center items-center ${href ? `text-black text-sm flex ` : ``}`}>
+                                <div className={`ml-2 text-sm font-medium text-gray-500 flex justify-center items-center ${href ? `text-black text-md  ` : ``}`}>
                                     <div className='flex-grow'>
                                         {name}
                                     </div>
 
                                 </div>
-                                <div className='self-center ml-auto sm:m-auto'>
+                                <div className='ml-auto sm:m-auto'>
                                     <button
                                         href={href}
                                     >
 
                                         {href ? <a href={href
                                             ? href
-                                            : '#'} target='_blank' rel='noreferrer' className='p-1 text-xs font-thin text-blue-400 uppercase border border-blue-400 rounded-md font-SourceCodePro hover:text-white hover:bg-blue-400 active:text-white active:bg-blue-400'>verify</a> : ``}
+                                            : '#'} target='_blank' rel='noreferrer' >
+                                            {badgeTemplete('verify','blue')}
+                                            </a> : ``}
 
                                     </button>
                                 </div>
@@ -62,7 +64,7 @@ export default function OtherSkills() {
             return array(desc)
         }
     }
-    const badgeTemplete = <span className='p-1 ml-4 text-xs font-thin text-red-400 uppercase border border-red-400 rounded-md font-SourceCodePro'>expert</span>
+    const badgeTemplete = (content = `expert`, color = `red`) => <span className={`p-1 ml-4 text-xs font-thin text-${color}-400 uppercase border border-${color}-400 rounded-md font-SourceCodePro`}>{content}</span>
     const [otherSkills, setOtherSkills] = useState([
         {
             name: 'Networking',
@@ -159,7 +161,8 @@ export default function OtherSkills() {
                     name: 'Cyber Security Engineer',
                     color: 'bg-red-500',
                     href: 'https://maharatech.gov.eg/mod/customcert/verify_certificate.php?contextid=259555&code=xnYmZEvZfd&qrcode=1',
-                }
+                },
+
 
             ],
             icon: 'https://cdn-icons-png.flaticon.com/512/2716/2716652.png',
@@ -239,7 +242,7 @@ export default function OtherSkills() {
                                     src={icon} alt={name} className={`w-8 h-8 ${isOpen ? `hidden` : `block`}`} />
                             </div>
                             <div className='w-full ml-4'>
-                                <div className='font-medium text-gray-700 text-md text-start sm:text-md'>{name} {badge ? badgeTemplete : null}</div>
+                                <div className='self-center font-medium text-gray-700 text-md text-start sm:text-md'>{name} {badge ? badgeTemplete() : null}</div>
                                 {
                                     viewDesc ?
                                         descTemplete(desc)
@@ -248,10 +251,13 @@ export default function OtherSkills() {
                                 }
                             </div>
                         </div>
-                        {desc ? <svg xmlns="http://www.w3.org/5000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true" className={`${viewDesc ? 'rotate - 0' : 'rotate-180'} transform h-6 w-6 text-blue-500`}>
-                            <path fill-rule="evenodd" d="M14.77 12.79a.75.75 0 01-1.06-.02L10 8.832 6.29 12.77a.75.75 0 11-1.08-1.04l4.25-4.5a.75.75 0 011.08 0l4.25 4.5a.75.75 0 01-.02 1.06z" clip-rule="evenodd">
-                            </path>
-                        </svg> : ''}
+                        <div className={` rounded-lg p-1 `}>
+                            {desc ? <svg xmlns="http://www.w3.org/5000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true" className={`${viewDesc ? 'rotate - 0' : 'rotate-180'} transform h-6 w-6 text-blue-500`}>
+                                <path fill-rule="evenodd" d="M14.77 12.79a.75.75 0 01-1.06-.02L10 8.832 6.29 12.77a.75.75 0 11-1.08-1.04l4.25-4.5a.75.75 0 011.08 0l4.25 4.5a.75.75 0 01-.02 1.06z" clip-rule="evenodd">
+                                </path>
+                            </svg> : ''}
+                        </div>
+
                     </m.div>
                 </m.button>
             ))
