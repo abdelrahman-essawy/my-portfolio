@@ -32,8 +32,8 @@ export default function OtherSkills() {
                                 transition={{ delay: 0.1 * index }}
                                 exit={{ opacity: 0, y: 5 }}
                                 key={index} className='flex items-center justify-start w-full'>
-                                <div className={`flex-shrink-0 w-2 h-2 ${color} rounded-full ${href ? `text-black text-sm flex my-4` : ``}`} />
-                                <div className={`ml-2 text-sm font-medium text-gray-500 flex justify-center items-center ${href ? `text-black text-sm flex my-4` : ``}`}>
+                                <div className={`flex-shrink-0 w-2 h-2 ${color} rounded-full ${href ? `text-black text-sm flex ` : ``}`} />
+                                <div className={`ml-2 text-sm font-medium text-gray-500 flex justify-center items-center ${href ? `text-black text-sm flex ` : ``}`}>
                                     <div className='flex-grow'>
                                         {name}
                                     </div>
@@ -154,6 +154,10 @@ export default function OtherSkills() {
                     name: 'Certified Ethical Hacker',
                     color: 'bg-red-500',
                     href: 'https://maharatech.gov.eg/mod/customcert/verify_certificate.php?contextid=259560&code=szfaTBVwD9&qrcode=1',
+                },
+                {
+                    name: '',
+                    color: '',
                 },
                 {
                     name: 'Cyber Security Engineer',
