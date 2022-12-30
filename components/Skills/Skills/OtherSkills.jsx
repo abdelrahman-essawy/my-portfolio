@@ -24,18 +24,45 @@ export default function OtherSkills() {
                         {desc.map(({
                             name,
                             color,
-                            href
+                            href,
+                            by,
+                            id,
+                            date,
+                            icon
                         }, index) => (
                             <m.div
                                 initial={{ opacity: 0, y: 5 }}
                                 animate={{ opacity: 1, y: 0 }}
-                                transition={{ delay: 0.1 * index }}
+                                transition={{ delay: 0.07 * index }}
                                 exit={{ opacity: 0, y: 5 }}
-                                key={index} className='flex items-center justify-start'>
-                                <div className={`flex-shrink-0 w-2 h-2 ${color} rounded-full ${href ? `text-black text-sm flex ` : ``}`} />
-                                <div className={`ml-2 text-sm font-medium text-gray-500 flex justify-center items-center ${href ? `text-black text-sm mt-2  text-start ` : ``}`}>
-                                    <div className='flex-grow mr-auto'>
-                                        {name}
+                                key={index} className='flex items-start justify-start'>
+                                <div className={`ml-2 text-sm font-medium text-gray-500 flex justify-center items-center ${href ? `text-black text-sm   text-start ` : ``}`}>
+                                    <div className='self-start flex-grow mr-auto'>
+                                        <div className={`flex justify-start gap-2 items-center`}>
+                                            <div className={`h-2 w-2 ${color} rounded-full`} />
+
+                                            {name}
+                                        </div>
+                                        <div>
+                                            {
+                                                by ?
+                                                    <div className={`flex justify-center items-center p-2`}>
+                                                        <div className='mb-auto w-14 sm:w-10 h-14 sm:h-10'>
+
+                                                            <img src={icon} />
+                                                        </div>
+
+                                                        <div className={`flex flex-col gap-1 ml-2`}>
+                                                            {by ? <div className='text-sm font-medium tracking-wide text-gray-600'>{by}</div> : null}
+                                                            {date ? <div className='text-xs font-light text-gray-500'>{date}</div> : null}
+                                                            {id ? <div className='text-xs font-light text-gray-500'>Credential ID : {id}</div> : null}
+                                                        </div>
+                                                    </div>
+                                                    : null}
+
+                                        </div>
+
+
                                     </div>
 
                                 </div>
@@ -47,8 +74,8 @@ export default function OtherSkills() {
                                         {href ? <a href={href
                                             ? href
                                             : '#'} target='_blank' rel='noreferrer' >
-                                            {badgeTemplete('verify','blue')}
-                                            </a> : ``}
+                                            {badgeTemplete('verify', 'text-blue-400 border-blue-400 hover:bg-blue-400 hover:text-white active:bg-blue-400 active:text-white')}
+                                        </a> : ``}
 
                                     </a>
                                 </div>
@@ -64,7 +91,7 @@ export default function OtherSkills() {
             return array(desc)
         }
     }
-    const badgeTemplete = (content = `expert`, color = `red`) => <span className={`p-1 ml-4 text-xs font-thin text-${color}-400 uppercase border border-${color}-400 rounded-md font-SourceCodePro`}>{content}</span>
+    const badgeTemplete = (content = `expert`, ...args) => <span className={`p-1 ml-4 text-xs font-thin text-red-400 uppercase border border-red-400 rounded-md font-SourceCodePro ${args}`}>{content}</span>
     const [otherSkills, setOtherSkills] = useState([
         {
             name: 'Networking',
@@ -154,13 +181,22 @@ export default function OtherSkills() {
                 },
                 {
                     name: 'Certified Ethical Hacker',
+                    by: 'ITI - Information Technology Institute',
+                    date: 'Issued Jul 2022',
+                    id: 'szfaTBVwD9',
                     color: 'bg-red-500',
-                    href: 'https://maharatech.gov.eg/mod/customcert/verify_certificate.php?contextid=259560&code=szfaTBVwD9&qrcode=1',
+                    href: 'https://maharatech.gov.eg/mod/customcert/verify_certificate.php?contextid=259560&amp;code=szfaTBVwD9&amp;qrcode=1',
+                    icon: 'https://media.licdn.com/dms/image/C560BAQGK3uuhQer46g/company-logo_100_100/0/1519885145295?e=1680739200&v=beta&t=X4Q4dPPe6YvMn8LJEoZuP9ZwDc7Kpv0xwCt9wnx8tjU',
                 },
                 {
                     name: 'Cyber Security Engineer',
                     color: 'bg-red-500',
+                    by: 'ITI - Information Technology Institute',
                     href: 'https://maharatech.gov.eg/mod/customcert/verify_certificate.php?contextid=259555&code=xnYmZEvZfd&qrcode=1',
+                    id: 'xnYmZEvZfd',
+                    date: 'Issued Jul 2022',
+                    icon: 'https://media.licdn.com/dms/image/C560BAQGK3uuhQer46g/company-logo_100_100/0/1519885145295?e=1680739200&v=beta&t=X4Q4dPPe6YvMn8LJEoZuP9ZwDc7Kpv0xwCt9wnx8tjU',
+
                 },
 
 
