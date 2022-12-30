@@ -32,14 +32,14 @@ export default function OtherSkills() {
                                 transition={{ delay: 0.1 * index }}
                                 exit={{ opacity: 0, y: 5 }}
                                 key={index} className='flex items-center justify-start w-full'>
-                                <div className={`flex-shrink-0 w-2 h-2 ${color} rounded-full ${href ? `text-black text-sm flex mb-3` : ``}`} />
-                                <div className={`ml-2 text-sm font-medium text-gray-500 flex justify-center items-center ${href ? `text-black text-sm flex mb-3` : ``}`}>
+                                <div className={`flex-shrink-0 w-2 h-2 ${color} rounded-full ${href ? `text-black text-sm flex my-2` : ``}`} />
+                                <div className={`ml-2 text-sm font-medium text-gray-500 flex justify-center items-center ${href ? `text-black text-sm flex my-2` : ``}`}>
                                     <div className='flex-grow'>
                                         {name}
                                     </div>
 
                                 </div>
-                                <div className='self-start ml-auto sm:m-auto'>
+                                <div className='self-center ml-auto sm:m-auto'>
                                     <button
                                         href={href}
                                     >
