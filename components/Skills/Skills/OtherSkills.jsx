@@ -10,14 +10,14 @@ export default function OtherSkills({ windowScreenWidth }) {
         }
         return 5
     }
-    const descTemplete = (desc) => {
-        const text = ({ desc }) => {
+    const descTemplete = (wordDesc, desc) => {
+        const text = (wordDesc) => {
             return (
                 <m.div
                     initial={{ opacity: 0, y: 5 }}
                     animate={{ opacity: 1, y: 0 }}
                     exit={{ opacity: 0, y: 5 }}>
-                    <p className='py-3 text-sm'>{desc}</p>
+                    <p className='py-3 text-sm text-start'>{wordDesc}</p>
                 </m.div>
             )
         }
@@ -98,11 +98,14 @@ export default function OtherSkills({ windowScreenWidth }) {
                 </m.div>
             )
         }
-        if (typeof desc === 'string') {
-            return text({ desc })
-        } else if (Array.isArray(desc)) {
-            return array(desc)
-        }
+        return (
+            <>
+                {text(wordDesc)}
+                {array(desc)}
+            </>
+
+        )
+
     }
     const badgeTemplete = (
         content,
@@ -111,7 +114,7 @@ export default function OtherSkills({ windowScreenWidth }) {
         switch (content) {
             case 'expert':
                 return (
-                    <div className={`p-1 ml-4 text-xs font-thin text-red-400 uppercase border border-red-400 rounded-md font-SourceCodePro  ${args}`}>
+                    <div className={`p-1 ml-4 text-xs font-thin text-white uppercase border bg-red-400 rounded-md font-SourceCodePro  ${args}`}>
                         expert
                     </div>
                 )
@@ -163,23 +166,42 @@ export default function OtherSkills({ windowScreenWidth }) {
     const [otherSkills, setOtherSkills] = useState([
         {
             name: 'Networking',
+            wordDesc: 'I have been working with networking since 2018. I have worked with many networking devices and protocols. I have also worked with many network simulators like Packet Tracer and Wireshark.',
             desc: [
                 {
-                    name: 'Network design',
+                    name: 'Network Design',
                     color: 'bg-blue-500',
                 },
                 {
-                    name: 'Network administration',
+                    name: 'Network Administration',
                     color: 'bg-blue-500',
                 },
                 {
-                    name: 'Network troubleshooting',
+                    name: 'Network Troubleshooting',
                     color: 'bg-blue-500',
                 },
                 {
-                    name: 'Network security',
+                    name: 'Network Security',
                     color: 'bg-blue-500',
                 },
+                {
+                    name: '',
+                    color: '',
+                },
+                {
+                    name: '',
+                    color: '',
+                },
+                {
+                    name: 'Packet Tracer',
+                    color: 'bg-yellow-500',
+                },
+                {
+                    name: 'Wireshark',
+                    color: 'bg-yellow-500',
+                },
+
+
             ],
             icon: 'https://cdn-icons-png.flaticon.com/512/1239/1239682.png',
             badges: [
@@ -188,14 +210,21 @@ export default function OtherSkills({ windowScreenWidth }) {
         },
         {
             name: 'Linux',
-            desc: 'I have a good understanding of Linux and how it works. I have a good understanding of how to set up a Linux server and how to troubleshoot it.',
+            wordDesc: 'I have a good understanding of Linux and how it works. I have a good understanding of how to set up a Linux server and how to troubleshoot it.',
             icon: 'https://cdn-icons-png.flaticon.com/512/2333/2333187.png',
             badges: [
                 'hands-on', 'amature'
             ],
+            desc: [
+                {
+                    name: 'Linux Administration',
+                    color: 'bg-blue-500',
+                }
+            ],
         },
         {
             name: 'Cyber Security',
+            wordDesc: 'I have a good understanding of Cyber Security and how it works. I have a good understanding of how to set up a Cyber Security server and how to troubleshoot it.',
             desc: [
                 {
                     name: 'SOC Analysis',
@@ -288,11 +317,11 @@ export default function OtherSkills({ windowScreenWidth }) {
             desc: [
                 {
                     name: 'Blender',
-                    color: 'bg-blue-500',
+                    color: 'bg-yellow-500',
                 },
                 {
                     name: 'ZBrush',
-                    color: 'bg-blue-500',
+                    color: 'bg-yellow-500',
                 }
             ],
             badges: [
@@ -305,11 +334,11 @@ export default function OtherSkills({ windowScreenWidth }) {
             desc: [
                 {
                     name: 'Adobe Premiere',
-                    color: 'bg-blue-500',
+                    color: 'bg-yellow-500',
                 },
                 {
                     name: 'Adobe After Effects',
-                    color: 'bg-blue-500',
+                    color: 'bg-yellow-500',
                 },
             ],
             badges: [
@@ -349,6 +378,7 @@ export default function OtherSkills({ windowScreenWidth }) {
                 name,
                 desc,
                 color,
+                wordDesc,
                 viewDesc,
                 icon,
                 badges,
@@ -383,7 +413,7 @@ export default function OtherSkills({ windowScreenWidth }) {
                                     src={icon} alt={name} className={`w-8 h-8  ${isOpen ? `hidden sm:block` : `block`}`} />
                             </div>
                             <div className='w-full ml-4'>
-                                <div className='self-center font-medium text-gray-700 text-md text-start sm:text-md'>{name} <span>
+                                <div className='self-center font-medium text-gray-700 text-md text-start sm:text-md'>{name}<span>
                                     <div key={index} className={`inline-block`}>
                                         {
 
@@ -392,7 +422,8 @@ export default function OtherSkills({ windowScreenWidth }) {
                                                     .slice(0, handleSlice())
                                                     .map((badge, index) => (
                                                         <div key={index} className={`inline-block`}>
-                                                            {badgeTemplete(badge)
+                                                            {
+                                                                badgeTemplete(badge)
                                                             }
                                                         </div>
 
@@ -407,14 +438,18 @@ export default function OtherSkills({ windowScreenWidth }) {
                                 </div>
                                 {
                                     viewDesc ?
-                                        descTemplete(desc)
+
+                                        descTemplete(wordDesc, desc)
+
+
+
                                         :
                                         null
                                 }
                             </div>
                         </div>
                         <div className={` rounded-lg p-1 `}>
-                            {desc ? <svg xmlns="http://www.w3.org/5000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true" className={`${viewDesc ? 'rotate - 0' : 'rotate-180'} transform h-6 w-6 text-blue-500`}>
+                            {desc || wordDesc ? <svg xmlns="http://www.w3.org/5000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true" className={`${viewDesc ? 'rotate - 0' : 'rotate-180'} transform h-6 w-6 text-blue-500`}>
                                 <path fill-rule="evenodd" d="M14.77 12.79a.75.75 0 01-1.06-.02L10 8.832 6.29 12.77a.75.75 0 11-1.08-1.04l4.25-4.5a.75.75 0 011.08 0l4.25 4.5a.75.75 0 01-.02 1.06z" clip-rule="evenodd">
                                 </path>
                             </svg> : ''}
