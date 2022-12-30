@@ -1,14 +1,8 @@
 import React, { useState } from 'react'
 import { motion as m } from 'framer-motion'
 import Image from 'next/image';
-
 export default function OtherSkills() {
-
     const descTemplete = (desc) => {
-
-
-
-
         const text = ({ desc }) => {
             return (
                 <m.div
@@ -16,12 +10,9 @@ export default function OtherSkills() {
                     animate={{ opacity: 1, y: 0 }}
                     exit={{ opacity: 0, y: 5 }}>
                     <p className='py-3 text-sm'>{desc}</p>
-
                 </m.div>
             )
         }
-
-
         const array = (desc) => {
             return (
                 <m.div
@@ -46,23 +37,16 @@ export default function OtherSkills() {
                             </m.div>
                         ))}
                     </div>
-
                 </m.div>
             )
         }
-
-
         if (typeof desc === 'string') {
             return text({ desc })
         } else if (Array.isArray(desc)) {
             return array(desc)
         }
-
     }
     const badgeTemplete = <span className='p-1 ml-4 text-xs font-thin text-red-400 uppercase border border-red-400 rounded-md font-SourceCodePro'>expert</span>
-
-
-
     const [otherSkills, setOtherSkills] = useState([
         {
             name: 'Networking',
@@ -83,24 +67,23 @@ export default function OtherSkills() {
                     name: 'Network security',
                     color: 'bg-blue-500',
                 },
-
             ],
-            icon: 'https://cdn-icons-png.flaticon.com/512/1239/1239682.png ',
+            icon: 'https://cdn-icons-png.flaticon.com/512/1239/1239682.png',
         },
         {
             name: 'Linux',
             desc: 'I have a good understanding of Linux and how it works. I have a good understanding of how to set up a Linux server and how to troubleshoot it.',
-            icon: '   https://cdn-icons-png.flaticon.com/512/2333/2333187.png ',
+            icon: 'https://cdn-icons-png.flaticon.com/512/2333/2333187.png',
         },
         {
             name: 'Cyber Security',
             desc: 'I have a good understanding of Cyber Security and how it works. I have a good understanding of how to set up a Cyber Security server and how to troubleshoot it.',
-            icon: '     https://cdn-icons-png.flaticon.com/512/2716/2716652.png  ',
+            icon: 'https://cdn-icons-png.flaticon.com/512/2716/2716652.png',
             badge: true,
         },
         {
             name: '3D Designing',
-            icon: 'https://cdn-icons-png.flaticon.com/512/1806/1806507.png ',
+            icon: 'https://cdn-icons-png.flaticon.com/512/1806/1806507.png',
             desc: [
                 {
                     name: 'Blender',
@@ -115,7 +98,7 @@ export default function OtherSkills() {
         },
         {
             name: 'Video Editing',
-            icon: 'https://cdn-icons-png.flaticon.com/512/2886/2886875.png ',
+            icon: 'https://cdn-icons-png.flaticon.com/512/2886/2886875.png',
             desc: [
                 {
                     name: 'Adobe Premiere',
@@ -125,20 +108,14 @@ export default function OtherSkills() {
                     name: 'Adobe After Effects',
                     color: 'bg-blue-500',
                 },
-
             ],
-
         },
         {
             name: 'Photography',
-            icon: '   https://cdn-icons-png.flaticon.com/512/1042/1042339.png ',
+            icon: 'https://cdn-icons-png.flaticon.com/512/1042/1042339.png',
         },
-
     ])
-
-
     // const oldArray = '
-
     // desc[0] ?
     //     <div className='flex flex-col items-start justify-start'>
     //         {desc.map((desc, index) => (
@@ -148,11 +125,7 @@ export default function OtherSkills() {
     //             </div>
     //         ))}
     //     </div>
-
     //     : '
-
-
-
     return (
         <div className='grid items-start grid-cols-1 gap-4 sm:grid-cols-2'>
             {otherSkills.map(({
@@ -162,7 +135,6 @@ export default function OtherSkills() {
                 viewDesc,
                 icon,
                 badge
-
             }, index) => (
                 <m.button
                     initial={{ opacity: 0, y: 20 }}
@@ -182,7 +154,6 @@ export default function OtherSkills() {
                     }}
                 >
                     <m.div
-
                         className='flex items-center justify-between p-3'>
                         <div className='flex items-center flex-grow'>
                             <div className={`flex-shrink-0 ${color} `}>
@@ -197,16 +168,12 @@ export default function OtherSkills() {
                                 <div className='font-medium text-gray-700 text-md text-start sm:text-md'>{name} {badge ? badgeTemplete : null}</div>
                                 {
                                     viewDesc ?
-
                                         descTemplete(desc)
-
                                         :
                                         null
                                 }
-
                             </div>
                         </div>
-
                         {desc ? <svg xmlns="http://www.w3.org/5000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true" className={`${viewDesc ? 'rotate - 0' : 'rotate-180'} transform h-6 w-6 text-blue-500`}>
                             <path fill-rule="evenodd" d="M14.77 12.79a.75.75 0 01-1.06-.02L10 8.832 6.29 12.77a.75.75 0 11-1.08-1.04l4.25-4.5a.75.75 0 011.08 0l4.25 4.5a.75.75 0 01-.02 1.06z" clip-rule="evenodd">
                             </path>
@@ -216,9 +183,5 @@ export default function OtherSkills() {
             ))
             }
         </div>
-
-
     )
 }
-
-

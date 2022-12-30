@@ -1,11 +1,8 @@
 import React, { useState } from 'react'
 import { motion as m } from 'framer-motion'
 import Image from 'next/image'
-
 export default function TechnicalSkills({ windowScreenWidth }) {
     const [seeMore, setSeeMore] = useState(false)
-
-
     const skills = [
         {
             name: 'HTML',
@@ -59,7 +56,6 @@ export default function TechnicalSkills({ windowScreenWidth }) {
             level: 'Competent',
             color: 'bg-blue-500',
             imgRounded: 'p-3'
-
         },
         {
             name: 'Jquery',
@@ -72,7 +68,6 @@ export default function TechnicalSkills({ windowScreenWidth }) {
             level: 'Proficient',
             color: 'bg-blue-500',
         },
-
         {
             name: 'GitHub',
             level: 'Proficient',
@@ -88,7 +83,6 @@ export default function TechnicalSkills({ windowScreenWidth }) {
             level: 'Beginner',
             color: 'bg-blue-500'
         },
-
         {
             name: 'Oracle',
             level: 'Beginner',
@@ -99,13 +93,11 @@ export default function TechnicalSkills({ windowScreenWidth }) {
             level: 'Beginner',
             color: 'bg-blue-500'
         },
-
         {
             name: 'NodeJs',
             level: 'Beginner',
             color: 'bg-blue-500',
             imgRounded: 'p-3'
-
         },
         {
             name: 'MongoDB',
@@ -113,8 +105,6 @@ export default function TechnicalSkills({ windowScreenWidth }) {
             color: 'bg-blue-500',
             soon: true
         }
-
-
         // {
         //     name: 'Adobe XD',
         //     level: '90%',
@@ -167,7 +157,6 @@ export default function TechnicalSkills({ windowScreenWidth }) {
             return 'text-blue-500'
         }
     }
-
     const handleSlice = () => {
         if (windowScreenWidth < 640) {
             if (seeMore) {
@@ -176,23 +165,15 @@ export default function TechnicalSkills({ windowScreenWidth }) {
                 return 6
             }
         }
-
         return skills.length
     }
-
     return (
         <m.div
             initial={{ opacity: 0, }}
             animate={{ opacity: 1, type: 'spring' }}
         >
-
-
-
-
             <div className='grid grid-cols-3 gap-3 sm:gap-4 sm:grid-cols-8 '>
-
                 {
-
                     skills
                         .slice(0, handleSlice())
                         .map(({
@@ -201,9 +182,6 @@ export default function TechnicalSkills({ windowScreenWidth }) {
                             imgRounded,
                             soon
                         }, index) => (
-
-
-
                             <m.div
                                 key={index}
                                 className={`flex flex-col justify-center px-1 py-2 bg-gray-100 rounded-lg  relative ${soon ? `grayscale blur-[1.3px]  bg-zinc-200/80 shadow-none` : `shadow-md`}`}>
@@ -224,9 +202,7 @@ export default function TechnicalSkills({ windowScreenWidth }) {
                                     </div>
                                 </div>
                             </m.div>
-
                         ))
-
                 }
                 <m.button
                     initial={{ opacity: 0 }}
@@ -235,9 +211,8 @@ export default function TechnicalSkills({ windowScreenWidth }) {
                     onClick={() => setSeeMore(!seeMore)}
                     className='col-span-3 p-2 rounded-lg shadow sm:hidden font-SourceCodePro bg-zinc-200 active:bg-zinc-300 hover:bg-zinc-300'>{
                         seeMore ? 'See Less' : 'See More'
-                    }</m.button>
-
-
+                    }
+                </m.button>
             </div>
         </m.div>
     )
