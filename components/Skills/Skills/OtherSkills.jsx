@@ -68,8 +68,8 @@ export default function OtherSkills({ windowScreenWidth }) {
                                                                         src={icon} />
                                                                 </div>
 
-                                                                <div className={`flex flex-col gap-1 ml-2`}>
-                                                                    {by ? <div className='font-mono text-sm font-medium tracking-tight text-gray-600 '>{by}</div> : null}
+                                                                <div className={`flex flex-col gap-1 ml-2 text-start`}>
+                                                                    {by ? <div className='font-mono text-sm font-medium tracking-tight text-gray-600'>{by}</div> : null}
                                                                     {date ? <div className='text-xs font-light text-gray-500'>{date}</div> : null}
                                                                     {id ? <div className='text-xs font-light text-gray-500'>Credential ID : {id}</div> : null}
                                                                 </div>
@@ -292,7 +292,6 @@ export default function OtherSkills({ windowScreenWidth }) {
                 {
                     name: 'Internship',
                     by: 'EZDK',
-                    href: 'https://maharatech.gov.eg/mod/customcert/verify_certificate.php?contextid=259555&code=xnYmZEvZfd&qrcode=1',
                     date: 'Aug 2022 - Sep 2022',
                     icon: 'https://media.licdn.com/dms/image/C4E0BAQGOXgJ-PCvrpg/company-logo_100_100/0/1519878976704?e=1680739200&v=beta&t=Nt7cPWWqd8LPyzQBezizd0efFR3hnQgQ2oEYozUm3us',
                     color: 'bg-red-500',
