@@ -10,7 +10,7 @@ module.exports = {
     extend: {
       // custom user configuration
       fontFamily: {
-        SourceCodePro: ['Source Code Pro'],
+        SourceCodePro: ['Source Code Pro', 'monospace'],
       },
 
 

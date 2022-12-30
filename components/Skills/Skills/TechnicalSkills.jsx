@@ -198,7 +198,7 @@ export default function TechnicalSkills({ windowScreenWidth }) {
                                     <div className='flex flex-col items-center justify-center w-full'>
                                         <hr className={`w-full h-1 my-2  ${soon ? `bg-gray-200` : `bg-gray-100`}`} />
                                         <h3 className='mb-1 text-sm font-bold '>{name}</h3>
-                                        <p className={`text-xs font-SourceCodePro tracking-tight ${setColor(level)}`}>{level}</p>
+                                        <p className={`text-xs font-SourceCodePro font-normal tracking-tight ${setColor(level)}`}>{level}</p>
                                     </div>
                                 </div>
                             </m.div>
@@ -209,7 +209,7 @@ export default function TechnicalSkills({ windowScreenWidth }) {
                     animate={{ opacity: 1 }}
                     exit={{ opacity: 0 }}
                     onClick={() => setSeeMore(!seeMore)}
-                    className='col-span-3 p-2 rounded-lg shadow sm:hidden font-SourceCodePro bg-zinc-200 active:bg-zinc-300 hover:bg-zinc-300'>{
+                    className='col-span-3 p-2 font-normal rounded-lg shadow sm:hidden font-SourceCodePro bg-zinc-200 active:bg-zinc-300 hover:bg-zinc-300'>{
                         seeMore ? 'See Less' : 'See More'
                     }
                 </m.button>

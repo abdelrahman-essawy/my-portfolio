@@ -15,7 +15,7 @@ export default function Review({ name, country, icon, desc }) {
             </svg>
             <blockquote>
                 <p className='text-center'>
-                    <span className='font-mono text-xl text-gray-400'>&quot;
+                    <span className='font-sourceCodePro text-xl text-gray-400'>&quot;
                     </span>
                     <span className="font-sans text-gray-900 text-md dark:text-white">
 
@@ -27,7 +27,7 @@ export default function Review({ name, country, icon, desc }) {
                             {desc || <Skeleton count={4} />}
                         </ReactReadMoreReadLess>
                     </span>
-                    <span className='font-mono text-xl text-gray-400'>&quot;
+                    <span className='font-sourceCodePro text-xl text-gray-400'>&quot;
                     </span>
                 </p>
             </blockquote>
