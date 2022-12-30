@@ -5,7 +5,7 @@ export default function OtherSkills({ windowScreenWidth }) {
     const handleSlice = () => {
         if (windowScreenWidth < 640) {
 
-            return 2
+            return 3
 
         }
         return 5
@@ -128,14 +128,14 @@ export default function OtherSkills({ windowScreenWidth }) {
             case 'certified':
 
                 return (
-                    <div className={`p-1 ml-4 text-xs font-thin text-blue-400 uppercase border border-blue-400 rounded-md font-SourceCodePro  hover:bg-blue-400 hover:text-white active:bg-blue-400 active:text-white ${args}`}>
+                    <div className={`p-1 ml-4 text-xs font-thin text-purple-400 uppercase border border-purple-400 rounded-md font-SourceCodePro   ${args}`}>
                         Certified
                     </div>
                 )
             case 'amature':
 
                 return (
-                    <div className={`p-1 ml-4 text-xs font-thin text-blue-400 uppercase border border-blue-400 rounded-md font-SourceCodePro  hover:bg-blue-400 hover:text-white active:bg-blue-400 active:text-white ${args}`}>
+                    <div className={`p-1 ml-4 text-xs font-thin text-blue-400 uppercase border border-blue-400 rounded-md font-SourceCodePro  ${args}`}>
                         amature
                     </div>
                 )
@@ -164,64 +164,6 @@ export default function OtherSkills({ windowScreenWidth }) {
     }
 
     const [otherSkills, setOtherSkills] = useState([
-        {
-            name: 'Networking',
-            wordDesc: 'I have been working with networking since 2018. I have worked with many networking devices and protocols. I have also worked with many network simulators like Packet Tracer and Wireshark.',
-            desc: [
-                {
-                    name: 'Network Design',
-                    color: 'bg-blue-500',
-                },
-                {
-                    name: 'Network Administration',
-                    color: 'bg-blue-500',
-                },
-                {
-                    name: 'Network Troubleshooting',
-                    color: 'bg-blue-500',
-                },
-                {
-                    name: 'Network Security',
-                    color: 'bg-blue-500',
-                },
-                {
-                    name: '',
-                    color: '',
-                },
-                {
-                    name: '',
-                    color: '',
-                },
-                {
-                    name: 'Packet Tracer',
-                    color: 'bg-yellow-500',
-                },
-                {
-                    name: 'Wireshark',
-                    color: 'bg-yellow-500',
-                },
-
-
-            ],
-            icon: 'https://cdn-icons-png.flaticon.com/512/1239/1239682.png',
-            badges: [
-                'intern', 'hands-on'
-            ],
-        },
-        {
-            name: 'Linux',
-            wordDesc: 'I have a good understanding of Linux and how it works. I have a good understanding of how to set up a Linux server and how to troubleshoot it.',
-            icon: 'https://cdn-icons-png.flaticon.com/512/2333/2333187.png',
-            badges: [
-                'hands-on', 'amature'
-            ],
-            desc: [
-                {
-                    name: 'Linux Administration',
-                    color: 'bg-blue-500',
-                }
-            ],
-        },
         {
             name: 'Cyber Security',
             wordDesc: 'I have a good understanding of Cyber Security and how it works. I have a good understanding of how to set up a Cyber Security server and how to troubleshoot it.',
@@ -308,9 +250,68 @@ export default function OtherSkills({ windowScreenWidth }) {
             ],
             icon: 'https://cdn-icons-png.flaticon.com/512/2716/2716652.png',
             badges: [
-                'expert', 'intern', 'hands-on',
+                'expert', 'intern', 'certified', 'hands-on',
             ],
         },
+        {
+            name: 'Networking',
+            wordDesc: 'I have been working with networking since 2018. I have worked with many networking devices and protocols. I have also worked with many network simulators like Packet Tracer and Wireshark.',
+            desc: [
+                {
+                    name: 'Network Design',
+                    color: 'bg-blue-500',
+                },
+                {
+                    name: 'Network Administration',
+                    color: 'bg-blue-500',
+                },
+                {
+                    name: 'Network Troubleshooting',
+                    color: 'bg-blue-500',
+                },
+                {
+                    name: 'Network Security',
+                    color: 'bg-blue-500',
+                },
+                {
+                    name: '',
+                    color: '',
+                },
+                {
+                    name: '',
+                    color: '',
+                },
+                {
+                    name: 'Packet Tracer',
+                    color: 'bg-yellow-500',
+                },
+                {
+                    name: 'Wireshark',
+                    color: 'bg-yellow-500',
+                },
+
+
+            ],
+            icon: 'https://cdn-icons-png.flaticon.com/512/1239/1239682.png',
+            badges: [
+                'intern', 'hands-on'
+            ],
+        },
+        {
+            name: 'Linux',
+            wordDesc: 'I have a good understanding of Linux and how it works. I have a good understanding of how to set up a Linux server and how to troubleshoot it.',
+            icon: 'https://cdn-icons-png.flaticon.com/512/2333/2333187.png',
+            badges: [
+                'hands-on', 'amature'
+            ],
+            desc: [
+                {
+                    name: 'Linux Administration',
+                    color: 'bg-blue-500',
+                }
+            ],
+        },
+
         {
             name: '3D Designing',
             icon: 'https://cdn-icons-png.flaticon.com/512/1806/1806507.png',
@@ -404,17 +405,19 @@ export default function OtherSkills({ windowScreenWidth }) {
                     <m.div
                         className='flex items-center justify-between p-3 '>
                         <div className='flex items-center flex-grow'>
-                            <div className={`${color} mb-auto`}>
+                            <div className={`${color}  ${isOpen ? `mb-auto mt-[9.531px]` : `m-auto `}`}>
                                 <Image
                                     priority={true}
                                     width="100"
                                     height="100"
-                                    layout="intrinsic"
-                                    src={icon} alt={name} className={`w-8 h-8  ${isOpen ? `hidden sm:block` : `block`}`} />
+                                    layout="fixed"
+                                    src={icon} alt={name} className={`sm:w-10 sm:h-10 w-10 h-10 ${isOpen ? `hidden sm:block` : `block`}`} />
                             </div>
                             <div className='w-full ml-4'>
-                                <div className='self-center font-medium text-gray-700 text-md text-start sm:text-md'>{name}<span>
-                                    <div key={index} className={`inline-block`}>
+                                <div className='self-center font-medium text-gray-700 text-md text-start sm:text-md'>
+                                    {name}
+                                    <span>
+                                        <div key={index} className={` mt-1`}>
                                         {
 
                                             badges ?
