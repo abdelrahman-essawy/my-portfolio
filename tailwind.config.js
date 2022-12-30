@@ -1,3 +1,4 @@
+const { fontFamily } = require('tailwindcss/defaultTheme')
 /** @type {import('tailwindcss').Config} */
 const plugin = require('tailwindcss/plugin')
 
@@ -10,7 +11,7 @@ module.exports = {
     extend: {
       // custom user configuration
       fontFamily: {
-        SourceCodePro: ['Source Code Pro', 'monospace'],
+        SourceCodePro: [`var(--SourceCodePro)`, ...fontFamily.mono],
       },
 
 

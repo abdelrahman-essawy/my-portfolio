@@ -2,14 +2,16 @@ import '../styles/globals.css'
 import Loading from './loading'
 import { Source_Code_Pro } from '@next/font/google'
 
-const sourceCodePro = Source_Code_Pro({
-  weights: [300, 400, 500, 600, 700, 800, 900],
+const SourceCodePro = Source_Code_Pro({
+  subsets: ['latin'],
+  variable: '--SourceCodePro'
 })
 function MyApp({ Component, pageProps }) {
 
+  console.log(SourceCodePro.variable)
 
   return (
-    <main className={sourceCodePro.style}>
+    <main className={`${SourceCodePro.variable} font-sans`}>
 
       <Component fallback={<Loading />} {...pageProps} />
     </main>
