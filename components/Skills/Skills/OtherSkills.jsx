@@ -293,7 +293,7 @@ export default function OtherSkills({ windowScreenWidth }) {
                     name: 'Internship',
                     by: 'EZDK',
                     href: 'https://maharatech.gov.eg/mod/customcert/verify_certificate.php?contextid=259555&code=xnYmZEvZfd&qrcode=1',
-                    date: 'Aug 2022 - Sep 2022 · 2 mos',
+                    date: 'Aug 2022 - Sep 2022',
                     icon: 'https://media.licdn.com/dms/image/C4E0BAQGOXgJ-PCvrpg/company-logo_100_100/0/1519878976704?e=1680739200&v=beta&t=Nt7cPWWqd8LPyzQBezizd0efFR3hnQgQ2oEYozUm3us',
                     color: 'bg-red-500',
 
