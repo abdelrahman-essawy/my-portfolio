@@ -212,6 +212,8 @@ export default function OtherSkills() {
                     id: 'szfaTBVwD9',
                     href: 'https://maharatech.gov.eg/mod/customcert/verify_certificate.php?contextid=259560&amp;code=szfaTBVwD9&amp;qrcode=1',
                     icon: 'https://media.licdn.com/dms/image/C560BAQGK3uuhQer46g/company-logo_100_100/0/1519885145295?e=1680739200&v=beta&t=X4Q4dPPe6YvMn8LJEoZuP9ZwDc7Kpv0xwCt9wnx8tjU',
+                    color: 'bg-red-500',
+
                 },
                 {
                     name: 'Cyber Security Engineer',
@@ -220,6 +222,8 @@ export default function OtherSkills() {
                     id: 'xnYmZEvZfd',
                     date: 'Issued Jul 2022',
                     icon: 'https://media.licdn.com/dms/image/C560BAQGK3uuhQer46g/company-logo_100_100/0/1519885145295?e=1680739200&v=beta&t=X4Q4dPPe6YvMn8LJEoZuP9ZwDc7Kpv0xwCt9wnx8tjU',
+                    color: 'bg-red-500',
+
 
                 },
 
