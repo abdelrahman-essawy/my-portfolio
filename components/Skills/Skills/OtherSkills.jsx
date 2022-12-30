@@ -156,10 +156,6 @@ export default function OtherSkills() {
                     href: 'https://maharatech.gov.eg/mod/customcert/verify_certificate.php?contextid=259560&code=szfaTBVwD9&qrcode=1',
                 },
                 {
-                    name: '',
-                    color: '',
-                },
-                {
                     name: 'Cyber Security Engineer',
                     color: 'bg-red-500',
                     href: 'https://maharatech.gov.eg/mod/customcert/verify_certificate.php?contextid=259555&code=xnYmZEvZfd&qrcode=1',
@@ -240,7 +236,7 @@ export default function OtherSkills() {
                                     width="100"
                                     height="100"
                                     layout="intrinsic"
-                                    src={icon} alt={name} className={`w-8 h-8 ${isOpen ? `sm:block hidden` : `block`}`} />
+                                    src={icon} alt={name} className={`w-8 h-8 ${isOpen ? `hidden` : `block`}`} />
                             </div>
                             <div className='w-full ml-4'>
                                 <div className='font-medium text-gray-700 text-md text-start sm:text-md'>{name} {badge ? badgeTemplete : null}</div>
