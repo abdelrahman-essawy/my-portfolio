@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import { motion as m } from 'framer-motion'
-import { Image } from 'next/image';
+import Image from 'next/image'
 
 export default function TechnicalSkills({ windowScreenWidth }) {
     const [seeMore, setSeeMore] = useState(false)
@@ -204,26 +204,22 @@ export default function TechnicalSkills({ windowScreenWidth }) {
 
 
 
-
                             <m.div
                                 key={index}
-                                initial={{ opacity: 0, y: 20 }}
-                                whileInView={{ opacity: 1, y: 0 }}
-                                exit={{ opacity: 0, y: 20 }}
-                                transition={{ delay: index * 0.07 }}
-                                viewport={{ once: true }}
-                                className={`flex flex-col justify-center px-1 py-2 bg-gray-100 rounded-lg shadow-md ${soon ? `grayscale blur-[0px]` : ``}`}>
+                                className={`flex flex-col justify-center px-1 py-2 bg-gray-100 rounded-lg  relative ${soon ? `grayscale blur-[1.3px]  bg-zinc-200/80 shadow-none` : `shadow-md`}`}>
                                 <div className='flex items-center justify-center flex-1'>
-                                    <img src={`./Skills/${name}.webp`} alt={name} className={`p-2  bg-gray-100 ${imgRounded}`} />
+                                    <Image width="512" height="512" layout="responsive" objectFit="contain"
+                                        src={`/Skills/${name}.webp`} alt={name} className={`p-2  bg-gray-100 ${imgRounded} ${soon ? `bg-gray-200` : `bg-gray-100`}`} />
                                 </div>
                                 <div className='flex items-center justify-between w-full space-x-2'>
                                     <div className='flex flex-col items-center justify-center w-full'>
-                                        <hr className='w-full h-1 my-2 bg-gray-100' />
+                                        <hr className={`w-full h-1 my-2  ${soon ? `bg-gray-200` : `bg-gray-100`}`} />
                                         <h3 className='mb-1 text-sm font-bold '>{name}</h3>
                                         <p className={`text-xs font-SourceCodePro ${setColor(level)}`}>{level}</p>
                                     </div>
                                 </div>
                             </m.div>
+
                         ))
 
                 }
@@ -237,7 +233,7 @@ export default function TechnicalSkills({ windowScreenWidth }) {
                     }</m.button>
 
 
-            </div>
-        </m.div>
+            </div >
+        </m.div >
     )
 }
