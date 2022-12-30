@@ -137,11 +137,11 @@ export default function OtherSkills({ windowScreenWidth }) {
                         Verify
                     </div>
                 )
-            case 'certified':
+            case 'Cert.':
 
                 return (
                     <div className={`p-1 ml-4 text-xs font-thin text-purple-400 uppercase border border-purple-400 rounded-md font-SourceCodePro   ${args}`}>
-                        Certified
+                        Cert.
                     </div>
                 )
             case 'amature':
@@ -178,7 +178,6 @@ export default function OtherSkills({ windowScreenWidth }) {
     const [otherSkills, setOtherSkills] = useState([
         {
             name: 'Cyber Security',
-            wordDesc: 'I have a good understanding of Cyber Security and how it works. I have a good understanding of how to set up a Cyber Security server and how to troubleshoot it.',
             desc: [
                 {
                     name: 'SOC Analysis',
@@ -237,8 +236,8 @@ export default function OtherSkills({ windowScreenWidth }) {
                     color: '',
                 },
                 {
-                    name: 'Certified Ethical Hacker',
-                    by: 'ITI - Information Technology Institute',
+                    name: 'Cert. Ethical Hacker',
+                    by: 'ITI',
                     date: 'Issued Jul 2022',
                     id: 'szfaTBVwD9',
                     href: 'https://maharatech.gov.eg/mod/customcert/verify_certificate.php?contextid=259560&amp;code=szfaTBVwD9&amp;qrcode=1',
@@ -248,7 +247,7 @@ export default function OtherSkills({ windowScreenWidth }) {
                 },
                 {
                     name: 'Cyber Security Engineer',
-                    by: 'ITI - Information Technology Institute',
+                    by: 'ITI',
                     href: 'https://maharatech.gov.eg/mod/customcert/verify_certificate.php?contextid=259555&code=xnYmZEvZfd&qrcode=1',
                     id: 'xnYmZEvZfd',
                     date: 'Issued Jul 2022',
@@ -259,7 +258,7 @@ export default function OtherSkills({ windowScreenWidth }) {
                 },
                 {
                     name: 'Netowrk Security Engineer',
-                    by: 'ITI - Information Technology Institute',
+                    by: 'ITI',
                     href: 'https://maharatech.gov.eg/mod/customcert/verify_certificate.php?contextid=35618&code=e8lLCxRnrI&qrcode=1',
                     id: 'e8lLCxRnrI',
                     date: 'Issued Jul 2022',
@@ -280,7 +279,7 @@ export default function OtherSkills({ windowScreenWidth }) {
 
                 },
                 {
-                    name: 'Cybersecurity Attacks and Defense Strategies',
+                    name: 'Social Engineering',
                     by: 'CodeRed',
                     href: 'https://media.licdn.com/dms/image/C4E0BAQFs-2ABuczSnA/company-logo_100_100/0/1647326522520?e=1680739200&v=beta&t=8M1StpjDoT8vDZn1M6yjigr2ccZT6YEx9w83HLRHopU',
                     id: '1d0a1029-036e-4693-aa0f-03e5244e65bf',
@@ -292,7 +291,7 @@ export default function OtherSkills({ windowScreenWidth }) {
                 },
                 {
                     name: 'Internship',
-                    by: 'Al Ezz Dekheila Steel Co. EZDK',
+                    by: 'EZDK',
                     href: 'https://maharatech.gov.eg/mod/customcert/verify_certificate.php?contextid=259555&code=xnYmZEvZfd&qrcode=1',
                     date: 'Aug 2022 - Sep 2022 · 2 mos',
                     icon: 'https://media.licdn.com/dms/image/C4E0BAQGOXgJ-PCvrpg/company-logo_100_100/0/1519878976704?e=1680739200&v=beta&t=Nt7cPWWqd8LPyzQBezizd0efFR3hnQgQ2oEYozUm3us',
@@ -305,7 +304,7 @@ export default function OtherSkills({ windowScreenWidth }) {
             ],
             icon: 'https://cdn-icons-png.flaticon.com/512/2716/2716652.png',
             badges: [
-                'expert', 'intern', 'certified', 'hands-on',
+                'expert', 'intern', 'Cert.', 'hands-on',
             ],
         },
         {
@@ -469,7 +468,7 @@ export default function OtherSkills({ windowScreenWidth }) {
                                     src={icon} alt={name} className={`sm:w-10 sm:h-10 w-10 h-10 ${isOpen ? `hidden sm:block` : `block`}`} />
                             </div>
                             <div className='w-full ml-4'>
-                                <div className='self-center font-medium text-gray-700 text-md text-start sm:text-md'>
+                                <div className='self-center text-sm font-medium text-gray-700 text-start sm:text-md'>
                                     {name}
                                     <span>
                                         <div key={index} className={` mt-1`}>
