@@ -93,7 +93,7 @@ export default function OtherSkills({ windowScreenWidth }) {
                                             {href ? <a href={href
                                                 ? href
                                                 : '#'} target='_blank' rel='noreferrer' >
-                                                {badgeTemplete('verify', 'text-blue-400 border-blue-400 hover:bg-blue-400 hover:text-white active:bg-blue-400 active:text-white')}
+                                                {badgeTemplete('verify', 'text-red-400 border-red-400 hover:bg-red-400 hover:text-white active:bg-red-400 active:text-white')}
                                             </a> : ``}
 
                                         </a>
@@ -328,7 +328,7 @@ export default function OtherSkills({ windowScreenWidth }) {
         },
         {
             name: 'Networking',
-            wordDesc: 'I have been working with networking since 2018. I have worked with many networking devices and protocols. I have also worked with many network solutions like Packet Tracer and Wireshark.',
+            wordDesc: 'Have been working with networking since 2018. I have worked with many networking devices and protocols. I have also worked with many network solutions like Packet Tracer and Wireshark.',
             desc: [
                 {
                     name: 'Network Design',
@@ -460,6 +460,7 @@ export default function OtherSkills({ windowScreenWidth }) {
         {
             name: 'Video Editing',
             icon: 'https://cdn-icons-png.flaticon.com/512/2886/2886875.png',
+            wordDesc: `Used to montage and edit videos for my college projects. Have worked with many video editing tools like Adobe Premiere and Adobe After Effects.`,
             desc: [
                 {
                     name: 'Adobe Premiere',
