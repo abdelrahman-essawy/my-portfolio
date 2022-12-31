@@ -7,6 +7,7 @@ import Spliiter from './../components/Spliiter';
 import { motion as m } from 'framer-motion'
 import { useEffect, useState } from 'react';
 import Skills from './../components/Skills/Skills';
+import Contact from '../components/Contact/Contact';
 
 
 export default function Home() {
@@ -49,6 +50,9 @@ export default function Home() {
         <Spliiter />
 
         <Testimonials windowScreenWidth={windowScreenWidth} />
+        <Spliiter />
+
+        <Contact />
         <Spliiter />
 
       </main>

@@ -2,7 +2,7 @@ import { Disclosure, Menu, Transition } from '@headlessui/react'
 import { Bars3Icon, BellIcon, XMarkIcon } from '@heroicons/react/24/outline'
 import Link from 'next/link'
 import DownloadSVG from './SVG/DownloadSVG';
-import {motion as m} from 'framer-motion'
+import { motion as m } from 'framer-motion'
 
 const navigation = [
   { name: 'Home', href: '#Home', current: true },
@@ -64,16 +64,33 @@ export default function Example() {
                 </div>
               </div>
               <div className="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0">
-                <button className="hidden px-4 py-2 font-semibold text-blue-500 bg-transparent border border-blue-500 rounded animate-pulse hover:animate-none sm:block hover:bg-blue-500 hover:text-white hover:border-transparent">
-                  Download CV
+                <Link
+                  target={'_blank'}
+                  href='/Abdelrahman Essawy Resume.pdf'
+                  download={'Abdelrahman Essawy Resume.pdf'}
+                >
+                  <button
+                    type="button"
+                    className="hidden px-4 py-2 font-semibold text-blue-500 bg-transparent border border-blue-500 rounded animate-pulse hover:animate-none sm:block hover:bg-blue-500 hover:text-white hover:border-transparent">
+
+
+                    Download CV
                 </button>
+                </Link>
 
-
+                <Link
+                  target={'_blank'}
+                  href='/Abdelrahman Essawy Resume.pdf'
+                  download={'Abdelrahman Essawy Resume.pdf'}
+                >
                 <button className="flex items-center justify-center px-4 py-2 text-lg font-semibold text-blue-500 bg-transparent border border-blue-500 rounded-lg animate-pulse hover:animate-none sm:hidden hover:border-blue-700 hover:text-blue-700">
-                  <DownloadSVG className={'fill-blue-500 mr-1 '} width={22} ></DownloadSVG>
-                  CV
+
+                    <DownloadSVG className={'fill-blue-500 mr-1 '} width={22} ></DownloadSVG>
+
+                    CV
                 </button>
 
+                </Link>
 
               </div>
             </div>
