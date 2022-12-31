@@ -427,6 +427,7 @@ export default function OtherSkills({ windowScreenWidth }) {
 
         {
             name: '3D Designing',
+            wordDesc: 'I have been working as Freelance 3D Desginer since 2020. I have worked with many 3D designing tools and finished more than 150 projects.',
             icon: 'https://cdn-icons-png.flaticon.com/512/1806/1806507.png',
             desc: [
                 {
@@ -436,7 +437,21 @@ export default function OtherSkills({ windowScreenWidth }) {
                 {
                     name: 'ZBrush',
                     color: 'bg-yellow-600',
-                }
+                },
+                {
+                    name: '',
+                    color: '',
+                }, {
+                    name: '',
+                    color: '',
+                },
+                cert('3D Designer',
+                    'Fiverr',
+                    '97 Reviews, 98% Positive Rating',
+                    '',
+                    'https://media.licdn.com/dms/image/C4D0BAQFHz9agyy675A/company-logo_100_100/0/1635337455276?e=1680739200&v=beta&t=gtIusyHXsCts8HOmeYPtl5fAfqPL2DprENS0rEEPhD8',
+                    'https://www.fiverr.com/abdelrahman_ess')
+
             ],
             badges: [
                 'expert', 'hands-on'
