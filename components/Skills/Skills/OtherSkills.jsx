@@ -65,7 +65,9 @@ export default function OtherSkills({ windowScreenWidth }) {
                                                                         height="100"
                                                                         layout="intrinsic"
                                                                         alt={by}
-                                                                        src={icon} />
+                                                                        src={icon}
+                                                                        className='rounded-lg'
+                                                                    />
                                                                 </div>
 
                                                                 <div className={`flex flex-col gap-1 ml-2 text-start`}>
@@ -91,7 +93,7 @@ export default function OtherSkills({ windowScreenWidth }) {
                                             {href ? <a href={href
                                                 ? href
                                                 : '#'} target='_blank' rel='noreferrer' >
-                                                {badgeTemplete('verify', 'text-blue-400 border-blue-400 hover:bg-blue-400 hover:text-white active:bg-blue-400 active:text-white')}
+                                                {badgeTemplete('verify', 'text-red-400 border-red-400 hover:bg-red-400 hover:text-white active:bg-red-400 active:text-white')}
                                             </a> : ``}
 
                                         </a>
@@ -126,41 +128,41 @@ export default function OtherSkills({ windowScreenWidth }) {
         switch (content) {
             case 'expert':
                 return (
-                    <div className={`p-1 ml-4 text-[.65rem] leading-3 sm:text-xs text-white uppercase border bg-red-400 rounded-md font-SourceCodePro  ${args}`}>
+                    <div className={`p-1 ml-4 text-[.68rem] leading-3 sm:text-xs text-white lowercase border bg-red-400 rounded-md font-SourceCodePro  ${args}`}>
                         expert
                     </div>
                 )
             case 'verify':
 
                 return (
-                    <div className={`p-1 ml-4 text-[.65rem] leading-3 sm:text-xs text-blue-400 uppercase border border-blue-400 rounded-md font-SourceCodePro  hover:bg-blue-400 hover:text-white active:bg-blue-400 active:text-white ${args}`}>
+                    <div className={`p-1 ml-4 text-[.68rem] leading-3 sm:text-xs text-blue-400 lowercase border border-blue-400 rounded-md font-SourceCodePro  hover:bg-blue-400 hover:text-white active:bg-blue-400 active:text-white ${args}`}>
                         Verify
                     </div>
                 )
             case 'Cert.':
 
                 return (
-                    <div className={`p-1 ml-4 text-[.65rem] leading-3 sm:text-xs text-purple-400 uppercase border border-purple-400 rounded-md font-SourceCodePro   ${args}`}>
+                    <div className={`p-1 ml-4 text-[.68rem] leading-3 sm:text-xs text-purple-400 lowercase border border-purple-400 rounded-md font-SourceCodePro   ${args}`}>
                         Cert.
                     </div>
                 )
             case 'amature':
 
                 return (
-                    <div className={`p-1 ml-4 text-[.65rem] leading-3 sm:text-xs text-blue-400 uppercase border border-blue-400 rounded-md font-SourceCodePro  ${args}`}>
+                    <div className={`p-1 ml-4 text-[.68rem] leading-3 sm:text-xs text-blue-400 lowercase border border-blue-400 rounded-md font-SourceCodePro  ${args}`}>
                         amature
                     </div>
                 )
             case 'hands-on':
 
                 return (
-                    <div className={`p-1 ml-4 text-[.65rem] leading-3 sm:text-xs text-green-500 uppercase border border-green-500 rounded-md font-SourceCodePro ${args}`}>
+                    <div className={`p-1 ml-4 text-[.68rem] leading-3 sm:text-xs text-green-500 lowercase border border-green-500 rounded-md font-SourceCodePro ${args}`}>
                         hands-on
                     </div>
                 )
             case 'intern':
                 return (
-                    <div className={`p-1 ml-4 text-[.65rem] leading-3 sm:text-xs text-yellow-500 uppercase border border-yellow-500 rounded-md font-SourceCodePro ${args}`}>
+                    <div className={`p-1 ml-4 text-[.68rem] leading-3 sm:text-xs text-yellow-600 lowercase border border-yellow-600 rounded-md font-SourceCodePro ${args}`}>
                         intern
                     </div>
                 )
@@ -174,6 +176,27 @@ export default function OtherSkills({ windowScreenWidth }) {
         }
 
     }
+    const cert = (
+        name,
+        by,
+        date,
+        id,
+        icon,
+        href = null,
+        color = 'bg-red-500',
+    ) => {
+        const certTemplete = {
+            name: name,
+            by: by,
+            href: href,
+            id: id,
+            date: date,
+            icon: icon,
+            color: color,
+        }
+        return certTemplete
+    }
+
 
     const [otherSkills, setOtherSkills] = useState([
         {
@@ -213,19 +236,19 @@ export default function OtherSkills({ windowScreenWidth }) {
                 },
                 {
                     name: 'Metasploit',
-                    color: 'bg-yellow-500',
+                    color: 'bg-yellow-600',
                 },
                 {
                     name: 'Nmap',
-                    color: 'bg-yellow-500',
+                    color: 'bg-yellow-600',
                 },
                 {
                     name: 'Wireshark',
-                    color: 'bg-yellow-500',
+                    color: 'bg-yellow-600',
                 },
                 {
                     name: 'Burp Suite',
-                    color: 'bg-yellow-500',
+                    color: 'bg-yellow-600',
                 },
                 {
                     name: '',
@@ -248,9 +271,9 @@ export default function OtherSkills({ windowScreenWidth }) {
                 {
                     name: 'Cyber Security Engineer',
                     by: 'ITI',
-                    href: 'https://maharatech.gov.eg/mod/customcert/verify_certificate.php?contextid=259555&code=xnYmZEvZfd&qrcode=1',
-                    id: 'xnYmZEvZfd',
                     date: 'Issued Jul 2022',
+                    id: 'xnYmZEvZfd',
+                    href: 'https://maharatech.gov.eg/mod/customcert/verify_certificate.php?contextid=259555&code=xnYmZEvZfd&qrcode=1',
                     icon: 'https://media.licdn.com/dms/image/C560BAQGK3uuhQer46g/company-logo_100_100/0/1519885145295?e=1680739200&v=beta&t=X4Q4dPPe6YvMn8LJEoZuP9ZwDc7Kpv0xwCt9wnx8tjU',
                     color: 'bg-red-500',
 
@@ -259,9 +282,9 @@ export default function OtherSkills({ windowScreenWidth }) {
                 {
                     name: 'Netowrk Security Engineer',
                     by: 'ITI',
-                    href: 'https://maharatech.gov.eg/mod/customcert/verify_certificate.php?contextid=35618&code=e8lLCxRnrI&qrcode=1',
-                    id: 'e8lLCxRnrI',
                     date: 'Issued Jul 2022',
+                    id: 'e8lLCxRnrI',
+                    href: 'https://maharatech.gov.eg/mod/customcert/verify_certificate.php?contextid=35618&code=e8lLCxRnrI&qrcode=1',
                     icon: 'https://media.licdn.com/dms/image/C560BAQGK3uuhQer46g/company-logo_100_100/0/1519885145295?e=1680739200&v=beta&t=X4Q4dPPe6YvMn8LJEoZuP9ZwDc7Kpv0xwCt9wnx8tjU',
                     color: 'bg-red-500',
 
@@ -270,10 +293,10 @@ export default function OtherSkills({ windowScreenWidth }) {
                 {
                     name: 'Pre Security',
                     by: 'TryHackMe',
-                    href: 'https://tryhackme-certificates.s3-eu-west-1.amazonaws.com/THM-V1OLTKREBZ.png',
-                    id: 'THM-V1OLTKREBZ',
                     date: 'Issued Jul 2022',
+                    id: 'THM-V1OLTKREBZ',
                     icon: 'https://media.licdn.com/dms/image/C4D0BAQHbrQNn-KIK_g/company-logo_100_100/0/1555598012984?e=1680739200&v=beta&t=EBhAyahiHPZ41TJu8RR4CX3a3PxLIEJrV_iel9-xAFk',
+                    href: 'https://tryhackme-certificates.s3-eu-west-1.amazonaws.com/THM-V1OLTKREBZ.png',
                     color: 'bg-red-500',
 
 
@@ -281,23 +304,20 @@ export default function OtherSkills({ windowScreenWidth }) {
                 {
                     name: 'Social Engineering',
                     by: 'CodeRed',
-                    href: 'https://media.licdn.com/dms/image/C4E0BAQFs-2ABuczSnA/company-logo_100_100/0/1647326522520?e=1680739200&v=beta&t=8M1StpjDoT8vDZn1M6yjigr2ccZT6YEx9w83HLRHopU',
-                    id: '1d0a1029-036e-4693-aa0f-03e5244e65bf',
                     date: 'Issued Jul 2022',
+                    id: '1d0a1029-036e-4693-aa0f-03e5244e65bf',
                     icon: 'https://media.licdn.com/dms/image/C4E0BAQFs-2ABuczSnA/company-logo_100_100/0/1647326522520?e=1680739200&v=beta&t=8M1StpjDoT8vDZn1M6yjigr2ccZT6YEx9w83HLRHopU',
+                    href: 'https://media.licdn.com/dms/image/C4E0BAQFs-2ABuczSnA/company-logo_100_100/0/1647326522520?e=1680739200&v=beta&t=8M1StpjDoT8vDZn1M6yjigr2ccZT6YEx9w83HLRHopU',
                     color: 'bg-red-500',
 
 
                 },
-                {
-                    name: 'Internship',
-                    by: 'EZDK',
-                    date: 'Aug 2022 - Sep 2022',
-                    icon: 'https://media.licdn.com/dms/image/C4E0BAQGOXgJ-PCvrpg/company-logo_100_100/0/1519878976704?e=1680739200&v=beta&t=Nt7cPWWqd8LPyzQBezizd0efFR3hnQgQ2oEYozUm3us',
-                    color: 'bg-red-500',
-
-
-                },
+                cert('Internship',
+                    'EZDK',
+                    'Aug 2022 - Sep 2022',
+                    '',
+                    'https://media.licdn.com/dms/image/C4E0BAQGOXgJ-PCvrpg/company-logo_100_100/0/1519878976704?e=1680739200&v=beta&t=Nt7cPWWqd8LPyzQBezizd0efFR3hnQgQ2oEYozUm3us',
+                    '')
 
 
             ],
@@ -308,7 +328,7 @@ export default function OtherSkills({ windowScreenWidth }) {
         },
         {
             name: 'Networking',
-            wordDesc: 'I have been working with networking since 2018. I have worked with many networking devices and protocols. I have also worked with many network simulators like Packet Tracer and Wireshark.',
+            wordDesc: 'Have been working with networking since 2018. I have worked with many networking devices and protocols. I have also worked with many network solutions like Packet Tracer and Wireshark.',
             desc: [
                 {
                     name: 'Network Design',
@@ -336,12 +356,26 @@ export default function OtherSkills({ windowScreenWidth }) {
                 },
                 {
                     name: 'Packet Tracer',
-                    color: 'bg-yellow-500',
+                    color: 'bg-yellow-600',
                 },
                 {
                     name: 'Wireshark',
-                    color: 'bg-yellow-500',
+                    color: 'bg-yellow-600',
                 },
+                {
+                    name: '',
+                    color: '',
+                },
+                {
+                    name: '',
+                    color: '',
+                },
+                cert('Internship',
+                    'EZDK',
+                    'Aug 2022 - Sep 2022',
+                    '',
+                    'https://media.licdn.com/dms/image/C4E0BAQGOXgJ-PCvrpg/company-logo_100_100/0/1519878976704?e=1680739200&v=beta&t=Nt7cPWWqd8LPyzQBezizd0efFR3hnQgQ2oEYozUm3us',
+                    '')
 
 
             ],
@@ -352,7 +386,7 @@ export default function OtherSkills({ windowScreenWidth }) {
         },
         {
             name: 'Linux',
-            wordDesc: 'I have a good understanding of Linux and how it works. I have a good understanding of how to set up a Linux server and how to troubleshoot it.',
+            wordDesc: 'I have a good understanding of Linux and how it works. I have worked with many Linux distributions and I have also worked with many Linux tools.',
             icon: 'https://cdn-icons-png.flaticon.com/512/2333/2333187.png',
             badges: [
                 'hands-on', 'amature'
@@ -361,22 +395,63 @@ export default function OtherSkills({ windowScreenWidth }) {
                 {
                     name: 'Linux Administration',
                     color: 'bg-blue-500',
-                }
+                },
+                {
+                    name: 'Linux Troubleshooting',
+                    color: 'bg-blue-500',
+                },
+                {
+                    name: 'Kali Linux',
+                    color: 'bg-yellow-600',
+                },
+                {
+                    name: 'Ubuntu',
+                    color: 'bg-yellow-600',
+                },
+                {
+                    name: '',
+                    color: '',
+                },
+                {
+                    name: '',
+                    color: '',
+                },
+                cert('Shell Bash Scripting',
+                    'Coursera',
+                    'Issued May 2022',
+                    '2PRJQYMSXA35',
+                    'https://media.licdn.com/dms/image/C4D0BAQGexnfBxeEG-g/company-logo_100_100/0/1608039227697?e=1680739200&v=beta&t=Wtfo6t88A1NRA7A29vN1gsY1km-hYTbpHx5lgHinTJs',
+                    'https://coursera-certificate-images.s3.amazonaws.com/2PRJQYMSXA35')
             ],
         },
 
         {
             name: '3D Designing',
+            wordDesc: 'I have been working as Freelance 3D Desginer since 2020. I have worked with many 3D designing tools and finished more than 150 projects.',
             icon: 'https://cdn-icons-png.flaticon.com/512/1806/1806507.png',
             desc: [
                 {
                     name: 'Blender',
-                    color: 'bg-yellow-500',
+                    color: 'bg-yellow-600',
                 },
                 {
                     name: 'ZBrush',
-                    color: 'bg-yellow-500',
-                }
+                    color: 'bg-yellow-600',
+                },
+                {
+                    name: '',
+                    color: '',
+                }, {
+                    name: '',
+                    color: '',
+                },
+                cert('3D Designer',
+                    'Fiverr',
+                    '97 Reviews, 98% Positive Rating',
+                    '',
+                    'https://media.licdn.com/dms/image/C4D0BAQFHz9agyy675A/company-logo_100_100/0/1635337455276?e=1680739200&v=beta&t=gtIusyHXsCts8HOmeYPtl5fAfqPL2DprENS0rEEPhD8',
+                    'https://www.fiverr.com/abdelrahman_ess')
+
             ],
             badges: [
                 'expert', 'hands-on'
@@ -385,14 +460,15 @@ export default function OtherSkills({ windowScreenWidth }) {
         {
             name: 'Video Editing',
             icon: 'https://cdn-icons-png.flaticon.com/512/2886/2886875.png',
+            wordDesc: `Used to montage and edit videos for my college projects. Have worked with many video editing tools like Adobe Premiere and Adobe After Effects.`,
             desc: [
                 {
                     name: 'Adobe Premiere',
-                    color: 'bg-yellow-500',
+                    color: 'bg-yellow-600',
                 },
                 {
                     name: 'Adobe After Effects',
-                    color: 'bg-yellow-500',
+                    color: 'bg-yellow-600',
                 },
             ],
             badges: [
@@ -402,6 +478,7 @@ export default function OtherSkills({ windowScreenWidth }) {
         {
             name: 'Photography',
             icon: 'https://cdn-icons-png.flaticon.com/512/1042/1042339.png',
+            wordDesc: `I love taking good photos and know how to edit them. I have worked with many editing tools like Adobe Lightroom and Adobe Photoshop.`,
             badges: [
                 'amature'],
             desc: [
@@ -458,12 +535,12 @@ export default function OtherSkills({ windowScreenWidth }) {
                     <m.div
                         className='flex items-center justify-between p-3 '>
                         <div className='flex items-center flex-grow'>
-                            <div className={`${color}  ${isOpen ? `mb-auto mt-[9.531px]` : `m-auto `}`}>
+                            <div className={`${color}  ${isOpen ? `mb-auto mt-[7.063px]` : `m-auto `}`}>
                                 <Image
                                     priority={true}
-                                    width="100"
-                                    height="100"
-                                    layout="fixed"
+                                    width="50"
+                                    height="50"
+                                    layout="intrinsic"
                                     src={icon} alt={name} className={`sm:w-10 sm:h-10 w-10 h-10 ${isOpen ? `hidden sm:block` : `block`}`} />
                             </div>
                             <div className='w-full ml-4'>
