@@ -478,6 +478,7 @@ export default function OtherSkills({ windowScreenWidth }) {
         {
             name: 'Photography',
             icon: 'https://cdn-icons-png.flaticon.com/512/1042/1042339.png',
+            wordDesc: `I love taking good photos and know how to edit them. I have worked with many editing tools like Adobe Lightroom and Adobe Photoshop.`,
             badges: [
                 'amature'],
             desc: [
