@@ -181,8 +181,8 @@ export default function OtherSkills({ windowScreenWidth }) {
         by,
         date,
         id,
-        href,
         icon,
+        href = null,
         color = 'bg-red-500',
     ) => {
         const certTemplete = {
@@ -312,15 +312,12 @@ export default function OtherSkills({ windowScreenWidth }) {
 
 
                 },
-                {
-                    name: 'Internship',
-                    by: 'EZDK',
-                    date: 'Aug 2022 - Sep 2022',
-                    icon: 'https://media.licdn.com/dms/image/C4E0BAQGOXgJ-PCvrpg/company-logo_100_100/0/1519878976704?e=1680739200&v=beta&t=Nt7cPWWqd8LPyzQBezizd0efFR3hnQgQ2oEYozUm3us',
-                    color: 'bg-red-500',
-
-
-                },
+                cert('Internship',
+                    'EZDK',
+                    'Aug 2022 - Sep 2022',
+                    '',
+                    'https://media.licdn.com/dms/image/C4E0BAQGOXgJ-PCvrpg/company-logo_100_100/0/1519878976704?e=1680739200&v=beta&t=Nt7cPWWqd8LPyzQBezizd0efFR3hnQgQ2oEYozUm3us',
+                    '')
 
 
             ],
@@ -365,6 +362,20 @@ export default function OtherSkills({ windowScreenWidth }) {
                     name: 'Wireshark',
                     color: 'bg-yellow-600',
                 },
+                {
+                    name: '',
+                    color: '',
+                },
+                {
+                    name: '',
+                    color: '',
+                },
+                cert('Internship',
+                    'EZDK',
+                    'Aug 2022 - Sep 2022',
+                    '',
+                    'https://media.licdn.com/dms/image/C4E0BAQGOXgJ-PCvrpg/company-logo_100_100/0/1519878976704?e=1680739200&v=beta&t=Nt7cPWWqd8LPyzQBezizd0efFR3hnQgQ2oEYozUm3us',
+                    '')
 
 
             ],
@@ -397,12 +408,20 @@ export default function OtherSkills({ windowScreenWidth }) {
                     name: 'Ubuntu',
                     color: 'bg-yellow-600',
                 },
+                {
+                    name: '',
+                    color: '',
+                },
+                {
+                    name: '',
+                    color: '',
+                },
                 cert('Shell Bash Scripting',
                     'Coursera',
                     'Issued May 2022',
                     '2PRJQYMSXA35',
-                    'https://coursera-certificate-images.s3.amazonaws.com/2PRJQYMSXA35',
-                    'https://media.licdn.com/dms/image/C4D0BAQGexnfBxeEG-g/company-logo_100_100/0/1608039227697?e=1680739200&v=beta&t=Wtfo6t88A1NRA7A29vN1gsY1km-hYTbpHx5lgHinTJs')
+                    'https://media.licdn.com/dms/image/C4D0BAQGexnfBxeEG-g/company-logo_100_100/0/1608039227697?e=1680739200&v=beta&t=Wtfo6t88A1NRA7A29vN1gsY1km-hYTbpHx5lgHinTJs',
+                    'https://coursera-certificate-images.s3.amazonaws.com/2PRJQYMSXA35')
             ],
         },
 
