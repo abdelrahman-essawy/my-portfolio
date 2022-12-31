@@ -93,7 +93,7 @@ export default function OtherSkills({ windowScreenWidth }) {
                                             {href ? <a href={href
                                                 ? href
                                                 : '#'} target='_blank' rel='noreferrer' >
-                                                {badgeTemplete('verify', 'text-blue-400 border-blue-400 hover:bg-blue-400 hover:text-white active:bg-blue-400 active:text-white')}
+                                                {badgeTemplete('verify', 'text-red-400 border-red-400 hover:bg-red-400 hover:text-white active:bg-red-400 active:text-white')}
                                             </a> : ``}
 
                                         </a>
@@ -181,8 +181,8 @@ export default function OtherSkills({ windowScreenWidth }) {
         by,
         date,
         id,
-        href,
         icon,
+        href = null,
         color = 'bg-red-500',
     ) => {
         const certTemplete = {
@@ -312,15 +312,12 @@ export default function OtherSkills({ windowScreenWidth }) {
 
 
                 },
-                {
-                    name: 'Internship',
-                    by: 'EZDK',
-                    date: 'Aug 2022 - Sep 2022',
-                    icon: 'https://media.licdn.com/dms/image/C4E0BAQGOXgJ-PCvrpg/company-logo_100_100/0/1519878976704?e=1680739200&v=beta&t=Nt7cPWWqd8LPyzQBezizd0efFR3hnQgQ2oEYozUm3us',
-                    color: 'bg-red-500',
-
-
-                },
+                cert('Internship',
+                    'EZDK',
+                    'Aug 2022 - Sep 2022',
+                    '',
+                    'https://media.licdn.com/dms/image/C4E0BAQGOXgJ-PCvrpg/company-logo_100_100/0/1519878976704?e=1680739200&v=beta&t=Nt7cPWWqd8LPyzQBezizd0efFR3hnQgQ2oEYozUm3us',
+                    '')
 
 
             ],
@@ -331,7 +328,7 @@ export default function OtherSkills({ windowScreenWidth }) {
         },
         {
             name: 'Networking',
-            wordDesc: 'I have been working with networking since 2018. I have worked with many networking devices and protocols. I have also worked with many network solutions like Packet Tracer and Wireshark.',
+            wordDesc: 'Have been working with networking since 2018. I have worked with many networking devices and protocols. I have also worked with many network solutions like Packet Tracer and Wireshark.',
             desc: [
                 {
                     name: 'Network Design',
@@ -365,6 +362,20 @@ export default function OtherSkills({ windowScreenWidth }) {
                     name: 'Wireshark',
                     color: 'bg-yellow-600',
                 },
+                {
+                    name: '',
+                    color: '',
+                },
+                {
+                    name: '',
+                    color: '',
+                },
+                cert('Internship',
+                    'EZDK',
+                    'Aug 2022 - Sep 2022',
+                    '',
+                    'https://media.licdn.com/dms/image/C4E0BAQGOXgJ-PCvrpg/company-logo_100_100/0/1519878976704?e=1680739200&v=beta&t=Nt7cPWWqd8LPyzQBezizd0efFR3hnQgQ2oEYozUm3us',
+                    '')
 
 
             ],
@@ -397,17 +408,26 @@ export default function OtherSkills({ windowScreenWidth }) {
                     name: 'Ubuntu',
                     color: 'bg-yellow-600',
                 },
+                {
+                    name: '',
+                    color: '',
+                },
+                {
+                    name: '',
+                    color: '',
+                },
                 cert('Shell Bash Scripting',
                     'Coursera',
                     'Issued May 2022',
                     '2PRJQYMSXA35',
-                    'https://coursera-certificate-images.s3.amazonaws.com/2PRJQYMSXA35',
-                    'https://media.licdn.com/dms/image/C4D0BAQGexnfBxeEG-g/company-logo_100_100/0/1608039227697?e=1680739200&v=beta&t=Wtfo6t88A1NRA7A29vN1gsY1km-hYTbpHx5lgHinTJs')
+                    'https://media.licdn.com/dms/image/C4D0BAQGexnfBxeEG-g/company-logo_100_100/0/1608039227697?e=1680739200&v=beta&t=Wtfo6t88A1NRA7A29vN1gsY1km-hYTbpHx5lgHinTJs',
+                    'https://coursera-certificate-images.s3.amazonaws.com/2PRJQYMSXA35')
             ],
         },
 
         {
             name: '3D Designing',
+            wordDesc: 'I have been working as Freelance 3D Desginer since 2020. I have worked with many 3D designing tools and finished more than 150 projects.',
             icon: 'https://cdn-icons-png.flaticon.com/512/1806/1806507.png',
             desc: [
                 {
@@ -417,7 +437,21 @@ export default function OtherSkills({ windowScreenWidth }) {
                 {
                     name: 'ZBrush',
                     color: 'bg-yellow-600',
-                }
+                },
+                {
+                    name: '',
+                    color: '',
+                }, {
+                    name: '',
+                    color: '',
+                },
+                cert('3D Designer',
+                    'Fiverr',
+                    '97 Reviews, 98% Positive Rating',
+                    '',
+                    'https://media.licdn.com/dms/image/C4D0BAQFHz9agyy675A/company-logo_100_100/0/1635337455276?e=1680739200&v=beta&t=gtIusyHXsCts8HOmeYPtl5fAfqPL2DprENS0rEEPhD8',
+                    'https://www.fiverr.com/abdelrahman_ess')
+
             ],
             badges: [
                 'expert', 'hands-on'
@@ -426,6 +460,7 @@ export default function OtherSkills({ windowScreenWidth }) {
         {
             name: 'Video Editing',
             icon: 'https://cdn-icons-png.flaticon.com/512/2886/2886875.png',
+            wordDesc: `Used to montage and edit videos for my college projects. Have worked with many video editing tools like Adobe Premiere and Adobe After Effects.`,
             desc: [
                 {
                     name: 'Adobe Premiere',
@@ -443,6 +478,7 @@ export default function OtherSkills({ windowScreenWidth }) {
         {
             name: 'Photography',
             icon: 'https://cdn-icons-png.flaticon.com/512/1042/1042339.png',
+            wordDesc: `I love taking good photos and know how to edit them. I have worked with many editing tools like Adobe Lightroom and Adobe Photoshop.`,
             badges: [
                 'amature'],
             desc: [
