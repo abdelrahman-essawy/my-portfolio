@@ -10,7 +10,7 @@ export default function Contact() {
             whileInView={{ opacity: 1, x: 0, type: 'spring' }}
             transition={{ delay: 0.1 }}
             className='relative px-4 py-6 overflow-hidden bg-white sm:p-0 overflow-y sm:px-0'>
-            <div className='px-12 mt-8 sm:mx-0'>
+            <div className='px-12 sm:mt-8 sm:mx-0'>
                 <h2 className='text-3xl tracking-tight text-center text-blue-500 leading-2 '>Contact me</h2>
             </div>
             <h3 className='my-4 text-xl text-center text-gray-500 sm:mb-8 sm:tracking-normal leading-2'>
@@ -18,35 +18,29 @@ export default function Contact() {
             </h3>
 
             <div className='max-w-screen-xl m-auto mx-auto text-center sm:flex sm:justify-center sm:items-center'>
-
+                
                 <div className='overflow-hidden bg-white rounded-lg shadow border-zinc-100'>
-                    <div className='flex items-center justify-around gap-[.1rem] overflow-hidden '>
-                        <div className='flex-grow p-2 rounded rounded-l-none bg-zinc-100 sm:hover:bg-zinc-200 active:bg-zinc-200'>
-                            <div className='w-8 h-8 m-auto'>
-                                <img src='https://cdn-icons-png.flaticon.com/512/732/732200.png'></img>
-                            </div>
+                    <div className='flex items-center justify-around gap-[.1rem] cursor-pointer '>
+                        <div className='transition ease-in duration-100  flex-grow p-2 rounded rounded-l-none bg-zinc-100 sm:hover:bg-zinc-200 active:bg-zinc-200'>
+                                <img className={`w-8 h-8 m-auto`} src='https://cdn-icons-png.flaticon.com/512/5075/5075620.png'/>
                         </div>
-                        <div className='flex-grow p-2 rounded bg-zinc-100 sm:hover:bg-zinc-200 active:bg-zinc-200'>
-                            <div className='w-8 h-8 m-auto'>
-                                <img src='https://cdn-icons-png.flaticon.com/512/732/732200.png'></img>
-                            </div>
+                        <div className='transition ease-in duration-100  flex-grow p-2 rounded bg-zinc-100 sm:hover:bg-zinc-200 active:bg-zinc-200'>
+                                <img className={`w-8 h-8 m-auto`} src='https://cdn-icons-png.flaticon.com/512/3062/3062634.png'/>
                         </div>
-                        <div className='flex-grow p-2 rounded rounded-r-none bg-zinc-100 sm:hover:bg-zinc-200 active:bg-zinc-200'>
-                            <div className='w-8 h-8 m-auto'>
-                                <img src='https://cdn-icons-png.flaticon.com/512/732/732200.png'></img>
-                            </div>
+                        <div className='transition ease-in duration-100  flex-grow p-2 rounded rounded-r-none bg-zinc-100 sm:hover:bg-zinc-200 active:bg-zinc-200'>
+                                <img  className={`w-8 h-8 m-auto`} src='https://cdn-icons-png.flaticon.com/512/4413/4413664.png'/>
                         </div>
 
                     </div>
-                    <div className='flex items-center justify-center m-auto bg-zinc-50'>
+                    <div className='flex items-center justify-center m-auto bg-zinc-50 mt-4'>
                         <div>
 
                             <div className="grid max-w-screen-xl grid-cols-1 gap-8 px-2 py-4 mx-auto text-gray-900 bg-white rounded-lg shadow-lg sm:px-8 sm:py-16 md:grid-cols-2 md:px-12 lg:px-16 xl:px-32">
                                 <div className="flex flex-col justify-between">
                                     <div>
-                                        <h2 className="text-4xl font-bold leading-tight lg:text-5xl">Lets talk about everything!</h2>
+                                        <h2 className="text-4xl font-bold leading-tight text-gray-700 lg:text-5xl">Lets talk about everything!</h2>
                                         <div className="mt-8 text-gray-700">
-                                            Hate forms? Send me an <Link target='_blank' rel='noreferrer' href='https://mail.google.com/mail/u/0/?fs=1&to=abdelrahman.mo.essawy@gmail.com&tf=cm' className="underline">email</Link> instead.
+                                            Hate forms? Send me an <Link target='_blank' rel='noreferrer' href='https://mail.google.com/mail/u/0/?fs=1&to=abdelrahman.mo.essawy@gmail.com&tf=cm' className="text-blue-400 underline sm:hover:text-blue-500 active:text-blue-500">email</Link> instead.
                                         </div>
                                     </div>
                                     <div className="mt-8 text-center">
@@ -293,18 +287,18 @@ export default function Contact() {
                                 <div className>
                                     <div>
                                         <span className="text-sm font-bold text-gray-600 uppercase">Full Name</span>
-                                        <input className="w-full p-3 mt-2 text-gray-900 rounded-lg bg-zinc-200 focus:outline-none focus:shadow-outline" type="text" placeholder />
+                                        <input className="w-full p-3 mt-2 text-gray-900 transition ease-in duration-100 rounded-lg focus:ring ring-blue-300 bg-zinc-100 focus:outline-none focus:shadow-outline" type="text" placeholder />
                                     </div>
-                                    <div className="mt-8">
+                                    <div className="sm:mt-8 mt-4">
                                         <span className="text-sm font-bold text-gray-600 uppercase">Email</span>
-                                        <input className="w-full p-3 mt-2 text-gray-900 rounded-lg bg-zinc-200 focus:outline-none focus:shadow-outline" type="text" />
+                                        <input className="transition ease-in duration-100 focus:ring ring-blue-300 w-full p-3 mt-2 text-gray-900 rounded-lg bg-zinc-100 focus:outline-none focus:shadow-outline" type="text" />
                                     </div>
-                                    <div className="mt-8">
+                                    <div className="sm:mt-8 mt-4">
                                         <span className="text-sm font-bold text-gray-600 uppercase">Message</span>
-                                        <textarea className="w-full h-32 p-3 mt-2 text-gray-900 rounded-lg bg-zinc-200 focus:outline-none focus:shadow-outline" defaultValue={""} />
+                                        <textarea className="transition ease-in duration-100 focus:ring ring-blue-300 w-full h-32 p-3 mt-2 text-gray-900 rounded-lg bg-zinc-100 focus:outline-none focus:shadow-outline" defaultValue={""} />
                                     </div>
-                                    <div className="mt-8">
-                                        <button className="w-full p-3 text-sm font-bold tracking-wide text-gray-100 uppercase bg-blue-500 rounded-lg focus:outline-none focus:shadow-outline">
+                                    <div className="sm:mt-8 mt-4">
+                                        <button className="transition ease-in duration-100 sm:hover:bg-blue-600 active:bg-blue-600  w-full p-3 text-sm font-bold tracking-wide text-gray-100 uppercase bg-blue-500 rounded-lg focus:outline-none focus:shadow-outline">
                                             Send Message
                                         </button>
                                     </div>
