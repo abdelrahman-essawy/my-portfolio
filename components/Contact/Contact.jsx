@@ -19,7 +19,7 @@ export default function Contact() {
 
             <div className='max-w-screen-xl m-auto mx-auto text-center sm:flex sm:justify-center sm:items-center'>
 
-                <div className='overflow-hidden bg-white border rounded-lg shadow border-zinc-100'>
+                <div className='overflow-hidden bg-white rounded-lg shadow border-zinc-100'>
                     <div className='flex items-center justify-around gap-[.1rem] overflow-hidden '>
                         <div className='flex-grow p-2 rounded rounded-l-none bg-zinc-100 sm:hover:bg-zinc-200 active:bg-zinc-200'>
                             <div className='w-8 h-8 m-auto'>
