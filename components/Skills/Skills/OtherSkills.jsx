@@ -135,7 +135,7 @@ export default function OtherSkills({ windowScreenWidth }) {
             case 'verify':
 
                 return (
-                    <div className={`p-1 ml-4 text-[.68rem] leading-3 sm:text-xs text-blue-400 lowercase border border-blue-400 rounded-md font-SourceCodePro  hover:bg-blue-400 hover:text-white active:bg-blue-400 active:text-white ${args}`}>
+                    <div className={`p-1 ml-4 text-[.68rem] leading-3 sm:text-xs text-red-400 lowercase border border-red-400 rounded-md font-SourceCodePro  hover:bg-red-400 hover:text-white active:bg-red-400 active:text-white ${args}`}>
                         Verify
                     </div>
                 )

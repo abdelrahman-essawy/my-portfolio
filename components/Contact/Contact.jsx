@@ -40,7 +40,9 @@ export default function Contact() {
                                     <div>
                                         <h2 className="text-4xl font-bold leading-tight text-gray-700 lg:text-5xl">Lets talk about everything!</h2>
                                         <div className="mt-8 text-gray-700">
-                                            Hate forms? Send me an <Link target='_blank' rel='noreferrer' href='https://mail.google.com/mail/u/0/?fs=1&to=abdelrahman.mo.essawy@gmail.com&tf=cm' className="text-blue-400 underline sm:hover:text-blue-500 active:text-blue-500">email</Link> instead.
+                                        
+                                            Hate forms? Send me an <Link target='_blank' rel='noreferrer' href={'mailto:abdelrahman.mo.essawy@gmail.com'}
+                                             className="text-blue-400 underline sm:hover:text-blue-500 active:text-blue-500">email</Link> instead.
                                         </div>
                                     </div>
                                     <div className="mt-8 text-center">
@@ -314,6 +316,6 @@ export default function Contact() {
             </div>
 
 
-        </m.section>
+        </m.section >
     )
 }
