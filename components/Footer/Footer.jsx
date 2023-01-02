@@ -1,6 +1,7 @@
 import Image from 'next/image'
 import Link from 'next/link'
 import React from 'react'
+import { motion as m } from 'framer-motion'
 
 import Facebook from './../SVG/Social Media/Facebook';
 import Instagram from './../SVG/Social Media/Instagram';
@@ -49,7 +50,10 @@ export default function Footer({ navigation }) {
     ]
     return (
 
-        <footer class="p-4 bg-white sm:p-6 dark:bg-gray-900 text-center sm:text-start">
+        <m.footer
+            initial={{ opacity: 0, y: 10 }}
+            whileInView={{ opacity: 1, y: 0, type: 'spring' }}
+            class="p-4 bg-white sm:p-6 dark:bg-gray-900 text-center sm:text-start">
             <div class="px-4 sm:mt-2  max-w-screen-xl m-auto mx-auto sm:text-start text-center lg:py-0 lg:px-12 md:flex md:justify-between">
                 <div class="mb-6 md:mb-0 text-4xl sm:text-2xl ">
                     <Link href="https://essawy.me/" >
@@ -70,7 +74,12 @@ export default function Footer({ navigation }) {
 
                                 }, index
                             ) => (
-                                <li
+                                <m.li
+                                    initial={{ opacity: 0, }}
+                                    whileInView={{ opacity: 1, }}
+                                    viewport={{once:'true'}}
+                                    exit={{ opacity: 0, }}
+                                    transition={{ delay: index * 0.1 }}
                                     key={index}>
                                     <Link
                                         href={href}
@@ -80,7 +89,7 @@ export default function Footer({ navigation }) {
 
                                         {name}
                                     </Link>
-                                </li>
+                                </m.li>
 
                             ))}
 
@@ -116,7 +125,7 @@ export default function Footer({ navigation }) {
                     }
                 </div>
             </div>
-        </footer>
+        </m.footer>
 
     )
 }
