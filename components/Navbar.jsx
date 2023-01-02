@@ -4,20 +4,13 @@ import Link from 'next/link'
 import DownloadSVG from './SVG/DownloadSVG';
 import { motion as m } from 'framer-motion'
 
-const navigation = [
-  { name: 'Home', href: '#Home', current: true },
-  { name: 'About', href: '#About', current: false },
-  { name: 'Skills', href: '#Skills', current: false },
-  { name: 'Testimonials', href: '#Testimonials', current: false },
-  { name: 'Projects', href: '#Projects', current: false },
-  { name: 'Contact', href: '#Contact', current: false },
-]
 
-function classNames(...classes) {
-  return classes.filter(Boolean).join(' ')
-}
 
-export default function Example() {
+export default function Example({navigation}) {
+
+  function classNames(...classes) {
+    return classes.filter(Boolean).join(' ')
+  }
   return (
     <Disclosure as="nav">
       {({ open }) => (
@@ -37,7 +30,7 @@ export default function Example() {
                 </Disclosure.Button>
               </div>
               <div className="items-center flex-shrink-0 mx-auto sm:flex sm:justify-self-start sm:mx-0">
-                <Link className='text-2xl font' href='/'>
+                <Link className='text-2xl' href='#Home'>
 
                   <span className='text-gray-700'>&lt;</span>
                   <span className='text-blue-700'>

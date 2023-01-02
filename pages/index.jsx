@@ -8,6 +8,7 @@ import { motion as m } from 'framer-motion'
 import { useEffect, useState } from 'react';
 import Skills from './../components/Skills/Skills';
 import Contact from '../components/Contact/Contact';
+import Footer from './../components/Footer/Footer';
 
 
 export default function Home() {
@@ -16,6 +17,14 @@ export default function Home() {
   useEffect(() => {
     setWindowScreenWidth(window.screen.width)
   }, [])
+  const navigation = [
+    { name: 'Home', href: '#Home', current: true },
+    { name: 'About', href: '#About', current: false },
+    { name: 'Skills', href: '#Skills', current: false },
+    { name: 'Testimonials', href: '#Testimonials', current: false },
+    { name: 'Projects', href: '#Projects', current: false },
+    { name: 'Contact', href: '#Contact', current: false },
+  ]
 
 
   return (
@@ -24,7 +33,6 @@ export default function Home() {
         <title>Abdelrahman Essawy</title>
         <meta name="description" content="Abdelrahman Essawy Portfolio" />
         <link rel="icon" href="/favicon.ico" />
-        <link rel="preconnect" href="https://fonts.googleapis.com" /><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin /><link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@300&display=swap" rel="stylesheet" />
 
       </Head>
 
@@ -33,7 +41,7 @@ export default function Home() {
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: .5, ease: 'easeOut', type: 'tween', stiffness: 100 }}
         className='sticky top-0 z-50 shadow-sm bg-white/50 backdrop-blur-3xl'>
-        <Navbar />
+        <Navbar navigation={navigation}/>
       </m.header>
 
       {/* <div className='h-[1.5px] opacity-40 bg-gradient-to-r from-emerald-500 via-blue-500 to-emerald-500'></div> */}
@@ -55,6 +63,7 @@ export default function Home() {
         <Contact />
         <Spliiter />
 
+        <Footer navigation={navigation}/>
       </main>
     </>
   )
