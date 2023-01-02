@@ -46,7 +46,7 @@ export default function Email() {
 
     return (
         <div className='overflow-hidden bg-white'>
-            <div className="grid max-w-screen-xl grid-cols-1 gap-4 px-2 mt-2 sm:gap-8 sm:px-8 sm:mt-12 md:grid-cols-2 md:px-12 lg:px-16 xl:px-32">
+            <div className="grid max-w-screen-xl grid-cols-1 gap-4 px-2 mt-4 mb-6 sm:gap-8 sm:px-8 sm:mt-12 md:grid-cols-2 md:px-12 lg:px-16 xl:px-32">
                 {
                     contacts.map(({
                         name,
