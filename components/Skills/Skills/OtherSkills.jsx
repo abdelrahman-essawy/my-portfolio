@@ -523,14 +523,16 @@ export default function OtherSkills({ windowScreenWidth }) {
                     key={index}
                     type='button'
                     className={`${desc ? `cursor-pointer hover:shadow-lg ${isOpen ? 'sm:col-span-2 sm:shadow-lg' : ''}` : 'cursor-default'} border border-zinc-200/70 rounded-lg shadow-md`}
-                    onClick={() => {
+                    onClick={
+                        () => {
                         setOtherSkills((prev) => {
                             const newSkillsWithDesc = [...prev]
                             newSkillsWithDesc[index].viewDesc = !newSkillsWithDesc[index].viewDesc
                             newSkillsWithDesc[index].isOpen = !newSkillsWithDesc[index].isOpen
                             return newSkillsWithDesc
                         })
-                    }}
+                    }
+                    }
                 >
                     <m.div
                         className='flex items-center justify-between p-3 '>

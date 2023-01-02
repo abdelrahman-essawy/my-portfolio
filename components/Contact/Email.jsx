@@ -1,11 +1,12 @@
 import Image from 'next/image'
 import Link from 'next/link'
-import React from 'react'
+import React,{useState} from 'react'
 import EmailSVG from './../SVG/Contact/EmailSVG';
 import PhoneSVG from './../SVG/Contact/PhoneSVG';
+import CheckSVG from './../SVG/CheckSVG';
 
 export default function Email() {
-    const contacts = [
+    const [contacts, setContacts] = useState([
         {
             name: 'Phone',
             icon: <PhoneSVG className={`w-6 h-6 mx-auto m-2`} />,
@@ -17,7 +18,8 @@ export default function Email() {
             desc: 'abdelrahman.mo.essawy@gmail.com'
         },
 
-    ]
+    ])
+
     return (
         <div className='overflow-hidden bg-white'>
             <div className="grid max-w-screen-xl grid-cols-1 gap-4 px-2 mt-2 sm:gap-8 sm:px-8 sm:mt-12 md:grid-cols-2 md:px-12 lg:px-16 xl:px-32">
@@ -25,19 +27,40 @@ export default function Email() {
                     contacts.map(({
                         name,
                         icon,
-                        desc
+                        desc,
+                        isCopied
                     }, index) => {
                         return (
 
                             <div
                                 key={index}
-                                className='flex items-center justify-between bg-blue-100 rounded-lg shadow'>
+                                onClick={()=>{
+                                    navigator.clipboard.writeText(desc.replace(/ /g,''))
+                                    setContacts((prev) => {
+                            const contactCopied = [...prev]
+                            contactCopied[index].isCopied = true
+                            return contactCopied
+                        })
+                    
+
+                                }}
+                                className='flex items-center justify-between bg-blue-100 rounded-lg shadow cursor-pointer'>
+                                
                                 <div className='px-3 py-1 bg-blue-300 rounded-lg '>
                                 {icon}
                                 </div>
+
                                     <h3 className='px-3 py-1 mr-auto text-xs tracking-wide text-black rounded-lg sm:mx-auto sm:text-sm font-SourceCodePro'>
                                     {desc}
                                     </h3>
+
+                                    <div className='px-3 py-1 bg-blue-300 rounded-lg sm:hover:bg-blue-400 active:bg-blue-400'>
+                                    {
+                                    isCopied? <CheckSVG className={`w-6 h-6 mx-auto m-2 fill-blue-700`}/>: <img src='https://cdn-icons-png.flaticon.com/512/1828/1828249.png' className='w-6 h-6 m-2 mx-auto'/>
+                                }
+                                    
+                                </div>
+
                             </div>
                         )
                     })
