@@ -72,13 +72,13 @@ export default function Email() {
 
 
                                 }}
-                                className='flex items-center justify-between bg-blue-100 rounded-lg shadow cursor-pointer'>
+                                className='flex items-center justify-between bg-blue-100 rounded-lg shadow cursor-pointer '>
 
                                 <div className='px-2 bg-blue-300 rounded-lg sm:px-3 sm:py-1 '>
                                     {icon}
                                 </div>
 
-                                <h3 className='px-3 py-1 mr-auto text-xs text-black rounded-lg sm:tracking-wide sm:mx-auto sm:text-sm font-SourceCodePro'>
+                                <h3 className='py-1 ml-2 mr-auto text-xs text-black rounded-lg sm:px-3 sm:tracking-wide sm:mx-auto sm:text-sm font-SourceCodePro'>
                                     {desc}
                                 </h3>
 
