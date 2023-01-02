@@ -74,17 +74,17 @@ function copyToClipboard(textToCopy) {
                                 }}
                                 className='flex items-center justify-between bg-blue-100 rounded-lg shadow cursor-pointer'>
 
-                                <div className='px-2 sm:px-3 sm:py-1 bg-blue-300 rounded-lg  '>
+                                <div className='px-2 bg-blue-300 rounded-lg sm:px-3 sm:py-1 '>
                                     {icon}
                                 </div>
 
-                                <h3 className='px-3 py-1 mr-auto text-xs tracking-wide text-black rounded-lg sm:mx-auto sm:text-sm font-SourceCodePro'>
+                                <h3 className='px-3 py-1 mr-auto text-xs text-black rounded-lg sm:tracking-wide sm:mx-auto sm:text-sm font-SourceCodePro'>
                                     {desc}
                                 </h3>
 
-                                <div className='px-2 sm:px-3 sm:py-1 bg-blue-300 rounded-lg  sm:hover:bg-blue-400 active:bg-blue-400'>
+                                <div className='px-2 bg-blue-300 rounded-lg sm:px-3 sm:py-1 sm:hover:bg-blue-400 active:bg-blue-400'>
                                     {
-                                        isCopied ? <CheckSVG className={`sm:w-6 sm:h-6 w-5 h-5 mx-auto m-2 fill-blue-700`} /> : <img src='https://cdn-icons-png.flaticon.com/512/1828/1828249.png' className='sm:w-6 sm:h-6 w-5 h-5 m-2 mx-auto' />
+                                        isCopied ? <CheckSVG className={`sm:w-6 sm:h-6 w-5 h-5 mx-auto m-2 fill-blue-700`} /> : <img src='https://cdn-icons-png.flaticon.com/512/1828/1828249.png' className='w-5 h-5 m-2 mx-auto sm:w-6 sm:h-6' />
                                     }
 
                                 </div>
