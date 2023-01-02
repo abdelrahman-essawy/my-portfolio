@@ -1,6 +1,6 @@
 import Image from 'next/image'
 import Link from 'next/link'
-import React,{useState} from 'react'
+import React, { useState } from 'react'
 import EmailSVG from './../SVG/Contact/EmailSVG';
 import PhoneSVG from './../SVG/Contact/PhoneSVG';
 import CheckSVG from './../SVG/CheckSVG';
@@ -9,16 +9,40 @@ export default function Email() {
     const [contacts, setContacts] = useState([
         {
             name: 'Phone',
-            icon: <PhoneSVG className={`w-6 h-6 mx-auto m-2`} />,
+            icon: <PhoneSVG className={`sm:w-6 sm:h-6 w-5 h-5 mx-auto m-2`} />,
             desc: '+20 155 480 9091'
         },
         {
             name: 'Email',
-            icon: <EmailSVG className={`w-6 h-6 mx-auto m-2`} />,
+            icon: <EmailSVG className={`sm:w-6 sm:h-6 w-5 h-5 mx-auto m-2`} />,
             desc: 'abdelrahman.mo.essawy@gmail.com'
         },
 
     ])
+// return a promise
+function copyToClipboard(textToCopy) {
+    // navigator clipboard api needs a secure context (https)
+    if (navigator.clipboard && window.isSecureContext) {
+        // navigator clipboard api method'
+        return navigator.clipboard.writeText(textToCopy);
+    } else {
+        // text area method
+        let textArea = document.createElement("textarea");
+        textArea.value = textToCopy;
+        // make the textarea out of viewport
+        textArea.style.position = "fixed";
+        textArea.style.left = "-999999px";
+        textArea.style.top = "-999999px";
+        document.body.appendChild(textArea);
+        textArea.focus();
+        textArea.select();
+        return new Promise((res, rej) => {
+            // here the magic happens
+            document.execCommand('copy') ? res() : rej();
+            textArea.remove();
+        });
+    }
+}
 
     return (
         <div className='overflow-hidden bg-white'>
@@ -34,31 +58,35 @@ export default function Email() {
 
                             <div
                                 key={index}
-                                onClick={()=>{
-                                    navigator.clipboard.writeText(desc.replace(/ /g,''))
-                                    setContacts((prev) => {
-                            const contactCopied = [...prev]
-                            contactCopied[index].isCopied = true
-                            return contactCopied
-                        })
-                    
+                                onClick={() => {
+
+                                    copyToClipboard(desc.replace(/ /g,''))
+    .then(() =>                                     setContacts((prev) => {
+                                        const contactCopied = [...prev]
+                                        contactCopied[index].isCopied = true
+                                        return contactCopied
+                                    }))
+
+
+
+
 
                                 }}
                                 className='flex items-center justify-between bg-blue-100 rounded-lg shadow cursor-pointer'>
-                                
-                                <div className='px-3 py-1 bg-blue-300 rounded-lg '>
-                                {icon}
+
+                                <div className='px-2 sm:px-3 sm:py-1 bg-blue-300 rounded-lg  '>
+                                    {icon}
                                 </div>
 
-                                    <h3 className='px-3 py-1 mr-auto text-xs tracking-wide text-black rounded-lg sm:mx-auto sm:text-sm font-SourceCodePro'>
+                                <h3 className='px-3 py-1 mr-auto text-xs tracking-wide text-black rounded-lg sm:mx-auto sm:text-sm font-SourceCodePro'>
                                     {desc}
-                                    </h3>
+                                </h3>
 
-                                    <div className='px-3 py-1 bg-blue-300 rounded-lg sm:hover:bg-blue-400 active:bg-blue-400'>
+                                <div className='px-2 sm:px-3 sm:py-1 bg-blue-300 rounded-lg  sm:hover:bg-blue-400 active:bg-blue-400'>
                                     {
-                                    isCopied? <CheckSVG className={`w-6 h-6 mx-auto m-2 fill-blue-700`}/>: <img src='https://cdn-icons-png.flaticon.com/512/1828/1828249.png' className='w-6 h-6 m-2 mx-auto'/>
-                                }
-                                    
+                                        isCopied ? <CheckSVG className={`sm:w-6 sm:h-6 w-5 h-5 mx-auto m-2 fill-blue-700`} /> : <img src='https://cdn-icons-png.flaticon.com/512/1828/1828249.png' className='sm:w-6 sm:h-6 w-5 h-5 m-2 mx-auto' />
+                                    }
+
                                 </div>
 
                             </div>
