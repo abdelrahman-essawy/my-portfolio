@@ -19,8 +19,8 @@ export default function Email() {
 
     ]
     return (
-        <div className='bg-white overflow-hidden'>
-            <div className="grid max-w-screen-xl grid-cols-1 sm:gap-8 gap-4  px-2 sm:px-8 mt-2 sm:mt-12 md:grid-cols-2 md:px-12 lg:px-16 xl:px-32">
+        <div className='overflow-hidden bg-white'>
+            <div className="grid max-w-screen-xl grid-cols-1 gap-4 px-2 mt-2 sm:gap-8 sm:px-8 sm:mt-12 md:grid-cols-2 md:px-12 lg:px-16 xl:px-32">
                 {
                     contacts.map(({
                         name,
@@ -33,10 +33,9 @@ export default function Email() {
                                 key={index}
                                 className='flex items-center justify-between bg-blue-100 rounded-lg shadow'>
                                 <div className='px-3 py-1 bg-blue-300 rounded-lg '>
-
-{icon}
+                                {icon}
                                 </div>
-                                    <h3 className='sm:mx-auto mr-auto px-3 py-1 text-xs sm:text-sm tracking-wide text-black rounded-lg font-SourceCodePro'>
+                                    <h3 className='px-3 py-1 mr-auto text-xs tracking-wide text-black rounded-lg sm:mx-auto sm:text-sm font-SourceCodePro'>
                                     {desc}
                                     </h3>
                             </div>
