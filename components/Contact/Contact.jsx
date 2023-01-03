@@ -44,7 +44,7 @@ export default function Contact() {
     ]
     return (
         <m.section
-            id='Skills'
+            id='Contact'
             initial={{ opacity: 0, x: 10 }}
             whileInView={{ opacity: 1, x: 0, type: 'spring' }}
             transition={{ delay: 0.1 }}
@@ -64,14 +64,14 @@ export default function Contact() {
                             pageNavigation.map(({
                                 name,
                                 icon: icon
-                                
+
                             }, index) => {
 
                                 return (
                                     <div
                                         key={name}
                                         onClick={() => setCurrentPage(name)}
-                                        className={`flex-grow p-2 transition duration-100 ease-in bg-blue-100 rounded rounded-t-none sm:hover:bg-blue-200 active:bg-blue-200 ${currentPage === name? `bg-blue-200`:``} ${index === 0 ? 'rounded-l-none' : ''} ${index === pageNavigation.length - 1 ? 'rounded-r-none' : ''}`}>
+                                        className={`flex-grow p-2 transition duration-100 ease-in bg-blue-100 rounded rounded-t-none sm:hover:bg-blue-200 active:bg-blue-200 ${currentPage === name ? `bg-blue-200` : ``} ${index === 0 ? 'rounded-l-none' : ''} ${index === pageNavigation.length - 1 ? 'rounded-r-none' : ''}`}>
                                         <Image
                                             alt={name}
                                             src={icon}
@@ -100,7 +100,7 @@ export default function Contact() {
                             }
                             )
                         } */}
-                            <Email/>
+                        <Email />
                     </div>
                 </div>
             </div>
