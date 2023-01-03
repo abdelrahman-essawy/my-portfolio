@@ -3,6 +3,7 @@ import ContactSVG from '../SVG/ContactSVG';
 import Image from 'next/image';
 import FindMeIn from './FindMeIn';
 import { motion as m } from 'framer-motion'
+import Link from 'next/link';
 
 export default function Hero() {
 
@@ -25,18 +26,18 @@ export default function Hero() {
               <svg className="w-5 h-5 ml-2 -mr-1" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fillRule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clipRule="evenodd" /></svg>
             </p>
             <div className='opacity-60 hover:opacity-100 p-[2px] rounded-lg hover:bg-gradient-to-r from-blue-300 to-emerald-300  focus:ring-4 focus:ring-gray-100  '>
-              <a href="#" className="inline-flex items-center justify-center w-full px-5 py-3 text-base font-medium text-center text-gray-900 bg-white border rounded-lg ">
+              <Link href="#Contact" className="inline-flex items-center justify-center w-full px-5 py-3 text-base font-medium text-center text-gray-900 bg-white border rounded-lg ">
                 <ContactSVG className="w-5 h-5 mr-2 -ml-1 fill-gray-900" xmlns="http://www.w3.org/2000/svg" />
                 Contact me
-              </a>
+              </Link>
             </div>
           </div>
           <div className="hidden mt-5 sm:mt-8 sm:flex sm:justify-center lg:justify-start">
             <div className="rounded-md shadow-none sm:shadow">
-              <a href="#" className="flex items-center justify-center w-full px-8 py-3 text-base font-medium text-transparent transition-all duration-200 ease-in-out bg-blue-500 border border-blue-500 rounded-md bg-clip-text hover:bg-blue-500 hover:text-white hover:bg-clip-padding active:bg-blue-600 md:py-3 md:px-7 md:text-lg">Contact me</a>
+              <Link href="#Contact" className="flex items-center justify-center w-full px-8 py-3 text-base font-medium text-transparent transition-all duration-200 ease-in-out bg-blue-500 border border-blue-500 rounded-md bg-clip-text hover:bg-blue-500 hover:text-white hover:bg-clip-padding active:bg-blue-600 md:py-3 md:px-7 md:text-lg">Contact me</Link>
             </div>
             <div className="mt-3 sm:mt-0 sm:ml-3">
-              <a href="#" className="flex items-center justify-center w-full px-8 py-3 text-base font-medium text-blue-500 transition-all duration-200 ease-out bg-blue-100 border border-transparent rounded-md hover:bg-blue-200 active:bg-blue-300 md:py-3 md:px-7 md:text-lg">Projects</a>
+              <Link href="#Projects" className="flex items-center justify-center w-full px-8 py-3 text-base font-medium text-blue-500 transition-all duration-200 ease-out bg-blue-100 border border-transparent rounded-md hover:bg-blue-200 active:bg-blue-300 md:py-3 md:px-7 md:text-lg">Projects</Link>
             </div>
           </div>
         </m.div>
@@ -60,7 +61,7 @@ export default function Hero() {
             initial={{ opacity: 0, y: -20 }}
             whileInView={{ opacity: 1, y: 0, type: 'spring', ease: 'easeOut' }}
             className="mt-3 sm:mt-0 sm:ml-3">
-            <a href="#ProjectsID" className="flex items-center justify-center w-full px-8 py-3 text-base font-medium text-blue-500 bg-blue-100 border border-transparent rounded-md hover:bg-blue-200 active:bg-blue-300 md:py-3 md:px-7 md:text-lg">Projects</a>
+            <Link href="#Projects" className="flex items-center justify-center w-full px-8 py-3 text-base font-medium text-blue-500 bg-blue-100 border border-transparent rounded-md hover:bg-blue-200 active:bg-blue-300 md:py-3 md:px-7 md:text-lg">Projects</Link>
           </m.div>
         </div>
       </div>
