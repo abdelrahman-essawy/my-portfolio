@@ -112,7 +112,7 @@ export default function Timeline({ learnMore }) {
                                                         initial={{ opacity: 0, }}
                                                         whileInView={{ opacity: 1, type: 'spring' }}
                                                         viewport={{ once: true }}
-                                                        transition={{ delay: .3 * index }}
+                                                        transition={{ delay: .2 * index }}
                                                         className="mb-4 ml-5 " key={index}>
                                                         <div className='bg-zinc-50' >
                                                             <span className="absolute flex items-center justify-center w-5 h-5 bg-blue-200 rounded-full -left-3 ring-8 ring-zinc-50 dark:bg-blue-900 dark:ring-gray-900">

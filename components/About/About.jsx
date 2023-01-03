@@ -40,7 +40,7 @@ export default function About() {
             height={304.9}
 
             alt='About Me'
-            src='/about-me.png'
+            src='/about-me.webp'
           />
         </m.div>
 
@@ -59,8 +59,8 @@ export default function About() {
               <li className='mb-2'><span className='font-bold'>Strong analytical</span>  and <span className='font-bold'>organizational skills</span>  within industry.</li>
             </ul> */}
             <div ref={ref}>
-              
-            <Timeline learnMore={learnMore} />
+
+              <Timeline learnMore={learnMore} />
             </div>
 
           </m.div>
