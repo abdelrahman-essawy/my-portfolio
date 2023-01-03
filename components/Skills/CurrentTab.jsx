@@ -14,7 +14,6 @@ export default function CurrentTab({ tab, isVisible, windowScreenWidth }) {
   const [ref, { height }] = useMeasure()
   useEffect(() => {
     const screenWidth = window.innerWidth
-    console.log(screenWidth)
   }, [])
 
   return (
