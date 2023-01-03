@@ -85,7 +85,6 @@ export default function Email() {
 
                                 >
                                     <m.div
-
                                         className='px-2 py-[1px] bg-blue-300 rounded-lg sm:px-3 sm:py-1 sm:hover:bg-blue-400 active:bg-blue-400'>
                                         <m.div
                                             initial={{ rotate: -10, opacity: 0 }}
