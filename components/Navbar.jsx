@@ -6,7 +6,7 @@ import { motion as m } from 'framer-motion'
 
 
 
-export default function Example({navigation}) {
+export default function Example({ navigation }) {
 
   function classNames(...classes) {
     return classes.filter(Boolean).join(' ')
@@ -20,12 +20,12 @@ export default function Example({navigation}) {
             <div className="relative flex items-center justify-between h-16">
               <div className="absolute inset-y-0 left-0 flex items-center sm:hidden">
                 {/* Mobile menu button*/}
-                <Disclosure.Button className="inline-flex items-center justify-center p-2 text-blue-500 rounded-md hover:bg-blue-500 hover:text-white focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white">
+                <Disclosure.Button className="inline-flex items-center justify-center p-2 text-blue-700 transition-opacity duration-150 ease-in rounded-md opacity-70 hover:opacity-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white">
                   <span className="sr-only">Open main menu</span>
                   {open ? (
                     <XMarkIcon className="block w-6 h-6" aria-hidden="true" />
                   ) : (
-                      <Bars3Icon className="block w-6 h-6" aria-hidden="true" />
+                    <Bars3Icon className="block w-6 h-6" aria-hidden="true" />
                   )}
                 </Disclosure.Button>
               </div>
@@ -46,7 +46,7 @@ export default function Example({navigation}) {
                       key={item.name}
                       href={item.href}
                       className={classNames(
-                        item.current ? 'bg-blue-700 text-white' : 'text-blue-500 hover:bg-blue-500 hover:text-white',
+                        item.current ? 'bg-blue-700 text-white' : 'text-blue-700 opacity-70 hover:opacity-100 transition-opacity duration-150 ease-in      ',
                         'px-3 py-2 rounded-md text-sm font-medium'
                       )}
                       aria-current={item.current ? 'page' : undefined}
@@ -68,7 +68,7 @@ export default function Example({navigation}) {
 
 
                     Download CV
-                </button>
+                  </button>
                 </Link>
 
                 <Link
@@ -76,12 +76,12 @@ export default function Example({navigation}) {
                   href='/Abdelrahman Essawy Resume.pdf'
                   download={'Abdelrahman Essawy Resume.pdf'}
                 >
-                <button className="flex items-center justify-center px-4 py-2 text-lg font-semibold text-blue-500 bg-transparent border border-blue-500 rounded-lg animate-pulse hover:animate-none sm:hidden hover:border-blue-700 hover:text-blue-700">
+                  <button className="flex items-center justify-center px-4 py-2 text-lg font-semibold text-blue-500 bg-transparent border border-blue-500 rounded-lg animate-pulse hover:animate-none sm:hidden hover:border-blue-700 hover:text-blue-700">
 
                     <DownloadSVG className={'fill-blue-500 mr-1 '} width={22} ></DownloadSVG>
 
                     CV
-                </button>
+                  </button>
 
                 </Link>
 

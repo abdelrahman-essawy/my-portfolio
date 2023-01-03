@@ -18,7 +18,7 @@ export default function Home() {
     setWindowScreenWidth(window.screen.width)
   }, [])
   const navigation = [
-    { name: 'Home', href: '#Home', current: true },
+    { name: 'Home', href: '#Home', current: false },
     { name: 'About', href: '#About', current: false },
     { name: 'Skills', href: '#Skills', current: false },
     { name: 'Testimonials', href: '#Testimonials', current: false },
@@ -41,7 +41,7 @@ export default function Home() {
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: .5, ease: 'easeOut', type: 'tween', stiffness: 100 }}
         className='sticky top-0 z-50 shadow-sm bg-white/50 backdrop-blur-3xl'>
-        <Navbar navigation={navigation}/>
+        <Navbar navigation={navigation} />
       </m.header>
 
       {/* <div className='h-[1.5px] opacity-40 bg-gradient-to-r from-emerald-500 via-blue-500 to-emerald-500'></div> */}
@@ -63,7 +63,7 @@ export default function Home() {
         <Contact />
         <Spliiter />
 
-        <Footer navigation={navigation}/>
+        <Footer navigation={navigation} />
       </main>
     </>
   )
