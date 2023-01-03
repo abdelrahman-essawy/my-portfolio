@@ -4,18 +4,21 @@ import React, { useState } from 'react'
 import EmailSVG from './../SVG/Contact/EmailSVG';
 import PhoneSVG from './../SVG/Contact/PhoneSVG';
 import CheckSVG from './../SVG/CheckSVG';
+import { motion as m } from 'framer-motion'
 
 export default function Email() {
     const [contacts, setContacts] = useState([
         {
             name: 'Phone',
             icon: <PhoneSVG className={`sm:w-6 sm:h-6 w-5 h-5 mx-auto m-2`} />,
-            desc: '+20 155 480 9091'
+            desc: '+20 155 480 9091',
+            href: 'tel:+201554809091'
         },
         {
             name: 'Email',
             icon: <EmailSVG className={`sm:w-6 sm:h-6 w-5 h-5 mx-auto m-2`} />,
-            desc: 'abdelrahman.mo.essawy@gmail.com'
+            desc: 'abdelrahman.mo.essawy@gmail.com',
+            href: 'mailto:abdelrahman.mo.essawy@gmail.com'
         },
 
     ])
@@ -52,7 +55,8 @@ export default function Email() {
                         name,
                         icon,
                         desc,
-                        isCopied
+                        isCopied,
+                        href
                     }, index) => {
                         return (
 
@@ -63,7 +67,7 @@ export default function Email() {
                                     copyToClipboard(desc.replace(/ /g, ''))
                                         .then(() => setContacts((prev) => {
                                             const contactCopied = [...prev]
-                                            contactCopied[index].isCopied = true
+                                            contactCopied[index].isCopied = !contactCopied[index].isCopied 
                                             return contactCopied
                                         }))
 
@@ -72,19 +76,63 @@ export default function Email() {
 
 
                                 }}
-                                className='flex items-center justify-between bg-blue-100 rounded-lg shadow cursor-pointer '>
+                                className='flex items-center justify-between bg-blue-100 rounded-lg shadow'>
 
-                                <div className='px-2 bg-blue-300 rounded-lg sm:px-3 sm:py-1 '>
-                                    {icon}
-                                </div>
+                                <Link
+                                    href={href}
+                                    target='_blank'
+                                    rel='noopener noreferrer'
 
-                                <h3 className='py-1 ml-2 mr-auto text-xs text-black rounded-lg sm:px-3 sm:tracking-wide sm:mx-auto sm:text-sm font-SourceCodePro'>
+                                >
+                                    <m.div
+
+                                        className='relative px-2 bg-blue-300 rounded-lg sm:px-3 sm:py-1 sm:hover:bg-blue-400 active:bg-blue-400'>
+                                        <m.div
+                                            initial={{ rotate: -10, opacity: 0 }}
+                                            whileInView={{ rotate: 0, opacity: 1 }}
+                                            whileHover={{ scale: 1.1 }}
+                                        >
+                                            {icon}
+                                        </m.div>
+                                    </m.div>
+                                </Link>
+
+                                <m.h3
+                                    initial={{ opacity: 0 }}
+                                    whileInView={{ opacity: 1 }}
+                                    className='py-1 ml-2 mr-auto text-xs text-black rounded-lg sm:px-3 sm:tracking-wide sm:mx-auto sm:text-sm font-SourceCodePro'>
                                     {desc}
-                                </h3>
+                                </m.h3>
 
-                                <div className='px-2 bg-blue-300 rounded-lg sm:px-3 sm:py-1 sm:hover:bg-blue-400 active:bg-blue-400'>
+                                <div className='px-2 bg-blue-300 rounded-lg cursor-pointer sm:px-3 sm:py-1 sm:hover:bg-blue-400 active:bg-blue-400'>
                                     {
-                                        isCopied ? <CheckSVG className={`sm:w-6 sm:h-6 w-5 h-5 mx-auto m-2 fill-blue-700`} /> : <img src='https://cdn-icons-png.flaticon.com/512/1828/1828249.png' className='w-5 h-5 m-2 mx-auto sm:w-6 sm:h-6' />
+                                        isCopied ?
+                                            <m.div
+                                                initial={{ opacity: 0 }}
+                                                whileInView={{ opacity: 1 }}
+                                            >
+
+                                                <CheckSVG className={`sm:w-6 sm:h-6 w-5 h-5 mx-auto m-2 fill-blue-700`} />
+                                            </m.div>
+                                            :
+                                            <m.div
+                                                initial={{ rotate: -10, opacity: 0 }}
+                                                whileInView={{ rotate: 0, opacity: 1 }}
+                                                whileHover={{ scale: 1.1 }}
+                                                transition={{
+                                                    type: "spring",
+                                                    stiffness: 260,
+                                                    damping: 20,
+                                                }}>
+                                                <Image
+                                                    alt='copy'
+                                                    width="50"
+                                                    height="50"
+                                                    layout="intrinsic"
+                                                    src='https://cdn-icons-png.flaticon.com/512/1828/1828249.png' className='w-5 h-5 m-2 mx-auto sm:w-6 sm:h-6' />
+
+                                            </m.div>
+
                                     }
 
                                 </div>
