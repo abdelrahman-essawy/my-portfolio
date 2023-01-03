@@ -1,5 +1,5 @@
 import Head from 'next/head'
-import About from '../components/About';
+import About from '../components/About/About';
 import Navbar from '../components/Navbar';
 import Testimonials from '../components/Testimonials/Testimonials';
 import Hero from '../components/Hero/Hero';
