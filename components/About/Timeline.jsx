@@ -41,7 +41,7 @@ export default function Timeline({ learnMore }) {
         {
             date: 'August 2020',
             title: 'Joined College - Arab Academy for Science, Technology and Maritime Transport.',
-            description: 'Joined college in 2020. Majored Computer Science.',
+            description: 'Joined college in 2020. Majored in Computer Science.',
             svg: <EducationSVG stroke="currentColor" fill="currentColor" strokeWidth={0} aria-hidden="true" className="w-3 h-3 text-blue-600 dark:text-blue-300" height="1em" width="1em" />
 
         },
@@ -54,7 +54,7 @@ export default function Timeline({ learnMore }) {
         {
             date: 'April 2002',
             title: 'A legend is born.',
-            description: 'Not to much to say here, but I was born in the year 2002.',
+            description: 'Not much to say here, but I was born in the year 2002.',
             svg: <NewbornSVG stroke="currentColor" fill="currentColor" strokeWidth={0} aria-hidden="true" className="w-3 h-3 text-blue-600 dark:text-blue-300" height="1em" width="1em" />
         },]
 
