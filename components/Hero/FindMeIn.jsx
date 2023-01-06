@@ -39,7 +39,17 @@ export default function FindMeIn({ item, index }) {
                 className='sm:hidden flex flex-wrap justify-center items-center mt-8 text-gray-500 sm:justify-between'>
                 {links.map((item, index) =>
                     <m.a
-                        whileHover={{ scale: 1.1 }}
+                        whileHover={{ scale: 1.02 }}
+                        transition={
+                            {
+                                delay: 0,
+                                type: "spring",
+                                stiffness: 260,
+                                damping: 20
+
+
+                            }
+                        }
                         whileTap={{ scale: 0.95 }}
                         target={'_blank'} rel="noopener noreferrer" key={index} href={item.href} className={'mx-auto lg:mb-0 hover:fill-gray-800'}>
                         {item.iconMobile}
@@ -57,7 +67,18 @@ export default function FindMeIn({ item, index }) {
                     <m.a
                         initial={{ opacity: 0, y: 10 }}
                         whileInView={{ opacity: 1, y: 0 }}
-                        whileHover={{ scale: 1.1 }}
+                        whileHover={{ scale: 1.02 }}
+                        transition={
+                            {
+                                delay: 0,
+                                type: "spring",
+                                stiffness: 260,
+                                damping: 20
+
+
+
+                            }
+                        }
                         whileTap={{ scale: 0.9 }}
                         target={'_blank'} rel="noopener noreferrer" key={index} href={item.href}>
                         {item.icon}
