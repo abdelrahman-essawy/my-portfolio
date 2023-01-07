@@ -9,6 +9,7 @@ import { useEffect, useState } from 'react';
 import Skills from './../components/Skills/Skills';
 import Contact from '../components/Contact/Contact';
 import Footer from './../components/Footer/Footer';
+import Projects from '../components/Projects/Projects';
 
 
 export default function Home() {
@@ -59,6 +60,9 @@ export default function Home() {
 
         <Testimonials windowScreenWidth={windowScreenWidth} />
         <Spliiter />
+
+        <Projects />
+        <Spliiter/>
 
         <Contact />
         <Spliiter />
