@@ -39,48 +39,20 @@ export default function Projects({ windowScreenWidth }) {
         },
         {
             name: 'Quizz App',
-            description: 'Lorem ipsum dolor sit amet, consectetur adipiscing',
+            description: 'Generate random quizzes and tests your knowledge',
             skillsUsed: ['React', 'TailwindCSS', 'Redux', 'REST API',],
             link: '',
             github: ''
         },
         {
-            name: 'Mas2cot',
-            description: `
-            Track all cryptocurrencies, gold and Currencies latest prices and news.
-`,
+            name: 'Quoter',
+            description: `Generate random quotes and share them on social media.`,
             image: '/object.png',
-            skillsUsed: ['Next.js', 'TailwindCSS', 'Framer Motion', 'REST API'],
+            skillsUsed: ['React', 'Bootstrap', 'JQuery', 'REST API'],
             link: '',
             github: ''
         },
-        {
-            name: 'My Por3tifolio',
-            description: `
-            This is my portifolio website. I built it using Next.js, TailwindCSS and Framer Motion.
-            `
-            ,
-            image: '/409-4096115_macbook-pro-mockup-cvn-web-development-companies-in.png',
-            skillsUsed: ['React', 'Next.js', 'TailwindCSS', 'Framer Motion'],
-            link: '',
-            github: ''
-        },
-        {
-            name: 'Pro41ject 1',
-            description: 'Lorem ipsum dolor sit amet, consectetur adipiscing',
-            image: '/object.png',
-            skillsUsed: ['React', 'Next.js', 'TailwindCSS', 'Framer Motion'],
-            link: '',
-            github: ''
-        },
-        {
-            name: 'Proj23ect 1',
-            description: 'Lorem ipsum dolor sit amet, consectetur adipiscing',
-            image: '/object.png',
-            skillsUsed: ['React', 'Next.js', 'TailwindCSS', 'Framer Motion'],
-            link: '',
-            github: ''
-        },
+
 
     ]
 
