@@ -39,7 +39,7 @@ export default function ShareButton({ link }) {
             onClick={() => setHoveredOnShareButton((prev) => !prev)}
             onMouseLeave={() => setHoveredOnShareButton(false)}
 
-            className='bg-white rounded-full p-1 outline-gray-200 outline-1 outline'>
+            className='bg-white rounded-full p-1 ring-1 ring-gray-200'>
             <svg
                 className='w-4 h-4 mx-auto '
                 viewBox="0 0 20 20"

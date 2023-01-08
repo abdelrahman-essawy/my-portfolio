@@ -128,14 +128,14 @@ export default function Projects() {
                                             mass: 0.5,
                                             duration: 0.5,
                                         }}
-                                        className='grid relative max-w-sm grid-rows-5 items-center justify-center mx-2 my-4  bg-white rounded-lg outline-gray-200 outline-1 outline'>
+                                        className='grid relative max-w-sm grid-rows-5 items-center justify-center mx-2 my-4  bg-white rounded-lg ring-1 ring-gray-200'>
                                         <div className={`absolute top-0 z-20  inset-x-0 p-3  ${image ? `` : ` `}`}>
                                             <div className='flex items-start justify-between'>
                                                 <ShareButton link={link} />
                                             </div>
 
                                         </div>
-                                        <div className='absolute -top-2 -right-2 z-20 h-4 w-4  bg-zinc-50 rounded-full outline-gray-200 outline-1 outline'>
+                                        <div className='absolute -top-2 -right-2 z-20 h-4 w-4  bg-zinc-50 rounded-full ring-1 ring-gray-200'>
                                             <div className='absolute flex inset-0 justify-center items-center '>
                                                 <div className='p-1 absolute bg-green-500  rounded-full ' />
                                                 <div className='p-1 absolute bg-green-500  rounded-full opacity-75 animate-ping' />
