@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { motion as m } from 'framer-motion'
-import MessengerSVG from '../SVG/Projects/Share/MessengerSVG'
 import Link from 'next/link'
+import MessengerSVG from '../SVG/Projects/Share/MessengerSVG'
 import WhatsappSVG from '../SVG/Projects/Share/WhatsappSVG'
 import FacebookSVG from '../SVG/Projects/Share/FacebookSVG'
 import TwitterSVG from '../SVG/Projects/Share/TwitterSVG'
@@ -12,7 +12,7 @@ export default function ShareButton({ link }) {
     const socialMedia = [
         {
             name: 'facebook',
-            icon: <FacebookSVG className='w-4 h-4' />,
+            icon: <FacebookSVG className='w-4 h-4 rounded-full' />,
             link: `https://www.facebook.com/sharer/sharer.php?u=${link}`
         },
         {
@@ -51,17 +51,19 @@ export default function ShareButton({ link }) {
                     icon,
                     link
 
-                }) => (
-                    <Link
-                        key={name}
-                        href={link}
-                        target='_blank'
-                        rel='noreferrer'
-                        className='bg-white rounded-full p-1 hover:bg-gray-200'>
+                }, index) => (
+                        <Link
+                            key={index}
+                            href={link}
+                            target='_blank'
+                            rel='noreferrer'
+                            className='bg-white rounded-full p-1 hover:bg-gray-200'
+                        >
                         {icon}
-                    </Link>
+                        </Link>
+
                 ))}
 
-            </div>
+                    </div>
         </m.button>)
 }
