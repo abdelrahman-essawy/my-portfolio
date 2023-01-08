@@ -130,8 +130,7 @@ export default function Projects() {
 
 
                                         key={index}
-                                        className='grid relative max-w-sm grid-rows-5 items-center justify-center mx-2 my-4  bg-white rounded-lg border'>
-
+                                        className='grid relative max-w-sm grid-rows-5 items-center justify-center mx-2 my-4  bg-white rounded-lg outline-gray-200 outline-1 outline'>
                                         <div className={`absolute top-0 z-20  inset-x-0 p-3  ${image ? `` : ` `}`}>
                                             <div className='flex items-start justify-between'>
                                                 <m.button
@@ -139,7 +138,7 @@ export default function Projects() {
                                                     whileTap={{ scale: 0.9 }}
                                                     onHoverStart={() => setHoveredOnShareButton(true)}
                                                     onHoverEnd={() => setHoveredOnShareButton(false)}
-                                                    className='bg-white rounded-full border p-1'>
+                                                    className='bg-white rounded-full p-1 outline-gray-200 outline-1 outline'>
                                                     <svg
                                                         width={16}
                                                         height={16}
@@ -157,13 +156,13 @@ export default function Projects() {
                                             </div>
 
                                         </div>
-                                        <div className='absolute -top-2 -right-2 z-20 h-4 w-4 border bg-zinc-50 rounded-full'>
+                                        <div className='absolute -top-2 -right-2 z-20 h-4 w-4  bg-zinc-50 rounded-full outline-gray-200 outline-1 outline'>
                                             <div className='absolute flex inset-0 justify-center items-center '>
                                                 <div className='p-1 absolute bg-green-500  rounded-full ' />
                                                 <div className='p-1 absolute bg-green-500  rounded-full opacity-75 animate-ping' />
                                             </div>
                                         </div>
-                                        <div className='overflow-hidden rounded-t-lg row-span-2 relative w-full h-full flex items-center justify-center bg-gray-100'>
+                                        <div className='overflow-hidden rounded-t-lg row-span-2 relative w-full h-full flex items-center justify-center  bg-gray-100'>
                                            
                                             <m.div
                                                 whileHover={{
