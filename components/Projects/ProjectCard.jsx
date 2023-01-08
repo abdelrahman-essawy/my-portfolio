@@ -32,7 +32,7 @@ export default function ProjectCard({
                 mass: 0.5,
                 duration: 0.5,
             }}
-            className='grid relative max-w-sm grid-rows-5 items-center justify-center mx-2 my-4  bg-white rounded-lg ring-1 ring-gray-200'>
+            className='grid relative max-w-sm grid-rows-5 items-center justify-center mx-2 my-4 bg-white rounded-lg ring-1 ring-gray-200'>
             <div className={`absolute top-0 z-20  inset-x-0 p-3  ${image ? `` : ` `}`}>
                 <div className='flex items-start justify-between'>
                     <ShareButton link={link} />
@@ -51,12 +51,12 @@ export default function ProjectCard({
 
             </div>
 
-            <div className='rounded-b-lg grid w-full grid-rows-3 gap-4 sm:p-7 p-4 bg-white z-10 row-span-3'>
+            <div className='rounded-b-lg flex flex-col justify-between h-full w-full items-strech w-full grid-rows-3 gap-4 sm:p-7 p-4 bg-white z-10 row-span-3 '>
 
 
                 <div className='grid grid-rows-2 gap-y-1'>
                     <h3 className='text-xl text-gray-800 font-light'>{name}</h3>
-                    <p className='text-xs text-gray-500 font-light '>{description}</p>
+                    <p className='text-md text-gray-500 font-light '>{description}</p>
                 </div>
                 <div className='grid grid-cols-2 items-center gap-2 font-SourceCodePro'>
                     {
@@ -71,7 +71,7 @@ export default function ProjectCard({
                         })
                     }
                 </div>
-                <div className='grid items-center justify-center grid-cols-1 gap-3 '>
+                <div className='grid items-center justify-center grid-cols-1 gap-3'>
                     <a
                         href={link}
                         target='_blank'

@@ -14,7 +14,7 @@ export default function Projects({ windowScreenWidth }) {
         {
             name: 'Mascot',
             description: `Track all cryptocurrencies, gold and Currencies latest prices and news.`,
-            image: '/mascot.webp',
+            image: '/mascot.png',
             skillsUsed: ['Next.js', 'TailwindCSS', 'Framer Motion', 'REST API'],
             link: 'https://mascot-app.vercel.app/',
             github: 'https://github.com/abdelrahman-essawy/mascot-app'
@@ -87,10 +87,10 @@ export default function Projects({ windowScreenWidth }) {
             </h3>
 
 
-            <div className='max-w-screen-2xl m-auto mx-auto text-center grid items-center justify-center sm:px-6 lg:px-8'>
+            <div className='max-w-screen-2xl m-auto text-center sm:px-6 lg:px-8'>
 
                 <div
-                    className={`grid grid-cols-1 sm:grid-cols-4 items-start`}>
+                    className={`grid grid-cols-4`}>
                     {
                         projects
                             .slice(0, handleSlice())
