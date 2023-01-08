@@ -164,41 +164,41 @@ export default function Projects() {
                                             </div>
                                         </div>
                                         <div className='overflow-hidden rounded-t-lg row-span-2 relative w-full h-full flex items-center justify-center bg-gray-100'>
+                                           
                                             <m.div
                                                 whileHover={{
                                                     scale: 1.05, backgroundColor: '#e0e0e0', transition: {
-
                                                         type: 'tween',
                                                         duration: 0.3,
                                                         ease: 'easeOut'
 
-
                                                     }
                                                 }}
-                                                className={`absolute inset-0`}>
+                                                className={`absolute inset-0 flex`}>
                                                 {
                                                     image ?
-                                                        
-                                                            <Image
-                                                                className={`${image ? `p-7 overflow-hidden` : `hidden`}`}
-                                                                src={image}
-                                                                alt={name}
-                                                                fill
-                                                                style={{ objectFit: 'contain' }}
-                                                            >
-                                                            </Image>
+
+                                                        <Image
+                                                            className={`${image ? `p-7` : ``}`}
+                                                            src={image}
+                                                            alt={name}
+                                                            fill
+                                                            style={{ objectFit: 'contain' }}
+                                                        >
+                                                        </Image>
 
 
 
-                                                        
+
                                                         :
-                                                        <div className='text-3xl font-light text-gray-500'>
+                                                        <div className='text-3xl font-light text-gray-500 m-auto '>
                                                             {name}
-                                                        </div>
+                                                        </div>                                                        
                                                 }
 
 
                                             </m.div>
+                                            
                                         </div>
 
                                         <div className='rounded-b-lg grid w-full grid-rows-3 gap-3 sm:p-7 p-4 bg-white z-10 row-span-3'>
