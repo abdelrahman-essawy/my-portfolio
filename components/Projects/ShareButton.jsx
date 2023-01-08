@@ -35,9 +35,7 @@ export default function ShareButton({ link }) {
         <m.button
             whileHover={{ scale: 1.1 }}
             whileTap={{ scale: 0.9 }}
-            onMouseEnter={() => setHoveredOnShareButton(true)}
             onClick={() => setHoveredOnShareButton((prev) => !prev)}
-            onMouseLeave={() => setHoveredOnShareButton(false)}
 
             className='bg-white rounded-full p-1 ring-1 ring-gray-200'>
             <svg
