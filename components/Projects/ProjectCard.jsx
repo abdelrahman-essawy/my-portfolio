@@ -45,7 +45,7 @@ export default function ProjectCard({
                     <div className='p-1 absolute bg-green-500  rounded-full opacity-75 animate-ping' />
                 </div>
             </div>
-            {/* <div className='overflow-hidden rounded-t-lg row-span-2 relative h-full w-full flex items-center justify-center  bg-gray-100'> */}
+            <div className='overflow-hidden  rounded-t-lg row-span-2 relative h-full w-full flex items-center justify-center  bg-gray-100'>
 
                 {<PreviewTemplete name={name} image={image} />}
 
