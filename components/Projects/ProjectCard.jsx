@@ -45,17 +45,17 @@ export default function ProjectCard({
                     <div className='p-1 absolute bg-green-500  rounded-full opacity-75 animate-ping' />
                 </div>
             </div>
-            <div className='overflow-hidden rounded-t-lg row-span-2 relative w-full h-full flex items-center justify-center  bg-gray-100'>
+            {/* <div className='overflow-hidden rounded-t-lg row-span-2 relative h-full w-full flex items-center justify-center  bg-gray-100'> */}
 
                 {<PreviewTemplete name={name} image={image} />}
 
             </div>
 
-            <div className='rounded-b-lg flex flex-col justify-between h-full w-full items-strech w-full grid-rows-3 gap-4 sm:p-7 p-4 bg-white z-10 row-span-3 '>
+            <div className='rounded-b-lg flex flex-col h-full  justify-between items-strech grid-rows-3 gap-4 sm:p-7 p-4 bg-white z-10 row-span-3 '>
 
 
-                <div className='grid grid-rows-2 gap-y-1'>
-                    <h3 className='text-xl text-gray-800 font-light'>{name}</h3>
+                <div className='grid grid-rows-2 gap-y-1 min-w-fit mt-0 auto-rows-auto'>
+                    <h3 className='text-xl text-gray-800 font-light mt-auto '>{name}</h3>
                     <p className='text-md text-gray-500 font-light '>{description}</p>
                 </div>
                 <div className='grid grid-cols-2 items-center gap-2 font-SourceCodePro'>
