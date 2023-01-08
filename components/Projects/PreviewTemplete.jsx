@@ -18,7 +18,7 @@ export default function PreviewTemplete({ name, image }) {
                         quality={1}
                         loading='lazy'
                     />
-                    <div className='absolute top-[50px] bottom-[62px] inset-x-[56px] round bg-white flex '>
+                    {/* <div className='absolute top-[50px] bottom-[62px] inset-x-[58px] round bg-black flex '>
                         {   
                             image ? 
                                 
@@ -28,7 +28,7 @@ export default function PreviewTemplete({ name, image }) {
                                     src={image}
                                     alt={name}
                                     fill
-                                    placeholder='blur'
+                                    placeholder='empty'
                                     blurDataURL={image}
                                     style={{ objectFit: 'contain' }}
                                     quality={1}
@@ -39,7 +39,7 @@ export default function PreviewTemplete({ name, image }) {
                                     {name}
                                 </div>
                         }
-                    </div>
+                    </div> */}
                 </div>
             )
             

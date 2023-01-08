@@ -14,7 +14,7 @@ export default function Projects({ windowScreenWidth }) {
         {
             name: 'Mascot',
             description: `Track all cryptocurrencies, gold and Currencies latest prices and news.`,
-            image: '/mascot2.png',
+            image: '/mascot.webp',
             skillsUsed: ['Next.js', 'TailwindCSS', 'Framer Motion', 'REST API'],
             link: 'https://mascot-app.vercel.app/',
             github: 'https://github.com/abdelrahman-essawy/mascot-app'
@@ -34,7 +34,7 @@ export default function Projects({ windowScreenWidth }) {
         {
             name: 'AAST E-Learning',
             description: 'Lorem ipsum dolor sit amet, consectetur adipiscing',
-            image: '/object.png',
+            image: '/aast.webp',
             skillsUsed: ['React', 'Framer Motion'],
             link: 'https://aast-e-learning.vercel.app/',
             github: 'https://github.com/abdelrahman-essawy/AAST-E-Learning-Platform'
@@ -43,6 +43,7 @@ export default function Projects({ windowScreenWidth }) {
             name: 'Quizz App',
             description: 'Generate random quizzes and tests your knowledge',
             skillsUsed: ['React', 'TailwindCSS', 'Redux', 'REST API',],
+            image: '/quiz-app.webp',
             link: 'quiz-app-gold-six.vercel.app',
             github: ''
         },

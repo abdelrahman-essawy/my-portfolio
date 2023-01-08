@@ -56,7 +56,7 @@ export default function ProjectCard({
 
                 <div className='grid grid-rows-2 gap-y-1'>
                     <h3 className='text-xl text-gray-800 font-light'>{name}</h3>
-                    {/* <p className='text-sm text-gray-500 font-light'>{description}</p> */}
+                    <p className='text-xs text-gray-500 font-light '>{description}</p>
                 </div>
                 <div className='grid grid-cols-2 items-center gap-2 font-SourceCodePro'>
                     {
