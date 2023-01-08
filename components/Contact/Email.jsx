@@ -124,7 +124,8 @@ export default function Email() {
                                                     damping: 20,
                                                 }}>
                                                 <Image
-                                                    alt='copy'
+                                                    quality={1}
+                                                    loading='lazy'                                                    alt='copy'
                                                     width="50"
                                                     height="50"
                                                     layout="intrinsic"

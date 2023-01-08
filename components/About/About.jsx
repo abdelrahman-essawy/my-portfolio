@@ -33,12 +33,12 @@ export default function About() {
 
           className={`hidden sm:block py-6 sm:p-0 sm:m-0 text-[0px] pointer-events-none select-none self-end w-96 ${learnMore ? `sm:hidden` : ``}`}>
           <Image
-            priority={true}
+            priority
+            quality={1}
             style={{ objectFit: 'cover' }}
             layout='responsive'
             width={200}
             height={304.9}
-
             alt='About Me'
             src='/about-me.webp'
           />

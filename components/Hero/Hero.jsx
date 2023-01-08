@@ -47,7 +47,15 @@ export default function Hero() {
           initial={{ opacity: 0, x: 10 }}
           whileInView={{ opacity: 1, x: 0, type: 'spring' }}
           className='pointer-events-none select-none'>
-          <Image width={500} height={500} alt='Me Image' src='/me.webp' priority={true} />
+          <Image
+            width={500}
+            height={500}
+            alt='My Image'
+            src='/me.webp'
+            priority
+            loading='eager'
+
+          />
         </m.div>
 
         <div className="block mt-5 sm:mt-8 sm:justify-center lg:justify-start sm:hidden">

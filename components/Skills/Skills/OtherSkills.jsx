@@ -61,9 +61,10 @@ export default function OtherSkills({ windowScreenWidth }) {
                                                                 <div className='mb-auto w-14 sm:w-10 h-14 sm:h-10'>
 
                                                                     <Image
+                                                                        quality={1}
+                                                                        loading='lazy'
                                                                         width="100"
                                                                         height="100"
-                                                                        layout="intrinsic"
                                                                         alt={by}
                                                                         src={icon}
                                                                         className='rounded-lg'
@@ -539,7 +540,8 @@ export default function OtherSkills({ windowScreenWidth }) {
                         <div className='flex items-center flex-grow'>
                             <div className={`${color}  ${isOpen ? `mb-auto mt-[7.063px]` : `m-auto `}`}>
                                 <Image
-                                    priority={true}
+                                    quality={1}
+                                    loading='lazy'
                                     width="50"
                                     height="50"
                                     layout="intrinsic"

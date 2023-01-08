@@ -93,7 +93,7 @@ export default function SoftSkills({ windowScreenWidth }) {
                         <div className='flex items-center'>
                             <div className='w-8 h-8'>
                                 <Image
-                                    priority={true}
+                                    quality={10}
                                     width="100"
                                     height="100"
                                     layout="intrinsic"

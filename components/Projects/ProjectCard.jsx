@@ -3,6 +3,7 @@ import Link from 'next/link'
 import React from 'react'
 import ShareButton from './ShareButton'
 import { motion as m } from 'framer-motion'
+import PreviewTemplete from './PreviewTemplete'
 
 export default function ProjectCard({
     name,
@@ -46,39 +47,7 @@ export default function ProjectCard({
             </div>
             <div className='overflow-hidden rounded-t-lg row-span-2 relative w-full h-full flex items-center justify-center  bg-gray-100'>
 
-                <m.div
-                    whileHover={{
-                        scale: 1.05, backgroundColor: '#e0e0e0', transition: {
-                            type: 'tween',
-                            duration: 0.3,
-                            ease: 'easeOut'
-
-                        }
-                    }}
-                    className={`absolute inset-0 flex`}>
-                    {
-                        image ?
-
-                            <Image
-                                className={`${image ? `p-7` : ``}`}
-                                src={image}
-                                alt={name}
-                                fill
-                                style={{ objectFit: 'contain' }}
-                            >
-                            </Image>
-
-
-
-
-                            :
-                            <div className='text-3xl font-light text-gray-500 m-auto '>
-                                {name}
-                            </div>
-                    }
-
-
-                </m.div>
+                {<PreviewTemplete name={name} image={image} />}
 
             </div>
 
@@ -87,7 +56,7 @@ export default function ProjectCard({
 
                 <div className='grid grid-rows-2 gap-y-1'>
                     <h3 className='text-xl text-gray-800 font-light'>{name}</h3>
-                    <p className='text-sm text-gray-500 font-light'>{description}</p>
+                    {/* <p className='text-sm text-gray-500 font-light'>{description}</p> */}
                 </div>
                 <div className='grid grid-cols-2 items-center gap-2 font-SourceCodePro'>
                     {

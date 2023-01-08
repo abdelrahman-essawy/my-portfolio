@@ -187,11 +187,11 @@ export default function TechnicalSkills({ windowScreenWidth }) {
                                 className={`flex flex-col justify-center px-1 py-2 bg-gray-100 rounded-lg  relative ${soon ? `grayscale blur-[1.3px]  bg-zinc-200/80 shadow-none` : `shadow-md`}`}>
                                 <div className='flex items-center justify-center flex-1'>
                                     <Image
-                                        priority={true}
+                                        placeholder='empty'
+                                        quality={1}
+                                        loading='lazy'
                                         width="512"
                                         height="512"
-                                        layout="responsive"
-                                        objectFit="contain"
                                         src={`/Skills/${name}.webp`} alt={name} className={`p-2  bg-gray-100 ${imgRounded} ${soon ? `bg-gray-200` : `bg-gray-100`}`} />
                                 </div>
                                 <div className='flex items-center justify-between w-full space-x-2'>

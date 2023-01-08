@@ -77,7 +77,8 @@ export default function Contact() {
                                             src={icon}
                                             width="32"
                                             height="32"
-                                            layout="intrinsic"
+                                            quality={1}
+                                            loading='lazy'
                                             className={`w-8 h-8 m-auto`} />
                                     </div>
                                 )

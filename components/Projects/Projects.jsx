@@ -14,7 +14,7 @@ export default function Projects({ windowScreenWidth }) {
         {
             name: 'Mascot',
             description: `Track all cryptocurrencies, gold and Currencies latest prices and news.`,
-            image: '/object.png',
+            image: '/mascot2.png',
             skillsUsed: ['Next.js', 'TailwindCSS', 'Framer Motion', 'REST API'],
             link: 'https://mascot-app.vercel.app/',
             github: 'https://github.com/abdelrahman-essawy/mascot-app'
@@ -25,8 +25,9 @@ export default function Projects({ windowScreenWidth }) {
             This is my portifolio website. I built it using Next.js, TailwindCSS and Framer Motion.
             `
             ,
-            image: '/409-4096115_macbook-pro-mockup-cvn-web-development-companies-in.png',
+            image: '/',
             skillsUsed: ['React', 'Next.js', 'TailwindCSS', 'Framer Motion'],
+            image: '/my-portfolio.webp',
             link: 'https://essawy.me',
             github: 'https://github.com/abdelrahman-essawy/my-portfolio'
         },
@@ -42,7 +43,7 @@ export default function Projects({ windowScreenWidth }) {
             name: 'Quizz App',
             description: 'Generate random quizzes and tests your knowledge',
             skillsUsed: ['React', 'TailwindCSS', 'Redux', 'REST API',],
-            link: '',
+            link: 'quiz-app-gold-six.vercel.app',
             github: ''
         },
         {
@@ -50,8 +51,8 @@ export default function Projects({ windowScreenWidth }) {
             description: `Generate random quotes and share them on social media.`,
             image: '/object.png',
             skillsUsed: ['React', 'Bootstrap', 'JQuery', 'REST API'],
-            link: '',
-            github: ''
+            link: 'https://quoter-app.netlify.app/',
+            github: 'https://github.com/abdelrahman-essawy/Quoter'
         },
 
 
@@ -85,7 +86,7 @@ export default function Projects({ windowScreenWidth }) {
             </h3>
 
 
-            <div className='max-w-screen-2xl m-auto mx-auto text-center grid items-center justify-end sm:px-6 lg:px-8'>
+            <div className='max-w-screen-2xl m-auto mx-auto text-center grid items-center justify-center sm:px-6 lg:px-8'>
 
                 <div
                     className={`grid grid-cols-1 sm:grid-cols-4 items-start`}>
