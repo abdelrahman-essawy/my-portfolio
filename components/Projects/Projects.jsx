@@ -5,7 +5,9 @@ import MobileGithubSVG from '../SVG/MobileGithubSVG';
 import Link from 'next/link';
 import ShareButton from './ShareButton';
 
-export default function Projects() {
+export default function Projects({ windowScreenWidth }) {
+    const [seeMore, setSeeMore] = useState(false)
+
 
     const projects = [
         {
@@ -81,6 +83,19 @@ export default function Projects() {
         },
 
     ]
+
+    const handleSlice = () => {
+        if (windowScreenWidth < 640) {
+            if (seeMore) {
+                return projects.length
+            } else {
+                return 2
+            }
+        }
+        return 4
+    }
+    console.log(windowScreenWidth)
+    console.log(handleSlice())
     return (
 
         <m.section
@@ -88,7 +103,7 @@ export default function Projects() {
             initial={{ opacity: 0, x: 10 }}
             whileInView={{ opacity: 1, x: 0, type: 'spring' }}
             transition={{ delay: 0.1 }}
-            className='relative px-4 py-6 overflow-hidden sm:py-0 bg-zinc-50 '>
+            className='relative px-4 py-6 overflow-hidden sm:py-0 sm:pb-4 bg-zinc-50 '>
             <div className='px-12 sm:mt-8 sm:mx-0'>
                 <h2 className='text-3xl tracking-tight text-center text-blue-500 leading-2 '>Projects</h2>
             </div>
@@ -97,13 +112,13 @@ export default function Projects() {
             </h3>
 
 
-            <div className='max-w-screen-2xl m-auto mx-auto text-center sm:flex sm:justify-center sm:items-center sm:px-6 lg:px-8'>
+            <div className='max-w-screen-2xl m-auto mx-auto text-center grid items-center justify-end sm:px-6 lg:px-8'>
 
                 <div
                     className={`grid grid-cols-1 sm:grid-cols-4 items-start`}>
                     {
                         projects
-                            .slice(0, 4)
+                            .slice(0, handleSlice())
                             .map((
                                 {
                                     name,
@@ -179,14 +194,14 @@ export default function Projects() {
 
                                         </div>
 
-                                        <div className='rounded-b-lg grid w-full grid-rows-3 gap-3 sm:p-7 p-4 bg-white z-10 row-span-3'>
+                                        <div className='rounded-b-lg grid w-full grid-rows-3 gap-4 sm:p-7 p-4 bg-white z-10 row-span-3'>
 
 
-                                            <div className='grid fgrid-rows-2 gap-y-2'>
+                                            <div className='grid grid-rows-2 gap-y-1'>
                                                 <h3 className='text-xl text-gray-800 font-light'>{name}</h3>
                                                 <p className='text-sm text-gray-500 font-light'>{description}</p>
                                             </div>
-                                            <div className='grid grid-cols-2 items-center gap-3 font-SourceCodePro'>
+                                            <div className='grid grid-cols-2 items-center gap-2 font-SourceCodePro'>
                                                 {
                                                     skillsUsed.map((skill, index) => {
                                                         return (
@@ -258,10 +273,22 @@ export default function Projects() {
                     }
 
                 </div>
+                <m.button
+                    initial={{ opacity: 0, y: 10 }}
+                    transition={{ delay: 0.5 }}
+                    whileInView={{ opacity: 1, y: 0, type: 'spring' }}
+                    viewport={{ once: true }}
+                    onClick={() => setSeeMore((prev) => !prev)}
+                    className=" text-gray-900 bg-white border sm:hidden border-gray-200 hover:bg-gray-100 hover:text-blue-700 disabled:hover:bg-white focus:text-gray-700 dark:bg-transparent dark:text-gray-400 dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700 focus:ring-1 dark:disabled:hover:bg-gray-800 focus:!ring-1 group flex h-min items-center justify-center p-0.5 text-center font-medium focus:z-10 rounded-lg ring-gray-300" type="button">
+                    <span className="flex items-center px-4 py-2 text-sm rounded-md ">
+                        {seeMore ? 'See Less' : 'See More'}
+                    </span>
+                </m.button>
+                
 
-            </div >
+            </div>
 
 
-        </m.section >
+        </m.section>
     )
 }
