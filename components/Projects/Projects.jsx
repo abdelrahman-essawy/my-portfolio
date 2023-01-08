@@ -3,10 +3,10 @@ import { motion as m } from 'framer-motion'
 import Image from 'next/image'
 import MobileGithubSVG from '../SVG/MobileGithubSVG';
 import Link from 'next/link';
+import ShareButton from './ShareButton';
 
 export default function Projects() {
 
-    const [hoveredOnShareButton, setHoveredOnShareButton] = useState(false)
     const projects = [
         {
             name: 'Mascot',
@@ -115,6 +115,7 @@ export default function Projects() {
                                 }, index) => {
                                 return (
                                     <m.div
+                                        key={index}
                                         initial={{ opacity: 0, x: 10 }}
                                         whileInView={{
                                             opacity: 1, x: 0,
@@ -127,32 +128,10 @@ export default function Projects() {
                                             mass: 0.5,
                                             duration: 0.5,
                                         }}
-
-
-                                        key={index}
                                         className='grid relative max-w-sm grid-rows-5 items-center justify-center mx-2 my-4  bg-white rounded-lg outline-gray-200 outline-1 outline'>
                                         <div className={`absolute top-0 z-20  inset-x-0 p-3  ${image ? `` : ` `}`}>
                                             <div className='flex items-start justify-between'>
-                                                <m.button
-                                                    whileHover={{ scale: 1.1 }}
-                                                    whileTap={{ scale: 0.9 }}
-                                                    onHoverStart={() => setHoveredOnShareButton(true)}
-                                                    onHoverEnd={() => setHoveredOnShareButton(false)}
-                                                    className='bg-white rounded-full p-1 outline-gray-200 outline-1 outline'>
-                                                    <svg
-                                                        width={16}
-                                                        height={16}
-                                                        viewBox="0 0 20 20"
-                                                        xmlns="http://www.w3.org/2000/svg"
-                                                    >
-                                                        <path d="M15 13.442c-.633 0-1.204.246-1.637.642l-5.938-3.463c.046-.188.075-.384.075-.584s-.029-.395-.075-.583L13.3 6.025A2.48 2.48 0 0 0 15 6.7c1.379 0 2.5-1.121 2.5-2.5S16.379 1.7 15 1.7s-2.5 1.121-2.5 2.5c0 .2.029.396.075.583L6.7 8.212A2.485 2.485 0 0 0 5 7.537c-1.379 0-2.5 1.121-2.5 2.5s1.121 2.5 2.5 2.5a2.48 2.48 0 0 0 1.7-.675l5.938 3.463a2.339 2.339 0 0 0-.067.546A2.428 2.428 0 1 0 15 13.442z" />
-                                                    </svg>
-                                                    <div className={`grid ${hoveredOnShareButton ? `block` : `hidden`} grid-rows-3`}>
-                                                        asd
-                                                    </div>
-                                                </m.button>
-
-
+                                                <ShareButton link={link} />
                                             </div>
 
                                         </div>
@@ -163,7 +142,7 @@ export default function Projects() {
                                             </div>
                                         </div>
                                         <div className='overflow-hidden rounded-t-lg row-span-2 relative w-full h-full flex items-center justify-center  bg-gray-100'>
-                                           
+
                                             <m.div
                                                 whileHover={{
                                                     scale: 1.05, backgroundColor: '#e0e0e0', transition: {
@@ -192,12 +171,12 @@ export default function Projects() {
                                                         :
                                                         <div className='text-3xl font-light text-gray-500 m-auto '>
                                                             {name}
-                                                        </div>                                                        
+                                                        </div>
                                                 }
 
 
                                             </m.div>
-                                            
+
                                         </div>
 
                                         <div className='rounded-b-lg grid w-full grid-rows-3 gap-3 sm:p-7 p-4 bg-white z-10 row-span-3'>
@@ -280,9 +259,9 @@ export default function Projects() {
 
                 </div>
 
-            </div>
+            </div >
 
 
-        </m.section>
+        </m.section >
     )
 }
