@@ -27,7 +27,3 @@ html {
 .swiper-slide-shadow {
     display: none;
 }
-
-.swiper-slide-visible {
-    height: 120% !important;
-}
