@@ -50,12 +50,14 @@ html {
     .swiper-slide {
         scale: 90% !important;
         transition: all 0.3s ease-out !important;
+
     }
 
     .swiper-slide-active {
         scale: 110% !important;
         transform: rotateY(0) !important;
         transition: all 0.3s ease-out !important;
+
     }
 
 }
