@@ -1,11 +1,18 @@
 import React, { useEffect, useState, useRef, } from 'react'
 import { animate, motion as m } from 'framer-motion'
-import { useSwipeable } from "react-swipeable";
 import Review from './Review';
+import { Swiper, SwiperSlide } from "swiper/react";
+import "swiper/css";
+import "swiper/css/effect-cards";
+import "swiper/css";
+import "swiper/css/pagination";
+import "swiper/css/navigation";
+import { Navigation, Pagination, Autoplay } from "swiper";
+import MobileSlider from './MobileSlider';
+import DesktopSlider from './DesktopSlider';
 
 
-
-export default function Reviews({ InitPosition, windowScreenWidth }) {
+export default function Reviews({ windowScreenWidth }) {
 
     const reviews = [
 
@@ -44,139 +51,19 @@ export default function Reviews({ InitPosition, windowScreenWidth }) {
             , country: 'United Kingdom'
 
         },
+
     ]
 
+    const slider = () => {
+        const desktop = () => <DesktopSlider reviews={reviews} />
 
-    let [position, setPosition] = useState(0);
-    let [useEffectInvoked, setUseEffectInvoked] = useState(false);
-    let [inCenter, setInCenter] = useState(0);
+        const mobile = () => <MobileSlider reviews={reviews} />
 
-
-    const carousel = useRef()
-    const [width, setWidth] = useState(0)
-    const extraMobileStylesWidth = 8 * 2 //margin left, right
-    const mobileGap = 16 //gap between each review
-    const bordersWidth = reviews.length //border of each review
-    const desktopGap = 28 //gap between each review
-    const extraDesktopStylesWidth = 48 * 2 //margin left, right
-    const widthBreakPoint = 640 //mobile , sm
-
-
-
-    useEffect(() => {
-        if (!useEffectInvoked) {
-            setUseEffectInvoked(useEffectInvoked = true)
-
-            // const totalWidth = () => {
-            //     if (window.screen.width < widthBreakPoint) {
-            //         //mobile
-            //         return (((mobileGap + carousel.current.clientWidth) * reviews.length) + extraMobileStylesWidth) - window.screen.width
-            //     } else {
-            //         //desktop
-            //         return (((desktopGap + carousel.current.clientWidth) * reviews.length) + extraDesktopStylesWidth) - window.screen.width
-            //     }
-            // }
-            // setWidth(totalWidth)
-            slideCarousel()
-        }
-    }, [])
-
-    const slideCarousel = () => {
-
-        setTimeout(() => {
-            setInCenter(inCenter = inCenter + 1)
-        if (window.screen.width < widthBreakPoint) {
-            //mobile
-            setPosition(position =
-                position - (
-                carousel.current.clientWidth + mobileGap
-                ))
-        } else {
-            //desktop
-            setPosition(position =
-                position - (
-                carousel.current.clientWidth + desktopGap
-                ))
-        }
-            if (inCenter < reviews.length - 1)
-                slideCarousel()
-            else
-                reverseSlideCarousel()
-        }, 3000)
+        return windowScreenWidth > 768 ? desktop() : mobile()
     }
 
-    const reverseSlideCarousel = () => {
 
-        setTimeout(() => {
-            setInCenter(inCenter = inCenter - 1)
-        if (window.screen.width < widthBreakPoint) {
-                //mobile
-            setPosition(position =
-                position + (
-                    carousel.current.clientWidth + mobileGap
-                ))
-        } else {
-            //desktop
-            setPosition(position =
-                position + (
-                carousel.current.clientWidth + desktopGap
-                ))
-        }
-            console.log('set time out revrese : ', inCenter)
-
-            if (inCenter > 0)
-                reverseSlideCarousel()
-            else
-                slideCarousel()
-        }, 3000)
-    }
-
-    return (
-
-        <div className='overflow-hidden'
-        >
-            <m.div
-                layout
-                drag='x'
-                dragConstraints={{ right: 0, left: - width }}
-                initial={{ x: 0 }}
-                whileInView={{ x: InitPosition + position }}
-                viewport={{ once: true }}
-                transition={{
-                    type: "spring",
-                    stiffness: 260,
-                    damping: 20,
-                }}
-                className='relative flex items-center mx-0 my-0 space-x-4 center sm:my-8 sm:space-x-7 sm:mx-12'>
-                {
-                    reviews.map(({ name, desc, icon, country }, index) => {
-
-                        return <m.div
-                            layout
-                            ref={carousel}
-                            className='cursor-grab'
-                            key={index}
-                            initial={{ scale: 0, rotation: -180 }}
-                            animate={{
-                                rotate: 0,
-                                scale: windowScreenWidth > widthBreakPoint ? index == inCenter ? 1.05 : .85 : 1,
-                            }}
-                            transition={{
-                                type: "spring",
-                                stiffness: 260,
-                                damping: 20,
-                            }}
-                        >
-                            <Review name={name} desc={desc} icon={icon} country={country} />
-                        </m.div>
-                    })
-                }
-
-            </m.div>
-        </div>
-
-
-    )
+    return slider()
 }
 
 
