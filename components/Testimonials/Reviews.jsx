@@ -1,20 +1,18 @@
 import React, { useEffect, useState, useRef, } from 'react'
 import { animate, motion as m } from 'framer-motion'
-import { useSwipeable } from "react-swipeable";
 import Review from './Review';
-// Import Swiper React components
 import { Swiper, SwiperSlide } from "swiper/react";
-
-// Import Swiper styles
 import "swiper/css";
 import "swiper/css/effect-cards";
+import "swiper/css";
+import "swiper/css/pagination";
+import "swiper/css/navigation";
+import { Navigation, Pagination, Autoplay } from "swiper";
+import MobileSlider from './MobileSlider';
+import DesktopSlider from './DesktopSlider';
 
 
-// import required modules
-import { EffectCards } from "swiper";
-
-
-export default function Reviews({ InitPosition, windowScreenWidth }) {
+export default function Reviews({ windowScreenWidth }) {
 
     const reviews = [
 
@@ -56,48 +54,16 @@ export default function Reviews({ InitPosition, windowScreenWidth }) {
 
     ]
 
+    const slider = () => {
+        const desktop = () => <DesktopSlider reviews={reviews} />
 
-    let [position, setPosition] = useState(0);
-    let [useEffectInvoked, setUseEffectInvoked] = useState(false);
-    let [inCenter, setInCenter] = useState(0);
+        const mobile = () => <MobileSlider reviews={reviews} />
 
-
-    const carousel = useRef()
-    const [width, setWidth] = useState(0)
-    const extraMobileStylesWidth = 8 * 2 //margin left, right
-    const mobileGap = 16 //gap between each review
-    const bordersWidth = reviews.length //border of each review
-    const desktopGap = 28 //gap between each review
-    const extraDesktopStylesWidth = 48 * 2 //margin left, right
-    const widthBreakPoint = 640 //mobile , sm
+        return windowScreenWidth > 768 ? desktop() : mobile()
+    }
 
 
-
-    return (
-
-        <Swiper
-            effect={"cards"}
-            grabCursor={true}
-            modules={[EffectCards]}
-            loop={true}
-            centeredSlides={true}
-            slidesPerView={'auto'}
-            className='w-screen'>
-            {
-                reviews.map(({ name, desc, icon, country }, index) => {
-
-                    return <SwiperSlide
-                        className='rounded-xl w-full h-full py-6 grid items-center shadow-none' key={index}>
-
-                        <Review name={name} desc={desc} icon={icon} country={country} />
-                    </SwiperSlide>
-                })
-            }
-
-        </Swiper>
-
-
-    )
+    return slider()
 }
 
 

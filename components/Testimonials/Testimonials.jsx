@@ -1,29 +1,9 @@
-import React, { useEffect, useState, useRef, } from 'react'
+import React from 'react'
 import Reviews from './Reviews';
-import { motion as m, AnimatePresence } from "framer-motion";
+import { motion as m } from "framer-motion";
 
 export default function Testimonials({ windowScreenWidth }) {
 
-
-    const pcCarouselCurrentClientWidth = 576
-    const mobCarouselCurrentClientWidth = 254
-    const mobileGap = 16 //gap between each review
-    const desktopGap = 28 //gap between each review
-    const extraMobileStylesWidth = 8 * 2 //margin left, right
-    const extraDesktopStylesWidth = 48 * 2 //margin left, right
-    const widthBreakPoint = 640 //mobile , sm
-
-    const [InitPosition, setInitPosition] = useState(0)
-
-    useEffect(() => {
-        if (windowScreenWidth > widthBreakPoint) {
-            setInitPosition((windowScreenWidth / 2 - extraDesktopStylesWidth / 2) + 16 - (desktopGap / 2 + pcCarouselCurrentClientWidth / 2))
-
-        } else {
-            setInitPosition(0)
-
-        }
-    }), [windowScreenWidth, widthBreakPoint, pcCarouselCurrentClientWidth, mobCarouselCurrentClientWidth, mobileGap, desktopGap, extraMobileStylesWidth, extraDesktopStylesWidth]
 
     return (
         <m.section
@@ -40,7 +20,7 @@ export default function Testimonials({ windowScreenWidth }) {
 
 
             <div className='mt-2 sm:px-0 sm:p-0'>
-                <Reviews InitPosition={InitPosition} windowScreenWidth={windowScreenWidth} />
+                <Reviews windowScreenWidth={windowScreenWidth} />
             </div>
 
 
