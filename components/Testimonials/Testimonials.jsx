@@ -23,7 +23,7 @@ export default function Testimonials({ windowScreenWidth }) {
             setInitPosition(0)
 
         }
-    }), []
+    }), [windowScreenWidth, widthBreakPoint, pcCarouselCurrentClientWidth, mobCarouselCurrentClientWidth, mobileGap, desktopGap, extraMobileStylesWidth, extraDesktopStylesWidth]
 
     return (
         <m.section
@@ -39,7 +39,7 @@ export default function Testimonials({ windowScreenWidth }) {
 
 
 
-            <div className='my-8 sm:px-0 sm:p-0 '>
+            <div className='mt-2 sm:px-0 sm:p-0'>
                 <Reviews InitPosition={InitPosition} windowScreenWidth={windowScreenWidth} />
             </div>
 
