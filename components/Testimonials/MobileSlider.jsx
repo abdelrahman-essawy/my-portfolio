@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { memo } from 'react'
 import { Swiper, SwiperSlide } from "swiper/react";
 import { motion as m } from "framer-motion";
 // Import Swiper styles
@@ -9,32 +9,27 @@ import { EffectCards, Autoplay } from "swiper";
 
 import Review from './Review'
 
-export default function MobileSlider({ reviews }) {
-    return <Swiper
+const MobileSlider = ({ reviews }) =>
+    <Swiper
         effect={"cards"}
-        grabCursor={true}
         modules={[EffectCards, Autoplay]}
-        loop={true}
-        centeredSlides={true}
-        slidesPerView={'auto'}
-        className='w-screen'
         autoplay={{
             delay: 2500,
             disableOnInteraction: false,
         }}
         lazy={true}
-
+        rewind={true}
     >
         {
-            reviews.map(({ name, desc, icon, country }, index) => {
+            reviews.map(({ name, desc, icon, country }, index) => 
 
-                return <SwiperSlide
+                 <SwiperSlide
                     className='rounded-xl w-full h-full py-6 grid items-start' key={index}>
-                        <Review name={name} desc={desc} icon={icon} country={country} />
+                    <Review name={name} desc={desc} icon={icon} country={country} />
                 </SwiperSlide>
-            })
+            )
         }
 
     </Swiper>
 
-}
+export default MobileSlider
