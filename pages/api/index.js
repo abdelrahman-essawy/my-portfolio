@@ -12,7 +12,6 @@ export default function handler(req, res) {
     sgMail
         .send(msg)
         .then(() => {
-            console.log(`Email sent`)
         }
         )
         .catch((error) => {

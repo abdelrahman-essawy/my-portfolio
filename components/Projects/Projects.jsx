@@ -66,8 +66,6 @@ export default function Projects({ windowScreenWidth }) {
         }
         return 4
     }
-    console.log(windowScreenWidth)
-    console.log(handleSlice())
     return (
 
         <m.section

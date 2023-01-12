@@ -8,7 +8,6 @@ const SourceCodePro = Source_Code_Pro({
 })
 function MyApp({ Component, pageProps }) {
 
-  console.log(SourceCodePro.variable)
 
   return (
     <main className={`${SourceCodePro.variable} font-sans`}>
