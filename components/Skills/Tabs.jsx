@@ -13,7 +13,6 @@ export default function Tabs({ windowScreenWidth }) {
 
     const handleTap = (tab, event) => {
         setSelected(tab)
-        console.log(event)
     }
 
     return (
