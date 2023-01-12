@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { memo } from 'react'
 // Import Swiper React components
 import { Swiper, SwiperSlide } from "swiper/react";
 import { motion as m } from "framer-motion";
@@ -12,8 +12,8 @@ import "swiper/css/navigation";
 import { Autoplay, Pagination, Navigation } from "swiper";
 import Review from './Review';
 
-export default function DesktopSlider({ reviews }) {
-    return <Swiper
+const DesktopSlider = ({ reviews }) =>
+    <Swiper
         slideActiveClass='swiper-slide-active'
         slidesPerView={4}
         spaceBetween={30}
@@ -35,10 +35,11 @@ export default function DesktopSlider({ reviews }) {
 
                 return <SwiperSlide
                     className='rounded-xl w-full h-full py-6 grid items-start' key={index}>
-                        <Review name={name} desc={desc} icon={icon} country={country} />
+                    <Review name={name} desc={desc} icon={icon} country={country} />
                 </SwiperSlide>
             })
         }
 
     </Swiper>
-}
+
+export default DesktopSlider

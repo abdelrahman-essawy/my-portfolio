@@ -12,7 +12,7 @@ import MobileSlider from './MobileSlider';
 import DesktopSlider from './DesktopSlider';
 
 
-export default function Reviews({ windowScreenWidth }) {
+const Reviews = ({ windowScreenWidth }) => {
 
     const reviews = [
 
@@ -55,8 +55,8 @@ export default function Reviews({ windowScreenWidth }) {
     ]
 
     const slider = () => {
-        const desktop = () => <DesktopSlider reviews={reviews} />
 
+        const desktop = () => <DesktopSlider reviews={reviews} />
         const mobile = () => <MobileSlider reviews={reviews} />
 
         return windowScreenWidth > 768 ? desktop() : mobile()
@@ -67,3 +67,4 @@ export default function Reviews({ windowScreenWidth }) {
 }
 
 
+export default Reviews
