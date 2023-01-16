@@ -94,8 +94,10 @@ export default function SoftSkills({ windowScreenWidth }) {
           <div className="flex items-center">
             <div className="w-8 h-8">
               <Image
-                width="1"
-                height="1"
+                lazy={true}
+                quality={30}
+                width="32"
+                height="32"
                 layout="intrinsic"
                 src={
                   skill.svg

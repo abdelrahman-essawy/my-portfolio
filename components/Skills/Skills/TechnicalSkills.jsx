@@ -184,8 +184,9 @@ export default function TechnicalSkills({ windowScreenWidth }) {
               <div className="flex items-center justify-center flex-1">
                 <Image
                   lazy={true}
-                  width="1"
-                  height="1"
+                  quality={10}
+                  width="50"
+                  height="50"
                   layout="responsive"
                   objectFit="contain"
                   src={`/Skills/${name}.webp`}

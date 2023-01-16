@@ -545,8 +545,10 @@ export default function OtherSkills({ windowScreenWidth }) {
                   }`}
                 >
                   <Image
-                    width="1"
-                    height="1"
+                    lazy={true}
+                    quality={30}
+                    width="40"
+                    height="40"
                     layout="intrinsic"
                     src={icon}
                     alt={name}
