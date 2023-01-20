@@ -1,19 +1,31 @@
 import Head from 'next/head'
-import About from '../components/About/About';
-import Navbar from '../components/Navbar';
-import Testimonials from '../components/Testimonials/Testimonials';
-import Hero from '../components/Hero/Hero';
-import Spliiter from './../components/Spliiter';
-import { motion as m } from 'framer-motion'
 import { useEffect, useState } from 'react';
+import { motion as m } from 'framer-motion'
+
+import Navbar from '../components/Navbar';
+import Spliiter from './../components/Spliiter';
+
+import React, { Suspense, lazy } from 'react';
+import VisibilitySensor from 'react-visibility-sensor';
+
+import Hero from '../components/Hero/Hero';
+import About from '../components/About/About';
 import Skills from './../components/Skills/Skills';
+import Projects from '../components/Projects/Projects';
+import Testimonials from '../components/Testimonials/Testimonials';
 import Contact from '../components/Contact/Contact';
 import Footer from './../components/Footer/Footer';
-import Projects from '../components/Projects/Projects';
-
 
 export default function Home() {
   const [windowScreenWidth, setWindowScreenWidth] = useState(0)
+
+  const [isHeroVisible, setIsHeroVisible] = useState(false);
+  const [isAboutVisible, setIsAboutVisible] = useState(false);
+  const [isSkillsVisible, setIsSkillsVisible] = useState(false);
+  const [isProjectsVisible, setIsProjectsVisible] = useState(false);
+  const [isTestimonialsVisible, setIsTestimonialsVisible] = useState(false);
+  const [isContactVisible, setIsContactVisible] = useState(false);
+  const [isFooterVisible, setIsFooterVisible] = useState(false);
 
   useEffect(() => {
     setWindowScreenWidth(window.screen.width)
@@ -22,11 +34,12 @@ export default function Home() {
     { name: 'Home', href: '#Home', current: false },
     { name: 'About', href: '#About', current: false },
     { name: 'Skills', href: '#Skills', current: false },
-    { name: 'Testimonials', href: '#Testimonials', current: false },
     { name: 'Projects', href: '#Projects', current: false },
+    { name: 'Testimonials', href: '#Testimonials', current: false },
     { name: 'Contact', href: '#Contact', current: false },
   ]
 
+  console.log(isSkillsVisible)
 
   return (
     <>
@@ -52,22 +65,29 @@ export default function Home() {
         <Hero />
         <Spliiter />
 
-        <About />
+        <VisibilitySensor onChange={(visable) => visable && setIsAboutVisible(visable)} delayedCall>
+          <About />
+        </VisibilitySensor>
         <Spliiter />
 
-        <Skills windowScreenWidth={windowScreenWidth} />
+        <VisibilitySensor onChange={(visable) => visable && setIsSkillsVisible(visable)} delayedCall>
+          <Skills windowScreenWidth={windowScreenWidth} isSkillsVisible={isSkillsVisible} />
+        </VisibilitySensor>
         <Spliiter />
 
-        <Projects windowScreenWidth={windowScreenWidth}/>
+        <Projects windowScreenWidth={windowScreenWidth} />
         <Spliiter />
 
-        <Testimonials windowScreenWidth={windowScreenWidth} />
+
+        <VisibilitySensor onChange={(visable) => visable && setIsTestimonialsVisible(visable)} delayedCall>
+          <Testimonials windowScreenWidth={windowScreenWidth} isTestimonialsVisible={isProjectsVisible} />
+        </VisibilitySensor>
         <Spliiter />
+
 
         <Contact />
         <Spliiter />
 
-        <Footer navigation={navigation} />
       </main>
     </>
   )

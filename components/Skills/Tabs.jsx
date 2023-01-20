@@ -1,8 +1,8 @@
-import React, { useState } from 'react'
+import React, { useState, lazy, Suspense } from 'react'
 import { motion as m, AnimatePresence } from 'framer-motion'
 import CurrentTab from './CurrentTab'
 
-export default function Tabs({ windowScreenWidth }) {
+export default function Tabs({ windowScreenWidth, isSkillsVisible }) {
     const [tabs, setTabs] = useState(['Soft Skills', 'Technical Skills', 'Other Skills'])
     const [selected, setSelected] = useState('Technical Skills')
     const [x, setX] = useState(0)
@@ -48,10 +48,8 @@ export default function Tabs({ windowScreenWidth }) {
             </m.div>
             <AnimatePresence
                 mode='wait'
-                animate={{ opacity: 1, x: 0, type: 'spring' }}
-            >
-                <CurrentTab tab={selected} windowScreenWidth={windowScreenWidth} />
-
+                animate={{ opacity: 1, x: 0, type: 'spring' }}>
+                <CurrentTab tab={selected} windowScreenWidth={windowScreenWidth} isSkillsVisible={isSkillsVisible} />
             </AnimatePresence>
         </m.div>
     )
