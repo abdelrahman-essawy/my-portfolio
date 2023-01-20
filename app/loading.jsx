@@ -4,11 +4,11 @@ import anime from 'animejs/lib/anime.es.js';
 
 export default function Loading() {
     console.log('loading')
-    // return <div className='w-full h-screen relative flex justify-center items-center'>
-    //     <div class="lds-heart">
-    //         <div className='bg-blue-500 after:bg-blue-500 before:bg-blue-500' />
-    //     </div>
-    // </div>
+    return <div className='w-full h-screen relative flex justify-center items-center'>
+        <div class="lds-heart">
+            <div className='bg-blue-500 after:bg-blue-500 before:bg-blue-500' />
+        </div>
+    </div>
 
     useEffect(() => {
         anime.timeline({ loop: true })
@@ -62,20 +62,26 @@ export default function Loading() {
         <>
 
             <h1 class="ml8">
-                <span class="letters-container">
-                    <span class="letters letters-left">Hi</span>
-                    <span class="letters bang">!</span>
-                </span>
                 <span class="circle circle-white"></span>
                 <span class="circle circle-dark flex justify-center items-center">
                     <div className=''>
-                        <div className='font-light text-lg'>
+                        <div className='font-light text-3xl'>
+                            
                             <span className='text-gray-700'>&lt;</span>
                             <span className='text-blue-700'>
                                 AE
                             </span>
                             <span className='text-gray-700'>/&gt;</span>
+
+
                         </div>
+
+                        <div className='w-full h-screen relative flex justify-center items-center'>
+                            <div class="lds-heart">
+                                <div className='bg-blue-500 after:bg-blue-500 before:bg-blue-500' />
+                            </div>
+                        </div>
+
                     </div>
                 </span>
                 <span class="circle circle-container"><span class="circle circle-dark-dashed"></span></span>
