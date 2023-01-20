@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import { motion as m } from 'framer-motion'
-import Image from 'next/image';
+import Image from "next/image";
 import update from 'immutability-helper';
 
 export default function OtherSkills({ windowScreenWidth }) {
@@ -65,11 +65,13 @@ export default function OtherSkills({ windowScreenWidth }) {
                                                                     <Image
                                                                         width="100"
                                                                         height="100"
-                                                                        layout="intrinsic"
                                                                         alt={by}
                                                                         src={icon}
                                                                         className='rounded-lg'
-                                                                    />
+                                                                        style={{
+                                                                            maxWidth: "100%",
+                                                                            height: "auto"
+                                                                        }} />
                                                                 </div>
 
                                                                 <div className={`flex flex-col gap-1 ml-2 text-start`}>
@@ -112,7 +114,7 @@ export default function OtherSkills({ windowScreenWidth }) {
                         ))}
                     </div>
                 </m.div>
-            )
+            );
         }
         return (
             <>
@@ -507,89 +509,96 @@ export default function OtherSkills({ windowScreenWidth }) {
     ])
 
 
-    return <div className='grid items-start grid-cols-1 gap-4 sm:grid-cols-2'>
-        {otherSkills.map(({
-            name,
-            desc,
-            color,
-            wordDesc,
-            viewDesc,
-            icon,
-            badges,
-            isOpen,
-        }, index) => (
-            <m.div
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                exit={{ opacity: 0, y: 20 }}
-                transition={{ delay: index * 0.1 }}
-                key={index}
-                type='button'
-                className={`${desc ? `cursor-pointer hover:shadow-lg ${isOpen ? 'sm:col-span-2 sm:shadow-lg' : ''}` : 'cursor-default'} border border-zinc-200/70 rounded-lg shadow-md`}
-                onClick={
-                    () => {
-                        const newarray = update(otherSkills, { [index]: { isOpen: { $set: !isOpen } } })
-                        setOtherSkills(newarray)
-                    }
-                }
-            >
+    return (
+        <div className='grid items-start grid-cols-1 gap-4 sm:grid-cols-2'>
+            {otherSkills.map(({
+                name,
+                desc,
+                color,
+                wordDesc,
+                viewDesc,
+                icon,
+                badges,
+                isOpen,
+            }, index) => (
                 <m.div
-                    className='flex items-center justify-between p-3 '>
-                    <div className='flex items-center flex-grow'>
-                        <div className={`${color}  ${isOpen ? `mb-auto mt-[7.063px]` : `m-auto `}`}>
-                            <Image
-                                priority={true}
-                                width="50"
-                                height="50"
-                                layout="intrinsic"
-                                src={icon} alt={name} className={`sm:w-10 sm:h-10 w-10 h-10 ${isOpen ? `hidden sm:block` : `block`}`} />
-                        </div>
-                        <div className='w-full ml-4'>
-                            <div className='self-center text-sm font-medium text-gray-700 text-start sm:text-md'>
-                                {name}
-                                <span>
-                                    <div key={index} className={` mt-1`}>
-                                        {
-
-                                            badges ?
-                                                badges
-                                                    .slice(0, handleSlice())
-                                                    .map((badge, index) => (
-                                                        <div key={index} className={`inline-block`}>
-                                                            {
-                                                                badgeTemplete(badge)
-                                                            }
-                                                        </div>
-
-                                                    ))
-                                                :
-                                                null
-
-                                        }
-                                    </div>
-
-                                </span>
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    exit={{ opacity: 0, y: 20 }}
+                    transition={{ delay: index * 0.1 }}
+                    key={index}
+                    type='button'
+                    className={`${desc ? `cursor-pointer hover:shadow-lg ${isOpen ? 'sm:col-span-2 sm:shadow-lg' : ''}` : 'cursor-default'} border border-zinc-200/70 rounded-lg shadow-md`}
+                    onClick={
+                        () => {
+                            const newarray = update(otherSkills, { [index]: { isOpen: { $set: !isOpen } } })
+                            setOtherSkills(newarray)
+                        }
+                    }
+                >
+                    <m.div
+                        className='flex items-center justify-between p-3 '>
+                        <div className='flex items-center flex-grow'>
+                            <div className={`${color}  ${isOpen ? `mb-auto mt-[7.063px]` : `m-auto `}`}>
+                                <Image
+                                    priority={true}
+                                    width="50"
+                                    height="50"
+                                    src={icon}
+                                    alt={name}
+                                    className={`sm:w-10 sm:h-10 w-10 h-10 ${isOpen ? `hidden sm:block` : `block`}`}
+                                    style={{
+                                        maxWidth: "100%",
+                                        height: "auto"
+                                    }} />
                             </div>
-                            {
-                                isOpen ?
+                            <div className='w-full ml-4'>
+                                <div className='self-center text-sm font-medium text-gray-700 text-start sm:text-md'>
+                                    {name}
+                                    <span>
+                                        <div key={index} className={` mt-1`}>
+                                            {
 
-                                    descTemplete(wordDesc, desc)
-                                    :
-                                    null
-                            }
+                                                badges ?
+                                                    badges
+                                                        .slice(0, handleSlice())
+                                                        .map((badge, index) => (
+                                                            <div key={index} className={`inline-block`}>
+                                                                {
+                                                                    badgeTemplete(badge)
+                                                                }
+                                                            </div>
+
+                                                        ))
+                                                    :
+                                                    null
+
+                                            }
+                                        </div>
+
+                                    </span>
+                                </div>
+                                {
+                                    isOpen ?
+
+                                        descTemplete(wordDesc, desc)
+                                        :
+                                        null
+                                }
+                            </div>
                         </div>
-                    </div>
-                    <div className={` rounded-lg p-1 `}>
-                        {desc || wordDesc ? <svg xmlns="http://www.w3.org/5000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true" className={`${viewDesc ? 'rotate - 0' : 'rotate-180'} transform h-6 w-6 text-blue-500`}>
-                            <path fill-rule="evenodd" d="M14.77 12.79a.75.75 0 01-1.06-.02L10 8.832 6.29 12.77a.75.75 0 11-1.08-1.04l4.25-4.5a.75.75 0 011.08 0l4.25 4.5a.75.75 0 01-.02 1.06z" clip-rule="evenodd">
-                            </path>
-                        </svg> : ''}
-                    </div>
+                        <div className={` rounded-lg p-1 `}>
+                            {desc || wordDesc ? <svg xmlns="http://www.w3.org/5000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true" className={`${viewDesc ? 'rotate - 0' : 'rotate-180'} transform h-6 w-6 text-blue-500`}>
+                                <path fill-rule="evenodd" d="M14.77 12.79a.75.75 0 01-1.06-.02L10 8.832 6.29 12.77a.75.75 0 11-1.08-1.04l4.25-4.5a.75.75 0 011.08 0l4.25 4.5a.75.75 0 01-.02 1.06z" clip-rule="evenodd">
+                                </path>
+                            </svg> : ''}
+                        </div>
 
+                    </m.div>
                 </m.div>
-            </m.div>
-        ))
-        }
-    </div>
+            ))
+            }
+        </div>
+    );
 
 }

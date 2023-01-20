@@ -1,6 +1,6 @@
 import React from 'react'
 import ContactSVG from '../SVG/ContactSVG';
-import Image from 'next/image';
+import Image from "next/image";
 import FindMeIn from './FindMeIn';
 import { motion as m } from 'framer-motion'
 import Link from 'next/link';
@@ -47,7 +47,16 @@ export default function Hero() {
           initial={{ opacity: 0, x: 10 }}
           whileInView={{ opacity: 1, x: 0, type: 'spring' }}
           className='pointer-events-none select-none'>
-          <Image width={500} height={500} alt='Me Image' src='/me.webp' priority={true} />
+          <Image
+            width={500}
+            height={500}
+            alt='Me Image'
+            src='/me.webp'
+            priority={true}
+            style={{
+              maxWidth: "100%",
+              height: "auto"
+            }} />
         </m.div>
 
         <div className="block mt-5 sm:mt-8 sm:justify-center lg:justify-start sm:hidden">
@@ -68,7 +77,5 @@ export default function Hero() {
       <hr className="hidden max-w-4xl px-6 mx-auto mb-4 "></hr>
       <FindMeIn />
     </section>
-
-
-  )
+  );
 }

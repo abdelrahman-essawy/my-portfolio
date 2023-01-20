@@ -1,4 +1,4 @@
-import Image from 'next/image'
+import Image from "next/image";
 import Link from 'next/link'
 import React from 'react'
 import { motion as m } from 'framer-motion'
@@ -53,9 +53,9 @@ export default function Footer({ navigation }) {
         <m.footer
             initial={{ opacity: 0, y: 10 }}
             whileInView={{ opacity: 1, y: 0, type: 'spring' }}
-            class="p-4 bg-white sm:p-6 dark:bg-gray-900 text-center sm:text-start">
-            <div class="px-4 sm:mt-2  max-w-screen-xl m-auto mx-auto sm:text-start text-center lg:py-0 lg:px-12 md:flex md:justify-between">
-                <div class="mb-6 md:mb-0 text-4xl sm:text-2xl ">
+            className="p-4 bg-white sm:p-6 dark:bg-gray-900 text-center sm:text-start">
+            <div className="px-4 sm:mt-2  max-w-screen-xl m-auto mx-auto sm:text-start text-center lg:py-0 lg:px-12 md:flex md:justify-between">
+                <div className="mb-6 md:mb-0 text-4xl sm:text-2xl ">
                     <Link href="https://essawy.me/" >
                         <span className='text-gray-700'>&lt;</span>
                         <span className='text-blue-700'>
@@ -64,20 +64,19 @@ export default function Footer({ navigation }) {
                         <span className='text-gray-700'>/&gt;</span>
                     </Link>
                 </div>
-                <div class=" mt-8 sm:mt-0">
+                <div className=" mt-8 sm:mt-0">
                     <div>
-                        <ul class="text-gray-600 dark:text-gray-400 sm:flex sm:gap-x-12 sm:items-center grid grid-cols-3 gap-y-3">
+                        <ul className="text-gray-600 dark:text-gray-400 sm:flex sm:gap-x-12 sm:items-center grid grid-cols-3 gap-y-3">
                             {navigation.map((
                                 {
                                     name,
                                     href,
-
                                 }, index
                             ) => (
                                 <m.li
                                     initial={{ opacity: 0, }}
                                     whileInView={{ opacity: 1, }}
-                                    viewport={{once:'true'}}
+                                    viewport={{ once: 'true' }}
                                     exit={{ opacity: 0, }}
                                     transition={{ delay: index * 0.1 }}
                                     key={index}>
@@ -99,11 +98,11 @@ export default function Footer({ navigation }) {
 
                 </div>
             </div>
-            <hr class="my-6 border-gray-200 sm:mx-auto dark:border-gray-700 lg:my-8" />
-            <div class="px-4  max-w-screen-xl m-auto mx-auto sm:text-start text-center lg:py-0 lg:px-12 md:flex md:justify-between sm:flex sm:items-center sm:justify-between">
-                <span class="text-sm text-gray-500 sm:text-center dark:text-gray-400">© 2023 <Link href="https://essawy.me/" class="hover:underline">Abdelrahman Essawy</Link>. All Rights Reserved.
+            <hr className="my-6 border-gray-200 sm:mx-auto dark:border-gray-700 lg:my-8" />
+            <div className="px-4  max-w-screen-xl m-auto mx-auto sm:text-start text-center lg:py-0 lg:px-12 md:flex md:justify-between sm:flex sm:items-center sm:justify-between">
+                <span className="text-sm text-gray-500 sm:text-center dark:text-gray-400">© 2023 <Link href="https://essawy.me/" className="hover:underline">Abdelrahman Essawy</Link>. All Rights Reserved.
                 </span>
-                <div class="flex mt-4 space-x-6 sm:justify-center justify-center sm:mt-0 items-center">
+                <div className="flex mt-4 space-x-6 sm:justify-center justify-center sm:mt-0 items-center">
                     {
                         socialMedia.map(({
                             name,
@@ -111,16 +110,13 @@ export default function Footer({ navigation }) {
                             svg,
                             href
                         }, index) => (
-                            <>
                                 <Link
                                     key={index}
                                     href={href}
-                                    class="text-gray-500 grayscale sm:hover:grayscale-0 hover:text-gray-900 dark:hover:text-white"
+                                    className="text-gray-500 grayscale sm:hover:grayscale-0 hover:text-gray-900 dark:hover:text-white"
                                 >
                                     {svg}
                                 </Link>
-                            </>
-
                         ))
                     }
                 </div>

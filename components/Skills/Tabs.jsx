@@ -47,7 +47,7 @@ export default function Tabs({ windowScreenWidth }) {
 
             </m.div>
             <AnimatePresence
-                exitBeforeEnter
+                mode='wait'
                 animate={{ opacity: 1, x: 0, type: 'spring' }}
             >
                 <CurrentTab tab={selected} windowScreenWidth={windowScreenWidth} />

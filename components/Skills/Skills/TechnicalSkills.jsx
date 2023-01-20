@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import { motion as m } from 'framer-motion'
-import Image from 'next/image'
+import Image from "next/image";
 export default function TechnicalSkills({ windowScreenWidth }) {
     const [seeMore, setSeeMore] = useState(false)
     const skills = [
@@ -190,9 +190,15 @@ export default function TechnicalSkills({ windowScreenWidth }) {
                                         priority={true}
                                         width="512"
                                         height="512"
-                                        layout="responsive"
-                                        objectFit="contain"
-                                        src={`/Skills/${name}.webp`} alt={name} className={`p-2  bg-gray-100 ${imgRounded} ${soon ? `bg-gray-200` : `bg-gray-100`}`} />
+                                        src={`/Skills/${name}.webp`}
+                                        alt={name}
+                                        className={`p-2  bg-gray-100 ${imgRounded} ${soon ? `bg-gray-200` : `bg-gray-100`}`}
+                                        sizes="100vw"
+                                        style={{
+                                            width: "100%",
+                                            height: "auto",
+                                            objectFit: "contain"
+                                        }} />
                                 </div>
                                 <div className='flex items-center justify-between w-full space-x-2'>
                                     <div className='flex flex-col items-center justify-center w-full'>
@@ -215,5 +221,5 @@ export default function TechnicalSkills({ windowScreenWidth }) {
                 </m.button>
             </div>
         </m.div>
-    )
+    );
 }
