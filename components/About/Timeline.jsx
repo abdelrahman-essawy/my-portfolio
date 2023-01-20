@@ -97,7 +97,7 @@ export default function Timeline({ learnMore }) {
                                             </svg>}
                                         </span>
                                     </div>
-                                    <div data-testid="timeline-content" className>
+                                    <div data-testid="timeline-content">
                                         <time className="mb-1 text-sm font-normal leading-none text-gray-400 dark:text-gray-500">{date}</time>
                                         <h3 className="text-lg font-semibold text-gray-900 dark:text-white">{title} {extraInfo && <span className='italic font-normal text-gray-600'> - {extraInfo}</span>}</h3>
                                         <p className="mb-4 text-base font-normal text-gray-500 dark:text-gray-400">{description}</p>
@@ -114,15 +114,15 @@ export default function Timeline({ learnMore }) {
                                                                 viewport={{ once: true }}
                                                                 transition={{ delay: .2 * index }}
                                                                 className="mb-4 ml-5 " key={index}>
-                                                                <div className='bg-zinc-50' >
+                                                                <div className="bg-zinc-50">
                                                                     <span className="absolute flex items-center justify-center w-5 h-5 bg-blue-200 rounded-full -left-3 ring-8 ring-zinc-50 dark:bg-blue-900 dark:ring-gray-900">
-                                                                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24px" height="24px" className='p-1 text-blue-700'>
-                                                                            <path fill="none" stroke="currentColor" stroke-miterlimit="10" stroke-width="2" d="M21 6L9 18 4 13" />
+                                                                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24px" height="24px" className="p-1 text-blue-700">
+                                                                            <path fill="none" stroke="currentColor" strokeMiterlimit={10} strokeWidth={2} d="M21 6L9 18 4 13" />
                                                                         </svg>
-
                                                                     </span>
                                                                 </div>
-                                                                <div className>
+
+                                                                <div>
                                                                     <p className="my-auto text-sm font-normal text-gray-500 dark:text-gray-400">{desc}</p>
                                                                 </div>
                                                             </m.li>
@@ -136,9 +136,10 @@ export default function Timeline({ learnMore }) {
                                         {
                                             link && (
                                                 <button className="text-gray-900 bg-white border border-gray-200 hover:bg-gray-100 hover:text-blue-700 disabled:hover:bg-white focus:ring-blue-700 focus:text-blue-700 dark:bg-transparent dark:text-gray-400 dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700 focus:ring-2 dark:disabled:hover:bg-gray-800 focus:!ring-2 group flex h-min items-center justify-center p-0.5 text-center font-medium focus:z-10 rounded-lg" type="button">
-                                                    <span className="flex items-center px-4 py-2 text-sm rounded-md">Learn More<svg stroke="currentColor" fill="currentColor" strokeWidth={0} viewBox="0 0 20 20" className="w-3 h-3 ml-2" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
-                                                        <path fillRule="evenodd" d="M12.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-2.293-2.293a1 1 0 010-1.414z" clipRule="evenodd" />            </svg>
+                                                    <span className="flex items-center px-4 py-2 text-sm rounded-md">Learn More<svg stroke="currentColor" fill="currentColor" strokeWidth="{0}" viewBox="0 0 20 20" className="w-3 h-3 ml-2" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
+                                                        <path fillrule="evenodd" d="M12.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-2.293-2.293a1 1 0 010-1.414z" cliprule="evenodd" />          </svg>
                                                     </span>
+
                                                 </button>)
 
                                         }

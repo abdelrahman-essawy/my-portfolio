@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import Image from 'next/image';
+import Image from "next/image";
 import { motion as m } from 'framer-motion'
 import Timeline from './Timeline';
 import useMeasure from 'react-use-measure';
@@ -34,14 +34,16 @@ export default function About() {
           className={`hidden sm:block py-6 sm:p-0 sm:m-0 text-[0px] pointer-events-none select-none self-end w-96 ${learnMore ? `sm:hidden` : ``}`}>
           <Image
             priority={true}
-            style={{ objectFit: 'cover' }}
-            layout='responsive'
             width={200}
             height={304.9}
-
             alt='About Me'
             src='/about-me.webp'
-          />
+            sizes="100vw"
+            style={{
+              objectFit: 'cover',
+              width: "100%",
+              height: "auto"
+            }} />
         </m.div>
 
         <div className="m-auto">
@@ -126,5 +128,5 @@ export default function About() {
       </m.div>
 
     </m.section>
-  )
+  );
 }

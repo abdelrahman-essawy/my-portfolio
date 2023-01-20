@@ -1,5 +1,5 @@
 import React from 'react'
-import Image from 'next/image'
+import Image from "next/image";
 import Skeleton from 'react-loading-skeleton'
 import ReactReadMoreReadLess from "react-read-more-read-less";
 
@@ -28,7 +28,17 @@ const Review = ({ name, country, icon, desc }) =>
             </p>
         </blockquote>
         <figcaption className="flex items-center justify-center mt-6 space-x-3">
-            <Image width={32} height={32} quality={1} className="rounded-full" src={icon || `/placeholder.png`} alt="profile picture" />
+            <Image
+                width={32}
+                height={32}
+                quality={1}
+                className="rounded-full"
+                src={icon || `/placeholder.png`}
+                alt="profile picture"
+                style={{
+                    maxWidth: "100%",
+                    height: "auto"
+                }} />
             <div className="flex items-center divide-x-2 divide-gray-500 dark:divide-gray-700">
                 <div className="pr-3 font-medium text-gray-900 dark:text-white">{name || <Skeleton />}</div>
                 <div className="pl-3 text-xs font-light text-gray-500 dark:text-gray-400">{country || <Skeleton />}</div>

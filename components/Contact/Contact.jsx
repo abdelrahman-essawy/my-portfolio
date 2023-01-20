@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { motion as m } from 'framer-motion'
 import Link from 'next/link';
-import Image from 'next/image';
+import Image from "next/image";
 import Email from './Email';
 import SocialMedia from './SocialMedia';
 import PersonalInformations from './PersonalInformations';
@@ -77,10 +77,13 @@ export default function Contact() {
                                             src={icon}
                                             width="32"
                                             height="32"
-                                            layout="intrinsic"
-                                            className={`w-8 h-8 m-auto`} />
+                                            className={`w-8 h-8 m-auto`}
+                                            style={{
+                                                maxWidth: "100%",
+                                                height: "auto"
+                                            }} />
                                     </div>
-                                )
+                                );
                             }
                             )
                         }
@@ -110,5 +113,5 @@ export default function Contact() {
 
 
         </m.section>
-    )
+    );
 }

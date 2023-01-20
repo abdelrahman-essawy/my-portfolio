@@ -15,11 +15,11 @@ export default function ShareButton({ link }) {
             icon: <FacebookSVG className='w-4 h-4 rounded-full' />,
             link: `https://www.facebook.com/sharer/sharer.php?u=${link}`
         },
-        {
-            name: 'messenger',
-            icon: <MessengerSVG className='w-4 h-4' />,
-            link: `fb-messenger://share?link=${link}`
-        },
+        // {
+        //     name: 'messenger',
+        //     icon: <MessengerSVG className='w-4 h-4' />,
+        //     link: `fb-messenger://share?link=${link}`
+        // },
         {
             name: 'whatsapp',
             icon: <WhatsappSVG className='w-4 h-4' />,
@@ -31,7 +31,7 @@ export default function ShareButton({ link }) {
             link: `https://twitter.com/intent/tweet?url=${link}&text=Check%20this%20out%20`
         },
     ]
-    return (
+    return link &&
         <m.button
             whileHover={{ scale: 1.1 }}
             whileTap={{ scale: 0.9 }}
@@ -52,18 +52,19 @@ export default function ShareButton({ link }) {
                     link
 
                 }, index) => (
-                        <Link
-                            key={index}
-                            href={link}
-                            target='_blank'
-                            rel='noreferrer'
-                            className='bg-white rounded-full p-1 hover:bg-gray-200'
-                        >
+                    <Link
+                        key={index}
+                        href={link}
+                        target='_blank'
+                        rel='noreferrer'
+                        className='bg-white rounded-full p-1 hover:bg-gray-200'
+                    >
                         {icon}
-                        </Link>
+                    </Link>
 
                 ))}
 
-                    </div>
-        </m.button>)
+            </div>
+        </m.button>
+
 }

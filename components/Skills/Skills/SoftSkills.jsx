@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import { AnimatePresence, motion as m } from 'framer-motion'
-import Image from 'next/image';
+import Image from "next/image";
 export default function SoftSkills({ windowScreenWidth }) {
     const [seeMore, setSeeMore] = useState(false)
     const softSkills = [
@@ -96,10 +96,14 @@ export default function SoftSkills({ windowScreenWidth }) {
                                     priority={true}
                                     width="100"
                                     height="100"
-                                    layout="intrinsic"
                                     src={skill.svg
                                         ? skill.svg
-                                        : 'https://img.icons8.com/color/48/000000/teamwork.png'} alt={skill.name} />
+                                        : 'https://img.icons8.com/color/48/000000/teamwork.png'}
+                                    alt={skill.name}
+                                    style={{
+                                        maxWidth: "100%",
+                                        height: "auto"
+                                    }} />
                             </div>
                             <div className='ml-4'>
                                 <div className='font-medium text-gray-700 text-md sm:text-md'>{skill.name}</div>
@@ -119,5 +123,5 @@ export default function SoftSkills({ windowScreenWidth }) {
                     seeMore ? 'See Less' : 'See More'
                 }</m.button>
         </m.div>
-    )
+    );
 }

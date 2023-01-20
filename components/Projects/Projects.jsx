@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import { motion as m } from 'framer-motion'
-import Image from 'next/image'
+import Image from "next/image";
 import MobileGithubSVG from '../SVG/MobileGithubSVG';
 import Link from 'next/link';
 import ShareButton from './ShareButton';
@@ -67,7 +67,6 @@ export default function Projects({ windowScreenWidth }) {
         return 4
     }
     return (
-
         <m.section
             id='Projects'
             initial={{ opacity: 0, x: 10 }}
@@ -146,8 +145,11 @@ export default function Projects({ windowScreenWidth }) {
                                                             src={image}
                                                             alt={name}
                                                             fill
-                                                            style={{ objectFit: 'contain' }}
-                                                        >
+                                                            style={{
+                                                                objectFit: 'contain',
+                                                                maxWidth: "100%",
+                                                                height: "100%"
+                                                            }}>
                                                         </Image>
 
 
@@ -237,7 +239,7 @@ export default function Projects({ windowScreenWidth }) {
                                             </div>
                                         </div>
                                     </m.div>
-                                )
+                                );
                             })
 
                     }
@@ -254,11 +256,11 @@ export default function Projects({ windowScreenWidth }) {
                         {seeMore ? 'See Less' : 'See More'}
                     </span>
                 </m.button>
-                
+
 
             </div>
 
 
         </m.section>
-    )
+    );
 }

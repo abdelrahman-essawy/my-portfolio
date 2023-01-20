@@ -1,4 +1,4 @@
-import Image from 'next/image'
+import Image from "next/image";
 import Link from 'next/link'
 import React, { useState } from 'react'
 import EmailSVG from './../SVG/Contact/EmailSVG';
@@ -59,7 +59,6 @@ export default function Email() {
                         href
                     }, index) => {
                         return (
-
                             <div
                                 key={index}
                                 onClick={() => {
@@ -127,8 +126,12 @@ export default function Email() {
                                                     alt='copy'
                                                     width="50"
                                                     height="50"
-                                                    layout="intrinsic"
-                                                    src='https://cdn-icons-png.flaticon.com/512/1828/1828249.png' className='w-5 h-5 m-2 mx-auto sm:w-6 sm:h-6' />
+                                                    src='https://cdn-icons-png.flaticon.com/512/1828/1828249.png'
+                                                    className='w-5 h-5 m-2 mx-auto sm:w-6 sm:h-6'
+                                                    style={{
+                                                        maxWidth: "100%",
+                                                        height: "auto"
+                                                    }} />
 
                                             </m.div>
 
@@ -137,7 +140,7 @@ export default function Email() {
                                 </div>
 
                             </div>
-                        )
+                        );
                     })
 
                 }
@@ -399,7 +402,7 @@ export default function Email() {
                 <div className='text-center sm:text-start'>
                     <div>
                         <span className="text-sm font-bold text-gray-600 uppercase">Full Name</span>
-                        <input className="w-full p-3 mt-2 text-gray-900 transition duration-100 ease-in rounded-lg focus:ring ring-blue-200 bg-blue-50 focus:outline-none focus:shadow-outline" type="text" placeholder />
+                        <input className="w-full p-3 mt-2 text-gray-900 transition duration-100 ease-in rounded-lg focus:ring ring-blue-200 bg-blue-50 focus:outline-none focus:shadow-outline" type="text" />
                     </div>
                     <div className="mt-4 sm:mt-8">
                         <span className="text-sm font-bold text-gray-600 uppercase">Email</span>
@@ -417,5 +420,5 @@ export default function Email() {
                 </div>
             </div>
         </div>
-    )
+    );
 }
