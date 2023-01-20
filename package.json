@@ -13,6 +13,7 @@
     "@heroicons/react": "^2.0.12",
     "@next/font": "^13.1.1",
     "@sendgrid/mail": "^7.7.0",
+    "animejs": "^3.2.1",
     "framer-motion": "^7.6.19",
     "immutability-helper": "^3.1.1",
     "next": "^13.0.3",
@@ -27,6 +28,7 @@
     "tailwind-typewriter": "^1.0.1"
   },
   "devDependencies": {
+    "@types/react": "18.0.27",
     "autoprefixer": "^10.4.13",
     "eslint": "^8.32.0",
     "eslint-config-next": "^13.0.3",
