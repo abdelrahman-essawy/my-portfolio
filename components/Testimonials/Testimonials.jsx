@@ -1,8 +1,9 @@
-import React from 'react'
-import Reviews from './Reviews';
+import React, { lazy, Suspense } from 'react'
 import { motion as m } from "framer-motion";
 
-export default function Testimonials({ windowScreenWidth }) {
+const Reviews = lazy(() => import('./Reviews'));
+
+export default function Testimonials({ windowScreenWidth, isTestimonialsVisible }) {
 
 
     return (
@@ -20,7 +21,13 @@ export default function Testimonials({ windowScreenWidth }) {
 
 
             <div className='mt-2 sm:px-0 sm:p-0'>
-                <Reviews windowScreenWidth={windowScreenWidth} />
+                {
+                    isTestimonialsVisible &&
+                    <Suspense fallback={<div>Loading...</div>}>
+                        <Reviews windowScreenWidth={windowScreenWidth} />
+                    </Suspense>
+
+                }
             </div>
 
 

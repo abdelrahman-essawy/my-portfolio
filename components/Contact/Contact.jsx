@@ -1,12 +1,10 @@
-import React, { useState } from 'react'
-import { motion as m } from 'framer-motion'
-import Link from 'next/link';
+import { motion as m } from 'framer-motion';
 import Image from "next/image";
-import Email from './Email';
-import SocialMedia from './SocialMedia';
+import React, { lazy, Suspense, useState } from 'react';
 import PersonalInformations from './PersonalInformations';
-
-export default function Contact() {
+import SocialMedia from './SocialMedia';
+import Email from './Email';
+export default function Contact({ isContactVisible }) {
 
     const [currentPage, setCurrentPage] = useState('email')
 
@@ -64,7 +62,6 @@ export default function Contact() {
                             pageNavigation.map(({
                                 name,
                                 icon: icon
-
                             }, index) => {
 
                                 return (
@@ -103,7 +100,10 @@ export default function Contact() {
                             }
                             )
                         } */}
-                        <Email />
+                        {
+                            isContactVisible &&
+                            <Email />
+                        }
                     </div>
                 </div>
             </div>
