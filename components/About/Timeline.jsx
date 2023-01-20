@@ -1,8 +1,8 @@
+import { motion as m } from 'framer-motion'
 import React from 'react'
 import EducationSVG from '../SVG/About/EducationSVG'
 import NewbornSVG from '../SVG/About/NewbornSVG'
 import TournamentSVG from '../SVG/About/TournamentSVG'
-import { motion as m } from 'framer-motion'
 
 export default function Timeline({ learnMore }) {
 

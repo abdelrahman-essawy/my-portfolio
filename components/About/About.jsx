@@ -1,8 +1,8 @@
-import React, { useEffect, useState } from 'react'
+import { motion as m } from 'framer-motion';
 import Image from "next/image";
-import { motion as m } from 'framer-motion'
-import Timeline from './Timeline';
+import React, { useEffect, useState } from 'react';
 import useMeasure from 'react-use-measure';
+import Timeline from './Timeline';
 
 export default function About() {
 

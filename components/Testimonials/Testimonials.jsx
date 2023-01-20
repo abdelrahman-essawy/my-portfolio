@@ -23,7 +23,7 @@ export default function Testimonials({ windowScreenWidth, isTestimonialsVisible 
             <div className='mt-2 sm:px-0 sm:p-0'>
                 {
                     isTestimonialsVisible &&
-                    <Suspense fallback={<div></div>}>
+                    <Suspense fallback={<div>Loading...</div>}>
                         <Reviews windowScreenWidth={windowScreenWidth} />
                     </Suspense>
 

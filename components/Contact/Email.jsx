@@ -1,10 +1,10 @@
+import { motion as m } from 'framer-motion';
 import Image from "next/image";
-import Link from 'next/link'
-import React, { useState } from 'react'
+import Link from 'next/link';
+import React, { useState } from 'react';
+import CheckSVG from './../SVG/CheckSVG';
 import EmailSVG from './../SVG/Contact/EmailSVG';
 import PhoneSVG from './../SVG/Contact/PhoneSVG';
-import CheckSVG from './../SVG/CheckSVG';
-import { motion as m } from 'framer-motion'
 
 export default function Email() {
     const [contacts, setContacts] = useState([

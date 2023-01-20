@@ -1,6 +1,7 @@
 import '../styles/globals.css'
-import Loading from './loading'
 import { Source_Code_Pro } from '@next/font/google'
+import Loading from './Loading'
+import { Suspense } from 'react'
 
 const SourceCodePro = Source_Code_Pro({
   subsets: ['latin'],
@@ -10,10 +11,11 @@ function MyApp({ Component, pageProps }) {
 
 
   return (
-    <main className={`${SourceCodePro.variable} font-sans`}>
-
-      <Component fallback={<Loading />} {...pageProps} />
-    </main>
+    <Suspense fallback={<Loading />}>
+      <main className={`${SourceCodePro.variable} font-sans min-h-screen min-w-full`}>
+        <Component {...pageProps} />
+      </main>
+    </Suspense>
   )
 
 }
