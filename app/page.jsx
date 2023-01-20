@@ -18,7 +18,7 @@ export default function Home() {
 
     useEffect(() => {
         setWindowScreenWidth(window.screen.width)
-    }, [window.screen.width])
+    }, [])
     const navigation = [
         { name: 'Home', href: '#Home', current: false },
         { name: 'About', href: '#About', current: false },
