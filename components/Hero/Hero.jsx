@@ -9,9 +9,6 @@ export default function Hero() {
 
   return (
     <section id='Home'>
-      <div className='absolute w-20 rounded-3xl'>
-      </div>
-
       <div className="max-w-screen-xl px-4 py-8 m-auto mx-auto text-center lg:py-0 lg:px-12 sm:flex sm:justify-between sm:items-center">
         <m.div
           initial={{ opacity: 0, x: -10 }}
