@@ -76,11 +76,15 @@ export default function Home() {
           </VisibilitySensor>
           <Spliiter />
 
-
-          <Projects windowScreenWidth={windowScreenWidth} isProjectsVisible={isProjectsVisible} />
+          <VisibilitySensor onChange={(visable) => visable && setIsProjectsVisible(visable)} delayedCall>
+            <Projects windowScreenWidth={windowScreenWidth} isProjectsVisible={isProjectsVisible} />
+          </VisibilitySensor>
           <Spliiter />
 
-          <Testimonials windowScreenWidth={windowScreenWidth} isTestimonialsVisible={isTestimonialsVisible} />
+
+          <VisibilitySensor onChange={(visable) => visable && setIsTestimonialsVisible(visable)} delayedCall>
+            <Testimonials windowScreenWidth={windowScreenWidth} isTestimonialsVisible={isTestimonialsVisible} />
+          </VisibilitySensor>
           <Spliiter />
 
           <Contact windowScreenWidth={windowScreenWidth} isContactVisible={isContactVisible} />
