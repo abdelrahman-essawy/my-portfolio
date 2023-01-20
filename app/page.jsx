@@ -2,10 +2,17 @@
 import { motion as m } from 'framer-motion'
 import { lazy, Suspense, useEffect, useState } from 'react';
 
+const Hero = lazy(() => {
+    return Promise.all([
+        import('../components/Hero/Hero' /* webpackChunkName: "Hero" */),
+        new Promise(resolve => setTimeout(resolve, 1000))
+    ])
+        .then(([moduleExports]) => moduleExports);
+});
+
 const Navbar = lazy(() => import('../components/Navbar' /* webpackChunkName: "Navbar" */));
 const About = lazy(() => import('../components/About/About' /* webpackChunkName: "About" */));
 const Testimonials = lazy(() => import('../components/Testimonials/Testimonials' /* webpackChunkName: "Testimonials" */));
-const Hero = lazy(() => import('../components/Hero/Hero' /* webpackChunkName: "Hero" */));
 const Skills = lazy(() => import('../components/Skills/Skills' /* webpackChunkName: "Skills" */));
 const Contact = lazy(() => import('../components/Contact/Contact' /* webpackChunkName: "Contact" */));
 const Footer = lazy(() => import('../components/Footer/Footer' /* webpackChunkName: "Footer" */));
