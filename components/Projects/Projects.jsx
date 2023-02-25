@@ -11,6 +11,14 @@ export default function Projects({ windowScreenWidth }) {
 
     const projects = [
         {
+            name: 'AAST - Ratings',
+            description: `A platform for students to share their experiences and opinions.`,
+            image: '/object.png',
+            skillsUsed: ['Next.js 13', 'TypeScript', 'Postgresql', 'Prisma', 'Radix UI', 'Node.js'],
+            link: 'https://aast-ratings.vercel.app/',
+            github: 'https://github.com/abdelrahman-essawy/aast-ratings'
+        },
+        {
             name: 'Mascot',
             description: `Track all cryptocurrencies, gold and Currencies latest prices and news.`,
             image: '/object.png',
@@ -166,7 +174,7 @@ export default function Projects({ windowScreenWidth }) {
 
                                         </div>
 
-                                        <div className='rounded-b-lg grid w-full grid-rows-3 gap-4 sm:p-7 p-4 bg-white z-10 row-span-3'>
+                                        <div className='rounded-b-lg flex flex-col w-full grid-rows-3 gap-4 sm:p-7 p-4 bg-white z-10 row-span-3'>
 
 
                                             <div className='grid grid-rows-2 gap-y-1'>
@@ -186,12 +194,12 @@ export default function Projects({ windowScreenWidth }) {
                                                     })
                                                 }
                                             </div>
-                                            <div className='grid items-center justify-center grid-cols-1 gap-3 '>
+                                            <div className='flex flex-col w-full items-start justify-center grid-cols-1 gap-3 '>
                                                 <a
                                                     href={link}
                                                     target='_blank'
                                                     rel='noreferrer'
-                                                    className='flex items-center justify-center gap-1 px-4 py-2 text-sm font-medium text-white bg-blue-500 rounded-md hover:bg-blue-600'>
+                                                    className='flex w-full items-center justify-center gap-1 px-4 py-2 text-sm font-medium text-white bg-blue-500 rounded-md hover:bg-blue-600'>
 
                                                     <div>
                                                         <svg
@@ -215,7 +223,7 @@ export default function Projects({ windowScreenWidth }) {
                                                     href={github}
                                                     target='_blank'
                                                     rel='noreferrer'
-                                                    className='flex items-center justify-center gap-1 px-4 py-2 text-sm font-medium text-white bg-gray-700 rounded-md cursor-pointer hover:bg-gray-800'>
+                                                    className='flex w-full items-center justify-center gap-1 px-4 py-2 text-sm font-medium text-white bg-gray-700 rounded-md cursor-pointer hover:bg-gray-800'>
                                                     <div>
                                                         <svg
                                                             stroke="currentColor"
@@ -234,8 +242,6 @@ export default function Projects({ windowScreenWidth }) {
                                                         GitHub
                                                     </div>
                                                 </Link>
-
-
                                             </div>
                                         </div>
                                     </m.div>
