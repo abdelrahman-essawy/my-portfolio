@@ -8,6 +8,20 @@ export default function Timeline({ learnMore }) {
 
     const timelineItems = [
         {
+            date: 'Mar 2022 – Present',
+            title: 'Full Stack Developer',
+            description: 'Chingu',
+            arrayDescription: [
+                'Developed web apps with Next.js, React, Tailwind, Prisma, PostgreSQL, and Node.js.',
+                'Built APIs with Node.js for effective client-server communication.',
+                'Collaborated with a global team for timely delivery of high-quality products',
+                'Conducted code reviews, implemented best practices, and resolved technical issues for high code quality and scalability.',
+                'Troubleshoot and resolve complex technical issues for smooth app performance.',
+            ],
+            extraInfo: 'Internship',
+            country: 'USA',
+        },
+        {
             date: 'Nov 2022 – Present',
             title: 'Front End Developer',
             description: 'IEEE',
@@ -19,6 +33,7 @@ export default function Timeline({ learnMore }) {
                 'Collaborated with product team members to implement new feature developments.',
             ],
             extraInfo: 'Volunteering',
+            country: 'Egypt',
         },
         {
             date: 'Aug 2022 – Sep 2022',
@@ -31,6 +46,7 @@ export default function Timeline({ learnMore }) {
                 'Carried out continuous identification, measurement, and improvement of processes.',
             ],
             extraInfo: 'Internship',
+            country: 'Egypt',
         },
         {
             date: 'August 2021',
@@ -78,7 +94,8 @@ export default function Timeline({ learnMore }) {
                                 extraInfo,
                                 link,
                                 arrayDescription,
-                                svg
+                                svg,
+                                country
                             }
                             , index) => {
                             return (
@@ -100,7 +117,7 @@ export default function Timeline({ learnMore }) {
                                     <div data-testid="timeline-content">
                                         <time className="mb-1 text-sm font-normal leading-none text-gray-400 dark:text-gray-500">{date}</time>
                                         <h3 className="text-lg font-semibold text-gray-900 dark:text-white">{title} {extraInfo && <span className='italic font-normal text-gray-600'> - {extraInfo}</span>}</h3>
-                                        <p className="mb-4 text-base font-normal text-gray-500 dark:text-gray-400">{description}</p>
+                                        <p className="mb-4 text-base font-medium text-gray-500 dark:text-gray-400">{description} <span className='font-normal'>- {country}</span></p>
                                         <ol className='relative ml-4 border-l border-gray-200 dark:border-gray-700' >
 
                                             {
@@ -135,7 +152,7 @@ export default function Timeline({ learnMore }) {
                                         </ol>
                                         {
                                             link && (
-                                                <button className="text-gray-900 bg-white border border-gray-200 hover:bg-gray-100 hover:text-blue-700 disabled:hover:bg-white focus:ring-blue-700 focus:text-blue-700 dark:bg-transparent dark:text-gray-400 dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700 focus:ring-2 dark:disabled:hover:bg-gray-800 focus:!ring-2 group flex h-min items-center justify-center p-0.5 text-center font-medium focus:z-10 rounded-lg" type="button">
+                                                <button className="text-gray-900 bg-white border border-gray-200 hover:bg-gray-100 hover:text-blue-700 disabled:hover:bg-white focus:ring-blue-700 focus:text-blue-700 dark:bg-transparent dark:text-gray-400 dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700 dark:disabled:hover:bg-gray-800 focus:!ring-2 group flex h-min items-center justify-center p-0.5 text-center font-medium focus:z-10 rounded-lg" type="button">
                                                     <span className="flex items-center px-4 py-2 text-sm rounded-md">Learn More<svg stroke="currentColor" fill="currentColor" strokeWidth="{0}" viewBox="0 0 20 20" className="w-3 h-3 ml-2" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
                                                         <path fillrule="evenodd" d="M12.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-2.293-2.293a1 1 0 010-1.414z" cliprule="evenodd" />          </svg>
                                                     </span>

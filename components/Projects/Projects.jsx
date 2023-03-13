@@ -257,7 +257,7 @@ export default function Projects({ windowScreenWidth }) {
                     whileInView={{ opacity: 1, y: 0, type: 'spring' }}
                     viewport={{ once: true }}
                     onClick={() => setSeeMore((prev) => !prev)}
-                    className=" text-gray-900 bg-white border sm:hidden border-gray-200 hover:bg-gray-100 hover:text-blue-700 disabled:hover:bg-white focus:text-gray-700 dark:bg-transparent dark:text-gray-400 dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700 focus:ring-1 dark:disabled:hover:bg-gray-800 focus:!ring-1 group flex h-min items-center justify-center p-0.5 text-center font-medium focus:z-10 rounded-lg ring-gray-300" type="button">
+                    className=" text-gray-900 bg-white border sm:hidden border-gray-200 hover:bg-gray-100 hover:text-blue-700 disabled:hover:bg-white focus:text-gray-700 dark:bg-transparent dark:text-gray-400 dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700 dark:disabled:hover:bg-gray-800 focus:!ring-1 group flex h-min items-center justify-center p-0.5 text-center font-medium focus:z-10 rounded-lg ring-gray-300" type="button">
                     <span className="flex items-center px-4 py-2 text-sm rounded-md ">
                         {seeMore ? 'See Less' : 'See More'}
                     </span>
