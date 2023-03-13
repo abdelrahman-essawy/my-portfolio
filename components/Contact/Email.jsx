@@ -108,6 +108,7 @@ export default function Email() {
                                             <m.div
                                                 initial={{ opacity: 0 }}
                                                 whileInView={{ opacity: 1 }}
+                                                transition={{ duration: 0.3 }}
                                             >
 
                                                 <CheckSVG className={`sm:w-6 sm:h-6 w-5 h-5 mx-auto m-2 fill-blue-700`} />
@@ -121,6 +122,7 @@ export default function Email() {
                                                     type: "spring",
                                                     stiffness: 260,
                                                     damping: 20,
+                                                    duration: 0.3
                                                 }}>
                                                 <Image
                                                     alt='copy'

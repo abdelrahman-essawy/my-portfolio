@@ -34,7 +34,8 @@ export default function FindMeIn({ item, index }) {
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{
                     when: "beforeChildren",
-                    delay: 0.2
+                    delay: 0.2,
+                    duration: 0.3
                 }}
                 className='sm:hidden flex flex-wrap justify-center items-center mt-8 text-gray-500 sm:justify-between'>
                 {links.map((item, index) =>
@@ -60,7 +61,8 @@ export default function FindMeIn({ item, index }) {
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{
                     when: "beforeChildren",
-                    delay: 0.2
+                    delay: 0.2,
+                    duration: 0.3
                 }}
                 className='hidden sm:flex justify-evenly items-center mt-8 text-gray-500 sm:justify-evenly flex-nowrap'>
                 {links.map((item, index) =>
@@ -73,10 +75,8 @@ export default function FindMeIn({ item, index }) {
                                 delay: 0,
                                 type: "spring",
                                 stiffness: 260,
-                                damping: 20
-
-
-
+                                damping: 20,
+                                duration: 0.3
                             }
                         }
                         whileTap={{ scale: 0.9 }}

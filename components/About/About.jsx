@@ -17,7 +17,7 @@ export default function About() {
       initial={{ opacity: 0, }}
       whileInView={{ opacity: 1, }}
 
-      transition={{ when: 'beforeChildren' }}
+      transition={{ when: 'beforeChildren', duration: 0.3 }}
 
       id='About' className='overflow-hidden bg-zinc-50'>
       <m.div
@@ -50,7 +50,7 @@ export default function About() {
           <h2 className='block mb-6 text-3xl tracking-tight text-center text-blue-500 sm:hidden leading-2 sm:mb-10'>About Me</h2>
           <m.div
             animate={{ height }}
-            transition={{ when: 'beforeChildren', type: 'spring', stiffness: 1000, damping: 50 }}
+            transition={{ when: 'beforeChildren', type: 'spring', stiffness: 1000, damping: 50, duration: 0.3 }}
             initial={{ opacity: 0, x: 10 }}
             whileInView={{ opacity: 1, x: 0, type: 'spring' }}
             className={`mt-2 text-base font-medium text-gray-800 sm:text-xl sm:text-start `}>

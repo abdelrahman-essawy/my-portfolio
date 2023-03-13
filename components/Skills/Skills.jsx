@@ -9,7 +9,7 @@ export default function Skills({ windowScreenWidth }) {
             id='Skills'
             initial={{ opacity: 0, x: 10 }}
             whileInView={{ opacity: 1, x: 0, type: 'spring' }}
-            transition={{ delay: 0.1 }}
+            transition={{ delay: 0.1, duration: .3 }}
             className='relative px-4 py-6 bg-white sm:p-0 overflow-y sm:px-0'>
             
             <div className='px-12 mt-0 sm:mt-8 sm:mx-0 '>

@@ -79,7 +79,7 @@ export default function Projects({ windowScreenWidth }) {
             id='Projects'
             initial={{ opacity: 0, x: 10 }}
             whileInView={{ opacity: 1, x: 0, type: 'spring' }}
-            transition={{ delay: 0.1 }}
+            transition={{ delay: 0.1, duration:.5 }}
             className='relative px-4 py-6 overflow-hidden sm:py-0 sm:pb-4 bg-zinc-50 '>
             <div className='px-12 sm:mt-8 sm:mx-0'>
                 <h2 className='text-3xl tracking-tight text-center text-blue-500 leading-2 '>Projects</h2>
@@ -253,7 +253,7 @@ export default function Projects({ windowScreenWidth }) {
                 </div>
                 <m.button
                     initial={{ opacity: 0, y: 10 }}
-                    transition={{ delay: 0.5 }}
+                    transition={{ delay: 0.5, duration: .5 }}
                     whileInView={{ opacity: 1, y: 0, type: 'spring' }}
                     viewport={{ once: true }}
                     onClick={() => setSeeMore((prev) => !prev)}

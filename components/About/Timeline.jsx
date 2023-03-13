@@ -79,7 +79,7 @@ export default function Timeline({ learnMore }) {
             initial={{ opacity: 0, x: 10 }}
             whileInView={{ opacity: 1, x: 0, type: 'spring' }}
             viewport={{ once: true }}
-            transition={{ delay: 0.1, when: 'beforeChildren' }}
+            transition={{ delay: 0.1, when: 'beforeChildren', duration: .5 }}
 
         >
             <ol data-testid="timeline-component" className="relative border-l border-blue-200 dark:border-gray-700 ">
@@ -103,7 +103,7 @@ export default function Timeline({ learnMore }) {
                                     initial={{ opacity: 0, }}
                                     whileInView={{ opacity: 1, type: 'spring' }}
                                     viewport={{ once: true }}
-                                    transition={{ delay: .1 * index, when: 'beforeChildren' }}
+                                    transition={{ delay: .1 * index, when: 'beforeChildren', duration: .5 }}
 
 
                                     data-testid="timeline-item" className="mb-10 ml-6" key={index}>

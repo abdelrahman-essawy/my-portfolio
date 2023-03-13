@@ -40,7 +40,7 @@ export default function Home() {
       <m.header
         initial={{ opacity: 0, y: 10 }}
         animate={{ opacity: 1, y: 0 }}
-        transition={{ delay: .5, ease: 'easeOut', type: 'tween', stiffness: 100 }}
+        transition={{ delay: .5, ease: 'easeOut', type: 'tween', stiffness: 100, duration: .3 }}
         className='sticky top-0 z-50 shadow-sm bg-white/50 backdrop-blur-3xl'>
         <Navbar navigation={navigation} />
       </m.header>
@@ -58,7 +58,7 @@ export default function Home() {
         <Skills windowScreenWidth={windowScreenWidth} />
         <Spliiter />
 
-        <Projects windowScreenWidth={windowScreenWidth}/>
+        <Projects windowScreenWidth={windowScreenWidth} />
         <Spliiter />
 
         <Testimonials windowScreenWidth={windowScreenWidth} />
