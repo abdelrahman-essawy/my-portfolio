@@ -8,7 +8,7 @@ export default function Timeline({ learnMore }) {
 
     const timelineItems = [
         {
-            date: 'Mar 2022 – Present',
+            date: 'Mar 2023 – Present',
             title: 'Full Stack Developer',
             description: 'Chingu',
             arrayDescription: [
