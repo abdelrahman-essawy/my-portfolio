@@ -8,7 +8,22 @@ export default function Timeline({ learnMore }) {
 
     const timelineItems = [
         {
-            date: 'Mar 2022 – Present',
+            date: 'Mar 2023 – Present',
+            title: 'Front End Developer',
+            description: 'Alexapps',
+            arrayDescription: [
+                'Developed responsive web apps with modern frameworks like React, Next.js and MUI',
+                'Collaborated with designers and backend developers for consistent UI and effective client-server communication.',
+                'Utilized advanced front-end methodologies like ISR, CSR, SSG, and caching/revalidation for efficient rendering and improved performance.',
+                'Conducted code reviews, followed best practices, and ensured maintainable code.',
+                'Tested and debugged to ensure reliable and quality web apps.',
+                'Stayed updated with latest front-end technologies and shared insights.'
+            ],
+            extraInfo: 'Full Time',
+            country: 'Egypt',
+        },
+        {
+            date: 'Mar 2023 – April 2023',
             title: 'Full Stack Developer',
             description: 'Chingu',
             arrayDescription: [
