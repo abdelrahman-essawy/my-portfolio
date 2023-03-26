@@ -16,13 +16,13 @@ export default function TechnicalSkills({ windowScreenWidth }) {
         },
         {
             name: 'JavaScript',
-            level: 'Proficient',
+            level: 'Expert',
             color: 'bg-blue-500',
             imgRounded: 'rounded-3xl'
         },
         {
             name: 'TypeScript',
-            level: 'Beginner',
+            level: 'Proficient',
             color: 'bg-blue-500',
             imgRounded: 'rounded-xl'
         },
@@ -37,6 +37,23 @@ export default function TechnicalSkills({ windowScreenWidth }) {
             color: 'bg-blue-500',
         },
         {
+            name: 'Postgresql',
+            level: 'Competent',
+            color: 'bg-blue-500',
+            imgRounded: 'rounded-2xl'
+        },
+        {
+            name: 'Prisma',
+            level: 'Competent',
+            color: 'bg-blue-500',
+            imgRounded: 'rounded-2xl'
+        },
+        {
+            name: 'tRPC',
+            level: 'Competent',
+            color: 'bg-blue-500',
+        },
+        {
             name: 'Redux',
             level: 'Competent',
             color: 'bg-blue-500'
@@ -45,6 +62,12 @@ export default function TechnicalSkills({ windowScreenWidth }) {
             name: 'Tailwind',
             level: 'Proficient',
             color: 'bg-blue-500'
+        },
+        {
+            name: 'Material UI',
+            level: 'Proficient',
+            color: 'bg-blue-500',
+            imgRounded: 'p-3'
         },
         {
             name: 'Bootstrap',
@@ -95,12 +118,18 @@ export default function TechnicalSkills({ windowScreenWidth }) {
         },
         {
             name: 'NodeJs',
-            level: 'Beginner',
+            level: 'Proficient',
             color: 'bg-blue-500',
             imgRounded: 'p-3'
         },
         {
             name: 'MongoDB',
+            level: 'Learning',
+            color: 'bg-blue-500',
+            soon: true
+        },
+        {
+            name: 'Vue.js',
             level: 'Learning',
             color: 'bg-blue-500',
             soon: true
@@ -187,6 +216,7 @@ export default function TechnicalSkills({ windowScreenWidth }) {
                                 className={`flex flex-col justify-center px-1 py-2 bg-gray-100 rounded-lg  relative ${soon ? `grayscale blur-[1.3px]  bg-zinc-200/80 shadow-none` : `shadow-md`}`}>
                                 <div className='flex items-center justify-center flex-1'>
                                     <Image
+                                        quality={1}
                                         priority={true}
                                         width="512"
                                         height="512"
