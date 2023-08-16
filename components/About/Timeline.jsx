@@ -9,7 +9,7 @@ export default function Timeline({ learnMore }) {
     const timelineItems = [
         {
             date: 'Mar 2023 – Present',
-            title: 'Front End Developer',
+            title: 'Software Engineer',
             description: 'Alexapps',
             arrayDescription: [
                 'Developed responsive web apps with modern frameworks like React, Next.js and MUI.',

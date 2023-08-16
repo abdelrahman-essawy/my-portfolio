@@ -22,7 +22,7 @@ export default function TechnicalSkills({ windowScreenWidth }) {
         },
         {
             name: 'TypeScript',
-            level: 'Proficient',
+            level: 'Expert',
             color: 'bg-blue-500',
             imgRounded: 'rounded-xl'
         },
@@ -33,6 +33,11 @@ export default function TechnicalSkills({ windowScreenWidth }) {
         },
         {
             name: 'Next.js',
+            level: 'Competent',
+            color: 'bg-blue-500',
+        },
+        {
+            name: 'NestJs',
             level: 'Competent',
             color: 'bg-blue-500',
         },
