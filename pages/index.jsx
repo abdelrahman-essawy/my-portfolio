@@ -44,7 +44,7 @@ export default function Home() {
           stiffness: 100,
           duration: 0.3,
         }}
-        className="sticky top-0 z-50 shadow-sm bg-white/50 backdrop-grayscale"
+        className="sticky top-0 z-50 shadow-sm bg-white/90 backdrop-blur-md"
       >
         <Navbar navigation={navigation} />
       </m.header>
